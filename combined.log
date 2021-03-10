@@ -215,3 +215,5 @@
 {"message":"From before-after images:Cannot read property 'imageBefore' of null","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:41:01.091Z"}
 {"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:50:03.731Z"}
 {"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:50:09.063Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T05:46:40.871Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T05:46:41.174Z"}

@@ -5,11 +5,13 @@ const logger = createLogger({
   level: 'info',
   format: format.combine(format.timestamp(), format.colorize(), format.json()),
   transports: [
-    new transports.MongoDB({
-      level: 'error',
-      db: process.env.DB_URL,
-      collection: 'error-logs'
-    }),
+      new transports.File({ filename: 'error.log', level: 'error' }),
+    // new transports.MongoDB({
+    //   db: process.env.DB_URL,
+    //   tryReconnect: true,
+    //   level: 'error',
+    //   collection: 'error-logs'
+    // }),
     new transports.File({ filename: 'combined.log' })
   ]
 })

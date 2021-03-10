@@ -183,6 +183,11 @@ app.use('/gallery', galleryRoutes)
 app.use('/about', aboutRoutes)
 app.use('/errors', errorRoutes)
 
+app.get('/', (req, res) => {
+  res.render('index')
+})
+
+
 //csrf error handler
 app.use(function (err, req, res, next) {
   if (err.code !== 'EBADCSRFTOKEN') return next(err)
