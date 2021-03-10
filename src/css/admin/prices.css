@@ -1,0 +1,61 @@
+@import '../admin/header.css';
+
+body {
+  background: rgb(249, 179, 199);
+}
+
+h2 {
+  margin-top: 8rem;
+}
+
+h2 span {
+  color: #f6fafe;
+}
+
+
+.add-new-price {
+  margin-top: 7rem;
+}
+
+.price-new {
+  width: 40rem;
+}
+
+.price-show {
+  margin-top: 4rem;
+}
+
+.title {
+  color: #f6fafe;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.form-inline .form-control {
+  max-width: 100%;
+}
+
+input.form-control.edit-unit-price-input {
+  max-width: 30%;
+}
+
+input.form-control.edit-price-header {
+  max-width: 30%;
+}
+
+.price-edit-button {
+  width: 8rem;
+}
+
+.price-edit {
+  display: none;
+}
+
+.price-unit-edit {
+  display: none;
+}
+
+.price-unit-edit-button {
+  width: 4rem;
+}
+

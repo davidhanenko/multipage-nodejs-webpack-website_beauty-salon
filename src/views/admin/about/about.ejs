@@ -1,0 +1,202 @@
+<%- include ../partials/header -%>
+
+
+
+  <section class="container">
+    <div class="container-about my-5">
+
+      <form action="/admin/about?_method=PUT&_csrf=<%%= csrfToken %>" method="POST" class="mx-auto"
+        enctype="multipart/form-data">
+        <h1>about us</h1>
+        <%% if(about) { %>
+          <div class="row my-5">
+            <div class="col-md-7">
+              <div class="image-exist text-center">
+
+                <img alt="About page, photo" src="<%%= about.image.url %>">
+
+                <div class="image-choose">
+                  <label for="image">Upload new image</label>
+                  <input type="file" class="form-control-file my-2" name="image" id="image" accept="image/*" required />
+
+                  <!-- image preview -->
+                  <img alt="" class="imgPreview" />
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="our-mission">
+                <h2 class="text-center">Our Mission</h2>
+                <h4>
+                  <%%= about.ourMission %>
+                </h4>
+
+                <!-- button to open-close our mission edit area  -->
+                <button type="button" class="btn btn-sm btn-block btn-warning our-mission-button">
+                  Edit
+                </button>
+
+                <!-- edit aria for our mission -->
+                <div class="our-mission-edit-area">
+                  <textarea type="text" class="form-control my-2" name=ourMission rows="5">
+             <%%= about.ourMission %> </textarea>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- about section -->
+            <div class="col-md-10 offset-md-1 my-2">
+              <div class="about">
+                <h4>
+                  <%%= about.about %>
+                </h4>
+
+                <!-- button to open-close about edit area  -->
+                <button type="button" class="btn btn-sm btn-block about-button btn-warning">
+                  Edit
+                </button>
+
+                <!-- edit aria for about -->
+                <div class="about-edit-area">
+                  <textarea type="text" class="form-control my-2" name=about rows="5">
+             <%%= about.about %> </textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- about 1st sectiom -->
+            <div class="col-md-10 offset-md-1 my-2">
+              <div class="about-section1">
+                <h4>
+                  <%%= about.aboutSection1 %>
+                </h4>
+                <!-- button to open-close edit area  -->
+                <button type="button" class="btn btn-sm btn-block about-section1-button btn-warning">
+                  Edit
+                </button>
+
+                <!-- edit aria for about 1st section -->
+                <div class="about-section1-edit-area">
+                  <textarea type="text" class="form-control my-2" name=aboutSection1
+                    rows="5"><%%= about.aboutSection1 %> </textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- about 2nd section -->
+            <div class="col-md-10 offset-md-1 my-2">
+              <div class="about-section2">
+                <h4>
+                  <%%= about.aboutSection2 %>
+                </h4>
+                <!-- button to open-close edit area  -->
+                <button type="button" class="btn btn-sm btn-block about-section2-button btn-warning">
+                  Edit
+                </button>
+
+                <!-- edit aria for about 2nd section -->
+                <div class="about-section2-edit-area">
+                  <textarea type="text" class="form-control my-2" name=aboutSection2
+                    rows="5"><%%= about.aboutSection2 %> </textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- about 3rd section -->
+            <div class="col-md-10 offset-md-1 my-4">
+              <div class="about-section3">
+                <h4>
+                  <%%= about.aboutSection3 %>
+                </h4>
+                <!-- button to open-close edit area  -->
+                <button type="button" class="btn btn-sm btn-block about-section3-button btn-warning">
+                  Edit
+                </button>
+
+                <!-- edit aria for about 3rd section -->
+                <div class="about-section3-edit-area">
+                  <textarea type="text" class="form-control my-2" name=aboutSection3
+                    rows="5"><%%= about.aboutSection3 %> </textarea>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <button type="submit" id="updateBtn" class="btn btn-lg btn-block btn-primary my-4">
+            Update
+          </button>
+          <%% } %>
+
+      </form>
+    </div>
+  </section>
+
+
+  <hr>
+
+
+
+  <!-- =============================================== -->
+  <!-- Create about page -->
+  <div class="container mt-5">
+
+    <button type="button" class="btn btn-info create-fprm-button mb-4">
+      Open create form
+    </button>
+
+    <div class="mt-5 create-form">
+      <h1 class="text-center my-5">Create About page</h1>
+      <form action="/admin/about" method="POST" class="mx-auto" enctype="multipart/form-data">
+        <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <input type="text" class="form-control my-2" name="ourMission" placeholder="Our mission...">
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control my-2" name="about" placeholder="About...">
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control my-2" name="aboutSection1" placeholder="about 1st section...">
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control my-2" name="aboutSection2" placeholder="about 2nd section...">
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control my-2" name="aboutSection3" placeholder="about 3rd section...">
+          </div>
+
+          <div class="col-md-8 image-choose-block">
+            <label class="label" for="image">Image for About page</label>
+            <input type="file" class="form-control-file my-2" name="image" id="image" accept="image/*" required>
+          </div>
+        </div>
+
+
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <button type="submit" class="btn btn-lg btn-block btn-primary my-2">Submit</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- go back button -->
+  <a class="btn btn-secondary btn-go-back ml-3 my-3" href="/admin"><span><svg width=".5em" height=".5em"
+        viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+      </svg></span><span>GO BACK</span></a>
+
+
+  <%- include ../partials/footer -%>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+   Error
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed:100,200,300,400" rel="stylesheet">
+</head>
+
+<body class="loading">
+  <h1>500</h1>
+  <h2>Unexpected Error <b>:(</b></h2>
+  <div class="gears">
+    <div class="gear one">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="gear two">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="gear three">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+<div class="under">
+      
+  <%% if (process.env.NODE_ENV !== 'production') { %>
+    <h2 class="alert-heading">
+      <%%=err.message%>
+    </h2>
+    <p>
+      <%%= err.stack %>
+      <%%= statusCode %>
+    </p>
+    <%% } %>
+  <h3>Try to reload this page</h3>
+  <h3>Or go back to <a href="/">Homepage</a></h3>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+@import 'bottom-menu.css';
+@import 'go-to-top.css';
+@import 'header.css';
+/* @import 'services-bunner.css'; */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-header {
+  color: #f6fafee8;
+  margin-top: -12rem;
+}
+
+.gallery-header h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+#gallery {
+  font-size: 0;
+  width: 60%;
+  max-width: 50rem;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+}
+
+#gallery figure {
+  margin: 0;
+  width: 50%;
+  height: auto;
+  transition: 0.7s;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+#gallery figure:hover {
+  cursor: pointer;
+  z-index: 1;
+}
+
+#gallery figure img {
+  width: 100%;
+  height: auto;
+}
+
+#gallery figure:nth-child(1n) {
+  -webkit-transform-origin: 10%;
+}
+
+#gallery figure:nth-child(2n) {
+  -webkit-transform-origin: 90%;
+}
+
+.expanded {
+  transform: scale(1.6);
+  z-index: 1;
+}
+
+.full figure:not(.expanded) {
+  pointer-events: none;
+}
+
+/* top bunner */
+#serv-banner {
+  margin-top: 5rem;
+  height: 13rem;
+  background: url('../imgs/main-img.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+
+.serv-color-overlay {
+  width: 100%;
+  height: 100%;
+   background: #8c577a;
+  background: -webkit-linear-gradient(top left, #8c577a, #d095ce);
+  background: -moz-linear-gradient(top left, #8c577a, #d095ce);
+  background: linear-gradient(to bottom right, #502b42, #776576);
+  opacity: 0.7;
+  position: absolute;
+}
+
+/* bottom menu */
+
+#bottom-menu {
+  margin-top: 6rem;
+  background: #f6fafe;
+}
+
+#bottom-menu a {
+  color: #000000;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+#bottom-menu a:hover {
+  color: #5e3b5ef3;
+}
+
+
+/* navbar */
+.navbar {
+  background: #f6fafef5;
+}
+
+.dropdown-menu {
+  background: #f6fafef5;
+}
+
+
+@media (max-width: 480px) {
+  #gallery {
+    width: 80%;
+  }
+  #gallery figure:nth-child(1n) {
+    -webkit-transform-origin: left;
+  }
+
+  #gallery figure:nth-child(2n) {
+    -webkit-transform-origin: right;
+  }
+  .expanded {
+    transform: scale(2);
+    z-index: 1;
+  }
+}

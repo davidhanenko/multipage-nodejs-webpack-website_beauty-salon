@@ -1,0 +1,213 @@
+<%- include ../partials/header -%>
+
+  <div class="container my-5">
+    <h2>Edit or delete prices for <span>
+        <%%= servicePrice.serviceTitle %>
+      </span></h2>
+    <div class="row text-center">
+      <div class="col-md-8">
+        <div class="price-show">
+
+          <table class="table my-3">
+            <thead>
+              <tr>
+                <th class="title" scope="col">
+                  <%%= servicePrice.serviceTitle %>
+                </th>
+                <th scope="col">
+                  <%%= servicePrice.singleTreatment %> Treatment
+                </th>
+                <th scope="col">
+                  <%% if(servicePrice.multiTreatments) { %>
+                    <%%= servicePrice.multiTreatments %> Treatments
+                      <%% } %>
+                </th>
+                <th>
+                  <button class="btn btn-sm btn-warning price-edit-button">
+                    Edit
+                  </button>
+                </th>
+              </tr>
+
+              <!-- price edit aria -->
+              <tr class="price-edit">
+                <td colspan="4" scope="row">
+                  <form class="form-inline justify-content-around"
+                    action="/admin/prices/<%%= servicePrice._id %>?_method=PUT" method="POST" class="mx-auto">
+                    <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                    <input type="text" class="form-control edit-price-header my-2" name="serviceTitle"
+                      value="<%%= servicePrice.serviceTitle %>" />
+
+                    <div class="form-group">
+                      <label class="mr-1" for="singleTreatment">Treatments</label>
+                      <select class="form-control edit-price-header my-2" name="singleTreatment" id="singleTreatment">
+                        <option selected>
+                          <%%= servicePrice.singleTreatment %>
+                        </option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="mr-1" for="multiTreatments">Treatments</label>
+
+                      <select class="form-control edit-price-header my-2" name="multiTreatments" id="multiTreatments">
+                        <option selected>
+                          <%%= servicePrice.multiTreatments %>
+                        </option>
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                      </select>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-lg btn-block btn-primary my-2">
+                      Submit
+                    </button>
+                  </form>
+                </td>
+              </tr>
+            </thead>
+
+            <%% servicePrice.unitPrice.forEach(unit=> { %>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <%%= unit.unitTitle %>
+                  </th>
+                  <td>$<%%= unit.singlePrice %>
+                  </td>
+                  <td>
+                    <!-- show multi price whet it exist -->
+                    <%% if(unit.multiPrice) { %>
+                      $<%%= unit.multiPrice %>
+                        <%% } %>
+                  </td>
+                  <td>
+                    <!-- Edit button for price unit -->
+                    <button class="btn btn-sm btn-warning  price-unit-edit-button">
+                      Edit
+                    </button>
+
+                    <!-- Delete button -->
+                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
+                      data-target="#confirmDeleteModal<%%= unit._id %>">
+                      Delete
+                    </button>
+
+                    <!-- modal window to confirm delete price unit -->
+                    <div class="modal fade" id="confirmDeleteModal<%%= unit._id %>" data-backdrop="static"
+                      data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">
+                              Delete price: <%%= unit.unitTitle %>?
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Please confirm deleting the price
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                              Close
+                            </button>
+                            <form class="d-inline"
+                              action="/admin/prices/<%%= servicePrice._id %>/units/<%%= unit._id %>?_method=DELETE"
+                              method="POST">
+                              <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                              <button class="btn btn-danger">Confirm</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </td>
+                </tr>
+                <!-- unit price edit aria -->
+                <tr class="price-unit-edit">
+                  <th colspan="5" scope="row">
+                    <form class="form-inline justify-content-center"
+                      action="/admin/prices/<%%= servicePrice._id %>/units/<%%= unit._id %>?_method=PUT" method="POST">
+                      <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                      <input type="text" class="form-control edit-unit-price-input my-1 mx-1" name="unitTitle"
+                        value="<%%= unit.unitTitle %>" />
+                      <input type="text" class="form-control edit-unit-price-input my-2 mx-1" name="singlePrice"
+                        value="<%%= unit.singlePrice %>" />
+                      <input type="text" class="form-control edit-unit-price-input my-2 mx-1" name="multiPrice"
+                        value="<%%= unit.multiPrice %>" />
+                      <button type="submit" class="btn btn-sm btn-block btn-warning my-2">
+                       UPDATE
+                      </button>
+                    </form>
+                  </th>
+                </tr>
+                <%% }) %>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <!-- input for new unit price -->
+    <div class="row">
+      <div class="col-8">
+        <h3 class="mb-4">Add new unit price</h3>
+
+        <form class="form-inline justify-content-center" action="/admin/prices/<%%= servicePrice._id %>/units"
+          method="POST">
+          <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+          <div class="form-row text-center">
+            <div class="col-4">
+              <input type="text" class="form-control my-2 mx-1" name="unitTitle" placeholder="Price unit title"
+                value="<%%= data.unitTitle %>" />
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control my-2 mx-1" name="singlePrice"
+                placeholder="Single treatment prise" value="<%%= data.singlePrice %>" />
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control my-2 mx-1" name="multiPrice" placeholder="Multi treatments price"
+                value="<%%= data.multiPrice %>" />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-lg btn-block btn-success my-2 ml-2">
+            Add new price
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <hr />
+
+    <a class="btn btn-secondary btn-go-back mt-2" href="/admin"><span><svg width=".5em" height=".5em"
+          viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+        </svg></span><span>GO BACK</span></a>
+  </div>
+
+  <%- include ../partials/footer -%>

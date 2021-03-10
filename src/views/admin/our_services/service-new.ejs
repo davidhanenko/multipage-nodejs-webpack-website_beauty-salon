@@ -1,0 +1,79 @@
+<%- include ../partials/header -%>
+
+
+  <h1 class="text-center mb-4">Add a new service</h1>
+
+  <div class="mx-5">
+    <form action="/admin/services?_csrf=<%%= csrfToken %>" method="POST" class="mx-auto" enctype="multipart/form-data">
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <input type="text" class="form-control my-2" name="template" placeholder="template file (.ejs)">
+        </div>
+        <div class="col-md-8">
+          <input type="text" class="form-control my-2" name="title" placeholder="service title">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 justify-content-center">
+          <input type="text" class="form-control my-2" name="descriptionMain" placeholder="description for main page">
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control my-2" name="description1" placeholder="description fo service 1">
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control my-2" name="description2" placeholder="description for service 2">
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control my-2" name="description3" placeholder="description fo service 3">
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control my-2" name="description4" placeholder="description for service 4">
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-5 image-choose-block">
+          <label class="label" for="image_main">Image for main page</label>
+          <input type="file" class="form-control-file my-2" name="imageMain" id="image_main" accept="image/*">
+        </div>
+        <div class="col-md-5 image-choose-block">
+          <label class="label" for="image_1">Image 1</label>
+          <input type="file" class="form-control-file my-2" name="image1" id="image_1" accept="image/*">
+        </div>
+
+        <div class="col-md-5 image-choose-block">
+          <label class="label" for="image_2">Image 2</label>
+          <input type="file" class="form-control-file my-2" name="image2" id="image_2" accept="image/*">
+        </div>
+
+        <div class="col-md-5 image-choose-block">
+          <label class="label" for="image_3">Image 3</label>
+          <input type="file" class="form-control-file my-2" name="image3" id="image_3" accept="image/*">
+        </div>
+
+        <div class="col-md-5 image-choose-block">
+          <label class="label" for="video">Video</label>
+          <input type="file" class="form-control-file my-2" name="video" id="video" accept="video/*">
+        </div>
+      </div>
+
+
+
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <button type="submit" class="btn btn-lg btn-block btn-primary my-2">Submit</button>
+        </div>
+      </div>
+
+    </form>
+    <a class="btn btn-secondary" href="/admin">Go back</a>
+  </div>
+
+  </div>
+
+
+
+  <%- include ../partials/footer -%>

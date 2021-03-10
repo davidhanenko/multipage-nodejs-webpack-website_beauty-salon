@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%%= title %>
+  </title>
+</head>
+
+<body>
+  <div class="container-fluid p-0">
+    <div class="image-overlay">
+      <div class="row error">
+        <div class="container">
+          <div class="col">
+            <h1>404</h1>
+          </div>
+          <div class="col-12">
+            <h2>Page not found</h2>
+          </div>
+          <div class="col-12">
+            <h5>We couldn't find the page you were looking for. This is because:</h5>
+          </div>
+          <div class="col-12">
+            <ol>
+              <li>There is error in URL you entered</li>
+              <li>The page you are looking for has been moved or deleted</li>
+            </ol>
+          </div>
+          <div class="col-12">
+            <h5>Use the bottom menu to navigate to our pages <span>
+                <!-- arrow -->
+                <div class="arrow">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </span>&ensp;or contact us in other way</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include ../contacts -%>
+
+    <%- include ../partials/bottom-menu -%>
+
+</body>
+
+</html>

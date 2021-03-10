@@ -1,0 +1,98 @@
+<%- include ../partials/header -%>
+
+
+  <%- include ../partials/services-bunner -%>
+
+    <%- include ../partials/go-to-top-button -%>
+
+      <div class="container">
+        <div id="main-service">
+
+
+          <%- include ../partials/service-buttons -%>
+
+
+            <!-- HR -->
+            <hr class="service-hr">
+
+
+            <!-- service description======= -->
+
+            <!-- Permanent makeup -->
+            <div class="every">
+
+              <div class="row text-center">
+                <div class="col justify-content-center">
+                  <h2>
+                    <%%= service.title %>
+                  </h2>
+                </div>
+              </div>
+
+              <div class="row descript img-shadow service-p-bigger">
+                <div class="col-lg-10 offset-lg-1">
+                  <h3 class="pb-lg-0 pt-0 pt-lg-0">What is permanent makeup</h3>
+                  <p class="text-justify px-2 pt-1">
+                    <%%= service.description1 %>
+                  </p>
+                  <p class="text-justify px-2 pt-0">
+                    Regardless of being done solely for esthetic purposes, or due to more serious reasons, such as
+                    illness, the most
+                    popular PMU treatments are: <strong>eyebrows, lips, lipliner and eyeliner.</strong>
+                  </p>
+                </div>
+              </div>
+
+              <div class="row text-center img-shadow descript pb-5">
+                <div class="col-lg-6 pb-4">
+                  <h3 class="pb-2 pb-lg-0 pt-0 pt-lg-5 pt-lg-0">Eyebrows</h3>
+                  <p class="text-justify px-2 pt-3">
+                    <%%= service.description2 %>
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                  <img src="<%%= service.image1.url %>" alt="<%%= service.title %>">
+                </div>
+
+              </div>
+
+              <div class="row mt-0 text-center img-shadow descript serv-peel">
+                <div class="col-lg-6 order-2 order-lg-1">
+                  <img src="<%%= service.image2.url %>" alt="<%%= service.title %>">
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+                  <h3 class="pb-2">Eyeliner</h3>
+                  <p class="text-justify px-2 py-3">
+                    <%%= service.description3 %>
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="row text-center img-shadow descript pb-5">
+                <div class="col-lg-6 pb-4">
+                  <h3 class="pb-2 pb-lg-0 pt-0 pt-lg-5 pt-lg-0">Lips</h3>
+                  <p class="text-justify px-2 pt-3">
+                    <%%= service.description4 %>
+                  </p>
+                </div>
+                <div class="col-lg-6">
+                  <img src="<%%= service.image3.url %>" alt="<%%= service.title %>">
+                </div>
+
+              </div>
+              <!-- before/after photo-slider -->
+              <%- include ../partials/before-after -%>
+
+            </div>
+
+        </div>
+      </div>
+
+
+
+      <%- include ../prices -%>
+
+        <%- include ../partials/bottom-menu -%>
+
+          <%- include ../partials/footer -%>

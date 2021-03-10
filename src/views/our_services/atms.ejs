@@ -1,0 +1,101 @@
+<%- include ../partials/header -%>
+
+
+<%- include ../partials/services-bunner -%>
+
+<%- include ../partials/go-to-top-button -%>
+
+<div class="container">
+  <div id="main-service">
+
+
+    <%- include ../partials/service-buttons -%>
+
+
+    <!-- HR -->
+    <hr class="service-hr">
+
+
+    <!-- service description======= -->
+
+    <!-- AMTS -->
+    <div class="every">
+
+      <div class="row text-center">
+        <div class="col justify-content-center">
+          <h2>
+            <%%= service.title %>
+          </h2>
+        </div>
+      </div>
+
+      <div class="row descript text-center img-shadow pb-5">
+        <div class="col-lg-6">
+          <img src="<%%= service.image1.url %>" alt="<%%= service.title %>">
+        </div>
+        <div class="col-lg-6">
+          <h3 class="pb-0 pt-5 pt-lg-0">Microneedling</h3>
+          <p class="text-justify p-2">
+            <%%= service.description1 %>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="row mt-0 text-center img-shadow descript">
+        <div class="col-lg-6 my-4 my-lg-0">
+          <h3 class="pb-2">Compare to microneedling rollers</h3>
+          <p class="text-justify p-2">
+            The needles in microneedling pens penetrate the skin vertically whereas with microneedling rollers the
+            needles penetrate the skin at an angle causing more chance of 'tears' through the skin leading to more side
+            effects and therefore longer recovery time.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <img src="<%%= service.image2.url %>" alt="<%%= service.title %>">
+        </div>
+      </div>
+
+      <div class="row mb-5 descript serv-amts">
+        <div class="col-lg-6 mb-5 my-lg-0">
+          <h3>What is Auto MTS?</h3>
+          <p class="text-justify p-2">
+            <%%= service.description2 %>
+          </p>
+        </div>
+
+
+        <div class="col-lg-6 pl-4">
+          <h3>Benefits of MTS</h3>
+          <ul>
+            <li>Needle is penetrated in epidermis</li>
+            <li>Promotes collagen regeneration</li>
+            <li>Improves skin tone</li>
+            <li>Reduces wrinkles and pigments</li>
+            <li>Activates skin cell restoration ability</li>
+            <li>Increases skin tightness & elasticity</li>
+            <li>Safe, convenient, economical</li>
+            <li>Non-surgial & Non invasive</li>
+            <li> No side effects</li>
+            <li>Easy to handle for treatment</li>
+            <li>No pain & No scratch</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- before/after photo-slider -->
+      <%- include ../partials/before-after -%>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+<%- include ../prices -%>
+
+<%- include ../partials/bottom-menu -%>
+
+<%- include ../partials/footer -%>

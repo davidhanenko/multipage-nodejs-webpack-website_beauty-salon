@@ -1,0 +1,356 @@
+@import 'prices.css';
+@import 'flash-message.css';
+@import 'loaders.css';
+@import '../../node_modules/animate.css/animate.min.css';
+
+/* main screen============ */
+
+.main-screen {
+  z-index: 0;
+  height: 50rem;
+  background-image: url('../imgs/main-img.jpg');
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.slogan {
+  position: absolute;
+  top: 19rem;
+  color: #5e3b5ef3;
+  right: 23vw;
+}
+
+.slogan h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.8rem;
+  position: relative;
+}
+
+.slogan span {
+  position: absolute;
+  right: -4rem;
+  font-size: 1.2em;
+}
+
+#presentation {
+  display: flex;
+  padding-top: 40rem;
+}
+
+#presentation h2 {
+  margin-bottom: 1.2rem;
+  text-align: center;
+  background: linear-gradient(to left, #5e3b5e, #5e3b5e96);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  font-size: 2.2rem;
+}
+
+#presentation h3 {
+  margin-bottom: 1.7rem;
+  text-align: start;
+  font-size: 1.6rem;
+  color: #422942;
+}
+
+@keyframes slideouth2 {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideouth3 {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(50%);
+  }
+}
+
+#presentation h2 {
+  animation: slideouth2 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
+
+#presentation h3 {
+  animation: slideouth3 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
+
+@keyframes slidein1 {
+  from {
+    transform: translateX(-25%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes slidein2 {
+  from {
+    transform: translateX(25%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.service-wrap:nth-child(1) {
+  animation: slidein1 0.3s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
+
+.service-wrap:nth-child(2) {
+  animation: slidein2 0.3s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
+
+.service-wrap:nth-child(3) {
+  animation: slidein1 0.4s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
+
+.service-wrap:nth-child(4) {
+  animation: slidein2 0.4s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
+
+.service-wrap:nth-child(5) {
+  animation: slidein1 0.5s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
+
+.service-wrap:nth-child(6) {
+  animation: slidein2 0.5s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
+/* services============= */
+
+hr {
+  margin-top: 16rem;
+  margin-bottom: 5rem;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, #5e3b5e00, #5e3b5e, #5e3b5e00);
+}
+
+#services {
+  margin-top: 10rem;
+  max-width: 100%;
+}
+
+#services h2 {
+  font-weight: 700;
+  background: linear-gradient(to right, #5e3b5e, #5e3b5e96);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 3rem;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+}
+
+.service-wrap {
+  position: relative;
+}
+
+.service {
+  position: relative;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.service-container {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+}
+
+.service h3 {
+  z-index: 1;
+  color: #f6fafe;
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: absolute;
+  width: 100%;
+  bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.service img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.img-overlay {
+  display: block;
+  position: relative;
+}
+
+.img-overlay:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: url('../imgs/fda-logo-png-white-transparent-png.png');
+  background: rgba(46, 35, 46, 0.308);
+}
+
+.service p {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  line-height: 1;
+  font-weight: 300;
+  margin-left: 5%;
+  font-size: 1.3rem;
+  color: #222022d3;
+  width: 90%;
+}
+
+.service-container:hover p {
+  transform: translateY(-6rem);
+  transition: 0.4s;
+  opacity: 1;
+  line-height: 1.2;
+}
+
+.service-container:hover h3 {
+  color: #000;
+  transform: translateY(-15rem);
+  transition: 0.4s;
+}
+.service-container:hover .img-overlay {
+  transform: scaleY(1.1);
+  transition: 0.4s;
+}
+
+.service-container:hover .img-overlay:after {
+  background: linear-gradient(transparent 0%, rgba(184, 183, 183, 0.705) 100%)
+    repeat-x rgba(233, 232, 232, 0.849);
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+
+
+
+/* social */
+
+#instagram:hover {
+  color: #4b7ce7fa;
+}
+#telephone:hover {
+  color: #4b7ce7fa;
+}
+#facebook:hover {
+  color: #4b7ce7fa;
+}
+
+/* spinner */
+#page-loading-spinner {
+  position: fixed;
+  z-index: 999;
+  height: 3em;
+  width: 5em;
+  overflow: visible;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.lds-spinner div:after {
+  background: #3a004c;
+}
+
+
+
+/* ********** services page ************ */
+/* media */
+
+@media (max-width: 376px) {
+  .slogan {
+    position: absolute;
+    top: 45vh;
+    color: #5e3b5ef3;
+    right: 20vw;
+  }
+
+  .slogan h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    position: relative;
+  }
+
+  .slogan span {
+    position: absolute;
+    right: -2rem;
+    font-size: 1.2em;
+  }
+
+  #presentation {
+    display: flex;
+    padding-top: 30rem;
+  }
+
+  #presentation h2 {
+    margin-bottom: 1.2rem;
+    text-align: center;
+    background: linear-gradient(to left, #5e3b5e, #5e3b5e96);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    font-size: 1.4rem;
+  }
+
+  #presentation h3 {
+    margin-bottom: 1rem;
+    text-align: start;
+    font-size: 1rem;
+    color: #422942;
+  }
+
+hr {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+
+
+#services {
+  margin-top: 5rem;
+}
+
+}
+
+@media (max-widtn: 501px) {
+}

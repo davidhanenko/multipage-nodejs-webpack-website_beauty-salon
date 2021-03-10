@@ -1,0 +1,118 @@
+<!-- before/after photo-slider -->
+<div class="before-after-block">
+  <div class="row align-items-center pb-4">
+    <div class="col d-flex justify-content-center">
+      <h2>Before vs After</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <%% service.imageBeforeAfter.forEach( img=> { %>
+      <div class="col-md-6 my-3 before-after-image">
+        <div class="row no-gutters text-center">
+          <div class="col-6">
+            <!-- img before -->
+            <img src="<%%= img.imageBefore.url %>" alt="<%%= service.title %> before-after" />
+          </div>
+          <div class="col-6">
+            <!-- img after -->
+            <img src="<%%= img.imageAfter.url %>" alt="<%%= service.title %> before-after" />
+          </div>
+
+
+          <button type="button" class="btn btn-sm btn-danger delete-imageBA " data-toggle="modal"
+            data-target="#confirmDeleteModal<%%= img._id %>">
+            Delete
+          </button>
+
+          <!-- modal window to confirm delete before-after image -->
+          <div class="modal fade" id="confirmDeleteModal<%%= img._id %>" data-backdrop="static" data-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title mr-2" id="staticBackdropLabel">
+                    Delete image:
+                  </h5>
+                  <img class="imageBA-delete-modal" src="<%%= img.imageBefore.url %>">
+                  <img class="imageBA-delete-modal" src="<%%= img.imageAfter.url %>">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">Please confirm deleting current image from slider</div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Close
+                  </button>
+                  <form class="d-inline"
+                    action="/admin/services/<%%= service.title %>/imagesb-a/<%%= img._id %>?_method=DELETE&_csrf=<%%= csrfToken %>"
+                    method="POST">
+                    <button class="btn btn-sm btn-danger">
+                      Confirm
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <%% }) %>
+  </div>
+
+  <!-- upload form -->
+  <form action="/admin/services/<%%= service.title %>/imagesb-a?_csrf=<%%= csrfToken %>" method="POST" class="mx-auto"
+    enctype="multipart/form-data">
+    <div class="row imageBA-choose-block">
+      <div class="col-md-8">
+        <label class="label" for="imageBefore">Add new image BEFORE</label>
+        <input type="file" class="form-control-file my-2" name="imageBefore" id="imageBefore" accept="image/*" />
+
+
+        <label class="label" for="image_before_after">Add new image AFTER</label>
+        <input type="file" class="form-control-file my-2" name="imageAfter" id="imageAfter" accept="image/*" />
+        <!-- if checked, photos will load with coveres eyes -->
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="isCoverEyes">
+        <label class="form-check-label" for="inlineCheckbox1">Cover eyes</label>
+      </div>
+      <div class="col-md-4">
+
+        <!-- preview -->
+        <div class="row no-gutters">
+          <div class="col-6">
+            <img class="imgBeforePreview d-inline" />
+          </div>
+          <div class="col-6">
+            <img class="imgAfterPreview d-inline" />
+          </div>
+        </div>
+
+        <button id="upload-imagesBA" type="submit" class="btn btn-lg btn-primary my-2">
+          Upload new images
+        </button>
+
+      </div>
+    </div>
+  </form>
+
+  <!-- loading spinner -->
+  <div id="loading-imagesBA-spinner">
+    <div class="lds-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>
+</div>

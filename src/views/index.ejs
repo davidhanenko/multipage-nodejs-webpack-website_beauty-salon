@@ -1,0 +1,133 @@
+<%- include ./partials/header -%>
+
+  <!-- include flash-message here(only for Prod mode..not work in Dev mode) -->
+  <%- include ./partials/flash-message -%>
+
+    <%- include ./partials/go-to-top-button -%>
+
+      <!-- Loader for page loading -->
+      <div id="page-loading-spinner">
+        <div class="lds-spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <div id="main-screen">
+
+        <div class="container-fluid main-screen">
+
+
+
+          <div class="row slogan">
+            <div class="col animate__animated animate__fadeInRight animate__delay-1s">
+              <h1>
+                In Good Hands by
+                <br>
+                <span>Ilona</span>
+              </h1>
+            </div>
+          </div>
+
+
+
+          <section id="presentation" class="row justify-content-center">
+            <div class="col-lg-10 offset-lg-1">
+              <h2 class="pb-2">Anything you are not agree with..</h2>
+              <h3>Do you have any inperfection, you want to rid off.. or you have dull, lifeless skin..
+                or just need some refreshment..?</h3>
+              <h2 class="py-2">Only what you need, is to give yourself in good hands</h2>
+              <h3>We are providing all kind of treatments, you need to become
+                brand new again </h3>
+            </div>
+          </section>
+        </div>
+
+      </div>
+
+      <!-- ******** services **********-->
+
+      <hr>
+
+      <div id="services">
+        <div class="container">
+          <div class="row our-services justify-content-center ">
+            <div class="col-lg-5 text-center">
+              <h2>our services</h2>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <%% services.forEach(service=> { %>
+                <%% if(service.imageMain && service.title && service.template && service.descriptionMain) { %>
+
+                  <div class="service-wrap col-lg-6 ">
+
+                    <div class="service px-0 col-lg-12">
+                      <a href="/services/<%%= service.template %>">
+                        <div class="service-container">
+
+                          <div class="img-overlay">
+
+                            <img src="<%%= service.imageMain.url %>" alt="<%%= service.title %>">
+                            <h3>
+                              <%%= service.title %>
+                            </h3>
+
+                          </div>
+                          <p>
+                            <%%= service.descriptionMain %>
+                          </p>
+                        </div>
+
+                    </div>
+                    </a>
+                  </div>
+                  <%% } %>
+                    <%% }) %>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      </div>
+
+      <%- include ./prices -%>
+
+
+        <section id="email-map">
+          <div class="container mt-4">
+            <div class="row p-0 pt-5 pb-1">
+
+              <div id="email-input" class="col-lg-6">
+                <%- include ./email -%>
+              </div>
+
+              <div class="col-lg-6 mt-5 mt-lg-0 pl-0 pl-lg-4 pr-0 pr-lg-4">
+                <%- include ./partials/map -%>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
+        <%- include ./contacts -%>
+
+          <%- include ./partials/bottom-menu -%>
+
+            <%- include ./partials/footer -%>

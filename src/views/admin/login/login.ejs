@@ -1,0 +1,43 @@
+<%- include ../partials/header -%>
+
+
+  <div class="container login">
+
+    <div class="row justify-content-center">
+      <div class="col-md-7 col-lg-4">
+
+        <h1>Sign In</h1>
+
+        <form class="form-group needs-validation" action="/admin/login" method="POST" novalidate>
+          <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+          <div class="my-3">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" name="username" id="username" placeholder="username" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Username is required
+            </div>
+          </div>
+          <div class="my-3">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" id="password" name="password" placeholder="password" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Pasword is requires
+            </div>
+          </div>
+      
+          <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+        </form>
+
+        <a class="btn btn-secondary btn-go-back mt-3 mb-5" href="/admin"><span><svg width=".5em" height=".5em"
+              viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+            </svg></span><span>GO BACK</span></a>
+      </div>
+    </div>
+
+  </div>
+
+  <%- include ../partials/footer -%>

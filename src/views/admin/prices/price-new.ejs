@@ -1,0 +1,24 @@
+<%- include ../partials/header -%>
+
+
+
+  <h1 class="text-center mb-4 add-new-price">Add a new service price</h1>
+
+  <div class="container price-new">
+    <form action="/admin/prices" method="POST" class="mx-auto">
+      <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+      <input type="text" class="form-control my-2" name="serviceTitle" placeholder="service title(button)" value="<%%= data.serviceTitle %>" >
+
+      <input type="text" class="form-control my-2" name="singleTreatment" placeholder="number of treatments(1 default)" value="<%%= data.singleTreatment %>">
+      <input type="text" class="form-control my-2" name="multiTreatments" placeholder="number of treatments" value="<%%= data.multiTreatments %>">
+
+      <button type="submit" class="btn btn-lg btn-block btn-primary my-2">Submit</button>
+    </form>
+
+
+    <a class="btn btn-secondary" href="/admin">Go back</a>
+  </div>
+
+
+
+  <%- include ../partials/footer -%>

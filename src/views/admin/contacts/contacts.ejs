@@ -1,0 +1,832 @@
+<%- include ../partials/header -%>
+
+  <h1 class="my-5 text-center">Add new and Edit exist contact information</h1>
+
+  <div id="contacts" class="container">
+    <div class="row text-center align-items-start">
+      <!-- ADDRESS -->
+      <div class="contact col-md-6 my-3 my-md-0">
+        <h2 class="mb-3 location">
+          <span></span>Find us
+        </h2>
+        <!-- address info -->
+        <%% contacts.forEach(contact=> { %> <%% if(contact.address1stLine) { %>
+            <div class="contact-body">
+              <div>
+                <h3>
+                  <%%= contact.address1stLine %>
+                </h3>
+                <p>
+                  <%%= contact.address2ndLine %>
+                </p>
+              </div>
+              <!-- buttons: Edit, Delete for address -->
+              <div class="btn-group d-flex justify-content-around">
+                <div>
+                  <button class="btn btn-sm btn-outline-warning edit-button m-1"> Edit</button>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-sm btn-outline-danger m-1 p-1" data-toggle="modal"
+                    data-target="#confirmDeleteModal<%%= contact._id %>">
+                    Delete
+                  </button>
+                </div>
+
+                <!-- modal window to confirm address delete  -->
+                <div class="modal fade" id="confirmDeleteModal<%%= contact._id %>" data-backdrop="static"
+                  data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Delete current address:
+                          <div class="modal-address-phone">
+                            <h4>
+                              <%%= contact.address1stLine %>
+                            </h4>
+                            <p>
+                              <%%= contact.address2ndLine %>
+                            </p>
+                          </div>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        Please confirm deleting the address
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                          Close
+                        </button>
+                        <form action="/admin/contacts/<%%= contact._id %>?_method=DELETE" method="POST">
+                          <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                          <button class="btn btn-danger">Delete</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- address edit aria -->
+              <div class="edit-area p-3 w-100">
+                <h4 class="mb-3">Edit adress</h4>
+                <form class="form" action="/admin/contacts/<%%= contact._id %>?_method=PUT" method="POST">
+                  <input type="hidden" name="_csrf" value="<%%= csrfToken%>" required>
+                  <input type="text" class="form-control my-2 mx-1" name="address1stLine"
+                    value="<%%= contact.address1stLine %>" />
+                  <input type="text" class="form-control my-2 mx-1" name="address2ndLine"
+                    value="<%%= contact.address2ndLine %>" />
+
+                  <button type="submit" class="btn btn-block btn-warning my-2 mx-1">
+                    Update address
+                  </button>
+                </form>
+              </div>
+            </div>
+            <%% } %>
+              <%% }) %>
+
+                <!-- add address button -->
+                <button class="btn btn-lg btn-block btn-outline-info add-button mt-4">Add new</button>
+
+                <!-- add new address area -->
+                <div class="add-area p-3 w-100">
+                  <h4 class="mb-3">Add new adress</h4>
+                  <form class="form" action="/admin/contacts/contacts-edit" method="POST">
+                    <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                    <input type="text" class="form-control my-2 mx-1" name="address1stLine" placeholder="address"
+                      value="<%%= data.address1stLine %>" />
+                    <input type="text" class="form-control my-2 mx-1" name="address2ndLine"
+                      placeholder="address - additional line" value="<%%= data.address2ndLine %>" />
+
+                    <button type="submit" class="btn btn-block btn-success my-2 mx-1">
+                      Add new address
+                    </button>
+                  </form>
+                </div>
+      </div>
+
+      <!-- TELEPHONE & EMAIL  -->
+      <div class="contact col-md-6 my-3 my-md-0">
+        <h2 class="mb-3 telephone">
+          <span></span>Contact us
+        </h2>
+
+        <%% contacts.forEach(contact=> { %> <%% if(contact.telephone || contact.email) { %>
+            <div class="contact-body">
+              <div>
+                <h3>
+                  <%%= contact.telephone %>
+                </h3>
+                <p>
+                  <%%= contact.email %>
+                </p>
+              </div>
+
+              <div class="btn-group d-flex justify-content-around">
+                <div>
+                  <button class="btn btn-sm btn-outline-warning edit-button m-1">Edit</button>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-sm btn-outline-danger m-1" data-toggle="modal"
+                    data-target="#confirmDeleteModal<%%= contact._id %>">
+                    Delete
+                  </button>
+                </div>
+
+                <!-- modal window to confirm phone/email delete  -->
+                <div class="modal fade" id="confirmDeleteModal<%%= contact._id %>" data-backdrop="static"
+                  data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Delete current contact info:
+                          <div class="modal-address-phone">
+                            <h3>
+                              <%%= contact.telephone %>
+                            </h3>
+                            <p>
+                              <%%= contact.email %>
+                            </p>
+                          </div>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        Please confirm deleting contact info
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                          Close
+                        </button>
+                        <form action="/admin/contacts/<%%= contact._id %>?_method=DELETE" method="POST">
+                          <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                          <button class="btn btn-danger">Delete</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- contacts edit aria -->
+              <div class="edit-area p-3 w-100">
+                <h4 class="mb-3">Edit contacts info</h4>
+                <form class="form needs-validation" action="/admin/contacts/<%%= contact._id %>?_method=PUT"
+                  method="POST" novalidate>
+                  <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                  <div>
+                    <label for="tel">Enter phone number in follow format: 123-456-7890</label>
+                    <input id="tel" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" class="form-control my-2 mx-1 telehone"
+                      name="telephone" value="<%%= contact.telephone %>" required />
+                    <div class="valid-feedback">OK</div>
+                    <div class="invalid-feedback">
+                      Please provide a valid telephone number, in follow format: 123-456-7890
+                    </div>
+                  </div>
+
+
+                  <div>
+                    <input type="email" class="form-control my-2 mx-1" name="email" value="<%%= contact.email %>" />
+                    <div class="valid-feedback">OK</div>
+                    <div class="invalid-feedback">Please provide a valid email.</div>
+                  </div>
+
+                  <button type="submit" class="btn btn-block btn-warning my-2 mx-1">
+                    Update contacts
+                  </button>
+                </form>
+              </div>
+            </div>
+            <%% } %>
+              <%% }) %>
+
+                <!-- add new contacts button -->
+
+                <button class="btn btn-lg btn-block btn-outline-info add-button mt-4">Add new</button>
+
+                <!-- contact add area -->
+                <div class="add-area p-3 w-100">
+                  <h4 class="mb-3">Add new contacts</h4>
+                  <form class="needs-validation" action="/admin/contacts/contacts-edit" method="POST" novalidate>
+                    <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                    <div>
+                      <label for="tel">Enter phone number in follow format: 123-456-7890</label>
+                      <input id="tel" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" class="form-control my-2 mx-1 telehone"
+                        name="telephone" placeholder="123-456-7890" required value="<%%= data.telephone %>" />
+                      <div class="valid-feedback">OK</div>
+                      <div class="invalid-feedback">
+                        Please provide a valid telephone number, in follow format: 123-456-7890
+                      </div>
+                    </div>
+                    <div>
+                      <input type="email" class="form-control my-2 mx-1" name="email" placeholder="email"
+                        value="<%%= data.email %>" />
+                      <div class="valid-feedback">OK</div>
+                      <div class="invalid-feedback">Please provide a valid email.</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-block btn-success my-2 mx-1">
+                      Add new contact
+                    </button>
+                  </form>
+                </div>
+      </div>
+
+      <!-- HOURS-->
+      <div class="contact col-12 my-3 my-md-5">
+        <h2 class="my-3 hours"><span></span>Our hours
+        </h2>
+
+        <%% contacts.forEach(contact=> { %>
+          <%% if( contact.day || contact.dayFrom || contact.dayTo || contact.ampmFrom || contact.ampmTo ) { %>
+
+            <div class="contact-body">
+              <div>
+                <h3>
+                  <%% if(contact.day) { %>
+                    <%%= contact.day %>
+                      <%% } else { %>
+                        <%%= contact.dayFrom %>-<%%= contact.dayTo %>
+                            <%% } %>
+                              /
+                              <%%= contact.hoursFrom %>
+                                :
+                                <%%= contact.minsFrom %>
+                                  <%%= contact.ampmFrom %>
+                                    -
+                                    <%%= contact.hoursTo %>
+                                      :<%%= contact.minsTo %>
+                                        <%%= contact.ampmTo %>
+                </h3>
+              </div>
+
+              <!-- edit & delete buttons -->
+              <div class="btn-group d-flex justify-content-around">
+                <div>
+                  <button class="btn btn-sm btn-outline-warning edit-button m-1">Edit</button>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-sm btn-outline-danger m-1" data-toggle="modal"
+                    data-target="#confirmDeleteModal<%%= contact._id %>">
+                    Delete
+                  </button>
+                </div>
+
+                <!-- modal window to confirm address delete  -->
+                <div class="modal fade" id="confirmDeleteModal<%%= contact._id %>" data-backdrop="static"
+                  data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Delete current hours:
+                          <div class="modal-address-phone">
+                            <h3>
+                              <%% if(contact.day) { %>
+                                <%%= contact.day %>
+                                  <%% } else { %>
+                                    <%%= contact.dayFrom %>-<%%= contact.dayTo %>
+                                        <%% } %> / <%%= contact.hoursFrom %>:<%%= contact.minsFrom %>
+                                              <%%= contact.ampmFrom %> - <%%= contact.hoursTo %>:<%%= contact.minsTo %>
+                                                    <%%= contact.ampmTo %>
+                            </h3>
+                          </div>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">Please confirm hours deleting</div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                          Close
+                        </button>
+                        <form action="/admin/contacts/<%%= contact._id %>?_method=DELETE" method="POST">
+                          <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                          <button class="btn btn-danger">Delete</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- day & hours EDIT area -->
+              <div class="edit-area mt-4 p-3">
+                <!-- form for days -->
+
+                <form class="form" action="/admin/contacts/<%%= contact._id %>?_method=PUT" method="POST">
+                  <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                  <div class="row d-flex">
+                    <!-- input for days -->
+                    <!-- input for single day -->
+                    <div class="col-lg-4">
+                      <h4 class="pt-3">Edit days</h4>
+
+                      <div class="form-group single-day-input-group w-50">
+                        <label for="day ">Day:</label>
+                        <select class="form-control mt-n2" name="day" id="day">
+                          <option selected>
+                            <%%= contact.day %>
+                          </option>
+                          <option></option>
+                          <option>Mon</option>
+                          <option>Tue</option>
+                          <option>Wed</option>
+                          <option>Thu</option>
+                          <option>Fri</option>
+                          <option>Sat</option>
+                          <option>Sun</option>
+                        </select>
+                      </div>
+
+                      <h5 class="my-3">OR</h5>
+
+                      <!-- input for from-to days -->
+                      <!-- day from -->
+                      <div class="row">
+                        <div class="col-6 align-self-end">
+                          <div class="form-group">
+                            <label for="dayFrom">Day from: </label>
+                            <select class="form-control mt-n2" name="dayFrom" id="dayFrom">
+                              <option selected>
+                                <%%= contact.dayFrom %>
+                              </option>
+                              <option></option>
+                              <option>Mon</option>
+                              <option>Tue</option>
+                              <option>Wed</option>
+                              <option>Thu</option>
+                              <option>Fri</option>
+                              <option>Sat</option>
+                              <option>Sun</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!-- day to -->
+                        <div class="col-6 align-self-end">
+                          <div class="form-group">
+                            <label for="dayTo">Day to:</label>
+                            <div>
+                              <select class="form-control mt-n2" name="dayTo" id="dayTo">
+                                <option selected>
+                                  <%%= contact.dayTo %>
+                                </option>
+                                <option></option>
+                                <option>Mon</option>
+                                <option>Tue</option>
+                                <option>Wed</option>
+                                <option>Thu</option>
+                                <option>Fri</option>
+                                <option>Sat</option>
+                                <option>Sun</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- input for hours -->
+                    <div class="col-lg-8 mt-3 mt-md-0">
+                      <h4 class="pt-3">Edit time</h4>
+
+                      <div class="row pt-1 pt-md-5">
+                        <!-- time from -->
+                        <div class="col-6">
+                          <div class="row no-gutters align-items-end">
+                            <!-- hours -->
+                            <div class="col-4 timeSet">
+                              <div class="form-group">
+                                <label for="hoursFrom">Hours from:</label>
+                                <select class="form-control mt-n2 time-select" name="hoursFrom" id="hoursFrom">
+                                  <option selected>
+                                    <%%= contact.hoursFrom %>
+                                  </option>
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                  <option>6</option>
+                                  <option>7</option>
+                                  <option>8</option>
+                                  <option>9</option>
+                                  <option>10</option>
+                                  <option>11</option>
+                                  <option>12</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <!-- minutes -->
+                            <div class="col-4 timeSet">
+                              <div class="form-group">
+                                <label for="minsFrom">Mins from:</label>
+                                <select class="form-control mt-n2 time-select" name="minsFrom" id="minsFrom">
+                                  <option selected>
+                                    <%%= contact.minsFrom %>
+                                  </option>
+                                  <option>00</option>
+                                  <option>05</option>
+                                  <option>10</option>
+                                  <option>15</option>
+                                  <option>20</option>
+                                  <option>25</option>
+                                  <option>30</option>
+                                  <option>35</option>
+                                  <option>40</option>
+                                  <option>45</option>
+                                  <option>50</option>
+                                  <option>55</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <!-- AM/PM -->
+                            <div class="col-4 timeSet">
+                              <div class="form-group">
+                                <label for="ampmFrom">AM/PM:</label>
+                                <select class="form-control mt-n2 time-select" name="ampmFrom" id="ampmFrom">
+                                  <option selected>
+                                    <%%= contact.ampmFrom %>
+                                  </option>
+                                  <option>AM</option>
+                                  <option>PM</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- time to -->
+                        <div class="col-6 align-self-end">
+                          <div class="row no-gutters align-items-end">
+                            <!-- hours -->
+                            <div class="col-4 timeSet">
+                              <div class="form-group">
+                                <label for="hoursTo">Hours to:</label>
+                                <select class="form-control mt-n2 time-select" name="hoursTo" id="hoursTo">
+                                  <option selected>
+                                    <%%= contact.hoursTo %>
+                                  </option>
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                  <option>6</option>
+                                  <option>7</option>
+                                  <option>8</option>
+                                  <option>9</option>
+                                  <option>10</option>
+                                  <option>11</option>
+                                  <option>12</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <!-- minutes -->
+                            <div class="col-4 timeSet">
+                              <div class="form-group">
+                                <label for="minsTo">Mins to:</label>
+                                <select class="form-control mt-n2 time-select" name="minsTo" id="minsTo">
+                                  <option selected>
+                                    <%%= contact.minsTo %>
+                                  </option>
+                                  <option>00</option>
+                                  <option>05</option>
+                                  <option>10</option>
+                                  <option>15</option>
+                                  <option>20</option>
+                                  <option>25</option>
+                                  <option>30</option>
+                                  <option>35</option>
+                                  <option>40</option>
+                                  <option>45</option>
+                                  <option>50</option>
+                                  <option>55</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <!-- AM/PM -->
+                            <div class="col-4 timeSet">
+                              <div class="form-group">
+                                <label for="ampmTo">AM/PM:</label>
+                                <select class="form-control mt-n2 time-select" name="ampmTo" id="ampmTo">
+                                  <option selected>
+                                    <%%= contact.ampmTo %>
+                                  </option>
+                                  <option>AM</option>
+                                  <option>PM</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-block btn-warning my-2">
+                    Edit hours
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <%% } %>
+              <%% }) %>
+
+                <!-- Add new hours -->
+                <!-- add new button -->
+                <button class="btn btn-lg btn-block btn-outline-info add-button mt-4">Add new</button>
+
+                <!-- add new aria-->
+                <div class="add-area mt-4 p-3">
+                  <!-- form for days -->
+
+                  <form class="form" action="/admin/contacts/contacts-edit" method="POST">
+                    <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                    <div class="row d-flex hours-input">
+                      <!-- input for days -->
+                      <!-- input for single day -->
+                      <div class="col-lg-4">
+                        <h4 class="pt-3">Add new days</h4>
+
+                        <div class="form-group single-day-input-group w-50">
+                          <label for="day ">Day:</label>
+                          <select class="form-control mt-n2" name="day" id="day">
+                            <%% if(data.day) { %>
+                              <option selected>
+                                <%%= data.day %>
+                              </option>
+                              <option></option>
+                              <%% } else { %>
+                                <option></option>
+                                <%% } %>
+                                  <option>Mon</option>
+                                  <option>Tue</option>
+                                  <option>Wed</option>
+                                  <option>Thu</option>
+                                  <option>Fri</option>
+                                  <option>Sat</option>
+                                  <option>Sun</option>
+                          </select>
+                        </div>
+
+                        <h5 class="my-3">OR</h5>
+
+                        <!-- input for from-to days -->
+                        <!-- day from -->
+                        <div class="row">
+                          <div class="col-6 align-self-end">
+                            <div class="form-group">
+                              <label for="dayFrom">Day from: </label>
+                              <select class="form-control mt-n2" name="dayFrom" id="dayFrom">
+                                <%% if(data.dayFrom) { %>
+                                  <option selected>
+                                    <%%= data.dayFrom %>
+                                  </option>
+                                  <option></option>
+                                  <%% } else { %>
+                                    <option></option>
+                                    <%% } %>
+
+                                      <option>Mon</option>
+                                      <option>Tue</option>
+                                      <option>Wed</option>
+                                      <option>Thu</option>
+                                      <option>Fri</option>
+                                      <option>Sat</option>
+                                      <option>Sun</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <!-- day to -->
+                          <div class="col-6 align-self-end">
+                            <div class="form-group">
+                              <label for="dayTo">Day to:</label>
+                              <div>
+                                <select class="form-control mt-n2" name="dayTo" id="dayTo">
+                                  <%% if(data.dayTo) { %>
+                                    <option selected>
+                                      <%%= data.dayTo %>
+                                    </option>
+                                    <option></option>
+                                    <%% } else { %>
+                                      <option></option>
+                                      <%% } %>
+
+                                        <option>Mon</option>
+                                        <option>Tue</option>
+                                        <option>Wed</option>
+                                        <option>Thu</option>
+                                        <option>Fri</option>
+                                        <option>Sat</option>
+                                        <option>Sun</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- input for hours -->
+                      <div class="col-lg-8 mt-3 mt-md-0">
+                        <h4 class="pt-3">Add new hours</h4>
+
+                        <div class="row pt-1 pt-md-5">
+                          <!-- time from -->
+                          <div class="col-6">
+                            <div class="row no-gutters align-items-end">
+                              <!-- hours -->
+                              <div class="col-4 timeSet">
+                                <div class="form-group">
+                                  <label for="hoursFrom">Hours from:</label>
+                                  <select class="form-control mt-n2 time-select" name="hoursFrom" id="hoursFrom">
+                                    <%% if(data.hoursFrom) { %>
+                                      <option selected>
+                                        <%%= data.hoursFrom %>
+                                      </option>
+                                      <option></option>
+                                      <%% } else { %>
+                                        <option></option>
+                                        <%% } %>
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                          <option>5</option>
+                                          <option>6</option>
+                                          <option>7</option>
+                                          <option>8</option>
+                                          <option>9</option>
+                                          <option>10</option>
+                                          <option>11</option>
+                                          <option>12</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <!-- minutes -->
+                              <div class="col-4 timeSet">
+                                <div class="form-group">
+                                  <label for="minsFrom">Mins from:</label>
+                                  <select class="form-control mt-n2 time-select" name="minsFrom" id="minsFrom">
+                                    <%% if(data.minsFrom) { %>
+                                      <option selected>
+                                        <%%= data.minsFrom %>
+                                      </option>
+                                      <option></option>
+                                      <%% } else { %>
+                                        <option></option>
+                                        <%% } %>
+                                          <option>00</option>
+                                          <option>05</option>
+                                          <option>10</option>
+                                          <option>15</option>
+                                          <option>20</option>
+                                          <option>25</option>
+                                          <option>30</option>
+                                          <option>35</option>
+                                          <option>40</option>
+                                          <option>45</option>
+                                          <option>50</option>
+                                          <option>55</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <!-- AM/PM -->
+                              <div class="col-4 timeSet">
+                                <div class="form-group">
+                                  <label for="ampmFrom">AM/PM:</label>
+                                  <select class="form-control mt-n2 time-select" name="ampmFrom" id="ampmFrom">
+                                    <%% if(data.ampmFrom) { %>
+                                      <option selected>
+                                        <%%= data.ampmFrom %>
+                                      </option>
+                                      <option></option>
+                                      <%% } else { %>
+                                        <option></option>
+                                        <%% } %>
+                                          <option>AM</option>
+                                          <option>PM</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- time to -->
+                          <div class="col-6 align-self-end">
+                            <div class="row no-gutters align-items-end">
+                              <!-- hours -->
+                              <div class="col-4 timeSet">
+                                <div class="form-group">
+                                  <label for="hoursTo">Hours to:</label>
+                                  <select class="form-control mt-n2 time-select" name="hoursTo" id="hoursTo">
+                                    <%% if(data.hoursTo) { %>
+                                      <option selected>
+                                        <%%= data.hoursTo %>
+                                      </option>
+                                      <option></option>
+                                      <%% } else { %>
+                                        <option></option>
+                                        <%% } %>>
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                          <option>5</option>
+                                          <option>6</option>
+                                          <option>7</option>
+                                          <option>8</option>
+                                          <option>9</option>
+                                          <option>10</option>
+                                          <option>11</option>
+                                          <option>12</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <!-- minutes -->
+                              <div class="col-4 timeSet">
+                                <div class="form-group">
+                                  <label for="minsTo">Mins to:</label>
+                                  <select class="form-control mt-n2 time-select" name="minsTo" id="minsTo">
+                                    <%% if(data.minsTo) { %>
+                                      <option selected>
+                                        <%%= data.minsTo %>
+                                      </option>
+                                      <option></option>
+                                      <%% } else { %>
+                                        <option></option>
+                                        <%% } %>>
+                                          <option>00</option>
+                                          <option>05</option>
+                                          <option>10</option>
+                                          <option>15</option>
+                                          <option>20</option>
+                                          <option>25</option>
+                                          <option>30</option>
+                                          <option>35</option>
+                                          <option>40</option>
+                                          <option>45</option>
+                                          <option>50</option>
+                                          <option>55</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <!-- AM/PM -->
+                              <div class="col-4 timeSet">
+                                <div class="form-group">
+                                  <label for="ampmTo">AM/PM:</label>
+                                  <select class="form-control mt-n2 time-select" name="ampmTo" id="ampmTo">
+                                    <%% if(data.ampmTo) { %>
+                                      <option selected>
+                                        <%%= data.ampmTo %>
+                                      </option>
+                                      <option></option>
+                                      <%% } else { %>
+                                        <option></option>
+                                        <%% } %>>
+                                          <option>AM</option>
+                                          <option>PM</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-block btn-success my-2">
+                      Add new hours
+                    </button>
+                  </form>
+                </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="btn btn-secondary btn-go-back m-4" href="/admin"><span><svg width=".5em" height=".5em" viewBox="0 0 16 16"
+        class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+      </svg></span><span>GO BACK</span></a>
+
+  <%- include ../partials/footer -%>

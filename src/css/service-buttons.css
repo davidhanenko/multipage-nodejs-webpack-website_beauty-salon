@@ -1,0 +1,40 @@
+.serv-btn {
+  height: 6.3rem;
+  width: 10.3rem;
+  text-align: center;
+  align-items: center;
+}
+
+.serv-btn a:hover {
+  background: #8c577a;
+  background: -webkit-linear-gradient(top left, #8c577a, #d095ce);
+  background: -moz-linear-gradient(top left,#8c577a, #d095ce);
+  background: linear-gradient(to bottom right, #8c577a, #d095ce);
+  -webkit-text-fill-color: #f6fafe;
+  transition: 400;
+}
+
+.btn1 {
+  height: 6rem;
+  width: 9rem;
+  color: #3a004c;
+  text-transform: uppercase;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  /* border: 2px solid #7a029f; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  word-break: break-word;
+}
+
+.serv-btn-active {
+  background: #8c577a;
+  background: -webkit-linear-gradient(top left, #8c577a, #d095ce);
+  background: -moz-linear-gradient(top left, #8c577a, #d095ce);
+ background: linear-gradient(to bottom right, #68204c, #a578a1);
+  -webkit-text-fill-color: #f6fafe;
+  transition: 400;
+  border: none;
+}

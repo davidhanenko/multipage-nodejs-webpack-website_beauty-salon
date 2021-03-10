@@ -1,0 +1,47 @@
+body {
+  background: rgb(249, 179, 199);
+}
+
+h1 {
+  text-transform: uppercase;
+  margin-left: 4rem;
+  margin-top: 4.5rem;
+  color: #f6fafe;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+h2 {
+  text-transform: uppercase;
+  color: #f6fafe;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.register {
+  margin-top: 5rem;
+}
+
+/* disable SVG for bootstrap form validation */
+.form-control.is-valid,
+.was-validated .form-control:valid {
+  background-image: none;
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+  background-image: none;
+}
+
+/* alert flash message */
+.alert {
+  position: fixed;
+  display: flex;
+  top: 0;
+  height: 4rem;
+  align-items: center;
+  font-size: 1.4rem;
+  z-index: 100;
+  width: 90%;
+  margin: 0 auto;
+}

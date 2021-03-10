@@ -1,0 +1,143 @@
+/* header============ */
+
+@import '../flash-message.css';
+
+:root {
+  --bg-color: rgb(249, 179, 199);
+  ---white: #f6fafe;
+  --purple1: #3a004c;
+  --navbar-height: 4.5rem;
+}
+
+#header {
+  position: relative;
+  z-index: 5;
+  margin: 0;
+  padding: 0;
+}
+
+/* navbar */
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: var(--navbar-height);
+  padding: 0;
+}
+
+.navbar-light .navbar-brand {
+  color: #f6fafe;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0;
+  margin-left: 1.2rem;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: #f6fafe95;
+  transition: 300ms;
+}
+
+svg.bi {
+  font-size: 3rem;
+}
+
+#hamburger {
+  color: #210c28;
+  margin-right: 0.8rem;
+}
+
+button.navbar-toggler.collapsed {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-light .navbar-toggler {
+  color: #210c28;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.active-nav {
+  opacity: 0.5;
+}
+
+button.navbar-toggler {
+  border: none;
+  outline: none;
+  color: #210c28;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background: #90a7c1;
+  color: #210c28;
+}
+
+.navbar-collapse {
+  background: #90a7c1;
+  color: #210c28;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #210c28;
+  font-size: 1.1rem;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #210c2890;
+  transition: 200ms;
+}
+
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: #210c2890;
+}
+
+.close-icon {
+  font-size: 2.7rem;
+}
+
+.navbar-toggler.collapsed .close-icon {
+  display: none;
+}
+
+.navbar-toggler:not(.collapsed) .toggler-icon {
+  display: none;
+}
+
+.dropdown-menu {
+  background: #90a7c1;
+  border: none;
+  width: 21rem;
+}
+
+.dropdown-item {
+  border-bottom: 1px solid transparent;
+  color: #210c28;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.dropdown-item:hover {
+  background: none;
+  border-bottom: 1px solid #210c2890;
+  color: #210c2890;
+  transition: border 600ms;
+}
+
+.dropdown-item-active {
+  background: none;
+  color: #210c2890;
+  transition: border 600ms;
+}

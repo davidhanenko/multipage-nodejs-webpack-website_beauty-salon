@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta property="csp-nonce" content="<%%= cspNonce %>">
+  <title>
+    <%%= title %>
+  </title>
+</head>
+
+<body>
+
+  <%- include ../../partials/flash-message -%>
+
+
+    <h1>register</h1>
+
+
+
+    <div class="row justify-content-center">
+      <div class="col-8 col-lg-4 register">
+
+        <h2>Sign Up</h2>
+
+        <form class="form-group needs-validation" action="/admin/register" method="POST" novalidate>
+          <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+          <div class="my-3">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" name="username" id="username" placeholder="username" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Udername is required
+            </div>
+          </div>
+          <div class="my-3">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" id="password" name="password" placeholder="password" min="6" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Pasword is required
+            </div>
+          </div>
+          <div class="my-3">
+            <label class="form-label" for="permission">Admin permission code</label>
+            <input class="form-control" type="password" id="permission" name="permission" placeholder="Permission code"
+              min="6" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Admin permition code is required
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success btn-block mt-5">Sign Up</button>
+        </form>
+        <a class="btn btn-secondary mt-3" href="/admin">Go back</a>
+      </div>
+    </div>
+
+</body>
+
+</html>

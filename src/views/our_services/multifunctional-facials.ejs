@@ -1,0 +1,142 @@
+<%- include ../partials/header -%>
+
+
+  <%- include ../partials/services-bunner -%>
+
+    <%- include ../partials/go-to-top-button -%>
+
+      <div class="container">
+        <div id="main-service">
+
+
+          <%- include ../partials/service-buttons -%>
+
+
+            <!-- HR -->
+            <hr class="service-hr">
+
+
+            <!-- service description======= -->
+
+            <!--multifunctional facials -->
+            <div class="every">
+
+              <div class="row text-center">
+                <div class="col justify-content-center">
+                  <h2>
+                    <%%= service.title %>
+                  </h2>
+                </div>
+              </div>
+
+              <div class="row descript img-shadow service-p-bigger">
+                <div class="col-lg-10 offset-lg-1">
+                  <p>
+                    You can’t stop time, but there are ways to reduce its effects on your skin. Most of that can be find
+                    in our place.
+                  </p>
+                  <p class="text-justify px-2 pt-1">
+                    <%%= service.description1 %>
+                  </p>
+                </div>
+              </div>
+
+              <div class="row img-shadow descript pb-5">
+                <div class="col-lg-6 pb-4">
+                  <h3 class="pb-2 pb-lg-0 pt-0 pt-lg-5 pt-lg-0">Multifunction anti aging LED treatment</h3>
+                  <p class="text-justify px-2 pt-3">
+                  <ul>
+                    <li>
+                      Leading Nutrition Electroporation
+                    </li>
+                    <li>
+                      Tightening & Lifting EMS (Electrical Muscle Stimulation)
+                    </li>
+                    <li>
+                      Anti aging RF (Radio Frequency)
+                    </li>
+                    <li>
+                      New & Function LED (Light Emiting Diode)
+                    </li>
+                  </ul>
+                  <p>
+                    This beauty device operates with unique deeper stimulating effects which can generate collagen,
+                    tighten skin and has remarcable effects of improving skin color.
+                  </p>
+                  </p>
+                </div>
+                <div class="col-lg-6 text-center my-3 my-lg-0">
+                  <img src="<%%= service.image1.url %>" alt="<%%= service.title %>">
+                </div>
+
+              </div>
+
+
+              <div class="row mt-0 text-center img-shadow descript serv-peel">
+                <div class="col-lg-6 order-2 order-lg-1">
+                  <img src="<%%= service.image2.url %>" alt="<%%= service.title %>">
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 my-4 my-lg-0">
+                  <h3 class="pb-2">Eye lift</h3>
+                  <h4>Rejuvenate Eye Area for younger looking Countours</h4>
+                  <p class="text-justify px-2 pt-3">
+                    This treatment offers an effective, gentle solution by specifically working the muscles around your
+                    eyes to tone them and give them new firmness.
+                    At the end of the first session, puffiness is gone, fine lines fade, crows feet are smoothed and
+                    eyes look younger.
+                  </p>
+                  <!-- <p class="text-justify px-2 pt-3">
+                      <%%= service.description3 %>
+                    </p> -->
+                </div>
+
+              </div>
+
+              <div class="row text-center img-shadow descript pb-5">
+                <div class="col-lg-6 my-4 my-lg-0">
+                  <h3 class="pb-2 pb-lg-0 pt-0 pt-lg-5 pt-lg-0">Medical deep pore cleansing facial</h3>
+                  <h4>Micro Face and Neck</h4>
+                  <p class="text-justify px-2 pt-3">
+                    Ideal for only congested skin or for clients suffering from hormonal imbalance. This treatment helps
+                    regulate oil secretions while refiling open pores and detoxifying the skin. The extraction of
+                    comedones is followed by a special professional mask which helps to relive inflammation, irritation
+                    and redness. Immediately afterwards, your skin look and feels cleaner and more healthy.
+                  </p>
+                  <!-- <p class="text-justify px-2 pt-3">
+                    <%%= service.description4 %>
+                  </p> -->
+                </div>
+                <div class="col-lg-6">
+                  <img src="<%%= service.image3.url %>" alt="<%%= service.title %>">
+                </div>
+              </div>
+
+              <div class="row text-center img-shadow descript serv-peel mb-5">
+                <div class="col-lg-6 order-2 order-lg-1">
+                  <img src="<%%= service.image4.url %>" alt="<%%= service.title %>">
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+                  <h3 class="pb-2">Back facial</h3>
+
+                  <p class="text-justify px-2 my-4 my-lg-0">
+                    Complete cleaning for hard to reach areas includes exfoliation for smooth even toned skin.
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- before/after photo-slider -->
+              <%- include ../partials/before-after -%>
+
+            </div>
+
+        </div>
+      </div>
+
+
+
+      <%- include ../prices -%>
+
+        <%- include ../partials/bottom-menu -%>
+
+          <%- include ../partials/footer -%>

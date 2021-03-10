@@ -1,0 +1,95 @@
+<div class="row text-center align-items-center">
+  <div class="col mb-4 form-header">
+    <%% if(Object.keys(errors).length !==0) { %>
+      <h2 class="email-header-1">Something gone wrong</h2>
+      <h4 class="email-header-2">Please correct the following:</h4>
+      <%% Object.values(errors).forEach(err=> { %>
+        <p>
+          <%%= err.msg %>
+        </p>
+        <%% }) %>
+          <%% } else { %>
+            <h2 class="email-header-1">Still have a questions</h2>
+            <h4 class="email-header-2">We'll answer as soon as possible</h4>
+            <%% } %>
+  </div>
+</div>
+
+
+<form id="email-form" action="/email" method="POST">
+  <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+  <div class="row">
+    <div class="col form-field my-2 <%%= errors.name ? ' form-field-invalid' : '' %>
+  <%%= !errors.name && data.name ? 'form-field-valid' : '' %>">
+      <label for="name">Name <span class="check-name"></span></label>
+      <input name="name" id="name" type="text" class="form-control" placeholder="Your name.." value="<%%= data.name %>"
+        required>
+    </div>
+    <div
+      class="col form-field my-2 <%%= errors.phone ? 'form-field-invalid' : '' %> <%%= !errors.phone && data.phone ? 'form-field-valid' : '' %>">
+      <label for="phone">Phone number <span class="check-phone"></span></label>
+      <input name="phone" id="phone" type="text" class="form-control" placeholder="Your phone number.."
+        value="<%%= data.phone %>">
+    </div>
+  </div>
+  <div
+    class="form-field my-2 <%%= errors.email ? 'form-field-invalid' : '' %> <%%= !errors.email && data.email ? 'form-field-valid' : '' %>">
+    <label for="email">Email <span class="check-email"></span></label>
+    <input name="email" id="email" type="email" class="form-control" placeholder="Your email.."
+      value="<%%= data.email %>" required aria-required="true">
+  </div>
+  <div
+    class="form-field my-2 <%%= errors.message ? 'form-field-invalid' : '' %> <%%= data.message ? 'form-field-valid' : '' %>">
+    <label for="message">Message <span class="check-message"></span>
+    </label>
+    <textarea name="message" id="message" class="form-control" rows="3" required placeholder="Type your message here.."
+      aria-required="true"><%%= data.message %></textarea>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <button type="submit" id="send-email-btn" class="btn btn-outline" aria-label="Send">SEND</button>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+
+      <!-- reset form -->
+      <%% if(Object.keys(errors).length == 0) { %>
+        <input id="reset-email-btn" class="btn btn-outline" type="reset" value="reset" aria-label="Reset">
+        <%% } %>
+    </div>
+
+  </div>
+
+</form>
+
+<!-- cancel sending email, clear form  -->
+<!-- show only with errors and input data -->
+<%% if(Object.keys(errors).length !==0) { %>
+  <div class="row text-center">
+    <div class="col">
+      <form id="cancel-email" action="/email/cancel" method="POST">
+        <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+        <button id="cancel-email-btn" class="btn btn-outline" aria-label="Cancel">cancel</button>
+      </form>
+    </div>
+  </div>
+  <%% } %>
+
+
+    <!-- Loader for sending email -->
+    <div id="send-email-spinner">
+      <div class="lds-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>

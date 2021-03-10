@@ -1,0 +1,234 @@
+<%- include ../partials/header -%>
+
+
+  <div class="container my-5 pt-5">
+    <div id="main-service">
+      <h1 class="text-center mb-5">
+        Make changes to
+        <span class="service-title-main">
+          <%%= service.title %>
+        </span>
+      </h1>
+
+      <!-- HR -->
+      <hr class="service-hr">
+
+      <!-- FORM -->
+      <!-- image and description from main page  -->
+      <form class="my-5 main-edit-form"
+        action="/admin/services/<%%= service.title%>?_method=PUT&_csrf=<%%= csrfToken %>" method="POST"
+        enctype="multipart/form-data">
+
+        <!-- main page image -->
+        <div class="row from-main-page text-center">
+          <div class="col-md-8">
+            <div class="image-exist">
+              <img src="<%%= service.imageMain.url %>" alt="<%%= service.title %>" />
+
+              <div class="image-choose">
+                <label for="imageMain">Upload new image</label>
+                <input type="file" class="form-control-file my-2" name="imageMain" id="imageMain" accept="image/*" />
+
+                <!-- image preview -->
+                <img class="imgMainPreview" />
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-4 mt-md-0">
+            <h3>Description on main page</h3>
+            <h5>
+              <%%= service.descriptionMain %>
+            </h5>
+
+            <!-- button to open-close main description edit area  -->
+            <button type="button" class="btn btn-sm btn-block btn-warning main-description-button">
+              Edit
+            </button>
+
+            <!-- edit aria for main description -->
+            <div class="main-description-edit-area">
+              <textarea type="text" class="form-control my-2" name="descriptionMain" rows="5"><%%= service.descriptionMain %></textarea>
+            </div>
+          </div>
+        </div>
+
+        <hr class="mt-5 mb-5" />
+
+        <!-- service title -->
+        <div class="row text-center">
+          <div class="col-5 offset-4">
+            <h2>
+              <%%= service.title %>
+            </h2>
+            <!-- edit aria for title -->
+            <div class="row justify-content-center text-center">
+              <div class="title-edit-area">
+                <input type="text" class="form-control" name="title" value="<%%= service.title %>" />
+              </div>
+            </div>
+          </div>
+          <!-- button to open title edit area  -->
+          <div class="col-1">
+            <button type="button" class="btn btn-sm btn-warning title-edit-button">
+              Edit
+            </button>
+          </div>
+        </div>
+
+
+
+        <!-- Chemical peels -->
+
+
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1">
+            <p class="text-justify px-2 pt-5">
+              <%%= service.description1 %>
+            </p>
+            <button type="button" class="btn btn-sm btn-block btn-warning description1-edit-button">
+              Edit
+            </button>
+            <!-- edit area for 1st description -->
+            <div class="description1-edit-area">
+              <textarea type="text" class="form-control my-2" name="description1" rows="6"><%%= service.description1 %></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="row  text-center my-5">
+          <div class="col-lg-6 pb-4">
+            <h3 class="pb-2 pb-lg-0 pt-0 pt-lg-5 pt-lg-0">What is chemical peel</h3>
+            <p class="text-justify px-2 pt-3">
+              <%%= service.description2 %>
+            </p>
+            <button type="button" class="btn btn-sm btn-block btn-warning description2-edit-button">
+              Edit
+            </button>
+            <!-- edit area for 2nd description -->
+            <div class="description2-edit-area">
+              <textarea type="text" class="form-control my-2" name="description2" rows="6"><%%= service.description2 %></textarea>
+            </div>
+            <p class="text-justify px-2 pb-2 mt-0">
+              Ingredients in the peel solution are also working to create new cells that function properly, not only
+              visibly improving the skin, but correcting from within.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="image-exist">
+              <img src="<%%= service.image1.url %>" alt="<%%= service.title %>" />
+              <!-- image upload block -->
+              <div class="image-choose">
+                <label for="image1">Upload new image</label>
+                <input type="file" class="form-control-file my-2" name="image1" id="image1" accept="image/*" />
+
+                <!-- image preview -->
+                <img class="img1Preview" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row my-5">
+          <div class="col-lg-6 d-flex justify-content-center order-2 order-lg-1">
+            <div class="image-exist">
+              <img src="<%%= service.image2.url %>" alt="<%%= service.title %>" />
+              <div class="image-choose">
+                <label for="image2">Upload new image</label>
+                <input type="file" class="form-control-file my-2" name="image2" id="image2" accept="image/*" />
+
+                <!-- image preview -->
+                <img class="img2Preview" />
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2">
+            <h3 class="pb-2">Benefits of a peel</h3>
+            <ul>
+              <li>Reduced fine lines and whinkless</li>
+              <li>Controlled oil production and fewer breackouts</li>
+              <li>Increased cell turnover process</li>
+              <li>Reduced inflammatory response</li>
+              <li>Diminished discoloration and a more even skin tone</li>
+              <li>Overrall brightened skin tone</li>
+              <li>Softer and smoother skin</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="row my-5 text-center">
+
+          <div class="col-10 offset-1 offset-lg-0 col-lg-4 mb-5">
+            <h3 class="pb-0 m-0 m-lg-1">
+              Why
+            </h3>
+            <p class="text-center p-2">
+              Our skin naturally exfoliates, gently shedding dead skin cells so subtly that most of us don’t even
+              notice.
+              However, as we age, this process tends to slow, resulting in a dull complexion.
+            </p>
+          </div>
+
+          <div class="col-10 offset-1 offset-lg-0  col-lg-4 mb-5">
+            <h3 class="pb-0 m-0 m-lg-1">
+              How often
+            </h3>
+            <p class="text-center p-2">
+              Chemical peels are usually recommended once a month, paralleling the skin’s natural 28-day cell turnover
+              process for the best results. Depending on your skin concern, your aesthetician may recommend them more or
+              less frequently.
+            </p>
+          </div>
+
+          <div class="col-10 offset-1 offset-lg-0  col-lg-4 mb-5">
+            <h3 class="pb-0 m-0 m-lg-1">
+              Downtime
+            </h3>
+            <p class="text-center p-2">
+              Little downtime to no downtime(depending of your skin type and kind of peeling).
+            </p>
+          </div>
+        </div>
+
+
+        <button type="submit" id="updateBtn" class="btn btn-lg btn-block btn-primary my-2">
+          Update
+        </button>
+
+
+        <!-- update loading spinner -->
+        <div id="update-spinner">
+          <div class="lds-spinner update-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </form>
+
+      <hr class="my-5">
+
+
+      <%- include ../partials/img-before-after -%>
+
+        <a class="btn btn-secondary btn-go-back my-5" href="/admin"><span><svg width=".5em" height=".5em"
+              viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+            </svg></span><span>GO BACK</span></a>
+    </div>
+  </div>
+
+  <%- include ../partials/footer -%>

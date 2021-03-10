@@ -1,0 +1,17 @@
+@import '../admin/header.css';
+
+/* service-new */
+body {
+   background: rgb(249, 179, 199);
+}
+
+.image-choose-block {
+  border: 1px solid #f6fafe;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+label {
+  color:#f6fafe;
+  font-size: 1.6rem;
+}

@@ -1,0 +1,96 @@
+<%- include ../partials/header -%>
+
+
+  <%- include ../partials/services-bunner -%>
+
+    <%- include ../partials/go-to-top-button -%>
+
+      <div class="container">
+        <div id="main-service">
+
+
+          <%- include ../partials/service-buttons -%>
+
+
+            <!-- HR -->
+            <hr class="service-hr">
+
+
+            <!-- service description======= -->
+
+          <!-- IPL Laser -->
+          <div class="every">
+          
+            <div class="row text-center">
+              <div class="col justify-content-center">
+                <h2>IPL Laser</h2>
+              </div>
+            </div>
+          
+            <div class="row text-center serv-laser service-p-bigger">
+              <div class="col-lg-10 offset-lg-1">
+                <p class="text-justify px-2 pt-5">
+                  <%%= service.description1 %>
+                </p>
+                <p class="text-left pt-2">
+                  This technology let you get such treatments like:
+                <ul class="text-left service-p-bigger">
+                  <li>Hair removal (white and blond Hair also)</li>
+                  <li>Photo-rejuvenation</li>
+                  <li>Hyperpigmentation</li>
+                  <li>Vascular Lesions</li>
+                  <li>Acne</li>
+                </ul>
+                </p>
+              </div>
+            </div>
+          
+            <div class="row descript pb-5">
+              <div class="col-lg-6 pb-4">
+                <h3 class="pb-2 pb-lg-0 pt-0 pt-lg-5 pt-lg-0">What are we using</h3>
+                <p class="text-justify px-2 pt-3">
+                  <%%= service.description2 %>
+                </p>
+              </div>
+              <div class="col-lg-6">
+                <img src="<%%= service.image1.url %>" alt="<%%= service.title %>">
+              </div>
+          
+            </div>
+          
+            <div class="row my-5 img-shadow text-center descript serv-peel">
+              <div class="col-lg-6 order-2 order-lg-1">
+                <img src="<%%= service.image2.url %>" alt="<%%= service.title %>">
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2">
+                <h3 class="pb-2">How it works </h3>
+                <p class="text-justify p-2 pt-3 pb-4">
+                  <%%= service.description3 %>
+                </p>
+              </div>
+            </div>
+
+            <div class="row my-5 img-shadow text-center descript">
+              <div class="col-md-6">
+                <video controls width="450">
+                  <source src="<%%= service.video.url %>" type="video/webm">
+                </video>
+              </div>
+            </div>
+          
+          
+              <!-- before/after photo-slider -->
+              <%- include ../partials/before-after -%>
+
+            </div>
+
+        </div>
+      </div>
+
+
+
+      <%- include ../prices -%>
+
+        <%- include ../partials/bottom-menu -%>
+
+          <%- include ../partials/footer -%>

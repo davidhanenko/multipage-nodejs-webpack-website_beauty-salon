@@ -1,0 +1,162 @@
+@import '../admin/header.css';
+@import '../admin/service-new.css';
+@import '../flash-message.css';
+@import '../loaders.css';
+@import '../admin/img-before-after.css';
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(249, 179, 199);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  max-height: 24rem;
+}
+
+.service-title-main {
+  color: #f6fafe;
+  font-size: 3.3rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.service-title-main::first-letter {
+  text-transform: capitalize;
+}
+
+h2::first-letter {
+  text-transform: capitalize;
+}
+
+.from-main-page h5 {
+  line-height: 1.7rem;
+}
+
+.main-description-edit-area {
+  display: none;
+}
+
+h3::first-letter {
+  text-transform: capitalize;
+}
+
+p {
+  text-indent: 1.4rem;
+  font-size: 1.2rem;
+}
+
+li {
+  font-size: 1.2rem;
+}
+
+textarea.form-control {
+  font-size: 1.2rem;
+}
+
+input.form-control {
+  font-size: 1.4rem;
+}
+
+.title-edit-area {
+  display: none;
+  width: 100%;
+}
+
+.image-exist {
+  position: relative;
+  width: 450px;
+  height: auto;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-exist img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-choose {
+  max-width: 70%;
+  height: 7rem;
+  background: rgba(177, 131, 159, 0.516);
+  position: -webkit-sticky;
+  position: sticky;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
+  text-align: start;
+  color: var(---white);
+}
+
+.video-exist {
+  width: 450px;
+  height: 100%;
+  position: relative;
+}
+
+.video-choose {
+  width: 70%;
+  background: rgba(177, 131, 159, 0.516);
+  position: -webkit-sticky;
+  position: sticky;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #f6fafe;
+}
+
+.imgMainPreview,
+.img1Preview,
+.img2Preview,
+.img3Preview,
+.img4Preview {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.description1-edit-area,
+.description2-edit-area,
+.description3-edit-area,
+.description4-edit-area {
+  display: none;
+}
+
+.video-exist video {
+  max-width: 100%;
+  height: 100%;
+}
+
+.delete-video {
+  display: flex;
+  vertical-align: bottom;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.delete-video label {
+  display: block;
+}
+
+input[type='checkbox'] {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+  position: relative;
+  bottom: 4px;
+  margin-right: 0.2rem;
+}

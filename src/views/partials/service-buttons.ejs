@@ -1,0 +1,12 @@
+<div class="row no-gutters justify-content-center btn-row">
+  <%% services.forEach(button => { %>
+      
+    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center serv-btn">
+      <a href="/services/<%%= button.template %>" id="service-button" class="btn btn1 
+      <%%= typeof page !== undefined && page === button.title ? 'serv-btn-active' : ''
+      %>"><%%= button.title %> </a>
+    </div>
+      
+   <%% }) %>
+  
+  </div> 

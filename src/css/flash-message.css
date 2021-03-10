@@ -1,0 +1,25 @@
+.alert {
+  position: fixed;
+  display: flex;
+  top: var(--navbar-height);
+  height: 4rem;
+  align-items: center;
+  font-size: 1.4rem;
+  z-index: 100;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.alert-warning {
+  background-color: #ffd591bd;
+}
+
+.alert-success {
+  background-color: #b7eb8f92;
+}
+
+.alert-dismissible .close {
+  top: auto;
+}
+
+

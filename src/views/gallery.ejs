@@ -1,0 +1,30 @@
+<%- include ./partials/header -%>
+
+
+<%- include ./partials/services-bunner -%>
+
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col">
+      <div class="gallery-header">
+        <h1>gallery</h1>
+      </div>
+    </div>
+  </div>
+
+  <div id="gallery">
+
+    <%% gallery.forEach(img=> { %>
+      <figure>
+        <img src="<%%= img.galleryImage.url %>" alt="rose-red-wine">
+      </figure>
+      <%% }) %>
+
+  </div>
+</div>
+
+<%- include ./partials/go-to-top-button -%>
+
+<%- include ./partials/bottom-menu -%>
+
+<%- include ./partials/footer -%>

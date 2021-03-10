@@ -1,0 +1,116 @@
+<div class="container">
+ 
+       <form action="/admin/services/<%%= service._id %>?_method=PUT&_csrf=<%%= csrfToken %>" method="POST" class="mx-auto" enctype="multipart/form-data">
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <img src="<%%= service.imageMain.url %>" alt="<%%= service.title %>">   
+            </div>
+            <div class="col-md-3">
+              <div>
+                <label class="label" for="image_main">Upload new image for main page</label>
+                <input type="file" class="form-control-file my-2" name="imageMain" id="image_main" accept="image/*">
+              </div>
+            </div>
+          </div>
+    
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <input type="text" class="form-control my-2" name="title" value="<%%= service.title %>">
+              <button class="btn btn-sm btn-warning title-edit-button">Edit</button>
+            </div>
+          </div>
+
+     
+    
+
+
+      <!-- <div class="row">
+          <div class="col-md-4 justify-content-center">
+           <h3> <%%= service.descriptionMain %></h3>
+          </div>
+          <div class="col-md-4 justify-content-center">
+           <h3><%%= service.description1 %></h3>
+          </div>
+          <div class="col-md-4 justify-content-center">
+            <h3><%%= service.description2 %></h3>
+
+          </div> 
+      </div> -->
+
+      <div class="row">
+        <div class="col-md-4 justify-content-center">
+          
+             <textarea type="text" class="form-control my-2" name="descriptionMain" rows="8"><%%= service.descriptionMain %></textarea>
+         
+        </div>
+        <div class="col-md-4 justify-content-center">
+          
+             <textarea type="text" class="form-control my-2" name="description1" rows="8"><%%= service.description1 %></textarea>
+       
+        </div>
+        <div class="col-md-4 justify-content-center">
+        
+          <textarea type="text" class="form-control my-2" name="description2" rows="8"><%%= service.description2 %></textarea>
+         
+        </div>
+      </div>
+       <button type="submit" class="btn btn-lg btn-block btn-primary my-2">Update</button>
+    </form>
+
+      <div class="row justify-content-center">
+        <div class="col-md-5 image-choose-block">
+          <label class="label" for="image_main">Image for main page</label>
+          <input type="file" class="form-control-file my-2" name="imageMain" id="image_main" accept="image/*">
+        </div>
+        <div class="col-md-5 image-choose-block">
+          <label class="label" for="image_1">Image 1</label>
+          <input type="file" class="form-control-file my-2" name="image1" id="image_1" accept="image/*">
+        </div>
+        
+        <div class="col-md-5 image-choose-block">
+          <label class="label" for="image_2">Image 2</label>
+          <input type="file" class="form-control-file my-2" name="image2" id="image_2" accept="image/*">
+        </div>
+
+        <div class="col-md-5 image-choose-block">
+          <label class="label" for="image_3">Image 3</label>
+          <input type="file" class="form-control-file my-2" name="image3" id="image_3" accept="image/*">
+        </div>
+      </div> 
+
+        <div class="row image-choose-block">
+          <div class="col-md-8">
+            <label class="label" for="image_before_after">Image for before-after slider</label>
+            <input type="file" class="form-control-file my-2" name="imageBeforeAfter" id="image_before_after" accept="image/*" multiple>
+          </div>
+        </div>   
+      
+        
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+         
+        </div>
+      </div>
+        <a class="btn btn-secondary" href="/">Go back</a>
+
+  </div>
+
+ 
+
+
+
+        <div class="col-lg-6">
+            <div class="service col-lg-12">
+              <div class="service-container">
+                <img src="<%%= service.imageMain.url %>" alt="<%%= service.title %>">
+  
+                <h3><%%= service.title %> </h3>
+              </div>
+                
+                  <p><%%- service.descriptionMain %> </p>
+               
+            </div>
+        </div>
+      
+      </div>
+    </div>

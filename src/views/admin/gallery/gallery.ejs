@@ -1,0 +1,121 @@
+<%- include ../partials/header -%>
+
+  <div class="container gallery">
+
+    <h1>Make changes to your <span>Gallery</span></h1>
+
+    <div class="row mt-5">
+      <%% gallery.forEach(img=> { %>
+        <div class="col-md-3 mt-3">
+          <div class="gallery-image">
+            <img alt="gallery image" src="<%%= img.galleryImage.url %>" >
+
+
+            <!-- delete button -->
+            <button type="button" class="btn btn-sm btn-danger delete-image" data-toggle="modal"
+              data-target="#confirmDeleteModal<%%= img._id %>">
+              Delete
+            </button>
+
+
+          </div>
+        </div>
+        <!-- modal window to confirm delete before-after image -->
+        <div class="modal fade" id="confirmDeleteModal<%%= img._id %>" data-backdrop="static" data-keyboard="false"
+          tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title mr-2" id="staticBackdropLabel">
+                  Delete image:
+                </h5>
+                <img alt="preview of deleting gallery image"class="image-delete-modal" src="<%%= img.galleryImage.url %>" >
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">Please confirm deleting current image from gallery</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">
+                  Close
+                </button>
+                <form class="d-inline" action="/admin/gallery/<%%= img._id %>?_method=DELETE" method="POST">
+                  <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                  <button class="btn btn-sm btn-danger">
+                    Confirm
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%% }) %>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Add new image to gallery-->
+    <form class="upload-form" action="/admin/gallery?_csrf=<%%= csrfToken %>" method="POST"
+      enctype="multipart/form-data">
+      <div class="row text-center mb-3">
+        <div class="col">
+          <h3>Upload new images</h3>
+        </div>
+      </div>
+
+      <div class="row add-new-image text-center pt-5">
+
+        <div class="col-md-3">
+
+          <div class="image-choose">
+            <input type="file" class="form-control-file my-2 galleryImage" name="galleryImage" id="galleryImage"
+              accept="image/*" multiple />
+
+          </div>
+        </div>
+        <!-- images preview -->
+        <div class="col-md-9">
+          <div class="row preview">
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row justify-content-center upload-button">
+        <div class="col-md-10">
+
+          <button type="submit" id="updateBtn" class="btn btn-lg btn-block btn-primary my-2">
+            Upload
+          </button>
+          <!-- update loading spinner -->
+          <div id="update-spinner">
+            <div class="lds-spinner update-spinner">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+    <a class="btn btn-secondary btn-go-back mt-3 mb-5" href="/admin"><span><svg width=".5em" height=".5em"
+          viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+        </svg></span><span>GO BACK</span></a>
+
+  </div>
+  <%- include ../partials/footer -%>
