@@ -154,7 +154,7 @@ module.exports = {
             options: {
               disable: process.env.NODE_ENV !== 'production',
               pngquant: {
-                quality: '80'
+                quality: [0.65, 0.90]
               }
             }
           }

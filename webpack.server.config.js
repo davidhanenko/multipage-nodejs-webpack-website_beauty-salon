@@ -1,11 +1,4 @@
-/* eslint-disable no-undef */
-/* This config file is only for transpiling the Express server file.
- * You need webpack-node-externals to transpile an express file
- * but if you use it on your regular React bundle, then all the 
- * node modules your app needs to function get stripped out.
- *
- * Note: that prod and dev mode are set in npm scripts.
- */
+
  const path = require('path')
  const webpack = require('webpack')
  const nodeExternals = require('webpack-node-externals')

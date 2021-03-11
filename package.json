@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
-    "buildProd": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
-    "build": "webpack --mode production --config ./webpack.prod.config.js",
+    "build": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
     "start": "NODE_ENV=production node ./dist/server.js",
     "server": "nodemon app.js",
     "dev": "NODE_ENV=development nodemon ./bin/www.js --watch server"
