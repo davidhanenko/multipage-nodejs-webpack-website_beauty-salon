@@ -69,7 +69,5 @@
 @media (hover: none), (hover: on-demand) {
   .top-button:hover {
     background: none;
-    color: none;
-    border: none;
   }
 }
