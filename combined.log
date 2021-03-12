@@ -217,3 +217,5 @@
 {"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:50:09.063Z"}
 {"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T05:46:40.871Z"}
 {"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T05:46:41.174Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:23:52.095Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:23:57.603Z"}
