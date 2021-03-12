@@ -21,6 +21,10 @@ document.onreadystatechange = function () {
   }
 }
 
+setTimeout(()=> {
+   document.querySelector('#page-loading-spinner').style.display = 'none'
+}, 3000)
+
 // scroll
 window.addEventListener(
   'scroll',
