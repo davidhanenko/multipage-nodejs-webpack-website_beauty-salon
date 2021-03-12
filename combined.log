@@ -219,3 +219,10 @@
 {"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T05:46:41.174Z"}
 {"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:23:52.095Z"}
 {"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:23:57.603Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:48:11.246Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:48:17.084Z"}
+{"message":"ejs:98\n    96| \n    97| \n >> 98|             <% if(!admin) { %>\n    99|               <li class=\"nav-item <%= typeof page !== undefined && page === 'login' ? 'active' : '' %>\">\n    100|                 <a class=\"nav-link\" href=\"/admin/login\">Login</a>\n    101|               </li>\n\nadmin is not defined","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-12T01:48:51.362Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:49:40.314Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:49:40.649Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T03:31:28.044Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T03:31:28.411Z"}
