@@ -141,6 +141,7 @@ if (isDev) {
             'maps.googleapis.com',
             (req, res) => `'nonce-${res.locals.cspNonce}'`
           ],
+          'frame-src': ["'self'", 'www.google.com'],
           'object-src': [
             "'self'",
             (req, res) => `'nonce-${res.locals.cspNonce}'`
