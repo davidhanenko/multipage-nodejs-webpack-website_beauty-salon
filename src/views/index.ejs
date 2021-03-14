@@ -130,7 +130,7 @@
           <%- include ./partials/bottom-menu -%>
 
             <!-- Google maps -->
-            <script>
+            <script nonce="<%%= cspNonce %>">
               function initMap() {
                 const ilona = {
                   lat: 40.60115784454041,
@@ -185,7 +185,7 @@
               }
             </script>
 
-            <script defer src="https://maps.googleapis.com/maps/api/js?key=<%%=process.env.MAP_API%>&callback=initMap">
+            <script nonce="<%%= cspNonce %>" defer src="https://maps.googleapis.com/maps/api/js?key=<%%=process.env.MAP_API%>&callback=initMap">
             </script>
             <!--end Google maps-->
 
