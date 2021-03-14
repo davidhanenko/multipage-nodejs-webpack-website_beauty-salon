@@ -81,7 +81,7 @@ app.use(
     cookie: {
       httpOnly: true,
       sameSite: true,
-      secure: true,
+      // secure: true,
       maxAge: 1000 * 60 * 10
     }
   })
@@ -183,19 +183,17 @@ app.use('/gallery', galleryRoutes)
 app.use('/about', aboutRoutes)
 app.use('/errors', errorRoutes)
 
-app.get('/', (req, res) => {
-  res.render('index')
-})
-
+// app.get('/', (req, res) => {
+//   res.render('index')
+// })
 
 //csrf error handler
 app.use(function (err, req, res, next) {
   if (err.code !== 'EBADCSRFTOKEN') return next(err)
   // handle CSRF token errors here
-  res.status(403)
   req.flash('error', 'Forbiden, reload the page and try again')
-  logger.warning('403 ' + err)
-  // res.send('403 - Forbidden')
+  logger.warn('403 ' + err)
+  res.redirect('back')
 })
 
 // catch 404 and forward to error handler
@@ -203,13 +201,12 @@ app.use((req, res, next) => {
   res.redirect('/errors/404')
 })
 
-
 app.use((err, req, res, next) => {
   const { statusCode = 500 } = err
   if (!err.message) err.message = 'Oh No, Something Went Wrong!'
 
   if (!isDev) {
-    logger.error(err.stack.split('\n').slice(0, 3).join('\n'))
+    logger.error(err.stack.split('\n').slice(0, 5).join('\n'))
     res.status(statusCode).render('errors/errors.ejs', { err })
   } else {
     // render eerror page in dev mode wirh err.stack

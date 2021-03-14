@@ -1,230 +1,54 @@
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:46:15.296Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:46:19.389Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:47:31.103Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:47:34.625Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:47:44.473Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:47:48.062Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:47:55.828Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:47:59.580Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:48:25.029Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:48:28.210Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:48:30.351Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:48:33.934Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:48:35.309Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:48:38.773Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:49:37.903Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:49:42.718Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:49:44.252Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:49:47.679Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:49:50.977Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:50:01.597Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:50:05.104Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:50:12.006Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:50:15.537Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:50:18.684Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:50:24.814Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:50:28.332Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:50:54.215Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:50:57.823Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:51:17.103Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:51:19.871Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:51:23.481Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:51:26.415Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:51:27.579Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:51:31.139Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:51:32.868Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:51:36.343Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:51:47.370Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:51:50.863Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:51:54.733Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:51:58.387Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:52:15.570Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:52:16.797Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:52:20.344Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:52:25.044Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:52:29.501Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:52:31.596Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:52:35.070Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:52:53.627Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:52:56.986Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:52:58.769Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:02.695Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:06.230Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:07.586Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:09.537Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:13.090Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:23.185Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:26.737Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:30.843Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:34.874Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:38.350Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:41.986Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:45.569Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:47.244Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:48.805Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:53:52.794Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:54:01.675Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:54:05.211Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:54:08.323Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:54:34.412Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:54:35.830Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:54:40.248Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:54:44.196Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:54:46.044Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:54:55.028Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:54:58.284Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:10.637Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:14.081Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:16.865Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:20.451Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:26.976Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:30.392Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:34.494Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:37.091Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:40.543Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:43.411Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:46.786Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:49.067Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:51.138Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:55:54.766Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:56:07.189Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:56:10.546Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:56:14.357Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:56:21.904Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:56:25.557Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:56:35.924Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:56:37.901Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:56:41.460Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:56:49.017Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:56:52.520Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:56:57.956Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:57:01.536Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:57:36.068Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:57:39.594Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:57:49.069Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:57:53.207Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:57:56.525Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:57:59.053Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:58:02.353Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:58:06.212Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:58:09.751Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:58:15.074Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:58:18.805Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:58:24.032Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:58:28.436Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:58:32.046Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:58:46.442Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:58:49.659Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:58:57.789Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:02.209Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:05.743Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:10.876Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:14.383Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:18.209Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:21.563Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:23.496Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:25.354Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:30.023Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:33.407Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:36.627Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:46.505Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:49.876Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:54.353Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T02:59:56.685Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:00.416Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:04.037Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:08.667Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:13.843Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:17.477Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:21.068Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:23.548Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:27.932Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:31.219Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:33.669Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:37.615Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:39.300Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:43.169Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:46.287Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:48.789Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:52.417Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:00:59.689Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:01:03.029Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:01:05.043Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:01:08.716Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:02:00.578Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:02:04.099Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:08:53.943Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:08:58.720Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:15:18.102Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:15:22.984Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:15:24.912Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:15:27.914Z"}
-{"message":"From admin/signin page: Too many requests, 429","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:16:15.786Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:19:51.058Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:19:57.183Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:20:00.956Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:20:03.899Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:20:15.185Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:20:18.412Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:20:22.859Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:20:26.254Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:20:41.147Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:20:44.533Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:20:53.987Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:20:57.066Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:21:01.520Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:21:04.467Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:21:35.452Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:21:38.453Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:21:42.087Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:21:44.883Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:21:54.452Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:07.493Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:08.838Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:12.135Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:15.047Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:18.114Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:19.669Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:22.699Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:28.853Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:31.342Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:34.494Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:36.482Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:37.648Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:40.240Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:43.475Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:44.773Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:24:47.906Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:30:26.258Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:30:31.122Z"}
-{"message":"ejs:98\n    96| \n    97| \n >> 98|             <% if(!admin) { %>\n    99|               <li class=\"nav-item <%= typeof page !== undefined && page === 'login' ? 'active' : '' %>\">\n    100|                 <a class=\"nav-link\" href=\"/admin/login\">Login</a>\n    101|               </li>\n\nadmin is not defined","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:32:14.461Z"}
-{"message":"ejs:98\n    96| \n    97| \n >> 98|             <% if(!admin) { %>\n    99|               <li class=\"nav-item <%= typeof page !== undefined && page === 'login' ? 'active' : '' %>\">\n    100|                 <a class=\"nav-link\" href=\"/admin/login\">Login</a>\n    101|               </li>\n\nadmin is not defined","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:37:14.657Z"}
-{"message":"ejs:98\n    96| \n    97| \n >> 98|             <% if(!admin) { %>\n    99|               <li class=\"nav-item <%= typeof page !== undefined && page === 'login' ? 'active' : '' %>\">\n    100|                 <a class=\"nav-link\" href=\"/admin/login\">Login</a>\n    101|               </li>\n\nadmin is not defined","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:37:16.984Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:37:23.996Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:37:28.580Z"}
-{"message":"Unexpected token 'if' while compiling ejs\n\nIf the above error is not helpful, you may want to try EJS-Lint:\nhttps://github.com/RyanZim/EJS-Lint\nOr, if you meant to create an async function, pass `async: true` as an option.","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:37:32.145Z"}
-{"message":"Unexpected token 'if' while compiling ejs\n\nIf the above error is not helpful, you may want to try EJS-Lint:\nhttps://github.com/RyanZim/EJS-Lint\nOr, if you meant to create an async function, pass `async: true` as an option.","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:37:35.346Z"}
-{"message":"Unexpected token 'if' while compiling ejs\n\nIf the above error is not helpful, you may want to try EJS-Lint:\nhttps://github.com/RyanZim/EJS-Lint\nOr, if you meant to create an async function, pass `async: true` as an option.","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:37:35.692Z"}
-{"message":"Unexpected token 'if' while compiling ejs\n\nIf the above error is not helpful, you may want to try EJS-Lint:\nhttps://github.com/RyanZim/EJS-Lint\nOr, if you meant to create an async function, pass `async: true` as an option.","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:37:38.208Z"}
-{"message":"Unexpected token 'if' while compiling ejs\n\nIf the above error is not helpful, you may want to try EJS-Lint:\nhttps://github.com/RyanZim/EJS-Lint\nOr, if you meant to create an async function, pass `async: true` as an option.","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:38:54.103Z"}
-{"message":"Unexpected token 'if' while compiling ejs\n\nIf the above error is not helpful, you may want to try EJS-Lint:\nhttps://github.com/RyanZim/EJS-Lint\nOr, if you meant to create an async function, pass `async: true` as an option.","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:38:55.038Z"}
-{"message":"Unexpected token 'if' while compiling ejs\n\nIf the above error is not helpful, you may want to try EJS-Lint:\nhttps://github.com/RyanZim/EJS-Lint\nOr, if you meant to create an async function, pass `async: true` as an option.","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:38:56.704Z"}
-{"message":"Unexpected token 'if' while compiling ejs\n\nIf the above error is not helpful, you may want to try EJS-Lint:\nhttps://github.com/RyanZim/EJS-Lint\nOr, if you meant to create an async function, pass `async: true` as an option.","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:39:00.311Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:39:07.748Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:39:12.779Z"}
-{"message":"From before-after images:Cannot read property 'imageBefore' of null","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-10T03:41:01.091Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:50:03.731Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T03:50:09.063Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T05:46:40.871Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-10T05:46:41.174Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:23:52.095Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:23:57.603Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:48:11.246Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:48:17.084Z"}
-{"message":"ejs:98\n    96| \n    97| \n >> 98|             <% if(!admin) { %>\n    99|               <li class=\"nav-item <%= typeof page !== undefined && page === 'login' ? 'active' : '' %>\">\n    100|                 <a class=\"nav-link\" href=\"/admin/login\">Login</a>\n    101|               </li>\n\nadmin is not defined","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-12T01:48:51.362Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:49:40.314Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T01:49:40.649Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T03:31:28.044Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T03:31:28.411Z"}
-{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T04:21:06.811Z"}
-{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-12T04:21:07.142Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:20:58.763Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:20:59.059Z"}
+{"message":"TypeError: h.warning is not a function\n    at /Volumes/Files/Work/ilona_3:13:21/dist/server.js:1:22539\n    at Layer.handle_error (/Volumes/Files/Work/ilona_3:13:21/node_modules/express/lib/router/layer.js:71:5)","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-14T02:26:38.834Z"}
+{"message":"TypeError: h.warning is not a function\n    at /Volumes/Files/Work/ilona_3:13:21/dist/server.js:1:22539\n    at Layer.handle_error (/Volumes/Files/Work/ilona_3:13:21/node_modules/express/lib/router/layer.js:71:5)","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-14T02:26:51.384Z"}
+{"message":"TypeError: h.warning is not a function\n    at /Volumes/Files/Work/ilona_3:13:21/dist/server.js:1:22539\n    at Layer.handle_error (/Volumes/Files/Work/ilona_3:13:21/node_modules/express/lib/router/layer.js:71:5)","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-14T02:27:14.947Z"}
+{"message":"TypeError: h.warning is not a function\n    at /Volumes/Files/Work/ilona_3:13:21/dist/server.js:1:22539\n    at Layer.handle_error (/Volumes/Files/Work/ilona_3:13:21/node_modules/express/lib/router/layer.js:71:5)","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-14T02:27:46.582Z"}
+{"message":"TypeError: h.warning is not a function\n    at /Volumes/Files/Work/ilona_3:13:21/dist/server.js:1:22539\n    at Layer.handle_error (/Volumes/Files/Work/ilona_3:13:21/node_modules/express/lib/router/layer.js:71:5)","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-14T02:28:12.157Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:28:57.596Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:28:57.867Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:37:11.883Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:37:12.175Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:38:45.043Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:38:50.389Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:38:56.779Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:39:04.087Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:39:18.422Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:42:16.555Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:42:23.407Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:42:27.758Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:42:37.033Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:42:50.113Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:45:15.135Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:45:15.434Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:45:26.872Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:45:35.882Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:45:57.087Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:47:40.186Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:48:37.715Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:48:37.982Z"}
+{"message":"403 ForbiddenError: invalid csrf token","level":"\u001b[33mwarn\u001b[39m","timestamp":"2021-03-14T02:48:49.593Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:50:02.793Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:50:03.057Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:54:11.017Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T02:54:11.298Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:14:57.440Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:14:57.712Z"}
+{"message":"TypeError: Cannot read property 'template' of null\n    at /Volumes/Files/Work/ilona_3:13:21/dist/server.js:1:5849\n    at Generator.next (<anonymous>)\n    at t (/Volumes/Files/Work/ilona_3:13:21/dist/server.js:1:3148)\n    at o (/Volumes/Files/Work/ilona_3:13:21/dist/server.js:1:3351)","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-14T03:16:07.760Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:18:14.862Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:18:15.138Z"}
+{"message":"TypeError: Cannot read property 'title' of null\n    at /Volumes/Files/Work/ilona_3:13:21/dist/server.js:1:5843\n    at Generator.next (<anonymous>)\n    at t (/Volumes/Files/Work/ilona_3:13:21/dist/server.js:1:3148)\n    at o (/Volumes/Files/Work/ilona_3:13:21/dist/server.js:1:3351)","level":"\u001b[31merror\u001b[39m","timestamp":"2021-03-14T03:19:30.909Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:24:08.222Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:24:08.471Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:34:12.461Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:34:12.758Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:37:31.447Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:37:31.728Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:38:25.824Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:38:26.075Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:39:23.430Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:39:23.728Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:40:12.563Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:40:12.820Z"}
+{"message":"Serving on port 8000","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:42:13.318Z"}
+{"message":"Database connected","level":"\u001b[32minfo\u001b[39m","timestamp":"2021-03-14T03:42:13.587Z"}

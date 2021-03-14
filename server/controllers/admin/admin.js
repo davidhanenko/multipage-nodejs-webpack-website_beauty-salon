@@ -157,7 +157,7 @@ module.exports.login = async (req, res, next) => {
           ])
           // res.status(400).end('email or password is wrong')
           req.flash('Error', 'Wrong user name or password!')
-          logger.warning('Wrong attempts on: admin/login')
+          logger.warn('Wrong attempts on: admin/login')
           return res.redirect('/admin/login')
         } catch (rlRejected) {
           if (rlRejected instanceof Error) {

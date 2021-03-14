@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-   Error
+    Error
   </title>
   <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed:100,200,300,400" rel="stylesheet">
 </head>
@@ -30,20 +30,19 @@
       <div class="bar"></div>
     </div>
   </div>
-<div class="under">
-      
-  <%% if (process.env.NODE_ENV !== 'production') { %>
+  <div class="under">
+
+
     <h2 class="alert-heading">
       <%%=err.message%>
     </h2>
     <p>
       <%%= err.stack %>
-      <%%= statusCode %>
     </p>
-    <%% } %>
-  <h3>Try to reload this page</h3>
-  <h3>Or go back to <a href="/">Homepage</a></h3>
-</div>
+
+    <h3>Try to reload this page</h3>
+    <h3>Or go back to <a href="/">Homepage</a></h3>
+  </div>
 
 </body>
 

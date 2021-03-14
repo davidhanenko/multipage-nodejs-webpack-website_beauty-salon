@@ -10,20 +10,9 @@ import './email'
 import './go-to-top-button'
 import './map'
 
-// spinner
-document.onreadystatechange = function () {
-  if (document.readyState !== 'complete') {
-    document.querySelector('body').style.visibility = 'hidden'
-    document.querySelector('#page-loading-spinner').style.visibility = 'visible'
-  } else {
-    document.querySelector('#page-loading-spinner').style.display = 'none'
-    document.querySelector('body').style.visibility = 'visible'
-  }
-}
-
-setTimeout(()=> {
-   document.querySelector('#page-loading-spinner').style.display = 'none'
-}, 3000)
+// setTimeout(()=> {
+//    document.querySelector('#page-loading-spinner').style.display = 'none'
+// }, 3000)
 
 // scroll
 window.addEventListener(
@@ -37,7 +26,18 @@ window.addEventListener(
   false
 )
 
-// Needed for Hot Module Replacement
-if (typeof module.hot !== 'undefined') {
-  module.hot.accept() // eslint-disable-line no-undef
+// spinner
+document.onreadystatechange = function () {
+  if (document.readyState !== 'complete') {
+    // document.querySelector('body').style.visibility = 'hidden'
+    document.querySelector('#page-loading-spinner').style.visibility = 'visible'
+  } else {
+    document.querySelector('#page-loading-spinner').style.display = 'none'
+    document.querySelector('body').style.visibility = 'visible'
+  }
 }
+
+// Needed for Hot Module Replacement
+// if (typeof module.hot !== 'undefined') {
+//   module.hot.accept() // eslint-disable-line no-undef
+// }

@@ -15,16 +15,22 @@ const logger = createLogger({
       level: 'error',
       collection: 'error-logs'
     }),
+    new transports.MongoDB({
+      db: mongoConn,
+      tryReconnect: true,
+      level: 'warn',
+      collection: 'warn-logs'
+    }),
     new transports.File({ filename: 'combined.log' })
   ]
 })
 
-if (process.env.NODE_ENV !== 'production') {
+// if (process.env.NODE_ENV !== 'production') {
   logger.add(
     new transports.Console({
       format: format.simple()
     })
   )
-}
+// }
 
 module.exports = logger

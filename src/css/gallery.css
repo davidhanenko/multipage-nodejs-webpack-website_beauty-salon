@@ -117,17 +117,17 @@ body {
 
 @media (max-width: 480px) {
   #gallery {
-    width: 80%;
+    width: 95%;
   }
   #gallery figure:nth-child(1n) {
-    -webkit-transform-origin: left;
+    -webkit-transform-origin: 10%;
   }
 
   #gallery figure:nth-child(2n) {
-    -webkit-transform-origin: right;
+    -webkit-transform-origin: 90%;
   }
   .expanded {
-    transform: scale(2);
-    z-index: 1;
+    transform: scale(2.21);
+    z-index: 3;
   }
 }

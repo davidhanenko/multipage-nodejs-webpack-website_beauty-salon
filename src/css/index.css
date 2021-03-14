@@ -157,7 +157,7 @@ hr {
   max-width: 100%;
 }
 
-#services h2 {
+#services .services-our {
   font-weight: 700;
   background: linear-gradient(to right, #5e3b5e, #5e3b5e96);
   -webkit-background-clip: text;
@@ -186,7 +186,7 @@ hr {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
 }
 
-.service h3 {
+.service .service-title {
   z-index: 1;
   color: #f6fafe;
   font-size: 2.4rem;
@@ -243,7 +243,7 @@ hr {
   line-height: 1.2;
 }
 
-.service-container:hover h3 {
+.service-container:hover .service-title {
   color: #000;
   transform: translateY(-15rem);
   transition: 0.4s;
@@ -259,8 +259,6 @@ hr {
   transition-property: opacity;
   transition-duration: 0.5s;
 }
-
-
 
 /* social */
 
@@ -292,10 +290,7 @@ hr {
   background: #3a004c;
 }
 
-
-
-/* ********** services page ************ */
-/* media */
+/* @media */
 
 @media (max-width: 376px) {
   .slogan {
@@ -339,17 +334,18 @@ hr {
     color: #422942;
   }
 
-hr {
-  margin-top: 5rem;
-  margin-bottom: 3rem;
-}
+  hr {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
 
+  #services {
+    margin-top: 5rem;
+  }
 
-
-#services {
-  margin-top: 5rem;
-}
-
+  .service .service-title {
+     font-size: 2.1rem;
+  }
 }
 
 @media (max-widtn: 501px) {
