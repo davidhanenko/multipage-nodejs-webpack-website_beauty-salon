@@ -147,7 +147,7 @@
 
                 let map = new google.maps.Map( document.getElementById( 'map' ), mapOptions )
                 // icon
-                const iconImg = require( '../imgs/icon-marker.png' )
+               
 
                 const contentString = `<div id="info-window"><h6 class="header">In Good Hands by Ilona</h6><p>2303 Coney Island Ave, Broklyn, NY, 11223</p></div>`
 
@@ -156,7 +156,7 @@
                   position: ilona,
                   map,
                   icon: {
-                    url: iconImg,
+                    url: '../imgs/icon-marker.png',
                     labelOrigin: { x: 120, y: 40 },
                     // labelOrigin: new google.maps.Point(145, 55),
                     scaledSize: new google.maps.Size( 48, 48 )
