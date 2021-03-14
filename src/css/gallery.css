@@ -66,7 +66,7 @@ body {
 /* top bunner */
 #serv-banner {
   margin-top: 5rem;
-  height: 13rem;
+  height: 9rem;
   background: url('../imgs/main-img.jpg');
   display: flex;
   justify-content: center;
