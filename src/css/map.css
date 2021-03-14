@@ -1,7 +1,4 @@
-.map-wrap {
-  height: 570px;
-  width: 100%;
-}
+
 
 #map {
   position: relative;
@@ -10,23 +7,23 @@
   max-width: 100%;
 }
 
-#legend {
+/* #legend {
   position: absolute;
   background-color: var(--white);
   width: 45%;
   margin-left: 10px;
-}
+} */
 
-.title,
+/* .title,
 .address {
   padding-left: 1rem;
-}
+} */
 
-#info-window .header {
+/* #info-window .header {
   font-size: 1rem;
   font-weight: bold;
-}
+} */
 
-#info-window p {
+/* #info-window p {
   font-size: 1rem;
-}
+} */
