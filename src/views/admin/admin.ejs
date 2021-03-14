@@ -12,10 +12,10 @@
     <h2 class="mb-5">Make changes to About page</h2>
 
     <div class="row about mb-5">
-      <div class="col-6 text-center">
+      <div class="col-12 col-md-6 text-center">
         <img src="<%%= about.image.url %>" alt="About image">
       </div>
-      <div class="col-6">
+      <div class="col-12 col-md-6">
         <p>
           <%%= about.about %>
         </p>
@@ -55,7 +55,7 @@
     <h2>Chose Service you want to EDIT or DELETE</h2>
     <div class="row mt-4">
       <%% services.forEach(service=> { %>
-        <div class="col-md-4 mt-3 service-admin">
+        <div class="col-xs-6 col-md-4 mt-3 service-admin">
           <a href="/admin/services/<%%= service.title %>">
             <div class="img-gradient">
               <img class="img-service-admin" src="<%%= service.imageMain.url %>" alt="<%%= service.title %>" />
@@ -129,7 +129,7 @@
   <div id="contacts" class="container">
     <h2 class="mb-3">EDIT or DELETE Contact info</h2>
     <div class="row text-center">
-      <div class="contact col-md-4 my-3 my-md-0">
+      <div class="contact col-md-4 my-1 my-md-0">
         <h2>
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt-fill contact-icon" fill="currentColor"
             xmlns="http://www.w3.org/2000/svg">
@@ -146,7 +146,7 @@
           </p>
           <%% }) %>
       </div>
-      <div class="contact col-md-4 my-3 my-md-0">
+      <div class="contact col-md-4 my-1 my-md-0">
         <h2>
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-fill contact-icon"
             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -163,7 +163,7 @@
             </em></p>
           <%% }) %>
       </div>
-      <div class="contact col-md-4 my-3 my-md-0">
+      <div class="contact col-md-4 my-1 my-md-0">
         <h2>
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-clock contact-icon" fill="currentColor"
             xmlns="http://www.w3.org/2000/svg">
