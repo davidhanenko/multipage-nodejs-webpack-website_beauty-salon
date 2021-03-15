@@ -59,7 +59,9 @@
     <div class="container-fluid my-5">
 
       <div class="row services p-4">
-        <h2 class="my-4">Chose Service you want to EDIT or DELETE</h2>
+        <div class="col-12">
+          <h2 class="my-4">Chose Service you want to EDIT or DELETE</h2>
+        </div>
 
         <%% services.forEach(service=> { %>
           <div class="col-6 col-md-4 mt-3 service-admin">
@@ -86,7 +88,9 @@
     <div class="container my-5">
       <hr />
       <div class="row">
-        <h2 class="my-4">EDIT or DELETE services Prices</h2>
+        <div class="col-12">
+          <h2 class="my-4">EDIT or DELETE services Prices</h2>
+        </div>
         <%% prices.forEach(price=> { %>
 
           <div class="col-md-3 prices">
@@ -191,8 +195,10 @@
                   <%%= contact.day %>
                     <%% } else { %>
                       <%%= contact.dayFrom %>-<%%= contact.dayTo %>
-                      <%% } %> / 
-                      <%%= contact.hoursFrom %> : <%%= contact.minsFrom %><%%= contact.ampmFrom %>-<%%= contact.hoursTo%>:<%%= contact.minsTo%><%%= contact.ampmTo%>
+                          <%% } %> /
+                            <%%= contact.hoursFrom %> : <%%= contact.minsFrom %>
+                                <%%= contact.ampmFrom %>-<%%= contact.hoursTo%>:<%%= contact.minsTo%>
+                                      <%%= contact.ampmTo%>
               </h4>
               <%% } %>
                 <%% }) %>
