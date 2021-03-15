@@ -3,10 +3,22 @@
 @import '../flash-message.css';
 
 :root {
-  --bg-color: rgb(249, 179, 199);
+  --bg-color-main: rgb(249, 179, 199);
+  --bg-color-secondary: rgb(185, 137, 150);
   ---white: #f6fafe;
   --purple1: #3a004c;
   --navbar-height: 4.5rem;
+}
+
+body {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+  font-family: 'Nunito', sans-serif;
+  scroll-behavior: smooth;
+  background: var(--bg-color-main);
 }
 
 #header {

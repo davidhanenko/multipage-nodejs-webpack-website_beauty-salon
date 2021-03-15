@@ -1,5 +1,5 @@
 // /* eslint-disable no-undef */
-import '../css/map.css'
+// import '../css/map.css'
 
 // let script = document.createElement('script')
 

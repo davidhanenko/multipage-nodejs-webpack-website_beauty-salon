@@ -141,24 +141,42 @@ if (isDev) {
             'maps.googleapis.com',
             (req, res) => `'nonce-${res.locals.cspNonce}'`
           ],
-          'frame-src': ["'self'", 'www.google.com'],
+          'frame-src': [
+            "'self'",
+            'www.google.com',
+            (req, res) => `'nonce-${res.locals.cspNonce}'`
+          ],
           'object-src': [
             "'self'",
             (req, res) => `'nonce-${res.locals.cspNonce}'`
           ],
-          'style-src': ["'self'", 'fonts.googleapis.com'],
+          'style-src': [
+            "'self'",
+            'fonts.googleapis.com',
+            (req, res) => `'nonce-${res.locals.cspNonce}'`
+          ],
           'style-src-elem': [
             "'self'",
             "'unsafe-inline'",
-            'fonts.googleapis.com'
+            'fonts.googleapis.com',
+            (req, res) => `'nonce-${res.locals.cspNonce}'`
           ],
-          'font-src': ["'self'", 'fonts.gstatic.com'],
+          'font-src': [
+            "'self'",
+            'fonts.gstatic.com',
+            (req, res) => `'nonce-${res.locals.cspNonce}'`
+          ],
           'img-src': [
             "'self' data:",
             'https://res.cloudinary.com/dxxcixosf/',
-            'maps.gstatic.com *.googleapis.com *.ggpht'
+            'maps.gstatic.com *.googleapis.com *.ggpht',
+            (req, res) => `'nonce-${res.locals.cspNonce}'`
           ],
-          'media-src': ["'self' data:", 'https://res.cloudinary.com/dxxcixosf/']
+          'media-src': [
+            "'self' data:",
+            'https://res.cloudinary.com/dxxcixosf/',
+            (req, res) => `'nonce-${res.locals.cspNonce}'`
+          ]
         }
       },
       referrerPolicy: { policy: 'strict-origin-when-cross-origin' },

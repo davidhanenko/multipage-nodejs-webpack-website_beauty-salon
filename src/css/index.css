@@ -236,42 +236,6 @@ hr {
   width: 90%;
 }
 
-.service-container:hover p {
-  transform: translateY(-6rem);
-  transition: 0.4s;
-  opacity: 1;
-  line-height: 1.2;
-}
-
-.service-container:hover .service-title {
-  color: #000;
-  transform: translateY(-15rem);
-  transition: 0.4s;
-}
-.service-container:hover .img-overlay {
-  transform: scaleY(1.1);
-  transition: 0.4s;
-}
-
-.service-container:hover .img-overlay:after {
-  background: linear-gradient(transparent 0%, rgba(184, 183, 183, 0.705) 100%)
-    repeat-x rgba(233, 232, 232, 0.849);
-  transition-property: opacity;
-  transition-duration: 0.5s;
-}
-
-/* social */
-
-#instagram:hover {
-  color: #4b7ce7fa;
-}
-#telephone:hover {
-  color: #4b7ce7fa;
-}
-#facebook:hover {
-  color: #4b7ce7fa;
-}
-
 /* spinner */
 #page-loading-spinner {
   position: fixed;
@@ -292,17 +256,17 @@ hr {
 
 /* @media */
 
-@media (max-width: 376px) {
+@media (max-width: 501px) {
   .slogan {
     position: absolute;
-    top: 45vh;
+    top: 42vh;
     color: #5e3b5ef3;
     right: 20vw;
+    left: 1vh;
   }
 
   .slogan h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     position: relative;
   }
 
@@ -314,12 +278,68 @@ hr {
 
   #presentation {
     display: flex;
-    padding-top: 30rem;
+    padding-top: 39rem;
   }
 
   #presentation h2 {
     margin-bottom: 1.2rem;
-    text-align: center;
+    text-align: end;
+    background: linear-gradient(to left, #5e3b5e, #5e3b5e96);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    font-size: 1.4rem;
+  }
+
+  #presentation h3 {
+    margin-bottom: 1rem;
+    text-align: start;
+    font-size: 1rem;
+    color: #422942;
+  }
+
+  hr {
+    margin-top: 9rem;
+    margin-bottom: 3rem;
+  }
+
+  #services {
+    margin-top: 5rem;
+  }
+
+  .service .service-title {
+    font-size: 1.8rem;
+    bottom: 2rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .slogan {
+    position: absolute;
+    top: 36vh;
+    color: #5e3b5ef3;
+    right: 20vw;
+  }
+
+  .slogan h1 {
+    font-size: 3.2rem;
+    position: relative;
+  }
+
+  .slogan span {
+    position: absolute;
+    right: -2rem;
+    font-size: 1.2em;
+  }
+
+  #presentation {
+    display: flex;
+    padding-top: 38rem;
+  }
+
+  #presentation h2 {
+    margin-bottom: 1.2rem;
+    text-align: end;
     background: linear-gradient(to left, #5e3b5e, #5e3b5e96);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -344,9 +364,45 @@ hr {
   }
 
   .service .service-title {
-     font-size: 2.1rem;
+    font-size: 1.7rem;
   }
 }
 
-@media (max-widtn: 501px) {
+/* disable hover on touch screens */
+@media (hover: hover) {
+  .service-container:hover p {
+    transform: translateY(-6rem);
+    transition: 0.4s;
+    opacity: 1;
+    line-height: 1.2;
+  }
+
+  .service-container:hover .service-title {
+    color: #000;
+    transform: translateY(-15rem);
+    transition: 0.4s;
+  }
+  .service-container:hover .img-overlay {
+    transform: scaleY(1.1);
+    transition: 0.4s;
+  }
+
+  .service-container:hover .img-overlay:after {
+    background: linear-gradient(transparent 0%, rgba(184, 183, 183, 0.705) 100%)
+      repeat-x rgba(233, 232, 232, 0.849);
+    transition-property: opacity;
+    transition-duration: 0.5s;
+  }
+
+  /* social */
+
+  #instagram:hover {
+    color: #4b7ce7fa;
+  }
+  #telephone:hover {
+    color: #4b7ce7fa;
+  }
+  #facebook:hover {
+    color: #4b7ce7fa;
+  }
 }

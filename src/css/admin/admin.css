@@ -3,33 +3,37 @@
 @import 'header.css';
 
 body {
-  background: rgb(249, 179, 199);
+  background: var(--bg-color-main);
 }
 
 h1 {
-  font-size: 4rem;
-  color: #f6fafe;
-}
-
-.container > h2 {
-  color: #130915;
+  font-size: 3.5rem;
+  color: var(---white);
+  font-weight: 400;
 }
 
 h2 {
-  color: #555555;
+  font-size: 2.8rem;
+  color: var(--white);
+  font-weight: 300;
 }
 
 /* About */
+.about {
+  background: var(--bg-color-secondary);
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .about img {
-width: 15rem;
-height: auto;
+  width: 70%;
+  height: auto;
 }
 
 .about p {
   font-size: 1.2rem;
+  text-indent: 1.5rem;
 }
-
-
 
 /* Gallery */
 .main {
@@ -44,7 +48,7 @@ height: auto;
 }
 
 .gallery-image img {
-  margin: .6rem;
+  margin: 0.6rem;
   height: 15rem;
   width: 15rem;
 }
@@ -60,6 +64,10 @@ height: auto;
 }
 
 /* Services */
+.services {
+  background: var(--bg-color-secondary);
+}
+
 .service-admin a {
   max-height: auto;
   width: 100%;
@@ -111,6 +119,8 @@ height: auto;
   color: #f6fafe;
 }
 
+/* Prices */
+
 .prices {
   background-color: rgba(154, 128, 147, 0.413);
   border: 1px solid white;
@@ -118,15 +128,39 @@ height: auto;
   margin-top: 2rem;
 }
 
-@media (max-width: 376px) {
-  .service-admin h4 {
-    font-size: 2.3rem;
-  }
+/* Contacts */
 
+#contacts {
+  background: var(--bg-color-secondary);
 }
 
+.contact-section {
+  color: #555555;
+  margin-top: 2rem;
+}
+
+/* @MEDIA */
 @media (max-width: 790px) {
   .service-admin h4 {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 501px) {
+   h2 {
+    font-size: 2.5rem;
+  }
+  .service-admin h4 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 376px) {
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  .service-admin h4 {
+    font-size: 0.7rem;
   }
 }

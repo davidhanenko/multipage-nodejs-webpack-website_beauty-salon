@@ -3,7 +3,7 @@
 
 body {
   margin-top: calc(var(--navbar-height) + 4rem);
-  background: var(--bg-color);
+  background: var(--bg-color-main);
 }
 
 h1 {

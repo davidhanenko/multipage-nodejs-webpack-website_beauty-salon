@@ -12,7 +12,7 @@
 }
 
 #bottom-menu a {
-  color: #f6fafe;
+  color: var(--white);
   font-size: 1.2rem;
 }
 
@@ -76,3 +76,10 @@ ul {
   right: 2%;
   top: 15%;
 } */
+
+
+@media (max-width: 501px) {
+  #bottom-menu a {
+    font-size: 1.05rem;
+  }
+}
