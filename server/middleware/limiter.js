@@ -6,7 +6,7 @@ const mongoConn = mongoose.connection
 
 const opts = {
   storeClient: mongoConn,
-  points: 2, 
+  points: 4, 
   duration: 60 
 }
 
@@ -20,7 +20,7 @@ const rateLimiterMiddleware = (req, res, next) => {
     })
     .catch(() => {
       logger.error('Too Many Requests')
-      req.flash('error', 'Too Many Requests')
+      req.flash('error', 'Too many attempts, plese try in a minute')
       return res.redirect('back')
       // res.status(429).send('Too Many Requests')
     })

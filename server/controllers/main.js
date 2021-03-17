@@ -62,7 +62,7 @@ module.exports.email = async (req, res) => {
 
     req.flash('error', 'Please check information and message you entered')
 
-    res.redirect('/#email')
+    res.redirect('/#contact-form')
   } else {
     try {
       const data = matchedData(req)
@@ -92,8 +92,10 @@ module.exports.email = async (req, res) => {
       })
 
       req.flash('success', 'Thanks for the message! We‘ll be in touch')
-      req.session.destroy()
-      res.redirect('/#email')
+      // req.session.destroy()
+      req.session.data = null
+      req.session.errors = null
+      res.redirect('/')
     } catch (err) {
       logger.error('From nodemail:' + err.message)
       req.flash('error', err.message)
@@ -105,7 +107,7 @@ module.exports.email = async (req, res) => {
 // cancel email - clear form
 module.exports.emailCancel = async (req, res) => {
   req.session.destroy()
-  res.redirect('/#email')
+  res.redirect('/')
 }
 
 // gallery

@@ -1,6 +1,3 @@
-/* eslint-disable no-undef */
-__webpack_nonce__ = '<%%= cspNonce %>'
-
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 global.jQuery = require('jquery')

@@ -20,18 +20,12 @@ module.exports = {
     service: isDev
       ? ['webpack-hot-middleware/client?reload=true', './src/js/service.js']
       : './src/js/service.js',
-    price: isDev
-      ? ['webpack-hot-middleware/client?reload=true', './src/js/prices.js']
-      : './src/js/prices.js',
     gallery: isDev
       ? ['webpack-hot-middleware/client?reload=true', './src/js/gallery.js']
       : './src/js/gallery.js',
     about: isDev
       ? ['webpack-hot-middleware/client?reload=true', './src/js/about.js']
       : './src/js/about.js',
-    header: isDev
-      ? ['webpack-hot-middleware/client?reload=true', './src/js/header.js']
-      : './src/js/header.js',
     admin: isDev
       ? ['webpack-hot-middleware/client?reload=true', './src/js/admin/admin.js']
       : './src/js/admin/admin.js',
@@ -39,7 +33,10 @@ module.exports = {
       ? ['webpack-hot-middleware/client?reload=true', './src/js/admin/login.js']
       : './src/js/admin/login.js',
     admin_register: isDev
-      ? ['webpack-hot-middleware/client?reload=true', './src/js/admin/register.js']
+      ? [
+          'webpack-hot-middleware/client?reload=true',
+          './src/js/admin/register.js'
+        ]
       : './src/js/admin/register.js',
     admin_service: isDev
       ? [
@@ -154,7 +151,7 @@ module.exports = {
             options: {
               disable: process.env.NODE_ENV !== 'production',
               pngquant: {
-                quality: [0.65, 0.90]
+                quality: [0.65, 0.9]
               }
             }
           }
@@ -204,11 +201,6 @@ module.exports = {
       chunks: isDev ? ['service'] : ['service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/prices.ejs',
-      filename: 'views/prices.ejs',
-      chunks: isDev ? ['price'] : ['price', 'manifest', 'vendors']
-    }),
-    new HtmlWebPackPlugin({
       template: '!!ejs-webpack-loader!./src/views/gallery.ejs',
       filename: 'views/gallery.ejs',
       chunks: isDev ? ['gallery'] : ['gallery', 'manifest', 'vendors']
@@ -217,11 +209,6 @@ module.exports = {
       template: '!!ejs-webpack-loader!./src/views/about.ejs',
       filename: 'views/about.ejs',
       chunks: isDev ? ['about'] : ['about', 'manifest', 'vendors']
-    }),
-    new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/partials/header.ejs',
-      filename: 'views/partials/header.ejs',
-      chunks: isDev ? ['header'] : ['header', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
       template: '!!ejs-webpack-loader!./src/views/admin/prices/price-new.ejs',
@@ -249,7 +236,9 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: '!!ejs-webpack-loader!./src/views/admin/login/register.ejs',
       filename: 'views/admin/login/register.ejs',
-      chunks: isDev ? ['admin_register'] : ['admin_register', 'manifest', 'vendors']
+      chunks: isDev
+        ? ['admin_register']
+        : ['admin_register', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
       template:
@@ -347,58 +336,58 @@ module.exports = {
     }),
 
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/fav.png',
+      logo: './src/imgs/favicon.png',
       developerURL: null,
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'index.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/fav.png',
+      logo: './src/imgs/favicon.png',
       developerURL: null,
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'about.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/fav.png',
+      logo: './src/imgs/favicon.png',
       developerURL: null,
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'atms.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/fav.png',
+      logo: './src/imgs/favicon.png',
       developerURL: null,
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'chemical-peel.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/fav.png',
+      logo: './src/imgs/favicon.png',
       developerURL: null,
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'permanent-makeup.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/fav.png',
+      logo: './src/imgs/favicon.png',
       developerURL: null,
 
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'mictodermabrasion.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/fav.png',
+      logo: './src/imgs/favicon.png',
       developerURL: null,
 
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'ipl-laser.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/fav.png',
+      logo: './src/imgs/favicon.png',
       developerURL: null,
 
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'multifunctional-facials.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/fav.png',
+      logo: './src/imgs/favicon.png',
       developerURL: null,
 
       inject: (htmlPlugin) =>

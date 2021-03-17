@@ -24,7 +24,8 @@
 
 .slogan h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 3.8rem;
+  font-size: 4rem;
+  padding: .7rem;
   position: relative;
 }
 
@@ -262,7 +263,6 @@ hr {
     top: 42vh;
     color: #5e3b5ef3;
     right: 20vw;
-    left: 1vh;
   }
 
   .slogan h1 {
@@ -316,7 +316,7 @@ hr {
 @media (max-width: 376px) {
   .slogan {
     position: absolute;
-    top: 36vh;
+    top: 38vh;
     color: #5e3b5ef3;
     right: 20vw;
   }
@@ -364,9 +364,15 @@ hr {
   }
 
   .service .service-title {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 }
+
+/* @media (max-width: 281px) {
+  :root {
+    font-size: 0.65rem;
+  }
+} */
 
 /* disable hover on touch screens */
 @media (hover: hover) {

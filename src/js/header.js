@@ -22,5 +22,4 @@ $(function () {
 // add bg to navbar on toggle
 $('.navbar-toggler').on('click', function () {
   $('.navbar').toggleClass('navToggled')
-  // $('.navbar-collapse').toggleClass('navToggled')
 })

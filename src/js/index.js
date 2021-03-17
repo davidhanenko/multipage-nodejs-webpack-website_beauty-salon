@@ -9,10 +9,7 @@ import './contacts'
 import './email'
 import './go-to-top-button'
 import './map'
-
-// setTimeout(()=> {
-//    document.querySelector('#page-loading-spinner').style.display = 'none'
-// }, 3000)
+ 
 
 // scroll
 window.addEventListener(

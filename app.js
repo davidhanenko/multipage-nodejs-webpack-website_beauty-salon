@@ -82,7 +82,7 @@ app.use(
       httpOnly: true,
       sameSite: true,
       // secure: true,
-      maxAge: 1000 * 60 * 10
+      maxAge: 1000 * 60 * 20
     }
   })
 )
