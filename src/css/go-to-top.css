@@ -67,3 +67,22 @@
     background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" class="bi bi-chevron-up" fill="white" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" /> </svg>');
   }
 }
+
+@media (max-width: 501px) {
+  .top-button {
+    font-size: 1rem;
+    border-radius: 5%;
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  .top-button .first {
+    height: 0.8rem;
+    width: 0.8rem;
+  }
+
+  .top-button .second {
+    height: 0.8rem;
+    width: 0.8rem;
+  }
+}

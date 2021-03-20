@@ -20,7 +20,7 @@ router.post(
       .trim()
       .escape()
       .isLength({ min: 10 })
-      .withMessage('Please, tell us a little more, message is too short'),
+      .withMessage('Please, tell us a little more. Message is too short'),
     check('email')
       .isEmail()
       .withMessage('That email doesn‘t look right')

@@ -13,6 +13,7 @@
   color: #f6fafe;
   font-size: 1.4rem;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 .our-services {
@@ -125,7 +126,6 @@
 
 .prices-menu.dropdown-menu {
  background: #f6fafeee;
-
   border: none;
   width: 20em;
   margin-top: 0.1rem;

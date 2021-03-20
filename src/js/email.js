@@ -46,13 +46,13 @@ import '../css/email.css'
 $('input').on('change', function () {
   $('#reset-email-btn').fadeIn(function(){
     // scale SEND email button
-    $('#send-email-btn').addClass('send-email-btn-scale')
+    $('#send-email-btn').addClass('send-email-btn-isready')
   })
   // hide RESET button after click
   $('#reset-email-btn').on('click', function () {
     $('#reset-email-btn').fadeOut('slow', function() {
       // return SEND button to prev condition
-        $('#send-email-btn').removeClass('send-email-btn-scale')
+        $('#send-email-btn').removeClass('send-email-btn-isready')
     })
   })
 })
