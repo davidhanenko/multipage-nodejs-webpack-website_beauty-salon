@@ -84,27 +84,33 @@ module.exports.createAbout = async (req, res) => {
 // update about page
 module.exports.updateAbout = async (req, res) => {
   const about = await About.findOne({})
-  const uploader = async (path, opt) => await cloudinary.uploads(path, opt)
+  try {
+    // image upload
+    const uploader = async (path, opt) => await cloudinary.uploads(path, opt)
 
-
-  if (req.file && req.file.size < 10000000) {
-    if (about.image.id) {
-      await cloudinary.cloudinary.uploader.destroy(about.image.id)
-      about.image = await uploader(req.file.path, opts)
+    if (req.file && req.file.size < 10000000) {
+      if (about.image.id) {
+        await cloudinary.cloudinary.uploader.destroy(about.image.id)
+        about.image = await uploader(req.file.path, opts)
+      } else {
+        about.image = await uploader(req.file.path, opts)
+      }
     } else {
-      about.image = await uploader(req.file.path, opts)
+      req.flash(
+        'error',
+        'Please review size of images. 10Mb is maximum allowed'
+      )
     }
-  } else {
-    req.flash('error', 'Please review size of images. 10Mb is maximum allowed')
-  }
 
-  let errors = validationResult(req)
+    // validation errors
+    let errors = validationResult(req)
 
-  if (!errors.isEmpty()) {
-    errors = errors.array({ onlyFirstError: true })
-    req.flash('error', errors[0].msg)
-  } else {
-    try {
+    if (!errors.isEmpty()) {
+      errors = errors.array({ onlyFirstError: true })
+      req.flash('error', errors[0].msg)
+    } else {
+      // update req.body data
+
       about.ourMission = req.body.ourMission
       about.about = req.body.about
       about.aboutSection1 = req.body.aboutSection1
@@ -116,9 +122,9 @@ module.exports.updateAbout = async (req, res) => {
       req.flash('success', 'Information on About page was updated!')
 
       res.redirect('/admin/about')
-    } catch (err) {
-      logger.error('From admin/about page:' + err.message)
-      req.flash('error', err.message)
     }
+  } catch (err) {
+    logger.error('From admin/about page:' + err.message)
+    req.flash('error', err.message)
   }
 }

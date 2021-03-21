@@ -31,7 +31,7 @@
                 <input type="file" class="form-control-file my-2" name="imageMain" id="imageMain" accept="image/*" />
 
                 <!-- image preview -->
-                <img class="imgMainPreview" />
+                <img class="imgMainPreview" alt="" />
 
               </div>
             </div>
@@ -65,19 +65,20 @@
         <!-- service title -->
 
         <div class="row text-center">
-          <div class="col-5 offset-4">
+          <div class="col-8 col-md-6 offset-1 offset-md-3">
             <h2>
               <%%= service.title %>
             </h2>
             <!-- edit aria for title -->
             <div class="row justify-content-center text-center">
               <div class="title-edit-area">
-                <input type="text" class="form-control" name="title" value="<%%= service.title %>" />
+                <input aria-label="[Edit service title.]" type="text" class="form-control" name="title"
+                  value="<%%= service.title %>" />
               </div>
             </div>
           </div>
           <!-- button to open title edit area  -->
-          <div class="col-1">
+          <div class="col-3 text-right text-md-left">
             <button type="button" class="btn btn-sm btn-warning title-edit-button">
               Edit
             </button>
@@ -98,13 +99,13 @@
                 <input type="file" class="form-control-file my-2" name="image1" id="image1" accept="image/*" />
 
                 <!-- image preview -->
-                <img class="img1Preview" />
+                <img class="img1Preview" alt="" />
 
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6 justify-content-center">
+          <div class="col-lg-6 mt-4 mt-md-0 justify-content-center">
             <h3 class="pb-2">What is Microdermabrasion</h3>
             <p class="text-justify p-2">
               <%%= service.description1 %>
@@ -233,17 +234,22 @@
       </form>
 
       <hr class="my-5">
-
-      <%- include ../partials/img-before-after -%>
-
-        <a class="btn btn-secondary btn-go-back my-5" href="/admin"><span><svg width=".5em" height=".5em"
-              viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
-            </svg></span><span>GO BACK</span></a>
-
     </div>
   </div>
+
+  <div class="container-fluid px-0">
+    <%- include ../partials/img-before-after -%>
+  </div>
+
+  <div class="container">
+    <a class="btn btn-secondary btn-go-back my-5" href="/admin"><span><svg width=".5em" height=".5em"
+          viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <pat h fill-rule="evenodd"
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+        </svg></span><span>GO BACK</span></a>
+  </div>
+
+
 
 
 

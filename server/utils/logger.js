@@ -4,13 +4,27 @@ const mongoose = require('mongoose')
 
 const mongoConn = mongoose.connection
 
+const timezoned = () => {
+  return new Date().toLocaleString('en-US', {
+    timeZone: 'America/New_York'
+  })
+}
+
 const logger = createLogger({
   level: 'info',
-  format: format.combine(format.timestamp(), format.colorize(), format.json()),
+  format: format.combine(
+    format.timestamp({ format: timezoned }),
+    format.colorize(),
+    format.prettyPrint()
+  ),
   transports: [
-    // new transports.File({ filename: 'error.log', level: 'error' }),
     new transports.MongoDB({
       db: mongoConn,
+      format: format.combine(
+        format.timestamp({ format: timezoned }),
+        format.colorize(),
+        format.prettyPrint()
+      ),
       tryReconnect: true,
       level: 'error',
       collection: 'error-logs'
@@ -19,18 +33,23 @@ const logger = createLogger({
       db: mongoConn,
       tryReconnect: true,
       level: 'warn',
-      collection: 'warn-logs'
+      collection: 'warn-logs',
+      format: format.combine(
+        format.timestamp({ format: timezoned }),
+        format.prettyPrint(),
+        format.colorize()
+      )
     }),
     new transports.File({ filename: 'combined.log' })
   ]
 })
 
 // if (process.env.NODE_ENV !== 'production') {
-  logger.add(
-    new transports.Console({
-      format: format.simple()
-    })
-  )
+logger.add(
+  new transports.Console({
+    format: format.simple()
+  })
+)
 // }
 
 module.exports = logger

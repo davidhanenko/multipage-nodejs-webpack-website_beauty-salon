@@ -13,11 +13,11 @@
             <div class="col-md-7">
               <div class="image-exist text-center">
 
-                <img alt="About page, photo" src="<%%= about.image.url %>">
+                <img alt="About page, photo." src="<%%= about.image.url %>">
 
                 <div class="image-choose">
                   <label for="image">Upload new image</label>
-                  <input type="file" class="form-control-file my-2" name="image" id="image" accept="image/*" required />
+                  <input type="file" class="form-control-file my-2" name="image" id="image" accept="image/*" />
 
                   <!-- image preview -->
                   <img alt="" class="imgPreview" />
@@ -153,8 +153,8 @@
 
     <div class="mt-5 create-form">
       <h1 class="text-center my-5">Create About page</h1>
-      <form action="/admin/about" method="POST" class="mx-auto" enctype="multipart/form-data">
-        <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+      <form action="/admin/about?_csrf=<%%= csrfToken %>" method="POST" class="mx-auto" enctype="multipart/form-data">
+
         <div class="row justify-content-center">
           <div class="col-md-8">
             <input type="text" class="form-control my-2" name="ourMission" placeholder="Our mission...">

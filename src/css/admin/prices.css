@@ -12,7 +12,6 @@ h2 span {
   color: #f6fafe;
 }
 
-
 .add-new-price {
   margin-top: 7rem;
 }
@@ -62,3 +61,10 @@ input.form-control.edit-price-header {
   width: 4rem;
 }
 
+/* @media */
+
+@media (max-width: 501px) {
+ .form-inline .form-control {
+font-size: .8rem;
+}
+}

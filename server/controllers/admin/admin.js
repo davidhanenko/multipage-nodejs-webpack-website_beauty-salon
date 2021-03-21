@@ -103,7 +103,7 @@ const limiterFastBruteByIP = new RateLimiterMongo({
   keyPrefix: 'login_fail_ip_per_minute',
   points: maxWrongAttemptsByIPperMinute,
   duration: 60,
-  blockDuration: 60 * 30 // Block for 30 minutes, if 3 wrong attempts per 60 seconds
+  blockDuration: 60 * 2 // Block for 30 minutes, if 3 wrong attempts per 60 seconds
 })
 
 const limiterSlowBruteByIP = new RateLimiterMongo({
@@ -139,10 +139,10 @@ module.exports.login = async (req, res, next) => {
   }
 
   if (retrySecs > 0) {
-    res.set('Retry-After', String(retrySecs))
     req.flash('error', 'Too many wrong attempts, try again later')
     logger.error('From admin/signin page: To many request: 429')
     // res.status(429).send('Too Many Requests')
+    res.set('Retry-After', String(retrySecs))
     res.redirect('back')
   } else {
     passport.authenticate('local', async function (err, user) {
@@ -156,18 +156,24 @@ module.exports.login = async (req, res, next) => {
             limiterSlowBruteByIP.consume(ipAddr)
           ])
           // res.status(400).end('email or password is wrong')
-          req.flash('Error', 'Wrong user name or password!')
+          req.flash('error', 'Wrong user name or password!')
           logger.warn('Wrong attempts on: admin/login')
           return res.redirect('/admin/login')
         } catch (rlRejected) {
           if (rlRejected instanceof Error) {
             throw rlRejected
           } else {
-            res.set(
-              'Retry-After',
-              String(Math.round(rlRejected.msBeforeNext / 1000)) || 1
-            )
+            // res.set(
+            //   'Retry-After',
+            //   String(Math.round(rlRejected.msBeforeNext / 1000)) || 1
+            // )
             // res.status(429).send('Too Many Requests')
+            req.flash(
+              'Error',
+              `Too Many Requests, try after ${
+                String(Math.round(rlRejected.msBeforeNext / 1000)) || 1
+              } seconds..`
+            )
             logger.error('From admin/signin page: Too many requests, 429')
             res.redirect('back')
           }

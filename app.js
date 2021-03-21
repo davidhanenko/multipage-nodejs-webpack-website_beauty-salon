@@ -17,7 +17,6 @@ const helmet = require('helmet')
 const crypto = require('crypto')
 const methodOverride = require('method-override')
 const MongoStore = require('connect-mongo')(session)
-const ExpressError = require('./server/utils/ExpressError')
 const logger = require('./server/utils/logger')
 
 const { renderEJS } = require('./server/middleware/template')
@@ -82,7 +81,7 @@ app.use(
       httpOnly: true,
       sameSite: true,
       secure: true,
-      maxAge: 1000 * 60 * 20
+      maxAge: 1000 * 60 * 30
     }
   })
 )
