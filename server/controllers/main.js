@@ -52,7 +52,7 @@ module.exports.about = async (req, res) => {
 
 // send email
 module.exports.email = async (req, res) => {
-  req.session.cookie.maxAge = 5 * 60 * 1000
+  req.session.cookie.maxAge = 1000 * 60 * 5
   const errors = validationResult(req)
 
   if (!errors.isEmpty()) {

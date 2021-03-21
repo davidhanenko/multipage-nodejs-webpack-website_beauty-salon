@@ -78,9 +78,9 @@ app.use(
     resave: false,
     unset: 'destroy',
     cookie: {
-      httpOnly: true,
-      sameSite: true,
+      sameSite: 'lax',
       secure: true,
+      httpOnly: true,
       maxAge: 1000 * 60 * 30
     }
   })
