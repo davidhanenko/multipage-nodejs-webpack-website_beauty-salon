@@ -1,5 +1,5 @@
 #serv-banner {
-  margin-top: 79px;
+  margin-top: var(----navbar-height);
   height: 400px;
   background: url('../imgs/main-img.jpg');
   display: flex;

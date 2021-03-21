@@ -13,12 +13,6 @@ body {
   background: rgb(249, 179, 199);
 }
 
-/* img {
-  max-width: 100%;
-  height: auto;
-  max-height: 24rem;
-} */
-
 .service-title-main {
   color: #f6fafe;
   font-size: 3.3rem;
@@ -101,20 +95,34 @@ input.form-control {
 }
 
 .video-exist {
-  width: 450px;
-  height: 100%;
   position: relative;
+  width: 100%;
+  height: auto;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-exist video {
+  width: 100%;
+  height: auto;
 }
 
 .video-choose {
-  width: 70%;
+  max-width: 70%;
+  height: 7rem;
   background: rgba(177, 131, 159, 0.516);
   position: -webkit-sticky;
   position: sticky;
   position: absolute;
-  bottom: 0;
   right: 0;
-  color: #f6fafe;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
+  text-align: start;
+  color: var(---white);
 }
 
 .imgMainPreview,
@@ -134,11 +142,6 @@ input.form-control {
 .description3-edit-area,
 .description4-edit-area {
   display: none;
-}
-
-.video-exist video {
-  max-width: 100%;
-  height: 100%;
 }
 
 .delete-video {
@@ -168,14 +171,13 @@ input[type='checkbox'] {
   }
 }
 
-
 @media (max-width: 321px) {
   html {
     font-size: 0.7rem;
   }
   #main-service h1 {
-  font-size: 2.3rem;
-}
+    font-size: 2.3rem;
+  }
 
   .service-title-main {
     font-size: 2.5rem;

@@ -10,8 +10,8 @@ router.post(
   '/',
   isLoggedIn,
   multer.upload.fields([
-    { name: 'imageBefore', maxCount: 1 },
-    { name: 'imageAfter', maxCount: 1 }
+    { name: 'image-before', maxCount: 1 },
+    { name: 'image-after', maxCount: 1 }
   ]),
   catchAsync(addNewImageBA)
 )

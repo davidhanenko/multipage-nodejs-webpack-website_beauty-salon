@@ -384,10 +384,10 @@ module.exports.addNewImageBA = async (req, res) => {
 
     const uploader = async (path, opts) => await cloudinary.uploads(path, opts)
     // check if both images been choosen
-    if (req.files['imageBefore'] && req.files['imageAfter']) {
-      let imageBefore = await uploader(req.files['imageBefore'][0].path, opts)
+    if (req.files['image-before'] && req.files['image-after']) {
+      let imageBefore = await uploader(req.files['image-before'][0].path, opts)
 
-      let imageAfter = await uploader(req.files['imageAfter'][0].path, opts)
+      let imageAfter = await uploader(req.files['image-after'][0].path, opts)
 
       // check images size
       if (imageBefore.bytes < 10000000 && imageAfter.bytes < 10000000) {

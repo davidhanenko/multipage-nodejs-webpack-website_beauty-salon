@@ -76,11 +76,11 @@ app.use(
     secret: process.env.SESSION_SEC,
     saveUninitialized: false,
     resave: false,
-    unset: 'destroy',
+    // unset: 'destroy',
     cookie: {
-      sameSite: 'lax',
-      secure: true,
+      // sameSite: 'lax',
       httpOnly: true,
+      secure: true,
       maxAge: 1000 * 60 * 30
     }
   })

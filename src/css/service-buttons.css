@@ -1,3 +1,9 @@
+.btn-row {
+  position: absolute;
+  top: 6rem;
+  z-index: 2;
+}
+
 .serv-btn {
   height: 6.3rem;
   width: 10.3rem;
@@ -6,21 +12,20 @@
 }
 
 .serv-btn a:hover {
-  background: #8c577a;
+  border: 1px solid #3c2e41;
+  /* background: #8c577a;
   background: -webkit-linear-gradient(top left, #8c577a, #d095ce);
   background: -moz-linear-gradient(top left,#8c577a, #d095ce);
   background: linear-gradient(to bottom right, #8c577a, #d095ce);
   -webkit-text-fill-color: #f6fafe;
-  transition: 400;
+  transition: 400; */
 }
 
 .btn1 {
   height: 6rem;
   width: 9rem;
-  color: #3a004c;
+  color: #3c2e41;
   text-transform: uppercase;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-  /* border: 2px solid #7a029f; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,11 +35,12 @@
 }
 
 .serv-btn-active {
-  background: #8c577a;
+  border: 1px solid #3c2e41;
+  /* background: #8c577a;
   background: -webkit-linear-gradient(top left, #8c577a, #d095ce);
   background: -moz-linear-gradient(top left, #8c577a, #d095ce);
  background: linear-gradient(to bottom right, #68204c, #a578a1);
   -webkit-text-fill-color: #f6fafe;
   transition: 400;
-  border: none;
+  border: none; */
 }
