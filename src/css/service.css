@@ -129,3 +129,14 @@
 .dropdown-menu {
    background:  #f6fafe;
 }
+
+@media (max-width: 501px) {
+ #serv-banner {
+ display: none;
+}
+
+#main-service {
+  padding-top: 8rem;
+  background: var(--white);
+}
+}

@@ -1,5 +1,5 @@
 #serv-banner {
-  margin-top: var(----navbar-height);
+  margin-top: var(--navbar-height);
   height: 400px;
   background: url('../imgs/main-img.jpg');
   display: flex;
@@ -18,13 +18,12 @@
   font-size: 4rem;
   color: #37243b;
   z-index: 1;
- 
 }
 
 .serv-color-overlay {
   width: 100%;
   height: 100%;
-   background: #8c577a;
+  background: #8c577a;
   background: -webkit-linear-gradient(top left, #8c577a, #d095ce);
   background: -moz-linear-gradient(top left, #8c577a, #d095ce);
   background: linear-gradient(to bottom right, #502b42, #776576);

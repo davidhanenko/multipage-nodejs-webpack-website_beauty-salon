@@ -8,7 +8,6 @@ import './prices'
 import './contacts'
 import './email'
 import './go-to-top-button'
-import './map'
  
 
 // scroll

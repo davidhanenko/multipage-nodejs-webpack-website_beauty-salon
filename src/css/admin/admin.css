@@ -4,6 +4,7 @@
 
 body {
   background: var(--bg-color-main);
+  padding-top: 20vh;
 }
 
 .admin-header {

@@ -76,11 +76,11 @@ app.use(
     secret: process.env.SESSION_SEC,
     saveUninitialized: false,
     resave: false,
-    // unset: 'destroy',
+    unset: 'destroy',
     cookie: {
       // sameSite: 'lax',
       httpOnly: true,
-      secure: true,
+      // secure: true,
       maxAge: 1000 * 60 * 30
     }
   })
@@ -156,7 +156,6 @@ if (isDev) {
           ],
           'style-src-elem': [
             "'self'",
-            "'unsafe-inline'",
             'fonts.googleapis.com',
             (req, res) => `'nonce-${res.locals.cspNonce}'`
           ],

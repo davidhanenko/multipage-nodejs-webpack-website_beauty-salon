@@ -1,0 +1,11 @@
+.btn-go-back {
+  position: relative;
+}
+
+#chev-left {
+  position: absolute;
+  height: 1.5rem;
+  width: 1.5rem;
+  left: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="%23f6fafe" class="bi bi-chevron-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/></svg>');
+}

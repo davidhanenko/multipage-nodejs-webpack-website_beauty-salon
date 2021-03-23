@@ -386,14 +386,6 @@ module.exports = {
         basename(htmlPlugin.options.filename) === 'gallery.ejs'
     }),
 
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: resolve(__dirname, './src/imgs'),
-          to: resolve(__dirname, 'dist/imgs')
-        }
-      ]
-    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'

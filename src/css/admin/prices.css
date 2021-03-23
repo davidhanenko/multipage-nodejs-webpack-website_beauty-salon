@@ -1,4 +1,5 @@
 @import '../admin/header.css';
+@import '../admin/go-back-admin-btn.css';
 
 body {
   background: rgb(249, 179, 199);

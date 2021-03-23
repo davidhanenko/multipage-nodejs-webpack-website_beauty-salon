@@ -1,8 +1,8 @@
 @import '../admin/header.css';
 @import '../admin/service-new.css';
-@import '../flash-message.css';
 @import '../loaders.css';
 @import '../admin/img-before-after.css';
+@import '../admin/go-back-admin-btn.css';
 
 html {
   margin: 0;

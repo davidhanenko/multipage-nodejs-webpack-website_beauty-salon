@@ -1,5 +1,6 @@
 @import './header.css';
 @import '../loaders.css';
+@import '../admin/go-back-admin-btn.css';
 
 body {
   margin-top: calc(var(--navbar-height) + 4rem);
