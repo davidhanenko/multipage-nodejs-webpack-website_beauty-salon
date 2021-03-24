@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-let imageBeforeAfter = new Schema({
+const imageBeforeAfter = new Schema({
   imageBefore: {
     url: String,
     id: String

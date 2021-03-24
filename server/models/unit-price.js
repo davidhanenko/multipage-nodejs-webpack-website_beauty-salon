@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-let unitSchema = new Schema({
+const unitSchema = new Schema({
  
       unitTitle: String,
       singlePrice: String,

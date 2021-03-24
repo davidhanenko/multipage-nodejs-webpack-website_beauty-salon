@@ -1,0 +1,9 @@
+@import '../admin/header.css';
+
+.container-popup {
+  margin-top: 7rem;
+}
+
+.edit-row {
+  background: var(--bg-color-secondary);
+}

@@ -24,22 +24,16 @@ module.exports.showNewService = async (req, res) => {
 
 //options for cloudinary upload
 let optsMain = {
-  transformation: [
-    { width: 550, height: 550, crop: 'fill' },
-    { width: 'auto', dpr: 'auto', crop: 'scale' }
-  ],
-  fetch_format: 'auto',
-  quality: 85,
-  resource_type: 'auto',
-  folder: 'Ilona'
+      transformation: { width: 550, height: 550, dpr: 'auto', crop: 'fill' },
+      fetch_format: 'auto',
+      quality: 'auto:good',
+      resource_type: 'auto',
+      folder: 'Ilona'
 }
 
 let optsSecondary = {
-  transformation: [
-    { width: 450, crop: 'fill' },
-    { width: 'auto', dpr: 'auto', crop: 'scale' }
-  ],
-  quality: 100,
+  transformation: { width: 450, dpr: 'auto', crop: 'fill' },
+  quality: 'auto:good',
   fetch_format: 'auto',
   resource_type: 'auto',
   folder: 'Ilona'

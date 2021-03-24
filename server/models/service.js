@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-let serviceSchema = new Schema({
+const serviceSchema = new Schema({
   template: String,
   title: String,
   descriptionMain: String,

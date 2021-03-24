@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-let aboutSchema = new mongoose.Schema({
+const aboutSchema = new mongoose.Schema({
   ourMission: String,
   about: String,
   aboutSection1: String,

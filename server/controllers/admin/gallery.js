@@ -30,7 +30,8 @@ module.exports.addNewPhoto = async (req, res) => {
     //options for cloudinary upload
     let opts = {
       transformation: [{ width: 650, height: 650, crop: 'fill' }],
-      quality: 100,
+      fetch_format: 'auto',
+      quality: 'auto:good',
       resource_type: 'auto',
       folder: 'Ilona/Gallery'
     }

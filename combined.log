@@ -578,3 +578,1151 @@
   level: '\x1B[32minfo\x1B[39m',
   timestamp: '3/22/2021, 11:14:52 PM'
 }
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 6:20:39 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 6:20:45 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 6:30:40 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 6:30:46 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:20:53 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:20:58 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:21:02 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:24:32 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:24:47 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:24:52 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:24:56 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:25:01 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:27:02 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:27:08 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:42:56 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:42:59 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:43:01 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:43:03 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:43:05 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:43:08 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:43:10 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:43:15 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:43:18 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:43:23 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:43:29 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:43:33 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:47:37 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 7:47:41 PM'
+}
+{
+  message: "Cannot read property 'template' of null",
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '3/23/2021, 7:59:54 PM'
+}
+{
+  message: "Cannot read property 'template' of null",
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '3/23/2021, 7:59:58 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:07:45 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:07:51 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:08:05 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:08:09 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:08:53 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:08:58 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:10:30 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:10:36 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:10:50 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:10:55 PM'
+}
+{
+  message: 'Wrong attempts on: admin/login',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '3/23/2021, 8:29:53 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:30:44 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:30:50 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:33:49 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:33:56 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:34:00 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:34:06 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:34:07 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:34:12 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:34:15 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:36:01 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:36:06 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:49:56 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 8:50:02 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:12:32 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:12:32 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:16:45 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:16:45 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:18:30 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:18:34 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:20:28 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:20:35 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:27:45 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:27:51 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:30:08 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:30:15 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:37:15 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:37:15 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:39:25 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:39:30 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:58:22 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 9:58:28 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 10:01:32 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 10:01:36 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 10:03:59 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 10:04:04 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 10:04:39 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 10:04:43 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 10:05:40 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 10:05:44 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 10:27:52 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 10:27:59 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:26:44 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:26:50 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:26:57 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:00 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:05 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:08 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:12 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:16 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:18 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:21 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:26 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:29 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:35 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:38 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:41 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:27:45 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:29:26 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:29:28 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:29:32 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:29:34 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:29:37 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:29:40 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:29:58 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:30:01 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:30:45 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:30:48 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:30:51 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:30:52 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:30:55 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:32:37 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:32:39 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:32:43 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:32:46 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:32:49 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:32:52 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:33:04 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:33:06 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:33:11 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:33:13 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:33:16 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:35:29 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:35:33 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:35:37 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:35:41 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:35:51 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:35:55 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:35:59 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:36:03 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:36:07 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:36:11 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:36:14 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:36:16 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:36:19 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:36:21 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:36:25 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:36:55 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:36:59 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:03 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:06 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:08 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:11 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:13 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:18 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:20 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:21 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:24 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:31 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:34 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:38 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:41 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:53 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:37:57 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:38:39 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:38:43 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:38:46 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:39:03 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:39:06 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:49:09 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:49:15 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:49:27 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:49:30 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:49:37 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:49:40 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:49:45 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:49:46 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:49:50 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:49:51 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:49:55 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:50:04 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:50:07 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:50:10 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:50:26 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:50:29 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:50:37 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:50:40 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:50:46 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:50:49 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:51:05 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:51:07 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:51:10 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:51:13 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:51:15 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:52:00 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:52:07 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:52:11 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:53:15 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:53:18 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:54:15 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:54:19 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:54:21 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:54:24 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:54:45 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:54:48 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:55:31 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:55:34 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:55:38 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:55:39 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:55:42 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:55:46 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:55:48 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:55:50 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:55:53 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:56:36 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:56:41 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:56:44 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:56:48 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:56:51 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:56:59 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:57:03 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:57:07 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:57:10 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:57:15 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:57:18 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:57:30 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:57:33 PM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:58:01 PM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/23/2021, 11:58:07 PM'
+}
+{
+  message: 'Wrong attempts on: admin/login',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '3/24/2021, 12:03:03 AM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/24/2021, 12:03:40 AM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/24/2021, 12:03:46 AM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/24/2021, 12:05:37 AM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/24/2021, 12:05:43 AM'
+}
+{
+  message: 'Serving on port 8000',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/24/2021, 12:07:30 AM'
+}
+{
+  message: 'Database connected',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '3/24/2021, 12:07:36 AM'
+}
+{
+  message: "Unexpected token 'catch' while compiling ejs\n" +
+    '\n' +
+    'If the above error is not helpful, you may want to try EJS-Lint:\n' +
+    'https://github.com/RyanZim/EJS-Lint\n' +
+    'Or, if you meant to create an async function, pass `async: true` as an option.',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '3/24/2021, 12:14:07 AM'
+}
+{
+  message: "Unexpected token 'catch' while compiling ejs\n" +
+    '\n' +
+    'If the above error is not helpful, you may want to try EJS-Lint:\n' +
+    'https://github.com/RyanZim/EJS-Lint\n' +
+    'Or, if you meant to create an async function, pass `async: true` as an option.',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '3/24/2021, 12:14:31 AM'
+}

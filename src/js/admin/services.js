@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+import 'popper.js'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 global.jQuery = require('jquery')
@@ -77,8 +78,8 @@ $('#updateBtn').on('click', function () {
 })
 
 // image upload preview
-$(function() {
-  $('#imageMain').on('change',function () {
+$(function () {
+  $('#imageMain').on('change', function () {
     const file = this.files[0]
     if (file) {
       let reader = new FileReader()
@@ -89,7 +90,6 @@ $(function() {
     }
   })
 })
-
 
 $(function () {
   $('#image1').on('change', function () {
@@ -143,4 +143,11 @@ $(function () {
   })
 })
 
+// popover
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
 
+$('.popover-dismiss').popover({
+  trigger: 'focus'
+})

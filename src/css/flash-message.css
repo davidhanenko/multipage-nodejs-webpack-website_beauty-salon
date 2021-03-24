@@ -6,20 +6,26 @@
   align-items: center;
   font-size: 1.4rem;
   z-index: 100;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
 .alert-warning {
   background-color: #ffd591bd;
+  filter: grayscale(45%);
 }
 
 .alert-success {
   background-color: #b7eb8f92;
+  filter: grayscale(45%);
 }
 
 .alert-dismissible .close {
   top: auto;
 }
 
-
+.close-btn {
+  display: flex;
+  margin-left: 2rem;
+  align-items: center;
+}

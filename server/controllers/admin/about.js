@@ -24,12 +24,9 @@ module.exports.showAbout = async (req, res) => {
 
 //options for cloudinary upload
 let opts = {
-  transformation: [
-    { width: 550, height: 750, crop: 'fill' },
-    { width: 'auto', dpr: 'auto', crop: 'scale' }
-  ],
+  transformation: { width: 550, height: 750, crop: 'fill' },
   fetch_format: 'auto',
-  quality: 85,
+  quality: 'auto:good',
   resource_type: 'auto',
   folder: 'Ilona'
 }

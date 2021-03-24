@@ -71,6 +71,9 @@ module.exports = {
           './src/js/admin/header.js'
         ]
       : './src/js/admin/header.js',
+    admin_popup: isDev
+      ? ['webpack-hot-middleware/client?reload=true', './src/js/admin/popup.js']
+      : './src/js/admin/popup.js',
     errors: isDev
       ? [
           'webpack-hot-middleware/client?reload=true',
@@ -239,6 +242,13 @@ module.exports = {
       chunks: isDev
         ? ['admin_register']
         : ['admin_register', 'manifest', 'vendors']
+    }),
+    new HtmlWebPackPlugin({
+      template: '!!ejs-webpack-loader!./src/views/admin/popup/popup.ejs',
+      filename: 'views/admin/popup/popup.ejs',
+      chunks: isDev
+        ? ['admin_popup']
+        : ['admin_popup', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
       template: '!!ejs-webpack-loader!./src/views/admin/our_services/atms.ejs',

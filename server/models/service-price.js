@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 
-let priceSchema = new Schema({
+const priceSchema = new Schema({
  
   serviceTitle: String,
  

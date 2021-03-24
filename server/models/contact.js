@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-let contactSchema = new Schema({
+const contactSchema = new Schema({
  
       address1stLine: String,
       address2ndLine: String,

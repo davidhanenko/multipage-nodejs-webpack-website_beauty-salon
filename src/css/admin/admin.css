@@ -19,6 +19,16 @@ h2 {
   font-weight: 300;
 }
 
+/*Popup  */
+.popup-text {
+  padding: 2rem;
+  background: var(--white);
+}
+
+.popup-buttons .btn {
+  width: 35%;
+}
+
 /* About */
 .about {
   background: var(--bg-color-secondary);
@@ -27,8 +37,8 @@ h2 {
 }
 
 .about img {
-  width: 70%;
-  height: auto;
+  height: 20rem;
+  width: auto;
 }
 
 .about p {
@@ -187,6 +197,10 @@ h2 {
   .service-admin h4 {
     font-size: 0.8rem;
   }
+
+  .popup-buttons .btn {
+  width: 90%;
+}
 }
 
 @media (max-width: 376px) {

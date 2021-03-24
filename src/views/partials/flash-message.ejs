@@ -1,18 +1,21 @@
-
-<%% if((process.env.NODE_ENV !== 'development') && success && success.length) {%>
+<%% if((process.env.NODE_ENV !=='development' ) && success && success.length) {%>
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     <%%= success %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+      <span class="close-btn">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </span>
   </div>
   <%% } %>
 
-    <%% if((process.env.NODE_ENV !== 'development') && error && error.length) {%>
+    <%% if((process.env.NODE_ENV !=='development' ) && error && error.length) {%>
       <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <%%= error %>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <span class="close-btn">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </span>
       </div>
       <%% } %>

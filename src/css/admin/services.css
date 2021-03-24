@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background: rgb(249, 179, 199);
+  background: var(--bg-color-main);
 }
 
 .service-title-main {
@@ -165,6 +165,17 @@ input[type='checkbox'] {
   margin-right: 0.2rem;
 }
 
+/* delete confirm modal */
+.delete-modal-title {
+  text-transform: capitalize;
+}
+
+
+/* popover */
+.popover-btn {
+}
+
+/* @media */
 @media (max-width: 501px) {
   #main-service {
     margin-top: 5rem;

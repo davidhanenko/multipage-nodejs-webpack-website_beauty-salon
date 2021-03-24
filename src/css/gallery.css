@@ -62,6 +62,7 @@ body {
 
 .full figure:not(.expanded) {
   pointer-events: none;
+  z-index: 0;
 }
 
 
