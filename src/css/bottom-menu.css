@@ -1,5 +1,5 @@
 :root {
-  --bottom-menu-height: 10rem;
+  --bottom-menu-height: 12rem;
 }
 
 #bottom-menu {
@@ -13,6 +13,12 @@
 #bottom-menu a {
   color: var(--white);
   font-size: 1.2rem;
+  text-decoration: none;
+}
+
+#bottom-menu a:hover {
+  color: #000;
+  transition: 300ms;
 }
 
 ul {
@@ -74,9 +80,17 @@ ul {
   top: 15%;
 } */
 
+.copyright {
+  color: var(--white);
+}
+
 @media (max-width: 501px) {
   #bottom-menu a {
     font-size: 1.05rem;
+  }
+
+  .copyright {
+    font-size: 0.9rem;
   }
 }
 

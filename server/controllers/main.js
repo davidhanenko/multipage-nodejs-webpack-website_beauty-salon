@@ -2,6 +2,7 @@ const Service = require('../models/service')
 const Price = require('../models/service-price')
 const Contact = require('../models/contact')
 const About = require('../models/about')
+const Popup = require('../models/popup')
 const Gallery = require('../models/gallery')
 const { renderEJS } = require('../middleware/template')
 const nodemailer = require('nodemailer')
@@ -13,6 +14,7 @@ module.exports.index = async (req, res) => {
   // logout from admin
   req.logout()
 
+  const popup = await Popup.find({})
   const services = await Service.find({})
   const prices = await Price.find({}).populate('unitPrice')
   const contacts = await Contact.find({})
@@ -26,6 +28,7 @@ module.exports.index = async (req, res) => {
     title: 'Ilona',
     data,
     errors,
+    popup,
     services,
     prices,
     contacts

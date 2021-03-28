@@ -8,7 +8,6 @@ import './prices'
 import './contacts'
 import './email'
 import './go-to-top-button'
- 
 
 // scroll
 window.addEventListener(
@@ -33,7 +32,13 @@ document.onreadystatechange = function () {
   }
 }
 
-// Needed for Hot Module Replacement
-// if (typeof module.hot !== 'undefined') {
-//   module.hot.accept() // eslint-disable-line no-undef
+const alertModal = document.getElementById('previewModal')
+
+// function delayedPopup() {
+//   setTimeout(function () {
+//     alertModal.show()
+//   }, 3000)
 // }
+// delayedPopup()
+
+alertModal.show()

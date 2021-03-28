@@ -11,6 +11,7 @@ const { check } = require('express-validator')
 router
   .route('/')
   .get(isLoggedIn, catchAsync(popup.showPopupPage))
+  .post(isLoggedIn, catchAsync(popup.createNewMessage))
 
 
 module.exports = router

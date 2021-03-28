@@ -1,9 +1,17 @@
 const mongoose = require('mongoose')
 
-const previousSchema = new mongoose.Schema ({text: String})
+const previousSchema = new mongoose.Schema({ text: String })
 const popupSchema = new mongoose.Schema({
   message: String,
-  current: String,
+  
+  msgFontSize: String,
+  msgColor: String,
+  msgBgColor: String,
+
+  current: {
+    type: Boolean,
+    default: false
+  },
 
   previous: [previousSchema],
 

@@ -65,9 +65,16 @@ body {
   z-index: 0;
 }
 
+/* navbar */
+.navbar {
+  background: #f6fafef5;
+}
+
+.dropdown-menu {
+  background: #f6fafef5;
+}
 
 /* bottom menu */
-
 #bottom-menu {
   margin-top: 6rem;
   background: #f6fafe;
@@ -83,21 +90,14 @@ body {
   color: #5e3b5ef3;
 }
 
-
-/* navbar */
-.navbar {
-  background: #f6fafef5;
+.copyright {
+  color: #000000;
 }
-
-.dropdown-menu {
-  background: #f6fafef5;
-}
-
 
 @media (max-width: 501px) {
-.gallery-header {
-  margin-top: 9rem;
-}
+  .gallery-header {
+    margin-top: 9rem;
+  }
 
   #gallery {
     width: 95%;

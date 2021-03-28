@@ -8,13 +8,13 @@ const logger = require('../../utils/logger')
 
 //show popup page
 module.exports.showPopupPage = async (req, res) => {
-  // const popup = (await Popup.findOne({}))
+  const popup = (await Popup.findOne({}))
   const services = await Service.find({}, 'title template')
   const prices = await Price.find({}, 'serviceTitle')
   await renderEJS(res, 'admin/popup/popup', {
     csrfToken: req.csrfToken(),
     cspNonce: res.locals.cspNonce,
-    // popup,
+    popup,
     services,
     prices,
     title: 'Popup messages',
@@ -22,61 +22,29 @@ module.exports.showPopupPage = async (req, res) => {
   })
 }
 
-// //options for cloudinary upload
-// let opts = {
-//   transformation: { width: 550, height: 750, crop: 'fill' },
-//   fetch_format: 'auto',
-//   quality: 'auto:good',
-//   resource_type: 'auto',
-//   folder: 'Ilona'
-// }
 
-// // create about page
-// module.exports.createAbout = async (req, res) => {
-//   let errors = validationResult(req)
 
-//   if (!errors.isEmpty()) {
-//     errors = errors.array({ onlyFirstError: true })
-//     req.flash('error', errors[0].msg)
-//   }
+// create new popup message
+module.exports.createNewMessage = async (req, res) => {
 
-//   try {
-//     const uploader = async (path, opt) => await cloudinary.uploads(path, opt)
+  try {
+    const { message, msgFontSize, msgColor, msgBgColor } = req.body
 
-//     let image = null
-//     if (req.file) {
-//       if (req.file.bytes > 10000000) {
-//         req.flash(
-//           'error',
-//           'Please review size of images. 10Mb is maximum allowed'
-//         )
-//       }
-//       image = await uploader(req.file.path, opts)
-//     }
+    let newMessage = {
+      message,
+      msgFontSize,
+      msgColor,
+      msgBgColor
+    }
 
-//     let ourMission = req.body.ourMission
-//     let about = req.body.about
-//     let aboutSection1 = req.body.aboutSection1
-//     let aboutSection2 = req.body.aboutSection2
-//     let aboutSection3 = req.body.aboutSection3
-
-//     let newAbout = {
-//       ourMission,
-//       about,
-//       aboutSection1,
-//       aboutSection2,
-//       aboutSection3,
-//       image
-//     }
-
-//     await About.create(newAbout)
-//     res.redirect('/admin/about')
-//   } catch (err) {
-//     logger.error('From admin/about page:' + err.message)
-//     req.flash('error', err.message)
-//     res.redirect('back')
-//   }
-// }
+    await Popup.create(newMessage)
+    res.redirect('/admin/popup')
+  } catch (err) {
+    logger.error('From admin/popup page:' + err.message)
+    req.flash('error', err.message)
+    res.redirect('back')
+  }
+}
 
 // // update about page
 // module.exports.updateAbout = async (req, res) => {
