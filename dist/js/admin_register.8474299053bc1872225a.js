@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{36:function(n,t,i){"use strict";i.r(t),function(n){i(2),i(3),i(37),i(7);n.jQuery=i(0)}.call(this,i(1))},37:function(n,t,i){},7:function(n,t){!function(){"use strict";var n=document.querySelectorAll(".needs-validation");Array.from(n).forEach(function(n){n.addEventListener("submit",function(t){n.checkValidity()||(t.preventDefault(),t.stopPropagation()),n.classList.add("was-validated")},!1)})}()}},[[36,0,1]]]);
-//# sourceMappingURL=admin_register.8474299053bc1872225a.js.map

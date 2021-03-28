@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{47:function(n,o,w){"use strict";w.r(o);w(2),w(3),w(48)},48:function(n,o,w){}},[[47,0,1]]]);
-//# sourceMappingURL=admin_header.0260da4f0d4a2bd2c877.js.map
