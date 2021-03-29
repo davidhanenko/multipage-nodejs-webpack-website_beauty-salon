@@ -61,4 +61,4 @@ MAIL_TO=<email for nodemailer  testing>
 The website has an admin page for content management. To create new Admin navigate to `/admin/register`. Enter 'Username', 'Password' and 'Permission code' - use for confirming deleting important parts of the website.
 Enter credentials on `/admin/login`. Begin create content from 'Services'. Each service has its layout, so you need to enter one of the templates on `/admin/services/service-new`page, while creating new service. The rest of the content will add dynamically.
 
-![print screen](https://github.com/davidhanenko/website_beauty-salon/tree/main/src/imgs/screen-shot_admin.png)
+![screen shot](https://github.com/davidhanenko/website_beauty-salon/tree/main/src/imgs/screen-shot_admin.png)
