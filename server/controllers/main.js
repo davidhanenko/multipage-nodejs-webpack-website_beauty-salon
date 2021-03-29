@@ -95,7 +95,7 @@ module.exports.email = async (req, res) => {
       })
 
       req.flash('success', 'Thanks for the message! We‘ll be in touch')
-      // req.session.destroy()
+    
       req.session.data = null
       req.session.errors = null
       res.redirect('/')
