@@ -2,9 +2,9 @@ const { Router } = require('express')
 const router = Router({ mergeParams: true })
 const popup = require('../../controllers/admin/popup')
 const multer = require('../../utils/multer')
-const { isLoggedIn } = require('../../middleware/admin')
+// const { isLoggedIn } = require('../../middleware/admin')
 const catchAsync = require('../../utils/catchAsync')
-const { check } = require('express-validator')
+// const { check } = require('express-validator')
 
 
 
