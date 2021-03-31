@@ -1,76 +1,7 @@
 @import '../admin/header.css';
 @import '../admin/go-back-admin-btn.css';
+@import '../popup-modal.css';
 
-:root {
-  --textDark: #070707;
-  --textWhite: #f6fafe;
-  --textRed: #b92b2b;
-  --textBlue: #0c55c4;
-  --textGreen: #22be37;
-  --textPurple: #422942;
-
-  --bgWhite: #f6fafe;
-  --bgDWhite: #e5e6e9;
-  --bgLPink: #f1cfe2;
-  --bgLPurple: #b47eb28f;
-  --bgDPurple: #a772a5;
-}
-
-/* font sizes */
-.fs-1 {
-  font-size: 1.25rem;
-}
-.fs-2 {
-  font-size: 1.5rem;
-}
-.fs-3 {
-  font-size: 1.75rem;
-}
-.fs-4 {
-  font-size: 2rem;
-}
-.fs-5 {
-  font-size: 2.25rem;
-}
-
-/* text colors */
-.textDark {
-  color: var(--textDark);
-}
-.textWhite {
-  color: var(--textWhite);
-}
-.textRed {
-  color: var(--textRed);
-}
-.textBlue {
-  color: var(--textBlue);
-}
-.textGreen {
-  color: var(--textGreen);
-}
-.textPurple {
-  color: var(--textPurple);
-}
-/* background colors */
-.bgWhite {
-  background: var(--bgWhite);
-}
-.bgDWhite {
-  background: var(--bgDWhite);
-}
-.bgLPink {
-  background: var(--bgLPink);
-}
-.bgLPurple {
-  background: var(--bgLPurple);
-}
-.bgDPurple {
-  background: var(--bgDPurple);
-}
-.bgTransparent {
-  background: transparent;
-}
 
 .container-popup {
   margin-top: 7rem;
@@ -78,7 +9,7 @@
 
 .edit-row {
   background: var(--bg-color-secondary);
-  height: 14rem;
+  height: 20rem;
 }
 
 .edit-area,
@@ -95,14 +26,4 @@
 .new-area {
   padding: 1rem;
   height: 10rem;
-}
-
-
-/* modal */
-.modal-header {
-    border-bottom: 0 none;
-}
-
-.modal-footer {
-    border-top: 0 none;
 }

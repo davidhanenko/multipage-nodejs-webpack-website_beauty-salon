@@ -3,7 +3,9 @@ const mongoose = require('mongoose')
 const previousSchema = new mongoose.Schema({ text: String })
 const popupSchema = new mongoose.Schema({
   message: String,
+  title: String,
   
+
   msgFontSize: String,
   msgColor: String,
   msgBgColor: String,

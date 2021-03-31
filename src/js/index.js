@@ -2,12 +2,12 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 global.jQuery = require('jquery')
 
-import '../css/index.css'
 import './header'
 import './prices'
 import './contacts'
 import './email'
 import './go-to-top-button'
+import '../css/index.css'
 
 // scroll
 window.addEventListener(
@@ -32,13 +32,8 @@ document.onreadystatechange = function () {
   }
 }
 
-const alertModal = document.getElementById('previewModal')
+// show alert/modal after page load
 
-// function delayedPopup() {
-//   setTimeout(function () {
-//     alertModal.show()
-//   }, 3000)
-// }
-// delayedPopup()
-
-alertModal.show()
+setTimeout(function() {
+  $('#alertModal').modal('show')
+}, 3000)
