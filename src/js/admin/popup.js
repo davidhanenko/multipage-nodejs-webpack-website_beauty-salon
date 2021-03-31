@@ -23,7 +23,9 @@ $('.create-button').on('click', function () {
 })
 
 const msgText = document.querySelector('.msg-text')
+const msgTextTitle = document.querySelector('.msg-text-title')
 const newMessage = document.querySelector('.new-area')
+const newTitle = document.querySelector('.new-area-title')
 const msgFontSize = document.querySelector('.msg-font-size')
 const msgColor = document.querySelector('.msg-color')
 const msgBgColor = document.querySelector('.msg-bg-color')
@@ -49,6 +51,10 @@ const msgBgColorArr = [
 msgText.addEventListener(
   'change',
   (e) => (newMessage.textContent = e.target.value)
+)
+msgTextTitle.addEventListener(
+  'change',
+  (e) => (newTitle.textContent = e.target.value)
 )
 // change font size
 msgFontSize.addEventListener('change', (e) => {

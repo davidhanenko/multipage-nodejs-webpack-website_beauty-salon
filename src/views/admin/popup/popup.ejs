@@ -9,8 +9,8 @@
             <div class="col-12">
               <%% if(popup) { %>
                 <h5 class="popup-text align-middle 
-                <%%= popup.msgFontSize %> <%%= popup.msgColor %> <%%= popup.msgBgColor %>">
-                  <%%= popup.message %>
+                <%%= popup[0].msgFontSize %> <%%= popup[0].msgColor %> <%%= popup[0].msgBgColor %>">
+                  <%%= popup[0].message %>
                 </h5>
                 <%% } else { %>
                   <h4>No current mesaages..</h4>
@@ -54,14 +54,15 @@
           <form action="/admin/popup" method="POST" class="create-new-form">
             <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
 
-            <div class="row ">
+            <div class="row">
               <div class="col-6">
-                <p>Create new message</p>
+                <p class="mb-0">Alert/message header/tittle:</p>
 
+                <input class="msg-text-title mb-2" type="text" name="title">
 
-                <textarea type="text" class="msg-text form-control my-3" name="message" rows="4"></textarea>
+                <p class="mb-0">Create new message:</p>
 
-
+                <textarea type="text" class="msg-text form-control" name="message" rows="4"></textarea>
               </div>
               <div class="col-6">
                 <select class="msg-font-size form-select form-select-sm" name="msgFontSize"
@@ -126,7 +127,7 @@
         <div class="col-4">
           <!-- button to open preview modal window -->
           <button type="button" class="btn btn-sm btn-info btn-service-delete" data-toggle="modal"
-            data-target="#previewModal">
+            data-target="#alertModal">
             Preview
           </button>
         </div>
@@ -138,6 +139,7 @@
       <section id="create-new-message">
         <div class="row">
           <div class="col-12">
+            <h4 class="new-area-title"></h4>
             <h5 class="new-area"></h5>
           </div>
         </div>
@@ -146,42 +148,26 @@
   </div>
 
 
-
-
-  <!-- modal window to preview alert message -->
-  <div class="modal fade" id="previewModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content <%%= popup.msgBgColor %>">
-        <div class="modal-header">
-          <h5 class="modal-title mr-2" id="staticBackdropLabel">
-            Header
-          </h5>
-
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <%% if(popup) { %>
-            <h5 class="popup-text align-middle <%%= popup.msgFontSize %> <%%= popup.msgColor %> ">
-              <%%= popup.message %>
+  <div class="row">
+    <div class="col">
+      <ul>
+        <%% popup.forEach(p=> { %>
+          <li>
+            <h5>
+              <%%= p.message %>
             </h5>
-            <%% } %>
-        </div>
-        <div class="modal-footer">
-
-          <button class="btn btn-sm btn-outline-danger">
-            Confirm
-          </button>
-
-        </div>
-      </div>
+          </li>
+          <%% }) %>
+      </ul>
     </div>
   </div>
 
-  <!-- go back button -->
-  <%- include ../partials/go-back-admin-btn -%>
+  <!-- modal window to preview alert message -->
+  <%- include ../../partials/popup-modal -%>
 
 
-    <%- include ../partials/footer -%>
+    <!-- go back button -->
+    <%- include ../partials/go-back-admin-btn -%>
+
+
+      <%- include ../partials/footer -%>

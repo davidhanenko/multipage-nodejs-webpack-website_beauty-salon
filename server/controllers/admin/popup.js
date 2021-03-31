@@ -1,14 +1,14 @@
 const Popup = require('../../models/popup')
 const Service = require('../../models/service')
 const Price = require('../../models/service-price')
-const cloudinary = require('../../utils/cloudinary')
+// const cloudinary = require('../../utils/cloudinary')
 const { renderEJS } = require('../../middleware/template')
-const { validationResult } = require('express-validator')
+// const { validationResult } = require('express-validator')
 const logger = require('../../utils/logger')
 
 //show popup page
 module.exports.showPopupPage = async (req, res) => {
-  const popup = (await Popup.findOne({}))
+  const popup = (await Popup.find({}))
   const services = await Service.find({}, 'title template')
   const prices = await Price.find({}, 'serviceTitle')
   await renderEJS(res, 'admin/popup/popup', {
@@ -28,10 +28,11 @@ module.exports.showPopupPage = async (req, res) => {
 module.exports.createNewMessage = async (req, res) => {
 
   try {
-    const { message, msgFontSize, msgColor, msgBgColor } = req.body
+    const { message, title, msgFontSize, msgColor, msgBgColor } = req.body
 
     let newMessage = {
       message,
+      title,
       msgFontSize,
       msgColor,
       msgBgColor

@@ -14,7 +14,7 @@ module.exports.index = async (req, res) => {
   // logout from admin
   req.logout()
 
-  const popup = await Popup.find({})
+  const popup = await Popup.findOne({})
   const services = await Service.find({})
   const prices = await Price.find({}).populate('unitPrice')
   const contacts = await Contact.find({})
