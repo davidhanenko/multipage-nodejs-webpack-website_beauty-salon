@@ -23,7 +23,7 @@ $('.create-button').on('click', function () {
 })
 
 const msgText = document.querySelector('.msg-text')
-const msgTextTitle = document.querySelector('.msg-text-title')
+const msgTitle = document.querySelector('.msg-title')
 const newMessage = document.querySelector('.new-area')
 const newTitle = document.querySelector('.new-area-title')
 const msgFontSize = document.querySelector('.msg-font-size')
@@ -47,28 +47,31 @@ const msgBgColorArr = [
   'bgLPurple',
   'bgDPurple'
 ]
+
+// show title
+msgTitle.addEventListener(
+  'change',
+  (e) => (newTitle.textContent = e.target.value)
+)
 // show text
 msgText.addEventListener(
   'change',
   (e) => (newMessage.textContent = e.target.value)
 )
-msgTextTitle.addEventListener(
-  'change',
-  (e) => (newTitle.textContent = e.target.value)
-)
-// change font size
+
+// change message font size
 msgFontSize.addEventListener('change', (e) => {
   newMessage.classList.remove(...fsArr)
   newMessage.classList.add(e.target.value)
 })
 
-// change text color
+// change message text color
 msgColor.addEventListener('change', (e) => {
   newMessage.classList.remove(...msgColorArr)
   newMessage.classList.add(e.target.value)
 })
 
-// change background color
+// change message background color
 msgBgColor.addEventListener('change', (e) => {
   newMessage.classList.remove(...msgBgColorArr)
   newMessage.classList.add(e.target.value)

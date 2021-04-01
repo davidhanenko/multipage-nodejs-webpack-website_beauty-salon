@@ -54,58 +54,108 @@
           <form action="/admin/popup" method="POST" class="create-new-form">
             <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
 
+
             <div class="row">
-              <div class="col-6">
-                <p class="mb-0">Alert/message header/tittle:</p>
-
-                <input class="msg-text-title mb-2" type="text" name="title">
-
-                <p class="mb-0">Create new message:</p>
-
-                <textarea type="text" class="msg-text form-control" name="message" rows="4"></textarea>
-              </div>
-              <div class="col-6">
-                <select class="msg-font-size form-select form-select-sm" name="msgFontSize"
-                  aria-label=".form-select-sm example">
-                  <option selected>Font size</option>
-                  <option value="fs-1">1</option>
-                  <option value="fs-2">2</option>
-                  <option value="fs-3">3</option>
-                  <option value="fs-4">4</option>
-                  <option value="fs-5">5</option>
-                </select>
-                <select class="new msg-color form-select form-select-sm" name="msgColor"
-                  aria-label=".form-select-sm example">
-                  <option selected>Font color</option>
-                  <option value="textDark">Black</option>
-                  <option value="textWhite">White</option>
-                  <option value="textRed">Red</option>
-                  <option value="textBlue">Blue</option>
-                  <option value="textGreen">Green</option>
-                  <option value="textPurple">Purple</option>
-                </select>
-                <select class="msg-bg-color form-select form-select-sm" name="msgBgColor"
-                  aria-label=".form-select-sm example">
-                  <option selected>Background color</option>
-                  <option value="bgTransparent">Transparent</option>
-                  <option value="bgWhite">White</option>
-                  <option value="bgDWhite">Darker White</option>
-                  <option value="bgLPink">Light pink</option>
-                  <option value="bgLPurple">Light purple</option>
-                  <option value="bgDPurple">Darker purple</option>
-                </select>
-
+              <!-- main row -->
+              <div class="col-12">
+                <hr>
 
                 <div class="row">
+                  <!-- title -->
+                  <div class="col-6">
+                    <p class="mb-0">Alert/message header/tittle:</p>
+                    <input class="msg-title mb-2" type="text" name="title">
+                  </div>
+                  <div class="col-6">
+                    <select class="msg-font-size form-select form-select-sm" name="msgFontSize"
+                      aria-label=".form-select-sm example">
+                      <option selected>Font size</option>
+                      <option value="fs-1">1</option>
+                      <option value="fs-2">2</option>
+                      <option value="fs-3">3</option>
+                      <option value="fs-4">4</option>
+                      <option value="fs-5">5</option>
+                    </select>
+                    <select class="new msg-color form-select form-select-sm" name="msgColor"
+                      aria-label=".form-select-sm example">
+                      <option selected>Font color</option>
+                      <option value="textDark">Black</option>
+                      <option value="textWhite">White</option>
+                      <option value="textRed">Red</option>
+                      <option value="textBlue">Blue</option>
+                      <option value="textGreen">Green</option>
+                      <option value="textPurple">Purple</option>
+                    </select>
+                    <select class="msg-bg-color form-select form-select-sm" name="msgBgColor"
+                      aria-label=".form-select-sm example">
+                      <option selected>Background color</option>
+                      <option value="bgTransparent">Transparent</option>
+                      <option value="bgWhite">White</option>
+                      <option value="bgDWhite">Darker White</option>
+                      <option value="bgLPink">Light pink</option>
+                      <option value="bgLPurple">Light purple</option>
+                      <option value="bgDPurple">Darker purple</option>
+                    </select>
+                  </div>
+                </div> <!-- title -->
+
+                <hr>
+
+                <div class="row">
+                  <!-- message -->
+                  <div class="col-6">
+                    <p class="mb-0">Create new message:</p>
+
+                    <textarea type="text" class="msg-text form-control" name="message" rows="4"></textarea>
+                  </div>
+
+                  <div class="col-6">
+                    <select class="msg-font-size form-select form-select-sm" name="msgFontSize"
+                      aria-label=".form-select-sm example">
+                      <option selected>Font size</option>
+                      <option value="fs-1">1</option>
+                      <option value="fs-2">2</option>
+                      <option value="fs-3">3</option>
+                      <option value="fs-4">4</option>
+                      <option value="fs-5">5</option>
+                    </select>
+                    <select class="new msg-color form-select form-select-sm" name="msgColor"
+                      aria-label=".form-select-sm example">
+                      <option selected>Font color</option>
+                      <option value="textDark">Black</option>
+                      <option value="textWhite">White</option>
+                      <option value="textRed">Red</option>
+                      <option value="textBlue">Blue</option>
+                      <option value="textGreen">Green</option>
+                      <option value="textPurple">Purple</option>
+                    </select>
+                    <select class="msg-bg-color form-select form-select-sm" name="msgBgColor"
+                      aria-label=".form-select-sm example">
+                      <option selected>Background color</option>
+                      <option value="bgTransparent">Transparent</option>
+                      <option value="bgWhite">White</option>
+                      <option value="bgDWhite">Darker White</option>
+                      <option value="bgLPink">Light pink</option>
+                      <option value="bgLPurple">Light purple</option>
+                      <option value="bgDPurple">Darker purple</option>
+                    </select>
+                  </div>
+                </div> <!-- message -->
+
+                <hr>
+
+                <div class="row">
+                  <!-- submit btn-->
                   <div class="col">
                     <button type="submit" class="btn btn-lg btn-primary my-2">Submit</button>
                   </div>
-                </div>
+                </div> <!-- submit btn-->
+
+
+
               </div>
 
-            </div>
-
-
+            </div> <!-- main row -->
 
           </form> <!-- create form -->
 
@@ -113,13 +163,7 @@
       </div> <!-- edit row -->
 
 
-
-
-
-
-
-
-
+      <!-- under buttons -->
       <div class="row">
         <div class="col-4">
           <button>Cancel</button>
@@ -136,6 +180,7 @@
         </div>
       </div>
 
+      <!-- New/Editing message formating preview -->
       <section id="create-new-message">
         <div class="row">
           <div class="col-12">
