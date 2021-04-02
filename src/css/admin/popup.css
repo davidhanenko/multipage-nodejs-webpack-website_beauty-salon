@@ -2,24 +2,23 @@
 @import '../admin/go-back-admin-btn.css';
 @import '../popup-modal.css';
 
-
 .container-popup {
   margin-top: 7rem;
 }
 
-.edit-row {
-  background: var(--bg-color-secondary);
-  height: 20rem;
+#current-message {
+  height: 15rem;
+  margin-bottom: 2rem;
 }
 
-.edit-area,
-.create-area {
-  display: none;
+.hr-new {
+  background-color: var(--white);
+  margin-left: 0;
+  width: 85%;
 }
 
 #create-new-message {
   background: var(--white);
-  height: 10rem;
   margin-top: 6rem;
 }
 

@@ -12,4 +12,13 @@ router
   .get(isLoggedIn, catchAsync(popup.showPopupPage))
   .post(isLoggedIn, catchAsync(popup.createNewMessage))
 
+// remove popup-message
+router.put('/', isLoggedIn, catchAsync(popup.removeMsg))
+
+// delete popup-message
+router
+  .route('/:id')
+  .delete(isLoggedIn, catchAsync(popup.deleteMsg))
+  .put(isLoggedIn, catchAsync(popup.setMsg))
+
 module.exports = router

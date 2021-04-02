@@ -15,15 +15,29 @@
             <h2 class="admin-section my-4">Create new or Edit exist popup message</h2>
           </div>
 
-          <div class="col-12 col-md-8 d-flex">
-            <h5 class="popup-text align-middle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, error.
-            </h5>
+          <div class="col-xs-12 col-md-8 <%%= popupCurrent && popupCurrent.msgBgColor %>">
+
+            <%% if(popupCurrent) { %>
+
+              <h4
+                class="<%%= popupCurrent.titleFontSize %> <%%= popupCurrent.titleColor %> <%%= popupCurrent.titlePosition %>">
+                <%%= popupCurrent.title %>
+              </h4>
+              <h5 class="popup-text align-middle 
+                          <%%= popupCurrent.msgFontSize %> <%%= popupCurrent.msgColor %> ">
+                <%%= popupCurrent.message %>
+              </h5>
+
+              <%% } else { %>
+                <h4>No current mesaages..</h4>
+                <%% } %>
+
           </div>
           <div class="popup-buttons col-12 col-md-4">
             <div class="row">
               <div class="col-4 col-md-12 p-2">
-                <a href="/admin/popup">
-                <button  class="btn btn-sm btn-outline-info">Edit</button>
+                <a href="/admin/popups">
+                  <button class="btn btn-sm btn-outline-info">Edit</button>
                 </a>
               </div>
               <div class="col-4 col-md-12 p-2">

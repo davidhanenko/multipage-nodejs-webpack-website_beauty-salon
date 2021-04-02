@@ -4,8 +4,11 @@ const previousSchema = new mongoose.Schema({ text: String })
 const popupSchema = new mongoose.Schema({
   message: String,
   title: String,
-  
 
+  titleFontSize: String,
+  titleColor: String,
+  titlePosition: String,
+  
   msgFontSize: String,
   msgColor: String,
   msgBgColor: String,

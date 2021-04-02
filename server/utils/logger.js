@@ -11,7 +11,6 @@ const timezoned = () => {
 }
 
 const logger = createLogger({
-  level: 'info',
   format: format.combine(
     format.timestamp({ format: timezoned }),
     format.colorize(),
@@ -44,12 +43,12 @@ const logger = createLogger({
   ]
 })
 
-// if (process.env.NODE_ENV !== 'production') {
-logger.add(
-  new transports.Console({
-    format: format.simple()
-  })
-)
-// }
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new transports.Console({
+      format: format.simple()
+    })
+  )
+}
 
 module.exports = logger

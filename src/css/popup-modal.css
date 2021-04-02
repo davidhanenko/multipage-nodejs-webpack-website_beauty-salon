@@ -69,12 +69,22 @@
   background: transparent;
 }
 
+/* title positions */
+.title-left {
+  text-align: left;
+}
+.title-center {
+  text-align: center;
+}
+.title-right {
+  text-align: right;
+}
 
 /* modal */
 .modal-header {
-    border-bottom: 0 none;
+  border-bottom: 0 none;
 }
 
 .modal-footer {
-    border-top: 0 none;
+  border-top: 0 none;
 }

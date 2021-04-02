@@ -8,13 +8,15 @@ const logger = require('../../utils/logger')
 
 //show popup page
 module.exports.showPopupPage = async (req, res) => {
-  const popup = (await Popup.find({}))
+  const popupCurrent = await Popup.findOne({ current: true })
+  const popups = await Popup.find({})
   const services = await Service.find({}, 'title template')
   const prices = await Price.find({}, 'serviceTitle')
   await renderEJS(res, 'admin/popup/popup', {
     csrfToken: req.csrfToken(),
     cspNonce: res.locals.cspNonce,
-    popup,
+    popups,
+    popupCurrent,
     services,
     prices,
     title: 'Popup messages',
@@ -22,11 +24,8 @@ module.exports.showPopupPage = async (req, res) => {
   })
 }
 
-
-
 // create new popup message
 module.exports.createNewMessage = async (req, res) => {
-
   try {
     const { message, title, msgFontSize, msgColor, msgBgColor } = req.body
 
@@ -39,11 +38,56 @@ module.exports.createNewMessage = async (req, res) => {
     }
 
     await Popup.create(newMessage)
-    res.redirect('/admin/popup')
+    res.redirect('/admin/popups')
   } catch (err) {
     logger.error('From admin/popup page:' + err.message)
     req.flash('error', err.message)
     res.redirect('back')
+  }
+}
+
+// remove from main page
+module.exports.removeMsg = async (req, res) => {
+  try {
+    await Popup.findOneAndUpdate({ current: true }, { current: false })
+    req.flash('success', 'Message removed')
+    res.redirect('/admin/popups')
+  } catch (err) {
+    logger.error('From Popups/delete:' + err)
+    req.flash('error', err.message)
+  }
+}
+
+// set as current on main page
+module.exports.setMsg = async (req, res) => {
+  let popup = await Popup.find({ current: true })
+  console.log(popup)
+
+  try {
+    // not possible set current message if one is already selected
+    if (popup && popup.length > 0) {
+      req.flash('error', 'Before set new, remove current popup message')
+      return res.redirect('back')
+    } else {
+      await Popup.findByIdAndUpdate(req.params.id, { current: true })
+      req.flash('success', 'Message set as current')
+      res.redirect('/admin/popups')
+    }
+  } catch (err) {
+    logger.error('From Popups/set:' + err)
+    req.flash('error', err.message)
+  }
+}
+
+// delete popup-message
+module.exports.deleteMsg = async (req, res) => {
+  try {
+    await Popup.findByIdAndDelete(req.params.id)
+    req.flash('success', 'Message deleted')
+    res.redirect('/admin/popups')
+  } catch (err) {
+    logger.error('From Popups/delete:' + err)
+    req.flash('error', err.message)
   }
 }
 
