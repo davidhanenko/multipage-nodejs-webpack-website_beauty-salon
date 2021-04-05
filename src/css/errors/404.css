@@ -106,7 +106,19 @@ body {
 
 /* @media */
 @media (max-width: 501px) {
-   #error {
-    font-size: .5rem;
+  #error h2 {
+    font-size: 3.5rem;
   }
-} 
+
+  #error h5 {
+    font-size: 1.3rem;
+  }
+
+  #error ol {
+    padding-left: 3rem;
+  }
+
+  #error li {
+    font-size: 1rem;
+  }
+}
