@@ -1,0 +1,216 @@
+<%- include ../partials/header -%>
+
+  <div class="container">
+
+
+    <div class="row edit-row">
+      <h2>Edit popup message</h2>
+
+      <!-- Edit formating preview -->
+      <div class="row m-0" id="edit-message">
+        <div class="col-md-8 new-edit-area <%%= popup.msgBgColor %> ">
+          <h4
+            class="area-title my-0 pb-3  <%%= popup.titleFontSize %> <%%= popup.titleColor %> <%%= popup.titlePosition %>">
+            <%%= popup.title %>
+          </h4>
+          <h5 class="area-text <%%= popup.msgFontSize %> <%%= popup.msgColor %>">
+            <%%= popup.message %>
+          </h5>
+        </div>
+        <div class="col-md-4 d-md-block">
+          <!-- button to open preview modal window -->
+          <button type="button" class="btn btn-sm btn-info btn-service-delete d-md-block m-2" data-toggle="modal"
+            data-target="#alertModal">
+            Preview
+          </button>
+
+          <!-- popover -->
+          <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+            title="Preview"
+            data-content="To see changes in preview modal window, &quot;Update&quot; changes first.">?</a>
+
+        </div>
+      </div>
+
+
+      <!-- edit popup-message area -->
+      <div class="col-12 create-area">
+        <form action="/admin/popups/popup-message/<%%= popup._id %>?_method=PUT" method="POST">
+          <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+
+          <div class="row">
+            <!-- main row -->
+            <div class="col-12">
+
+              <hr class="hr-new">
+
+              <div class="row">
+                <!-- title -->
+                <div class="col-md-6">
+                  <p class="mb-0">Alert/message header/tittle:</p>
+                  <input class="msg-title mb-2" type="text" name="title" value="<%%= popup.title %>">
+                </div>
+                <div class="col-md-6">
+                  <select class="title-font-size form-select form-select-sm" name="titleFontSize"
+                    aria-label="form-select-sm example">
+                    <option selected>
+                      <%%= popup.titleFontSize %>
+                    </option>
+                    <option disabled></option>
+                    <option value="fs-1">fs-1</option>
+                    <option value="fs-2">fs-2</option>
+                    <option value="fs-3">fs-3</option>
+                    <option value="fs-4">fs-4</option>
+                    <option value="fs-5">fs-5</option>
+                  </select>
+                  <select class="new title-color form-select form-select-sm" name="titleColor"
+                    aria-label="form-select-sm example">
+                    <option selected>
+                      <%%= popup.titleColor %>
+                    </option>
+                    <option disabled></option>
+                    <option value="text-dark">text-dark</option>
+                    <option value="text-white">text-white</option>
+                    <option value="text-red">text-red</option>
+                    <option value="text-blue">text-blue</option>
+                    <option value="text-purple">text-purple</option>
+                    <option value="text-purple">text-purple</option>
+                  </select>
+                  <select class="title-position form-select form-select-sm" name="titlePosition"
+                    aria-label="form-select-sm example">
+                    <option selected>
+                      <%%= popup.titlePosition %>
+                    </option>
+                    <option disabled></option>
+                    <option value="title-left">title-left</option>
+                    <option value="title-center">title-center</option>
+                    <option value="title-right">title-right</option>
+                  </select>
+                </div>
+              </div> <!-- title -->
+
+              <hr class="hr-new">
+
+              <div class="row">
+                <!-- message -->
+                <div class="col-md-6">
+                  <p class="mb-0">Create new message:</p>
+
+                  <textarea type="text" class="msg-text form-control mb-2" name="message"
+                    rows="4"><%%= popup.message %></textarea>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-12">
+
+
+                      <select class="msg-font-size form-select form-select-sm" name="msgFontSize"
+                        aria-label="form-select-sm example">
+                        <option selected>
+                          <%%= popup.msgFontSize %>
+                        </option>
+                        <option disabled></option>
+                        <option value="fs-1">fs-1</option>
+                        <option value="fs-2">fs-2</option>
+                        <option value="fs-3">fs-3</option>
+                        <option value="fs-4">fs-4</option>
+                        <option value="fs-5">fs-5</option>
+                      </select>
+                      <select class="new msg-color form-select form-select-sm" name="msgColor"
+                        aria-label="form-select-sm example">
+                        <option selected>
+                          <%%= popup.msgColor %>
+                        </option>
+                        <option disabled></option>
+                        <option value="text-dark">text-dark</option>
+                        <option value="text-white">text-white</option>
+                        <option value="text-red">text-red</option>
+                        <option value="text-blue">text-blue</option>
+                        <option value="text-purple">text-purple</option>
+                      </select>
+                      <select class="msg-bg-color form-select form-select-sm" name="msgBgColor"
+                        aria-label="form-select-sm example">
+                        <option selected>
+                          <%%= popup.msgBgColor %>
+                        </option>
+                        <option disabled></option>
+                        <option value="bg-white">bg-white</option>
+                        <option value="bg-darker-white">bg-darker-white</option>
+                        <option value="bg-light-pink">bg-light-pink</option>
+                        <option value="bg-light-purple">bg-light-purple</option>
+                        <option value="bg-darker-purple">bg-darker-purple</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row p-3">
+                    <!--submit btn-->
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-lg btn-primary m-2">Update</button>
+
+
+                    </div>
+                  </div>
+                  <!--submit btn-->
+                </div>
+              </div> <!-- message -->
+
+              <hr class="hr-new">
+
+
+            </div>
+
+          </div> <!-- main row -->
+
+        </form> <!-- cedit form -->
+
+      </div> <!-- edit area -->
+    </div> <!-- edit row -->
+
+    <div class="container">
+      <a class="btn btn-secondary btn-go-back my-5" href="/admin/popups"><span id="chev-left"></span><span
+          class="ml-2">GO
+          BACK</span></a>
+    </div>
+
+  </div>
+
+
+  <!-- modal window to preview popup message -->
+  <div class="modal fade" id="alertModal" data-backdrop="static" data-keyboard="true" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content <%%= popup && popup.msgBgColor %>">
+        <div class="row modal-header">
+
+          <div class="col-10">
+            <%% if(popup && popup.title) { %>
+              <h5
+                class="modal-title mr-2 <%%= popup.titleFontSize %> <%%= popup.titleColor %> <%%= popup.titlePosition %>">
+                <%%= popup.title %>
+              </h5>
+              <%% } %>
+          </div>
+          <div class="col-2">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="modal-body">
+          <%% if(popup) { %>
+            <h5 class="popup-text align-middle <%%= popup.msgFontSize %> <%%= popup.msgColor %> ">
+              <%%= popup.message %>
+            </h5>
+            <%% } %>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include ../partials/footer -%>

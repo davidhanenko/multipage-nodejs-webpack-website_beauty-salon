@@ -1,3 +1,4 @@
+@import 'popup.css';
 @import 'contacts.css';
 @import 'prices.css';
 @import 'header.css';
@@ -20,13 +21,9 @@ h2 {
 }
 
 /*Popup  */
-.popup-text {
-  padding: 2rem;
-  background: var(--white);
-}
 
 .popup-buttons .btn {
-  width: 35%;
+  width: 8rem;
 }
 
 /* About */
@@ -199,8 +196,8 @@ h2 {
   }
 
   .popup-buttons .btn {
-  width: 90%;
-}
+    width: 90%;
+  }
 }
 
 @media (max-width: 376px) {

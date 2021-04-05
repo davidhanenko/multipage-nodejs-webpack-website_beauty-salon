@@ -7,9 +7,9 @@ body {
   padding: 0;
 }
 
-.error {
+#error {
   background-image: url('../../imgs/main-img.jpg');
-  height: 38rem;
+  min-height: 38rem;
   position: relative;
   background-position: center;
   background-size: cover;
@@ -32,7 +32,7 @@ body {
   background: rgba(37, 22, 37, 0.507);
 }
 
-.error h1 {
+#error h1 {
   z-index: 1;
   position: relative;
   display: block;
@@ -43,7 +43,7 @@ body {
   padding-top: 5rem;
 }
 
-.error h2 {
+#error h2 {
   z-index: 1;
   position: relative;
   display: block;
@@ -52,7 +52,7 @@ body {
   font-size: 4rem;
 }
 
-.error h5 {
+#error h5 {
   z-index: 1;
   position: relative;
   display: block;
@@ -61,7 +61,7 @@ body {
   font-size: 1.7rem;
 }
 
-.error ol {
+#error ol {
   display: block;
   z-index: 1;
   position: relative;
@@ -71,7 +71,7 @@ body {
   list-style-type: disc;
 }
 
-.error li {
+#error li {
   font-size: 1.4rem;
 }
 
@@ -105,8 +105,8 @@ body {
 }
 
 /* @media */
-@media (max-width: 540px) {
-  html {
-    font-size: 75%;
+@media (max-width: 501px) {
+   #error {
+    font-size: .5rem;
   }
-}
+} 

@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-import 'popper.js'
+
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 global.jQuery = require('jquery')

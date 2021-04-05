@@ -15,7 +15,7 @@ const { validationResult } = require('express-validator')
 
 // main page for admin
 module.exports.main = async (req, res) => {
-   const popupCurrent = await Popup.findOne({ current: true })
+  const popupCurrent = await Popup.findOne({ current: true })
   const services = await Service.find({})
   const gallery = await Gallery.find({})
   const about = await About.findOne({}, 'image about')
