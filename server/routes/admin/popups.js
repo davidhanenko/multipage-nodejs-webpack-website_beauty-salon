@@ -1,11 +1,6 @@
 const { Router } = require('express')
 const router = Router({ mergeParams: true })
 const popup = require('../../controllers/admin/popup')
-<<<<<<< HEAD:server/routes/admin/popup.js
-
-// const multer = require('../../utils/multer')
-=======
->>>>>>> developing:server/routes/admin/popups.js
 const { isLoggedIn } = require('../../middleware/admin')
 const catchAsync = require('../../utils/catchAsync')
 
