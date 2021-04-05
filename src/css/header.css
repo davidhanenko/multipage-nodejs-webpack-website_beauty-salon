@@ -176,6 +176,7 @@ button.navbar-toggler {
   transition: background 800ms;
 }
 
+
 @media (max-width: 767px) {
   .dropdownScrolled {
     background: transparent;

@@ -14,7 +14,7 @@ module.exports.index = async (req, res) => {
   // logout from admin
   req.logout()
 
-  const popup = await Popup.findOne({})
+  const popupCurrent = await Popup.findOne({ current: true })
   const services = await Service.find({})
   const prices = await Price.find({}).populate('unitPrice')
   const contacts = await Contact.find({})
@@ -28,7 +28,7 @@ module.exports.index = async (req, res) => {
     title: 'Ilona',
     data,
     errors,
-    popup,
+    popupCurrent,
     services,
     prices,
     contacts
@@ -95,7 +95,7 @@ module.exports.email = async (req, res) => {
       })
 
       req.flash('success', 'Thanks for the message! We‘ll be in touch')
-    
+
       req.session.data = null
       req.session.errors = null
       res.redirect('/')

@@ -1,166 +1,286 @@
 <%- include ../partials/header -%>
 
-  <div class="container">
-    <div class="container-popup">
-
-      <div class="row edit-row">
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-12">
-              <%% if(popup) { %>
-                <h5 class="popup-text align-middle 
-                <%%= popup[0].msgFontSize %> <%%= popup[0].msgColor %> <%%= popup[0].msgBgColor %>">
-                  <%%= popup[0].message %>
-                </h5>
-                <%% } else { %>
-                  <h4>No current mesaages..</h4>
-                  <%% } %>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-4">
-              <button type="button" class="btn btn-sm btn-warning edit-button">Edit text</button>
-            </div>
-            <div class="col-4">
-              <button type="button" class="btn btn-sm btn-success create-button">Create new</button>
-            </div>
-            <div class="col-4">
-              <button>Delete</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- edit area for message-->
-        <div class="col-12 edit-area">
-          <div class="row ">
-            <div class="col-6">
-              <p>Edit current message</p>
-              <textarea type="text" class="form-control my-2" name="editArea" rows="4"></textarea>
-            </div>
-            <div class="col-6">
-              <button>Font size</button>
-              <button>Font color</button>
-              <button>Bg color</button>
-            </div>
-          </div>
-        </div>
+  <div class="container container-popup">
+    <!-- container -->
 
 
+    <!-- current popup message -->
+    <div class="row m-2">
+      <div class="col-12">
+        <h2>Current message</h2>
+      </div>
+    </div>
+    <div class="row d-flex" id="current-message">
+      <!-- current -->
 
-        <!-- create new area for message -->
-        <div class="col-12 create-area">
-          <form action="/admin/popup" method="POST" class="create-new-form">
-            <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+      <div class="col-md-8 <%%= popupCurrent && popupCurrent.msgBgColor %>">
+        <%% if(popupCurrent) { %>
+          <h4
+            class="<%%= popupCurrent.titleFontSize %> <%%= popupCurrent.titleColor %> <%%= popupCurrent.titlePosition %>">
+            <%%= popupCurrent.title %>
+          </h4>
+          <h5 class="popup-text align-middle 
+                <%%= popupCurrent.msgFontSize %> <%%= popupCurrent.msgColor %> ">
+            <%%= popupCurrent.message %>
+          </h5>
+          <%% } else { %>
+            <h4>No current messages..</h4>
+            <h4>Create a new message or choose one from the list to show it on the main page.</h4>
+            <%% } %>
+      </div>
+      <div class="col-md-4 d-md-block">
+        <%% if(popupCurrent) { %>
+          <a href="/admin/popups/popup-message/<%%= popupCurrent._id %>" type="button"
+            class="btn btn-sm btn-warning edit-button d-md-inline-block m-2">Edit</a>
 
-            <div class="row">
-              <div class="col-6">
-                <p class="mb-0">Alert/message header/tittle:</p>
-
-                <input class="msg-text-title mb-2" type="text" name="title">
-
-                <p class="mb-0">Create new message:</p>
-
-                <textarea type="text" class="msg-text form-control" name="message" rows="4"></textarea>
-              </div>
-              <div class="col-6">
-                <select class="msg-font-size form-select form-select-sm" name="msgFontSize"
-                  aria-label=".form-select-sm example">
-                  <option selected>Font size</option>
-                  <option value="fs-1">1</option>
-                  <option value="fs-2">2</option>
-                  <option value="fs-3">3</option>
-                  <option value="fs-4">4</option>
-                  <option value="fs-5">5</option>
-                </select>
-                <select class="new msg-color form-select form-select-sm" name="msgColor"
-                  aria-label=".form-select-sm example">
-                  <option selected>Font color</option>
-                  <option value="textDark">Black</option>
-                  <option value="textWhite">White</option>
-                  <option value="textRed">Red</option>
-                  <option value="textBlue">Blue</option>
-                  <option value="textGreen">Green</option>
-                  <option value="textPurple">Purple</option>
-                </select>
-                <select class="msg-bg-color form-select form-select-sm" name="msgBgColor"
-                  aria-label=".form-select-sm example">
-                  <option selected>Background color</option>
-                  <option value="bgTransparent">Transparent</option>
-                  <option value="bgWhite">White</option>
-                  <option value="bgDWhite">Darker White</option>
-                  <option value="bgLPink">Light pink</option>
-                  <option value="bgLPurple">Light purple</option>
-                  <option value="bgDPurple">Darker purple</option>
-                </select>
-
-
-                <div class="row">
-                  <div class="col">
-                    <button type="submit" class="btn btn-lg btn-primary my-2">Submit</button>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-
-
-          </form> <!-- create form -->
-
-        </div> <!-- create area -->
-      </div> <!-- edit row -->
-
-
-
-
-
-
-
-
-
-      <div class="row">
-        <div class="col-4">
-          <button>Cancel</button>
-        </div>
-        <div class="col-4">
           <!-- button to open preview modal window -->
-          <button type="button" class="btn btn-sm btn-info btn-service-delete" data-toggle="modal"
+          <button type="button" class="btn btn-sm btn-info btn-service-delete d-md-block m-2" data-toggle="modal"
             data-target="#alertModal">
             Preview
           </button>
-        </div>
-        <div class="col-4">
-          <button>Confirm</button>
-        </div>
+
+          <form class="d-inline" action="/admin/popups?_method=PUT" method="POST">
+            <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+            <button class="m-2">Remove</button>
+          </form>
+
+          <!-- popover -->
+          <a tabindex="0" class="btn btn-round-advice m-3" role="button" data-toggle="popover" data-trigger="focus"
+            title="Popup actions"
+            data-content="&quot;Edit&quot;: make changes to message, &quot;Preview&quot;: preview message, customers will see on the main page, &quot;Remove&quot;: remove message from the main page">?</a>
+
+
+          <%% } %>
+
+
       </div>
+    </div> <!-- current-->
 
-      <section id="create-new-message">
-        <div class="row">
-          <div class="col-12">
-            <h4 class="new-area-title"></h4>
-            <h5 class="new-area"></h5>
-          </div>
+    <hr class="my-5">
+
+    <!-- Previous messages list -->
+    <h2>Previous popup messages</h2>
+    <%% popups.forEach(p=> { %>
+      <div class="row message-list my-3">
+        <!-- previous -->
+        <div class="col-md-8 py-3">
+
+          <h4>
+            <%%= p.title %>
+          </h4>
+          <h5>
+            <%%= p.message %>
+          </h5>
+
         </div>
-      </section>
-    </div>
-  </div>
+        <div class="col-md-4 d-flex my-3 my-md-0 align-items-center">
+
+          <!-- View/edit button -->
+          <a class="btn btn-secondary" href="/admin/popups/popup-message/<%%= p._id %>">Edit</a>
+
+          <!-- delete button -->
+          <button class="btn btn-danger m-1" data-toggle="modal"
+            data-target="#confirmDeleteModal<%%= p._id %>">Delete</button>
 
 
-  <div class="row">
-    <div class="col">
-      <ul>
-        <%% popup.forEach(p=> { %>
-          <li>
-            <h5>
-              <%%= p.message %>
-            </h5>
-          </li>
-          <%% }) %>
-      </ul>
-    </div>
-  </div>
+          <!-- modal window to confirm delete message -->
+          <div class="modal fade" id="confirmDeleteModal<%%= p._id %>" data-backdrop="static" data-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content <%%= p.msgBgColor %>">
+                <div class="modal-header">
+                  <h5 class="modal-title mr-2" id="staticBackdropLabel">
+                    Delete message: <span class="delete-modal-title <%%= p.titleColor %>">
+                      <%%= p.title || null %>
+                    </span>
+                    <p class=" <%%= p.msgColor %>">
+                      <%%= p.message %>
+                  </h5>
+                  </p>
+
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">Please confirm deleting current message from list: </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">
+                    Close
+                  </button>
+                  <form class="d-inline" action="/admin/popups/<%%= p._id %>?_method=DELETE" method="POST">
+                    <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+                    <input type="password" name="permission" placeholder="permission password.." required>
+                    <button class="btn btn-sm btn-danger">
+                      Confirm
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- set as current -->
+          <%% if(!p.current) { %>
+            <form class="d-inline" action="/admin/popups/<%%= p._id %>?_method=PUT" method="POST">
+              <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+              <button class="btn btn-success m-1">Set as current</button>
+            </form>
+            <%% } else { %>
+              <button class="btn btn-success m-1" disabled>Current</button>
+              <%% } %>
+
+        </div>
+
+
+      </div> <!-- previous -->
+      <%% }) %>
+        <%% if(popups.length <= 0) { %>
+          <div class="row">
+            <div class="col-12">
+              <h4>No messages on the list</h4>
+            </div>
+          </div>
+          <%% } %>
+
+
+
+            <hr class="my-5">
+
+            <h2>Create new popup message</h2>
+            <div class="row new-row">
+              <!-- create new popup-message area -->
+              <div class="col-12 create-area">
+                <form action="/admin/popups" method="POST" class="create-new-form">
+                  <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+
+                  <div class="row">
+                    <!-- main row -->
+                    <div class="col-12">
+
+                      <hr class="hr-new">
+
+                      <div class="row">
+                        <!-- title -->
+                        <div class="col-md-6">
+                          <p class="mb-0">Alert/message header/tittle:</p>
+                          <input class="msg-title mb-2" type="text" name="title">
+                        </div>
+                        <div class="col-md-6">
+                          <select class="title-font-size form-select form-select-sm" name="titleFontSize"
+                            aria-label="form-select-sm example">
+                            <option selected>Font size</option>
+                            <option value="fs-1">fs-1</option>
+                            <option value="fs-2">fs-2</option>
+                            <option value="fs-3">fs-3</option>
+                            <option value="fs-4">fs-4</option>
+                            <option value="fs-5">fs-5</option>
+                          </select>
+                          <select class="new title-color form-select form-select-sm" name="titleColor"
+                            aria-label="form-select-sm example">
+                            <option selected>Font color</option>
+                            <option value="text-dark">text-dark</option>
+                            <option value="text-white">text-white</option>
+                            <option value="text-red">text-red</option>
+                            <option value="text-blue">text-blue</option>
+                            <option value="text-purple">text-purple</option>
+                            <option value="text-purple">text-purple</option>
+                          </select>
+                          <select class="title-position form-select form-select-sm" name="titlePosition"
+                            aria-label="form-select-sm example">
+                            <option selected>Title position</option>
+                            <option value="title-left">title-left</option>
+                            <option value="title-center">title-center</option>
+                            <option value="title-right">title-right</option>
+                          </select>
+                        </div>
+                      </div> <!-- title -->
+
+                      <hr class="hr-new">
+
+                      <div class="row">
+                        <!-- message -->
+                        <div class="col-md-6">
+                          <p class="mb-0">Create new message:</p>
+
+                          <textarea type="text" class="msg-text form-control mb-2" name="message" rows="4"></textarea>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="col-12">
+
+
+                              <select class="msg-font-size form-select form-select-sm" name="msgFontSize"
+                                aria-label="form-select-sm example">
+                                <option selected>Font size</option>
+                                <option value="fs-1">fs-1</option>
+                                <option value="fs-2">fs-2</option>
+                                <option value="fs-3">fs-3</option>
+                                <option value="fs-4">fs-4</option>
+                                <option value="fs-5">fs-5</option>
+                              </select>
+                              <select class="new msg-color form-select form-select-sm" name="msgColor"
+                                aria-label="form-select-sm example">
+                                <option selected>Font color</option>
+                                <option value="text-dark">text-dark</option>
+                                <option value="text-white">text-white</option>
+                                <option value="text-red">text-red</option>
+                                <option value="text-blue">text-blue</option>
+                                <option value="text-purple">text-purple</option>
+                              </select>
+                              <select class="msg-bg-color form-select form-select-sm" name="msgBgColor"
+                                aria-label="form-select-sm example">
+                                <option selected>Background color</option>
+                                <option value="bg-white">bg-white</option>
+                                <option value="bg-darker-white">bg-darker-white</option>
+                                <option value="bg-light-pink">bg-light-pink</option>
+                                <option value="bg-light-purple">bg-light-purple</option>
+                                <option value="bg-darker-purple">bg-darker-purple</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="row p-3">
+
+                            <div class="col-12">
+                              <!-- create btn -->
+                              <button type="submit" class="btn btn-lg btn-primary m-2">Create</button>
+
+
+
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div> <!-- message -->
+
+                      <hr class="hr-new">
+
+
+                    </div>
+
+                  </div> <!-- main row -->
+
+                </form> <!-- create form -->
+
+              </div> <!-- create area -->
+            </div> <!-- new row -->
+
+
+
+            <!-- New message formating preview -->
+            <section id="create-new-message">
+              <div class="row m-0">
+                <div class="col-12 new-edit-area">
+                  <h4 class="area-title my-0 pb-3"></h4>
+                  <h5 class="area-text my-0"></h5>
+                </div>
+              </div>
+            </section>
+
+  </div> <!-- container -->
 
   <!-- modal window to preview alert message -->
   <%- include ../../partials/popup-modal -%>

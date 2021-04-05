@@ -4,231 +4,248 @@
 
   <div class="container-fluid p-0 mb-5">
     <div class="container">
-      <h1 class="admin-header">Welcome back, what will we change today?</h1>
+      <h1 class="admin-header">Welcome back. What will we change today?</h1>
 
       <hr>
 
       <!-- Popup/Emergency message -->
-      <div class="container">
+      <div class="container py-5">
+        <h2 class="admin-section my-4">Create new or Edit exist popup message</h2>
         <div class="row">
-          <div class="col-12">
-            <h2 class="admin-section my-4">Create new or Edit exist popup message</h2>
+
+          <div class="col-md-8 popup-message <%%= popupCurrent && popupCurrent.msgBgColor %>">
+            <%% if(popupCurrent) { %>
+              <h4
+                class="<%%= popupCurrent.titleFontSize %> <%%= popupCurrent.titleColor %> <%%= popupCurrent.titlePosition %>">
+                <%%= popupCurrent.title %>
+              </h4>
+              <h5 class="popup-text align-middle 
+                          <%%= popupCurrent.msgFontSize %> <%%= popupCurrent.msgColor %> ">
+                <%%= popupCurrent.message %>
+              </h5>
+              <%% } else { %>
+                <h4>No current mesaages..</h4>
+                <h4>Create a new message or choose one from the list to show it on the main page.</h4>
+                <%% } %>
           </div>
 
-          <div class="col-12 col-md-8 d-flex">
-            <h5 class="popup-text align-middle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, error.
-            </h5>
+          <div class="col-md-4 popup-buttons">
+
+            <a href="/admin/popups" class="btn btn-sm btn-outline-info d-md-block m-2">View
+            </a>
+
+            <%% if(popupCurrent) { %>
+              <form class="d-inline" action="/admin/popups?_method=PUT" method="POST">
+                <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+                <button class="btn btn-sm btn-outline-secondary d-md-block m-2">Remove</button>
+              </form>
+              <%% } %>
+
+
           </div>
-          <div class="popup-buttons col-12 col-md-4">
-            <div class="row">
-              <div class="col-4 col-md-12 p-2">
-                <a href="/admin/popup">
-                <button  class="btn btn-sm btn-outline-info">Edit</button>
-                </a>
-              </div>
-              <div class="col-4 col-md-12 p-2">
-                <button class="btn btn-sm btn-outline-secondary">Remove current</button>
-              </div>
-              <div class="col-4 col-md-12 p-2">
-                <button class="btn btn-sm btn-outline-danger">Delete current</button>
-              </div>
-            </div>
-          </div>
+          <!-- popover -->
+          <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+            title="Popup messages"
+            data-content="&quot;View&quot;: to go to Popup page. &quot;Remove&quot;: to remove current message from the main page.">?</a>
         </div>
+
       </div>
-
-      <hr>
-
     </div>
 
-    <!-- About page -->
-    <div class="container-fluid p-0 my-5">
-      <div class="row about">
-        <div class="col-12">
-          <h2 class="admin-section my-4">Make changes to About page</h2>
+    <hr>
+
+  </div>
+
+  <!-- About page -->
+  <div class="container-fluid p-0 my-5">
+    <div class="row about">
+      <div class="col-12">
+        <h2 class="admin-section my-4">Make changes to About page</h2>
+      </div>
+      <div class="col-12 col-md-6 text-center">
+        <img src="<%%= about.image.url %>" alt="About image.">
+      </div>
+      <div class="col-12 col-md-6 mt-4 mt-md-0">
+        <p>
+          <%%= about.about %>
+        </p>
+      </div>
+      <div class="col-12 my-5">
+        <a href="/admin/about">
+          <button type="button" class="btn btn-secondary btn-block">
+            Viev About page
+          </button>
+        </a>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+
+  <!--Gallery  -->
+  <div class="container">
+    <hr>
+    <h2 class="admin-section my-4">Make changes to Gallery</h2>
+
+    <div class="gallary-images flex">
+
+      <%% gallery.forEach(img=> { %>
+        <div class="gallery-image flex-item">
+          <img src="<%%= img.galleryImage.url %>">
         </div>
-        <div class="col-12 col-md-6 text-center">
-          <img src="<%%= about.image.url %>" alt="About image.">
-        </div>
-        <div class="col-12 col-md-6 mt-4 mt-md-0">
-          <p>
-            <%%= about.about %>
-          </p>
-        </div>
-        <div class="col-12 my-5">
-          <a href="/admin/about">
-            <button type="button" class="btn btn-secondary btn-block">
-              Viev About page
-            </button>
+        <%% })%>
+    </div>
+
+    <a class="btn btn-secondary btn-block mt-4" href="/admin/gallery">Go to Gallery</a>
+    <hr class="my-5">
+  </div>
+
+
+
+  <!-- Services -->
+  <div class="container-fluid my-5">
+
+    <div class="row services p-4">
+      <div class="col-12">
+        <h2 class="admin-section my-4">Chose Service you want to EDIT or DELETE</h2>
+      </div>
+
+      <%% services.forEach(service=> { %>
+        <div class="col-6 col-md-4 mt-3 service-admin">
+          <a href="/admin/services/<%%= service.title %>">
+            <div class="img-gradient">
+              <img class="img-service-admin" src="<%%= service.imageMain.url %>" alt="<%%= service.title %>" />
+              <h4>
+                <%%= service.title %>
+              </h4>
+            </div>
           </a>
         </div>
-      </div>
+        <%% }) %>
+
+          <a class="btn btn-block btn-secondary mt-5 mb-4" href="/admin/services/service-new">Add new service</a>
+
     </div>
 
 
-    <!--Gallery  -->
-    <div class="container">
-      <hr>
-      <h2 class="admin-section my-4">Make changes to Gallery</h2>
+  </div>
 
-      <div class="gallary-images flex">
 
-        <%% gallery.forEach(img=> { %>
-          <div class="gallery-image flex-item">
-            <img src="<%%= img.galleryImage.url %>">
+  <!-- Prices -->
+  <div class="container my-5">
+    <hr />
+    <div class="row">
+      <div class="col-12">
+        <h2 class="admin-section my-4">EDIT or DELETE services Prices</h2>
+      </div>
+      <%% prices.forEach(price=> { %>
+
+        <div class="col-md-3 prices">
+          <div>
+            <h4 class="pb-2">
+              <%%= price.serviceTitle %>
+            </h4>
+            <a class="btn btn-info" href="/admin/prices/<%%= price._id %>">View</a>
+            <button type="button" class="btn btn-danger" data-toggle="modal"
+              data-target="#confirmDeleteModal<%%= price._id %>">Delete</button>
+
           </div>
-          <%% })%>
-      </div>
-
-      <a class="btn btn-secondary btn-block mt-4" href="/admin/gallery">Go to Gallery</a>
-      <hr class="my-5">
-    </div>
-
-
-
-    <!-- Services -->
-    <div class="container-fluid my-5">
-
-      <div class="row services p-4">
-        <div class="col-12">
-          <h2 class="admin-section my-4">Chose Service you want to EDIT or DELETE</h2>
-        </div>
-
-        <%% services.forEach(service=> { %>
-          <div class="col-6 col-md-4 mt-3 service-admin">
-            <a href="/admin/services/<%%= service.title %>">
-              <div class="img-gradient">
-                <img class="img-service-admin" src="<%%= service.imageMain.url %>" alt="<%%= service.title %>" />
-                <h4>
-                  <%%= service.title %>
-                </h4>
-              </div>
-            </a>
-          </div>
-          <%% }) %>
-
-            <a class="btn btn-block btn-secondary mt-5 mb-4" href="/admin/services/service-new">Add new service</a>
-
-      </div>
-
-
-    </div>
-
-
-    <!-- Prices -->
-    <div class="container my-5">
-      <hr />
-      <div class="row">
-        <div class="col-12">
-          <h2 class="admin-section my-4">EDIT or DELETE services Prices</h2>
-        </div>
-        <%% prices.forEach(price=> { %>
-
-          <div class="col-md-3 prices">
-            <div>
-              <h4 class="pb-2">
-                <%%= price.serviceTitle %>
-              </h4>
-              <a class="btn btn-info" href="/admin/prices/<%%= price._id %>">View</a>
-              <button type="button" class="btn btn-danger" data-toggle="modal"
-                data-target="#confirmDeleteModal<%%= price._id %>">Delete</button>
-
-            </div>
-            <!-- modal window to confirm delete price block -->
-            <div class="modal fade" id="confirmDeleteModal<%%= price._id %>" data-backdrop="static"
-              data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">
-                      Delete price: <%%= price.serviceTitle %>?
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">Please confirm deleting the price</div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                      Close
-                    </button>
-                    <form class="d-inline" action="/admin/prices/<%%= price._id %>?_method=DELETE" method="POST">
-                      <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
-                      <button class="btn btn-danger">Confirm</button>
-                    </form>
-                    </form>
-                  </div>
+          <!-- modal window to confirm delete price block -->
+          <div class="modal fade" id="confirmDeleteModal<%%= price._id %>" data-backdrop="static" data-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">
+                    Delete price: <%%= price.serviceTitle %>?
+                  </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">Please confirm deleting the price</div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Close
+                  </button>
+                  <form class="d-inline" action="/admin/prices/<%%= price._id %>?_method=DELETE" method="POST">
+                    <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                    <button class="btn btn-danger">Confirm</button>
+                  </form>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <%% }) %>
-      </div>
-      <a class="btn btn-block btn-secondary mt-5 mb-5" href="/admin/prices/price-new">Add new price</a>
-      <hr />
+        <%% }) %>
     </div>
+    <a class="btn btn-block btn-secondary mt-5 mb-5" href="/admin/prices/price-new">Add new price</a>
+    <hr />
+  </div>
 
 
-    <!-- Contacts -->
-    <div id="contacts" class="container-fluid">
-      <div class="row text-center">
-        <div class="col-12 d-flex justify-content-start">
-          <h2 class="admin-section my-4">EDIT or DELETE Contact info</h2>
-        </div>
-        <div class="contact col-md-4 my-3 my-md-0">
-          <h3 class="contact-section location">
-            <span></span>Find us
-            </h2>
-            <%% contacts.forEach(contact=> { %>
-              <h4 class="contact-data">
-                <%%= contact.address1stLine %>
-              </h4>
-              <h5>
-                <%%= contact.address2ndLine %>
-              </h5>
-              <%% }) %>
-        </div>
-        <div class="contact col-md-4 my-1 my-md-0">
-          <h3 class="contact-section telephone">
-            <span></span>Contact us
-          </h3>
+  <!-- Contacts -->
+  <div id="contacts" class="container-fluid">
+    <div class="row text-center">
+      <div class="col-12 d-flex justify-content-start">
+        <h2 class="admin-section my-4">EDIT or DELETE Contact info</h2>
+      </div>
+      <div class="contact col-md-4 my-3 my-md-0">
+        <h3 class="contact-section location">
+          <span></span>Find us
+          </h2>
           <%% contacts.forEach(contact=> { %>
             <h4 class="contact-data">
-              <%%= contact.telephone %>
+              <%%= contact.address1stLine %>
             </h4>
-            <h5><em>
-                <%%= contact.email %>
-              </em></h5>
+            <h5>
+              <%%= contact.address2ndLine %>
+            </h5>
             <%% }) %>
-        </div>
-        <div class="contact col-md-4 my-1 my-md-0">
-          <h3 class="contact-section hours"><span></span>Our hours
-          </h3>
-          <%% contacts.forEach(contact=> { %> <%% if( contact.day || contact.dayFrom || contact.dayTo ||
-              contact.ampmFrom || contact.ampmTo ) { %>
-
-              <h4 class="contact-data">
-                <%% if(contact.day) { %>
-                  <%%= contact.day %>
-                    <%% } else { %>
-                      <%%= contact.dayFrom %>-<%%= contact.dayTo %>
-                          <%% } %> /
-                            <%%= contact.hoursFrom %> : <%%= contact.minsFrom %>
-                                <%%= contact.ampmFrom %>-<%%= contact.hoursTo%>:<%%= contact.minsTo%>
-                                      <%%= contact.ampmTo%>
-              </h4>
-              <%% } %>
-                <%% }) %>
-        </div>
-        <div class="col-12">
-          <a class="btn btn-secondary btn-block my-5" href="/admin/contacts/contacts-edit">View and edit contacts</a>
-        </div>
-
       </div>
+      <div class="contact col-md-4 my-1 my-md-0">
+        <h3 class="contact-section telephone">
+          <span></span>Contact us
+        </h3>
+        <%% contacts.forEach(contact=> { %>
+          <h4 class="contact-data">
+            <%%= contact.telephone %>
+          </h4>
+          <h5><em>
+              <%%= contact.email %>
+            </em></h5>
+          <%% }) %>
+      </div>
+      <div class="contact col-md-4 my-1 my-md-0">
+        <h3 class="contact-section hours"><span></span>Our hours
+        </h3>
+        <%% contacts.forEach(contact=> { %> <%% if( contact.day || contact.dayFrom || contact.dayTo || contact.ampmFrom
+            || contact.ampmTo ) { %>
 
+            <h4 class="contact-data">
+              <%% if(contact.day) { %>
+                <%%= contact.day %>
+                  <%% } else { %>
+                    <%%= contact.dayFrom %>-<%%= contact.dayTo %>
+                        <%% } %> /
+                          <%%= contact.hoursFrom %> : <%%= contact.minsFrom %>
+                              <%%= contact.ampmFrom %>-<%%= contact.hoursTo%>:<%%= contact.minsTo%>
+                                    <%%= contact.ampmTo%>
+            </h4>
+            <%% } %>
+              <%% }) %>
+      </div>
+      <div class="col-12">
+        <a class="btn btn-secondary btn-block my-5" href="/admin/contacts/contacts-edit">View and edit contacts</a>
+      </div>
 
     </div>
 
 
-    <%- include ./partials/footer -%>
+  </div>
+
+
+  <%- include ./partials/footer -%>

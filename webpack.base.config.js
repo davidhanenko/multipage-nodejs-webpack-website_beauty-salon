@@ -246,9 +246,13 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: '!!ejs-webpack-loader!./src/views/admin/popup/popup.ejs',
       filename: 'views/admin/popup/popup.ejs',
-      chunks: isDev
-        ? ['admin_popup']
-        : ['admin_popup', 'manifest', 'vendors']
+      chunks: isDev ? ['admin_popup'] : ['admin_popup', 'manifest', 'vendors']
+    }),
+    new HtmlWebPackPlugin({
+      template:
+        '!!ejs-webpack-loader!./src/views/admin/popup/popup-message.ejs',
+      filename: 'views/admin/popup/popup-message.ejs',
+      chunks: isDev ? ['admin_popup'] : ['admin_popup', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
       template: '!!ejs-webpack-loader!./src/views/admin/our_services/atms.ejs',
