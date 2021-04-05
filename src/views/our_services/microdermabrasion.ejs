@@ -1,120 +1,123 @@
 <%- include ../partials/header -%>
 
-<%- include ../partials/services-bunner -%>
+  <%- include ../partials/services-bunner -%>
 
-<%- include ../partials/go-to-top-button -%>
+    <%- include ../partials/go-to-top-button -%>
 
-<div class="container">
-  <div id="main-service">
-
-
-    <%- include ../partials/service-buttons -%>
+      <div class="container">
+        <div id="main-service">
 
 
-    <!-- HR -->
-    <hr class="service-hr">
+          <%- include ../partials/service-buttons -%>
 
 
-    <!-- microdermabration ------------->
-    <div class="every">
+            <!-- HR -->
+            <hr class="service-hr">
 
-      <div class="row text-center">
-        <div class="col justify-content-center">
-          <h2>
-            <%%= service.title %>
-          </h2>
+
+            <!-- microdermabration ------------->
+            <div class="every">
+
+              <div class="row text-center">
+                <div class="col justify-content-center">
+                  <h2>
+                    <%%= service.title %>
+                  </h2>
+                </div>
+              </div>
+
+              <div class="row descript img-shadow text-center pb-lg-3">
+                <div class="col-lg-6 my-5 my-lg-0">
+                  <img src="<%%= service.image1.url %>" alt="<%%= service.title %>">
+                </div>
+                <div class="col-lg-6 justify-content-center">
+                  <h3 class="pb-2">What is Microdermabrasion</h3>
+                  <p class="text-justify p-2">
+                    <%%= service.description1 %>
+                  </p>
+                </div>
+              </div>
+
+              <div class="row pt-5 ">
+                <div class="col-lg-10 offset-lg-1">
+                  <p class="p-2">
+                    <%%= service.description2 %>
+                  </p>
+
+                </div>
+              </div>
+
+              <div class="row descript img-shadow">
+                <div class="col-lg-6 order-2 order-lg-1">
+                  <h3 class="pb-2">What can microdebration do for your skin:</h3>
+                  <ul>
+                    <li>Vacuum away blackheads</li>
+                    <li>Clean and reduce clogged pores</li>
+                    <li>Exfoliate dull dry skin</li>
+                    <li>Resurface leatherly, sun-damaged skin</li>
+                    <li>Minimize enlarged pores</li>
+                    <li>Polish away mild skin imperfections</li>
+                    <li>Increase circulation</li>
+                    <li>Smooth skin</li>
+                    <li>Erase skin age spots</li>
+                    <li>Simulate production of new young skin cells and collagen</li>
+                    <li>Enhance absorption of skin care products</li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center order-1 order-lg-2 my-4 my-lg-0">
+                  <img src="<%%= service.image2.url %>" alt="<%%= service.title %>">
+                </div>
+              </div>
+
+
+
+              <div class="row mb-5 descript img-shadow  align-items-start">
+                <div class="col-12 col-md-4 mb-5 mb-lg-0">
+                  <h3 class="pb-1">
+                    Feels like
+                  </h3>
+                  <p class="text-center px-2">
+                    The procedure is non-invasive and does not wound your skin’s surface. So it is virtually no
+                    discomfort during or after
+                    microdermabrasion.
+                  </p>
+                </div>
+
+                <div class="col-12 col-md-4 mb-5 mb-lg-0">
+                  <h3 class="pb-1">
+                    How long
+                  </h3>
+                  <p class="text-center px-2">
+                    Face treatment typically takes between 30 and 60 minutes. It takes multiply treatments to melt away
+                    your skin’s
+                    imperfections. Treatments are spaced from two to three weeks apart to allow your skin to recover.
+                  </p>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <h3 class="pb-1">
+                    See results
+                  </h3>
+                  <p class="text-center px-2">
+                    For most patients, after first microdermabrasion appointment, skin will have soft pink, healthy
+                    glow. The
+                    benefits increase as treatment plan progresses until your skin has a sleek, even texture.
+                  </p>
+                </div>
+              </div>
+
+              <!-- before/after photo-slider -->
+              <%- include ../partials/before-after -%>
+            </div>
+
+
         </div>
       </div>
 
-      <div class="row descript img-shadow text-center pb-lg-3">
-        <div class="col-lg-6 my-5 my-lg-0">
-          <img src="<%%= service.image1.url %>" alt="<%%= service.title %>">
-        </div>
-        <div class="col-lg-6 justify-content-center">
-          <h3 class="pb-2">What is Microdermabrasion</h3>
-          <p class="text-justify p-2">
-            <%%= service.description1 %>
-          </p>
-        </div>
-      </div>
-
-      <div class="row pt-5 ">
-        <div class="col-lg-10 offset-lg-1">
-          <p class="p-2">
-          <%%= service.description2 %>
-            </p>
-          
-        </div>
-      </div>
-
-      <div class="row descript img-shadow">
-        <div class="col-lg-6 order-2 order-lg-1">
-          <h3 class="pb-2">What can microdebration do for your skin:</h3>
-          <ul>
-            <li>Vacuum away blackheads</li>
-            <li>Clean and reduce clogged pores</li>
-            <li>Exfoliate dull dry skin</li>
-            <li>Resurface leatherly, sun-damaged skin</li>
-            <li>Minimize enlarged pores</li>
-            <li>Polish away mild skin imperfections</li>
-            <li>Increase circulation</li>
-            <li>Smooth skin</li>
-            <li>Erase skin age spots</li>
-            <li>Simulate production of new young skin cells and collagen</li>
-            <li>Enhance absorption of skin care products</li>
-          </ul>
-        </div>
-        <div class="col-lg-6 d-flex justify-content-center order-1 order-lg-2 my-4 my-lg-0">
-          <img src="<%%= service.image2.url %>" alt="<%%= service.title %>">
-        </div>
-      </div>
 
 
 
-      <div class="row mb-5 descript img-shadow  align-items-start">
-        <div class="col-12 col-md-4 mb-5 mb-lg-0">
-          <h3 class="pb-1">
-            Feels like
-          </h3>
-          <p class="text-center px-2">
-            Procedure is noninvasive and not wound your skin’s surface, so is virtually no discomfort during or after
-            microdermabrasion.
-          </p>
-        </div>
+      <%- include ../prices -%>
 
-        <div class="col-12 col-md-4 mb-5 mb-lg-0">
-          <h3 class="pb-1">
-            How long
-          </h3>
-          <p class="text-center px-2">
-            Face treatment typically take between 30 and 60 minutes. It takes multiply treatments to melt away your
-            skin’s imperfections. Treatments are spaced from two to three weeks apart to allow your skin to recover.
-          </p>
-        </div>
-
-        <div class="col-12 col-md-4">
-          <h3 class="pb-1">
-            See results
-          </h3>
-          <p class="text-center px-2">
-            For most patients, after first microdermabrasion appointment, skin will have soft pink, healthy glow. The
-            benefits increase as treatment plan progresses until your skin has a sleek, even texture.
-          </p>
-        </div>
-      </div>
-
-      <!-- before/after photo-slider -->
-      <%- include ../partials/before-after -%>
-    </div>
-
-
-  </div>
-</div>
-
-
-
-
-<%- include ../prices -%>
-
-<%- include ../partials/bottom-menu -%>
-<%- include ../partials/footer -%>
+        <%- include ../partials/bottom-menu -%>
+          <%- include ../partials/footer -%>
