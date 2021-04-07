@@ -11,6 +11,7 @@ $('input').on('change', function () {
     // scale SEND email button
     $('#send-email-btn').addClass('send-email-btn-isready')
   })
+  
   // hide RESET button after click
   $('#reset-email-btn').on('click', function () {
     $('#reset-email-btn').fadeOut('slow', function() {

@@ -5,8 +5,8 @@
   max-width: 100%;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background: #f6fafe;
-  color: #5e3b5e;
+  background: var(--white);
+  color: var(--purple2);
 }
 
 .contact h2 {
@@ -15,7 +15,8 @@
 }
 
 .contact h3 {
-  color: #5e3b5eb0;
+  color: var(--purple2);
+  opacity: 80%;
   font-size: 1.6rem;
   letter-spacing: 0.09rem;
 }
@@ -61,7 +62,6 @@ h3.time {
   }
 
   .contact h3 {
-    color: #5e3b5eb0;
     font-size: 1.2rem;
     letter-spacing: 0.09rem;
   }

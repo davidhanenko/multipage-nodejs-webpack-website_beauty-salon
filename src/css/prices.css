@@ -5,12 +5,12 @@
   background: -webkit-linear-gradient(top left, #8c577a, #d095ce);
   background: -moz-linear-gradient(top left, #8c577a, #d095ce);
   background: linear-gradient(to bottom right, #8c577a, #d095ce);
-  color: #f6fafe;
+  color: var(--white);
   min-height: 30rem;
 }
 
 .priceBtn {
-  color: #f6fafe;
+  color: var(--white);
   font-size: 1.4rem;
   text-transform: capitalize;
   cursor: pointer;
@@ -20,7 +20,7 @@
   font-weight: 7;
   text-transform: uppercase;
   font-size: 2rem;
-  color: #f6fafe;
+  color: var(--white);
   background: none;
 }
 
@@ -108,7 +108,7 @@
 }
 
 .table tbody tr:hover {
-  color: #f6fafe;
+  color: var(--white);
   transition: 0.2s;
   transform: scale(1.02);
   cursor: default;
@@ -119,13 +119,12 @@
 }
 
 #drop-prices {
-  border-bottom: 2px solid #f6fafe;
+  border-bottom: 2px solid var(--white);
   margin-bottom: 1rem;
 }
 
-
 .prices-menu.dropdown-menu {
- background: #f6fafeee;
+  background: var(--white);
   border: none;
   width: 20em;
   margin-top: 0.1rem;
@@ -133,7 +132,7 @@
 
 .prices-menu .dropdown-item {
   border-bottom: 1px solid transparent;
-  color: #37243b;
+  color: var(--purple3);
   font-size: 1.2rem;
   width: 80%;
   margin: 0 auto;
@@ -141,7 +140,8 @@
 
 .prices-menu .dropdown-item:hover {
   background: none;
-  border-bottom: 1px solid #37243b81;
-  color: #37243b81;
+  border-bottom: 1px solid var(--purple3);
+  color: var(--purple3);
+  opacity: 65%;
   transition: border 400ms;
 }

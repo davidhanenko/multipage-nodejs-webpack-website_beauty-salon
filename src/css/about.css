@@ -10,10 +10,6 @@
   margin-bottom: 8rem;
 }
 
-.image-about {
-  /* width: 35rem; */
-
-}
 
 .image-about img {
   width: 100%;
@@ -43,10 +39,8 @@ h4 {
 
 
 /* navbar */
-.navbar {
-  background: #f6fafe;
+.navbar,
+.dropdown-menu {
+  background: var(--white);
 }
 
-.dropdown-menu {
-  background: #f6fafe;
-}

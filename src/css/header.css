@@ -1,8 +1,12 @@
 :root {
   --navbar-height: 5rem;
   --bg-color: rgb(249, 179, 199);
+  --slogan: #5e3b5ed5;
   --white: #f6fafe;
   --purple1: #3a004c;
+  --purple2: #5e3b5e;
+  --purple3: #422942;
+  --gradient1: linear-gradient(to left, #5e3b5e, #5e3b5e96);
 }
 
 * {

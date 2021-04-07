@@ -5,7 +5,7 @@
 #bottom-menu {
   position: relative;
   height: var(--bottom-menu-height);
-  background: #5e3b5ef3;
+  background: var(--purple2);
   max-width: 100%;
   bottom: 0;
 }
@@ -17,7 +17,7 @@
 }
 
 #bottom-menu a:hover {
-  color: #000;
+  color: #222;
   transition: 300ms;
 }
 

@@ -7,7 +7,7 @@
 }
 
 .email-header-1 {
-  color: #5e3b5e;
+  color: var(--purple2);
 }
 
 .form-header p {
@@ -110,12 +110,13 @@
 }
 
 .form-control:focus {
-  border-color: #8c577a81;
+  border-color: var(--purple2);
   box-shadow: none;
 }
 
-.send-email-btn-isready {
-  background: #836283c4;
+#send-email-btn.send-email-btn-isready {
+  background: #5e3b5efd;
+  color: var(--white);
   transition: 0.4s;
 }
 
@@ -124,14 +125,16 @@
   height: 2.22rem;
 }
 
-.btn-outline {
+#send-email-btn,
+#reset-email-btn {
   margin-top: 2rem;
   text-transform: uppercase;
   border-color: #5e3b5efd;
   color: #5e3b5efd;
 }
 
-.btn-outline:hover {
+#send-email-btn:hover,
+#reset-email-btn:hover {
   background: #5e3b5ec4;
   color: var(--white);
 }
@@ -160,7 +163,7 @@
 }
 
 .lds-spinner div:after {
-  background: #3a004c;
+  background: var(--purple1);
 }
 
 @media (max-width: 501px) {

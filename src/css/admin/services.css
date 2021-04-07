@@ -170,7 +170,6 @@ input[type='checkbox'] {
   text-transform: capitalize;
 }
 
-
 /* popover */
 .popover-btn {
 }
@@ -183,9 +182,10 @@ input[type='checkbox'] {
 }
 
 @media (max-width: 321px) {
-  html {
-    font-size: 0.7rem;
+  body {
+    font-size: 70%;
   }
+
   #main-service h1 {
     font-size: 2.3rem;
   }
