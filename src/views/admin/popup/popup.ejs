@@ -123,7 +123,8 @@
 
           <!-- set as current -->
           <%% if(!p.current) { %>
-            <button class="btn btn-success m-1" data-target="#confirmCurrentModal<%%= p._id %>" data-toggle="modal">Set as
+            <button class="btn btn-success m-1" data-target="#confirmCurrentModal<%%= p._id %>" data-toggle="modal">Set
+              as
               current</button>
 
             <%% } else { %>
@@ -131,37 +132,31 @@
               <%% } %>
 
                 <!-- modal window to confirm current message setting -->
-                <div class="modal fade" id="confirmCurrentModal<%%= p._id %>" data-backdrop="static" data-keyboard="false"
-                  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="confirmCurrentModal<%%= p._id %>" data-backdrop="static"
+                  data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title mr-2" id="staticBackdropLabel">
                           Set message as current message on the main page:
-                        </h5>
-                        <div>
-                          <%% if(p && p.title) { %>
-                            <h5
-                              class="modal-title mr-2 <%%= p.titleFontSize %> <%%= p.titleColor %> <%%= p.titlePosition %>">
-                              <%%= p.title %>
-                            </h5>
-                            <%% } %>
-                        </div>
-                        <div class="modal-body">
-                          <%% if(p) { %>
-                            <h5 class="popup-text align-middle <%%= p.msgFontSize %> <%%= p.msgColor %> ">
+                          <div class="my-5 <%%= p.msgBgColor %>">
+                            <div
+                              class="delete-modal-title <%%= p.titleFontSize %> <%%= p.titleColor %> <%%= p.titlePosition %>">
+                              <%%= p.title || null %>
+                            </div>
+                            <p class="<%%= p.msgFontSize %> <%%= p.msgColor %>">
                               <%%= p.message %>
-                            </h5>
-                            <%% } %>
-                        </div>
+                          </div>
+                        </h5>
+
 
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body">Please confirm current message</div>
+                      <div class="modal-body fs-3">Please confirm current message</div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
                           Close
                         </button>
                         <form class="d-inline" action="/admin/popups/<%%= p._id %>?_method=PUT" method="POST">
