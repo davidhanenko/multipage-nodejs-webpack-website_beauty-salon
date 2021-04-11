@@ -29,12 +29,14 @@ h2 {
 #create-new-message {
   background: var(--white);
   margin-top: 6rem;
+  width: 85%;
 }
 
 .new-edit-area {
   padding: 1rem;
   min-height: 10rem;
 }
+
 
 .delete-modal-title {
   font-size: 1.8rem;
