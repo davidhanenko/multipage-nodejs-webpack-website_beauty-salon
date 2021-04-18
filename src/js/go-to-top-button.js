@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 global.jQuery = require('jquery')
 
 import '../css/go-to-top.css';
@@ -13,6 +12,8 @@ goToTop.addEventListener('click', () => {
     top: 0,
     behavior: "smooth"
   })
+  goToTop.classList.remove('btn_hover')
+  goToTop.classList.add('btn_hover')
 })
 
 
