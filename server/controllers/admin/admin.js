@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs')
 const passport = require('passport')
 const { RateLimiterMongo } = require('rate-limiter-flexible')
 const mongoose = require('mongoose')
+const Main = require('../../models/main')
 const Popup = require('../../models/popup')
 const Service = require('../../models/service')
 const About = require('../../models/about')
@@ -200,4 +201,18 @@ module.exports.logout = (req, res) => {
   req.flash('success', 'You are logged out!')
   req.session.destroy()
   res.redirect('/admin/login')
+}
+
+// title and description
+module.exports.createMainPage = async (res, req) => {
+  try {
+    const { title, description } = req.body
+    const newMain = { title, description }
+    await Main.create(newMain)
+    res.redirect('/admin')
+  } catch (err) {
+    // logger.error('From admin/about page:' + err.message)
+    req.flash('error', err.message)
+    res.redirect('back')
+  }
 }

@@ -230,8 +230,7 @@
                 <%%= contact.day %>
                   <%% } else { %>
                     <%%= contact.dayFrom %>-<%%= contact.dayTo %>
-                        <%% } %> /
-                          <%%= contact.hoursFrom %> : <%%= contact.minsFrom %>
+                        <%% } %> / <%%= contact.hoursFrom %> : <%%= contact.minsFrom %>
                               <%%= contact.ampmFrom %>-<%%= contact.hoursTo%>:<%%= contact.minsTo%>
                                     <%%= contact.ampmTo%>
             </h4>
@@ -245,7 +244,44 @@
     </div>
 
 
+
   </div>
 
+  <hr>
+
+
+  <!-- Title, meta tags for main page-->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="admin-section my-4">Main page Title and Description</h2>
+      </div>
+    </div>
+
+    <form action="/admin/main" method="POST" class="mx-auto">
+      <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+      <div class="row justify-content-center">
+
+        <div class="col-md-8">
+          <input type="text" class="form-control my-2" name="title" placeholder="Title">
+        </div>
+
+        <div class="col-md-8">
+          <input type="text" class="form-control my-2" name="description" placeholder="Description">
+        </div>
+
+      </div>
+
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <button type="submit" class="btn btn-lg btn-block btn-primary my-2">Create</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+  <hr>
 
   <%- include ./partials/footer -%>

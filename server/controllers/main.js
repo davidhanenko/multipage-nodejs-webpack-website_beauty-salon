@@ -25,7 +25,7 @@ module.exports.index = async (req, res) => {
     csrfToken: req.csrfToken(),
     cspNonce: res.locals.cspNonce,
     page: 'home',
-    title: 'Ilona',
+    title: 'Facial & body treatments | Ilona beauty salon',
     data,
     errors,
     popupCurrent,
@@ -45,7 +45,7 @@ module.exports.about = async (req, res) => {
   await renderEJS(res, 'about', {
     csrfToken: req.csrfToken(),
     cspNonce: res.locals.cspNonce,
-    title: 'About',
+    title: 'Facial & body treatments | About Ilona beauty salon',
     page: 'about',
     about,
     services,
@@ -123,7 +123,7 @@ module.exports.gallery = async (req, res) => {
     services,
     gallery,
     page: 'gallery',
-    title: 'Gallery',
+    title: 'Facial & body treatments | Ilona beauty salon | Gallery',
     cspNonce: res.locals.cspNonce
   })
 }
@@ -139,7 +139,9 @@ module.exports.services = async (req, res) => {
   const prices = await Price.find({}).populate('unitPrice')
 
   await renderEJS(res, `our_services/${service.template}`, {
-    title: service.title,
+    title: `${
+      service.title.charAt(0).toUpperCase() + service.title.slice(1)
+    } | facial treatments | Ilona beauty salon`,
     page: service.title,
     cspNonce: res.locals.cspNonce,
     service,
