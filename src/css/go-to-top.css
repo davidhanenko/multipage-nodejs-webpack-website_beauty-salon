@@ -48,8 +48,8 @@
   background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" class="bi bi-chevron-up" fill="%2337243b" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" /> </svg>');
 }
 
-/* @media (hover: hover) { */
-  .top-button.btn_hover:hover {
+@media (hover: hover) {
+  .top-button:hover {
     background: #5e3b5ef3;
     border: transparent;
     transition: 400ms;
@@ -57,16 +57,26 @@
     text-decoration: none;
   }
 
-  .top-button.btn_hover:hover .first {
+  .top-button:hover .first {
     transform: translateY(-0.07rem) scale(1.5);
     background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" class="bi bi-chevron-up" fill="white" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" /> </svg>');
   }
 
-  .top-button.btn_hover:hover .second {
+  .top-button:hover .second {
     transform: translateY(0.07rem) scale(1.5);
     background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" class="bi bi-chevron-up" fill="white" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" /> </svg>');
   }
-/* } */
+}
+
+@media (pointer:coarse) {
+.top-button-touch {
+    background: #5e3b5e9d;
+    border: transparent;
+    transition: 400ms;
+    color: #f6fafe;
+    text-decoration: none;
+  }
+}
 
 @media (max-width: 501px) {
   .top-button {
