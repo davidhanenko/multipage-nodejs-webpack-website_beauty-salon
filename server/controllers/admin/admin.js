@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs')
 const passport = require('passport')
 const { RateLimiterMongo } = require('rate-limiter-flexible')
 const mongoose = require('mongoose')
-const Main = require('../../models/main')
+const MainTag = require('../../models/main-tag')
 const Popup = require('../../models/popup')
 const Service = require('../../models/service')
 const About = require('../../models/about')
@@ -16,6 +16,7 @@ const { validationResult } = require('express-validator')
 
 // main page for admin
 module.exports.main = async (req, res) => {
+  const mainTags = await MainTag.findOne({})
   const popupCurrent = await Popup.findOne({ current: true })
   const services = await Service.find({})
   const gallery = await Gallery.find({})
@@ -25,14 +26,15 @@ module.exports.main = async (req, res) => {
   await renderEJS(res, 'admin/admin', {
     csrfToken: req.csrfToken(),
     cspNonce: res.locals.cspNonce,
+    page: 'admin',
+    title: 'Admin',
     popupCurrent,
+    mainTags,
     services,
     gallery,
     about,
     prices,
-    contacts,
-    page: 'admin',
-    title: 'Admin'
+    contacts
   })
 }
 
@@ -203,15 +205,32 @@ module.exports.logout = (req, res) => {
   res.redirect('/admin/login')
 }
 
-// title and description
-module.exports.createMainPage = async (res, req) => {
+// title and description create
+module.exports.createMainPageTags = async (req, res) => {
   try {
     const { title, description } = req.body
-    const newMain = { title, description }
-    await Main.create(newMain)
+    await MainTag.create({ title, description })
     res.redirect('/admin')
   } catch (err) {
-    // logger.error('From admin/about page:' + err.message)
+    logger.error('From admin/main-tags create:' + err.message)
+    req.flash('error', err.message)
+    res.redirect('back')
+  }
+}
+
+// title and description update
+module.exports.updateMainPageTags = async (req, res) => {
+  try {
+    const mainTags = await MainTag.findOne({})
+
+    mainTags.title = req.body.title
+    mainTags.description = req.body.description
+
+    mainTags.save()
+    req.flash('success', 'Meta tags for main page updated')
+    res.redirect('/admin/#tags')
+  } catch (err) {
+    logger.error('From admin/main-tags update:' + err.message)
     req.flash('error', err.message)
     res.redirect('back')
   }

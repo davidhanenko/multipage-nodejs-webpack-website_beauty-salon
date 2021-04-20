@@ -78,3 +78,8 @@
     opacity: 0;
   }
 }
+
+.create-spinner,
+.update-spinner {
+  display: none;
+}

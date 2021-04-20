@@ -188,7 +188,7 @@
 
 
   <!-- Contacts -->
-  <div id="contacts" class="container-fluid">
+  <div id="contacts" class="container-fluid my-5">
     <div class="row text-center">
       <div class="col-12 d-flex justify-content-start">
         <h2 class="admin-section my-4">EDIT or DELETE Contact info</h2>
@@ -222,8 +222,8 @@
       <div class="contact col-md-4 my-1 my-md-0">
         <h3 class="contact-section hours"><span></span>Our hours
         </h3>
-        <%% contacts.forEach(contact=> { %> <%% if( contact.day || contact.dayFrom || contact.dayTo || contact.ampmFrom
-            || contact.ampmTo ) { %>
+        <%% contacts.forEach(contact=> { %>
+          <%% if( contact.day || contact.dayFrom || contact.dayTo || contact.ampmFrom || contact.ampmTo ) { %>
 
             <h4 class="contact-data">
               <%% if(contact.day) { %>
@@ -247,41 +247,118 @@
 
   </div>
 
-  <hr>
 
 
   <!-- Title, meta tags for main page-->
-  <div class="container">
+  <div class="container my-5" id="tags" >
+
+    <hr>
+
     <div class="row">
       <div class="col-12">
-        <h2 class="admin-section my-4">Main page Title and Description</h2>
+        <h2 class="admin-section my-4">Main page Title and Description tags</h2>
       </div>
     </div>
 
-    <form action="/admin/main" method="POST" class="mx-auto">
-      <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
-      <div class="row justify-content-center">
+    <%% if( !mainTags ) { %>
 
-        <div class="col-md-8">
-          <input type="text" class="form-control my-2" name="title" placeholder="Title">
+      <!-- create tags form -->
+      <form action="/admin/main" method="POST" class="mx-auto">
+        <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+        <div class="row justify-content-center">
+
+          <div class="col-md-8">
+            <input type="text" class="form-control my-2" name="title" placeholder="Title">
+          </div>
+
+          <div class="col-md-8">
+            <input type="text" class="form-control my-2" name="description" placeholder="Description">
+          </div>
+
         </div>
 
-        <div class="col-md-8">
-          <input type="text" class="form-control my-2" name="description" placeholder="Description">
+
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <button type="submit" id="create-tags" class="btn btn-lg btn-block btn-primary my-2">Create</button>
+          </div>
         </div>
 
-      </div>
-
-
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <button type="submit" class="btn btn-lg btn-block btn-primary my-2">Create</button>
+        <!-- create loading spinner -->
+        <div class="text-center" id="create-tags-spinner">
+          <div class="lds-spinner create-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
-      </div>
 
-    </form>
+      </form>
+
+      <!-- popover -->
+      <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+        title="Info" data-content="Create title and description Google use to find your page">?</a>
+
+
+      <%% } else { %>
+
+        <!-- edit tags form -->
+        <form action="/admin/main?_method=PUT" method="POST" class="mx-auto">
+          <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+          <div class="row justify-content-center">
+
+            <div class="col-md-8">
+              <input type="text" class="form-control my-2" name="title" value="<%%= mainTags.title %>">
+            </div>
+
+            <div class="col-md-8">
+              <textarea type="text" class="form-control my-2" name="description"><%%= mainTags.description %></textarea>
+            </div>
+
+          </div>
+
+
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <button type="submit" id="update-tags" class="btn btn-lg btn-block btn-primary my-2">Update</button>
+            </div>
+          </div>
+
+          <!-- update loading spinner -->
+          <div class="text-center" id="update-tags-spinner">
+            <div class="lds-spinner update-spinner">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+        </form>
+        <!-- popover -->
+        <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+          title="Info" data-content="Update title and description Google use to find your page">?</a>
+        <%% } %>
+
+          <hr>
 
   </div>
-  <hr>
 
   <%- include ./partials/footer -%>
