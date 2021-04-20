@@ -48,6 +48,9 @@ router
 router.get('/logout', admin.logout)
 
 // title and description
-router.post('/main', isLoggedIn, catchAsync(admin.createMainPage))
+router
+  .route('/main')
+  .post(isLoggedIn, catchAsync(admin.createMainPageTags))
+  .put(isLoggedIn, catchAsync(admin.updateMainPageTags))
 
 module.exports = router

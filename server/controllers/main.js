@@ -3,6 +3,7 @@ const Price = require('../models/service-price')
 const Contact = require('../models/contact')
 const About = require('../models/about')
 const Popup = require('../models/popup')
+const MainTag = require('../models/main-tag')
 const Gallery = require('../models/gallery')
 const { renderEJS } = require('../middleware/template')
 const nodemailer = require('nodemailer')
@@ -14,6 +15,7 @@ module.exports.index = async (req, res) => {
   // logout from admin
   req.logout()
 
+  const mainTags = await MainTag.findOne({})
   const popupCurrent = await Popup.findOne({ current: true })
   const services = await Service.find({})
   const prices = await Price.find({}).populate('unitPrice')
@@ -25,7 +27,8 @@ module.exports.index = async (req, res) => {
     csrfToken: req.csrfToken(),
     cspNonce: res.locals.cspNonce,
     page: 'home',
-    title: 'Facial & body treatments | Ilona beauty salon',
+    title: mainTags.title,
+    descriprion: mainTags.descriprion,
     data,
     errors,
     popupCurrent,
