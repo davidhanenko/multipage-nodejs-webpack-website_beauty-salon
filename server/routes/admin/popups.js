@@ -4,7 +4,6 @@ const popup = require('../../controllers/admin/popup')
 const { isLoggedIn } = require('../../middleware/admin')
 const catchAsync = require('../../utils/catchAsync')
 
-
 // show popup message page and create new message
 router
   .route('/')
@@ -18,7 +17,7 @@ router
   .delete(isLoggedIn, catchAsync(popup.deleteMsg))
   .put(isLoggedIn, catchAsync(popup.setMsg))
 
-// show, edit popup message edit page
+// show popup message edit page
 router
   .route('/popup-message/:id')
   .get(isLoggedIn, catchAsync(popup.showPopupEditPage))

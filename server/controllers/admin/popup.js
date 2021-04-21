@@ -72,7 +72,7 @@ module.exports.removeMsg = async (req, res) => {
 
 // set as current on main page
 module.exports.setMsg = async (req, res) => {
-  let popup = await Popup.find({ current: true })
+  const popup = await Popup.find({ current: true })
 
   try {
     // not possible set current message if one is already selected

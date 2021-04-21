@@ -42,7 +42,10 @@ const serviceSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'ImageBeforeAfter'
     }
-  ]
+  ],
+
+  titleTag: String,
+  descriptionTag: String
 })
 
 module.exports = mongoose.model('Service', serviceSchema)

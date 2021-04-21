@@ -1,0 +1,109 @@
+<section class="container" id="metatags">
+  <hr class="my-5">
+
+  <div class="row">
+    <div class="col-12">
+      <h2 class="admin-section my-4">Service Title and Description tags</h2>
+    </div>
+  </div>
+
+  <%% if( !service.titleTag || !service.descriptionTag ) { %>
+
+    <!-- create tags form -->
+    <form action="/admin/services/<%%= service.title %>/tags?_method=PUT" method="POST" class="mx-auto">
+      <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+      <div class="row justify-content-center">
+
+        <div class="col-md-8">
+          <input type="text" class="form-control my-2" name="titleTag" placeholder="Title">
+        </div>
+
+        <div class="col-md-8">
+          <input type="text" class="form-control my-2 description-tag" name="descriptionTag" placeholder="Description">
+        </div>
+
+      </div>
+
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <button type="submit" id="create-tags" class="btn btn-lg btn-block btn-primary my-2">Create tags</button>
+        </div>
+      </div>
+
+      <!-- create loading spinner -->
+      <div class="text-center" id="create-tags-spinner">
+        <div class="lds-spinner create-spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+    </form>
+
+    <!-- popover -->
+    <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+      title="Info" data-content="Create title and description Google use to find your page">?</a>
+
+
+    <%% } else { %>
+
+      <!-- edit tags form -->
+      <form action="/admin/services/<%%= service.title %>/tags?_method=PUT" method="POST" class="mx-auto">
+        <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+        <div class="row justify-content-center">
+
+          <div class="col-md-8">
+            <input type="text" class="form-control my-2" name="titleTag" value="<%%= service.titleTag %>">
+          </div>
+
+          <div class="col-md-8">
+            <textarea type="text" class="form-control my-2" rows="6"
+              name="descriptionTag"><%%= service.descriptionTag %></textarea>
+          </div>
+
+        </div>
+
+
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <button type="submit" id="update-tags" class="btn btn-lg btn-block btn-primary my-2">Update tags</button>
+          </div>
+        </div>
+
+        <!-- update loading spinner -->
+        <div class="text-center" id="update-tags-spinner">
+          <div class="lds-spinner update-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+      </form>
+      <!-- popover -->
+      <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+        title="Info" data-content="Update title and description Google use to find your page">?</a>
+      <%% } %>
+
+        <hr class="my-5">
+</section>

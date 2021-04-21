@@ -28,7 +28,7 @@ module.exports.index = async (req, res) => {
     cspNonce: res.locals.cspNonce,
     page: 'home',
     title: mainTags.title,
-    descriprion: mainTags.descriprion,
+    description: mainTags.descriprion,
     data,
     errors,
     popupCurrent,
@@ -140,13 +140,14 @@ module.exports.services = async (req, res) => {
   }).populate('imageBeforeAfter')
   const services = await Service.find({})
   const prices = await Price.find({}).populate('unitPrice')
-
   await renderEJS(res, `our_services/${service.template}`, {
     title: `${
+      service.titleTag.charAt(0).toUpperCase() + service.title.slice(1) ||
       service.title.charAt(0).toUpperCase() + service.title.slice(1)
-    } | facial treatments | Ilona beauty salon`,
+    } | Facial treatments | Ilona beauty salon | Brooklyn`,
     page: service.title,
     cspNonce: res.locals.cspNonce,
+    description: service.descriptionMain,
     service,
     services,
     prices
