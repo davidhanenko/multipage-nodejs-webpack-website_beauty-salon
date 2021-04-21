@@ -142,8 +142,7 @@ module.exports.services = async (req, res) => {
   const prices = await Price.find({}).populate('unitPrice')
   await renderEJS(res, `our_services/${service.template}`, {
     title: `${
-      service.titleTag.charAt(0).toUpperCase() + service.title.slice(1) ||
-      service.title.charAt(0).toUpperCase() + service.title.slice(1)
+      service.titleTag?.charAt(0).toUpperCase() + service.titleTag?.slice(1) || service.title.charAt(0).toUpperCase() + service.title.slice(1)
     } | Facial treatments | Ilona beauty salon | Brooklyn`,
     page: service.title,
     cspNonce: res.locals.cspNonce,

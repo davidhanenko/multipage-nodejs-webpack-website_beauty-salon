@@ -352,7 +352,7 @@ module.exports.addTags = async (req, res) => {
   try {
     await service.updateOne(
       {
-        titleTag: req.body.titleTag.toUpperCase(),
+        titleTag: req.body.titleTag,
         descriptionTag: req.body.descriptionTag
       },
       {
