@@ -65,6 +65,9 @@ router
     serviceInputValidation,
     catchAsync(services.updateService)
   )
+  
+  // tags
+  router.route('/:title/tags').put(isLoggedIn, catchAsync(services.addTags))
 
 // delete servise
 router.delete('/:id', isLoggedIn, catchAsync(services.deleteService))

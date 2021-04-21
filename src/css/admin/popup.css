@@ -34,7 +34,8 @@ h2 {
 
 .new-edit-area {
   padding: 1rem;
-  min-height: 10rem;
+  min-height: 4rem;
+  overflow-wrap: break-word;
 }
 
 

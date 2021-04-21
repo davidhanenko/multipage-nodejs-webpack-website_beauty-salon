@@ -7,7 +7,7 @@ const { renderEJS } = require('../../middleware/template')
 const { validationResult } = require('express-validator')
 const logger = require('../../utils/logger.js')
 
-// render add new service page
+// render Add new service page
 module.exports.showNewService = async (req, res) => {
   const services = await Service.find({}, 'title template')
   const prices = await Price.find({}, 'serviceTitle')
@@ -24,11 +24,11 @@ module.exports.showNewService = async (req, res) => {
 
 //options for cloudinary upload
 let optsMain = {
-      transformation: { width: 550, height: 550, dpr: 'auto', crop: 'fill' },
-      fetch_format: 'auto',
-      quality: 'auto:good',
-      resource_type: 'auto',
-      folder: 'Ilona'
+  transformation: { width: 550, height: 550, dpr: 'auto', crop: 'fill' },
+  fetch_format: 'auto',
+  quality: 'auto:good',
+  resource_type: 'auto',
+  folder: 'Ilona'
 }
 
 let optsSecondary = {
@@ -177,11 +177,11 @@ module.exports.showService = async (req, res) => {
   await renderEJS(res, `admin/our_services/${service.template}`, {
     csrfToken: req.csrfToken(),
     cspNonce: res.locals.cspNonce,
+    title: `${service.title.charAt(0).toUpperCase() + service.title.slice(1)}`,
+    page: service.title,
     service,
     services,
-    prices,
-    title: service.title,
-    page: service.title
+    prices
   })
 }
 
@@ -343,6 +343,29 @@ module.exports.deleteService = async (req, res) => {
   } catch (err) {
     logger.error('From Services:' + err)
     req.flash('error', err.message)
+  }
+}
+
+// create & update title and description tags
+module.exports.addTags = async (req, res) => {
+  const service = await Service.findOne({ title: req.params.title })
+  try {
+    await service.updateOne(
+      {
+        titleTag: req.body.titleTag.toUpperCase(),
+        descriptionTag: req.body.descriptionTag
+      },
+      {
+        new: true,
+        upsert: true
+      }
+    )
+    req.flash('success', 'Tags added/updated')
+    res.redirect(`/admin/services/${service.title}`)
+  } catch (err) {
+    logger.error('From Services:' + err)
+    req.flash('error', err.message)
+    res.redirect('back')
   }
 }
 
