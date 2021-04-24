@@ -15,74 +15,74 @@ const dotenv = require('dotenv').config({
 module.exports = {
   entry: {
     index: isDev
-      ? ['webpack-hot-middleware/client?reload=true', './src/js/index.js']
-      : './src/js/index.js',
+      ? ['webpack-hot-middleware/client?reload=true', './client/js/index.js']
+      : './client/js/index.js',
     service: isDev
-      ? ['webpack-hot-middleware/client?reload=true', './src/js/service.js']
-      : './src/js/service.js',
+      ? ['webpack-hot-middleware/client?reload=true', './client/js/service.js']
+      : './client/js/service.js',
     gallery: isDev
-      ? ['webpack-hot-middleware/client?reload=true', './src/js/gallery.js']
-      : './src/js/gallery.js',
+      ? ['webpack-hot-middleware/client?reload=true', './client/js/gallery.js']
+      : './client/js/gallery.js',
     about: isDev
-      ? ['webpack-hot-middleware/client?reload=true', './src/js/about.js']
-      : './src/js/about.js',
+      ? ['webpack-hot-middleware/client?reload=true', './client/js/about.js']
+      : './client/js/about.js',
     admin: isDev
-      ? ['webpack-hot-middleware/client?reload=true', './src/js/admin/admin.js']
-      : './src/js/admin/admin.js',
+      ? ['webpack-hot-middleware/client?reload=true', './client/js/admin/admin.js']
+      : './client/js/admin/admin.js',
     admin_login: isDev
-      ? ['webpack-hot-middleware/client?reload=true', './src/js/admin/login.js']
-      : './src/js/admin/login.js',
+      ? ['webpack-hot-middleware/client?reload=true', './client/js/admin/login.js']
+      : './client/js/admin/login.js',
     admin_register: isDev
       ? [
           'webpack-hot-middleware/client?reload=true',
-          './src/js/admin/register.js'
+          './client/js/admin/register.js'
         ]
-      : './src/js/admin/register.js',
+      : './client/js/admin/register.js',
     admin_service: isDev
       ? [
           'webpack-hot-middleware/client?reload=true',
-          './src/js/admin/services.js'
+          './client/js/admin/services.js'
         ]
-      : './src/js/admin/services.js',
+      : './client/js/admin/services.js',
     admin_price: isDev
       ? [
           'webpack-hot-middleware/client?reload=true',
-          './src/js/admin/prices.js'
+          './client/js/admin/prices.js'
         ]
-      : './src/js/admin/prices.js',
+      : './client/js/admin/prices.js',
     admin_contacts: isDev
       ? [
           'webpack-hot-middleware/client?reload=true',
-          './src/js/admin/contacts.js'
+          './client/js/admin/contacts.js'
         ]
-      : './src/js/admin/contacts.js',
+      : './client/js/admin/contacts.js',
     admin_about: isDev
-      ? ['webpack-hot-middleware/client?reload=true', './src/js/admin/about.js']
-      : './src/js/admin/about.js',
+      ? ['webpack-hot-middleware/client?reload=true', './client/js/admin/about.js']
+      : './client/js/admin/about.js',
     admin_gallery: isDev
       ? [
           'webpack-hot-middleware/client?reload=true',
-          './src/js/admin/gallery.js'
+          './client/js/admin/gallery.js'
         ]
-      : './src/js/admin/gallery.js',
+      : './client/js/admin/gallery.js',
     admin_header: isDev
       ? [
           'webpack-hot-middleware/client?reload=true',
-          './src/js/admin/header.js'
+          './client/js/admin/header.js'
         ]
-      : './src/js/admin/header.js',
+      : './client/js/admin/header.js',
     admin_popup: isDev
-      ? ['webpack-hot-middleware/client?reload=true', './src/js/admin/popup.js']
-      : './src/js/admin/popup.js',
+      ? ['webpack-hot-middleware/client?reload=true', './client/js/admin/popup.js']
+      : './client/js/admin/popup.js',
     errors: isDev
       ? [
           'webpack-hot-middleware/client?reload=true',
-          './src/js/errors/errors.js'
+          './client/js/errors/errors.js'
         ]
-      : './src/js/errors/errors.js',
+      : './client/js/errors/errors.js',
     404: isDev
-      ? ['webpack-hot-middleware/client?reload=true', './src/js/errors/404.js']
-      : './src/js/errors/404.js'
+      ? ['webpack-hot-middleware/client?reload=true', './client/js/errors/404.js']
+      : './client/js/errors/404.js'
   },
   target: 'web',
   devtool: 'source-map',
@@ -165,97 +165,97 @@ module.exports = {
 
   plugins: [
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/index.ejs',
+      template: '!!ejs-webpack-loader!./client/views/index.ejs',
       filename: 'views/index.ejs',
       chunks: isDev ? ['index'] : ['index', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/our_services/atms.ejs',
+      template: '!!ejs-webpack-loader!./client/views/our_services/atms.ejs',
       filename: 'views/our_services/atms.ejs',
       chunks: isDev ? ['service'] : ['service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
       template:
-        '!!ejs-webpack-loader!./src/views/our_services/microdermabrasion.ejs',
+        '!!ejs-webpack-loader!./client/views/our_services/microdermabrasion.ejs',
       filename: 'views/our_services/microdermabrasion.ejs',
       chunks: isDev ? ['service'] : ['service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
       template:
-        '!!ejs-webpack-loader!./src/views/our_services/chemical-peel.ejs',
+        '!!ejs-webpack-loader!./client/views/our_services/chemical-peel.ejs',
       filename: 'views/our_services/chemical-peel.ejs',
       chunks: isDev ? ['service'] : ['service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
       template:
-        '!!ejs-webpack-loader!./src/views/our_services/permanent-makeup.ejs',
+        '!!ejs-webpack-loader!./client/views/our_services/permanent-makeup.ejs',
       filename: 'views/our_services/permanent-makeup.ejs',
       chunks: isDev ? ['service'] : ['service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/our_services/ipl-laser.ejs',
+      template: '!!ejs-webpack-loader!./client/views/our_services/ipl-laser.ejs',
       filename: 'views/our_services/ipl-laser.ejs',
       chunks: isDev ? ['service'] : ['service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
       template:
-        '!!ejs-webpack-loader!./src/views/our_services/multifunctional-facials.ejs',
+        '!!ejs-webpack-loader!./client/views/our_services/multifunctional-facials.ejs',
       filename: 'views/our_services/multifunctional-facials.ejs',
       chunks: isDev ? ['service'] : ['service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/gallery.ejs',
+      template: '!!ejs-webpack-loader!./client/views/gallery.ejs',
       filename: 'views/gallery.ejs',
       chunks: isDev ? ['gallery'] : ['gallery', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/about.ejs',
+      template: '!!ejs-webpack-loader!./client/views/about.ejs',
       filename: 'views/about.ejs',
       chunks: isDev ? ['about'] : ['about', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/admin/prices/price-new.ejs',
+      template: '!!ejs-webpack-loader!./client/views/admin/prices/price-new.ejs',
       filename: 'views/admin/prices/price-new.ejs',
       chunks: isDev ? ['admin_price'] : ['admin_price', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
       template:
-        '!!ejs-webpack-loader!./src/views/admin/our_services/service-new.ejs',
+        '!!ejs-webpack-loader!./client/views/admin/our_services/service-new.ejs',
       filename: 'views/admin/our_services/service-new.ejs',
       chunks: isDev
         ? ['admin_service']
         : ['admin_service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/admin/admin.ejs',
+      template: '!!ejs-webpack-loader!./client/views/admin/admin.ejs',
       filename: 'views/admin/admin.ejs',
       chunks: isDev ? ['admin'] : ['admin', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/admin/login/login.ejs',
+      template: '!!ejs-webpack-loader!./client/views/admin/login/login.ejs',
       filename: 'views/admin/login/login.ejs',
       chunks: isDev ? ['admin_login'] : ['admin_login', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/admin/login/register.ejs',
+      template: '!!ejs-webpack-loader!./client/views/admin/login/register.ejs',
       filename: 'views/admin/login/register.ejs',
       chunks: isDev
         ? ['admin_register']
         : ['admin_register', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/admin/popup/popup.ejs',
+      template: '!!ejs-webpack-loader!./client/views/admin/popup/popup.ejs',
       filename: 'views/admin/popup/popup.ejs',
       chunks: isDev ? ['admin_popup'] : ['admin_popup', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
       template:
-        '!!ejs-webpack-loader!./src/views/admin/popup/popup-message.ejs',
+        '!!ejs-webpack-loader!./client/views/admin/popup/popup-message.ejs',
       filename: 'views/admin/popup/popup-message.ejs',
       chunks: isDev ? ['admin_popup'] : ['admin_popup', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/admin/our_services/atms.ejs',
+      template: '!!ejs-webpack-loader!./client/views/admin/our_services/atms.ejs',
       filename: 'views/admin/our_services/atms.ejs',
       chunks: isDev
         ? ['admin_service']
@@ -263,7 +263,7 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       template:
-        '!!ejs-webpack-loader!./src/views/admin/our_services/microdermabrasion.ejs',
+        '!!ejs-webpack-loader!./client/views/admin/our_services/microdermabrasion.ejs',
       filename: 'views/admin/our_services/microdermabrasion.ejs',
       chunks: isDev
         ? ['admin_service']
@@ -271,7 +271,7 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       template:
-        '!!ejs-webpack-loader!./src/views/admin/our_services/chemical-peel.ejs',
+        '!!ejs-webpack-loader!./client/views/admin/our_services/chemical-peel.ejs',
       filename: 'views/admin/our_services/chemical-peel.ejs',
       chunks: isDev
         ? ['admin_service']
@@ -279,7 +279,7 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       template:
-        '!!ejs-webpack-loader!./src/views/admin/our_services/permanent-makeup.ejs',
+        '!!ejs-webpack-loader!./client/views/admin/our_services/permanent-makeup.ejs',
       filename: 'views/admin/our_services/permanent-makeup.ejs',
       chunks: isDev
         ? ['admin_service']
@@ -287,7 +287,7 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       template:
-        '!!ejs-webpack-loader!./src/views/admin/our_services/ipl-laser.ejs',
+        '!!ejs-webpack-loader!./client/views/admin/our_services/ipl-laser.ejs',
       filename: 'views/admin/our_services/ipl-laser.ejs',
       chunks: isDev
         ? ['admin_service']
@@ -295,105 +295,105 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       template:
-        '!!ejs-webpack-loader!./src/views/admin/our_services/multifunctional-facials.ejs',
+        '!!ejs-webpack-loader!./client/views/admin/our_services/multifunctional-facials.ejs',
       filename: 'views/admin/our_services/multifunctional-facials.ejs',
       chunks: isDev
         ? ['admin_service']
         : ['admin_service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/admin/prices/prices.ejs',
+      template: '!!ejs-webpack-loader!./client/views/admin/prices/prices.ejs',
       filename: 'views/admin/prices/prices.ejs',
       chunks: isDev ? ['admin_price'] : ['admin_price', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/admin/contacts/contacts.ejs',
+      template: '!!ejs-webpack-loader!./client/views/admin/contacts/contacts.ejs',
       filename: 'views/admin/contacts/contacts.ejs',
       chunks: isDev
         ? ['admin_contacts']
         : ['admin_contacts', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/admin/gallery/gallery.ejs',
+      template: '!!ejs-webpack-loader!./client/views/admin/gallery/gallery.ejs',
       filename: 'views/admin/gallery/gallery.ejs',
       chunks: isDev
         ? ['admin_gallery']
         : ['admin_gallery', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/admin/about/about.ejs',
+      template: '!!ejs-webpack-loader!./client/views/admin/about/about.ejs',
       filename: 'views/admin/about/about.ejs',
       chunks: isDev ? ['admin_about'] : ['admin_about', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/admin/partials/header.ejs',
+      template: '!!ejs-webpack-loader!./client/views/admin/partials/header.ejs',
       filename: 'views/admin/partials/header.ejs',
       chunks: isDev ? ['admin_about'] : ['admin_about', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/errors/404.ejs',
+      template: '!!ejs-webpack-loader!./client/views/errors/404.ejs',
       filename: 'views/errors/404.ejs',
       chunks: isDev ? ['404'] : ['404', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./src/views/errors/errors.ejs',
+      template: '!!ejs-webpack-loader!./client/views/errors/errors.ejs',
       filename: 'views/errors/errors.ejs',
       chunks: isDev ? ['errors'] : ['errors', 'manifest', 'vendors']
     }),
 
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/favicon.png',
+      logo: './client/imgs/favicon.png',
       developerURL: null,
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'index.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/favicon.png',
+      logo: './client/imgs/favicon.png',
       developerURL: null,
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'about.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/favicon.png',
+      logo: './client/imgs/favicon.png',
       developerURL: null,
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'atms.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/favicon.png',
+      logo: './client/imgs/favicon.png',
       developerURL: null,
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'chemical-peel.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/favicon.png',
+      logo: './client/imgs/favicon.png',
       developerURL: null,
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'permanent-makeup.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/favicon.png',
+      logo: './client/imgs/favicon.png',
       developerURL: null,
 
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'mictodermabrasion.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/favicon.png',
+      logo: './client/imgs/favicon.png',
       developerURL: null,
 
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'ipl-laser.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/favicon.png',
+      logo: './client/imgs/favicon.png',
       developerURL: null,
 
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'multifunctional-facials.ejs'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/imgs/favicon.png',
+      logo: './client/imgs/favicon.png',
       developerURL: null,
 
       inject: (htmlPlugin) =>
