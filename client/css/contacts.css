@@ -16,9 +16,14 @@
 
 .contact h3 {
   color: var(--purple2);
-  opacity: 80%;
   font-size: 1.6rem;
   letter-spacing: 0.09rem;
+}
+
+h3 .address,
+h3 .tel-num,
+h3 .time {
+  opacity: 80%;
 }
 
 h3.time {

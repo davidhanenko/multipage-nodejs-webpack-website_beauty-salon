@@ -5,10 +5,10 @@
     <div class="contact text-center col-md-4 my-3 my-md-0">
       <h2 class="location d-flex align-items-center justify-content-center"><span class="icon"></span> Find us</h2>
       <%% contacts.forEach(contact=> { %>
-        <h3>
+        <h3 class="address">
           <%%= contact.address1stLine %>
         </h3>
-        <p>
+        <p></p>
           <%%= contact.address2ndLine %>
         </p>
         <%% }) %>
@@ -19,7 +19,7 @@
       <h2 class="d-flex align-items-center justify-content-center"><span class="icon"></span> Contact us</h2>
 
       <%% contacts.forEach(contact=> { %>
-        <h3>
+        <h3 class="tel-number">
           <%%= contact.telephone %>
         </h3>
         <p><em>
