@@ -40,6 +40,7 @@ module.exports.index = async (req, res) => {
 
 // about page
 module.exports.about = async (req, res) => {
+  const mainTags = await MainTag.findOne({})
   const about = await About.findOne({})
   const services = await Service.find({}, 'title template')
   const contacts = await Contact.find({})
@@ -48,8 +49,9 @@ module.exports.about = async (req, res) => {
   await renderEJS(res, 'about', {
     csrfToken: req.csrfToken(),
     cspNonce: res.locals.cspNonce,
-    title: 'Facial & body treatments | About Ilona beauty salon',
     page: 'about',
+    title: `${mainTags.title} | About`,
+    description: mainTags.descriprion,
     about,
     services,
     contacts
@@ -118,16 +120,18 @@ module.exports.emailCancel = async (req, res) => {
 
 // gallery
 module.exports.gallery = async (req, res) => {
+  const mainTags = await MainTag.findOne({})
   const services = await Service.find({}, 'title template')
   const gallery = await Gallery.find({})
   // logout from admin
   req.logout()
   await renderEJS(res, 'gallery', {
-    services,
-    gallery,
+    cspNonce: res.locals.cspNonce,
     page: 'gallery',
-    title: 'Facial & body treatments | Ilona beauty salon | Gallery',
-    cspNonce: res.locals.cspNonce
+    title: `${mainTags.title} | Gallery`,
+    description: mainTags.descriprion,
+    services,
+    gallery
   })
 }
 

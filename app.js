@@ -224,7 +224,7 @@ app.use((err, req, res, next) => {
 
   if (!isDev) {
     logger.error(err.stack.split('\n').slice(0, 5).join('\n'))
-    res.status(statusCode).render('errors/errors.ejs', { err })
+    res.status(statusCode).render('errors/errors.ejs')
   } else {
     // render eerror page in dev mode wirh err.stack
     logger.error(err.message)
