@@ -2,14 +2,11 @@
 @import 'bottom-menu.css';
 @import 'contacts.css';
 
-
-
 .container-about {
   position: relative;
   margin-top: 7rem;
   margin-bottom: 8rem;
 }
-
 
 .image-about img {
   width: 100%;
@@ -37,10 +34,8 @@ h4 {
   color: rgb(77, 77, 77);
 }
 
-
 /* navbar */
 .navbar,
 .dropdown-menu {
   background: var(--white);
 }
-
