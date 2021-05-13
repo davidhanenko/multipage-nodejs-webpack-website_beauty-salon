@@ -4,6 +4,7 @@ const Service = require('../../models/service')
 const { renderEJS } = require('../../middleware/template')
 const logger = require('../../utils/logger')
 
+
 //show contacts views & edit page
 module.exports.showContacts = async (req, res) => {
   const services = await Service.find({}, 'title template')
