@@ -7,7 +7,7 @@ const { renderEJS } = require('../../middleware/template')
 const { validationResult } = require('express-validator')
 const logger = require('../../utils/logger.js')
 
-// render Add new service page
+// render Add New Service page
 module.exports.showNewService = async (req, res) => {
   const services = await Service.find({}, 'title template')
   const prices = await Price.find({}, 'serviceTitle')

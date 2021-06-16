@@ -14,20 +14,29 @@ const logger = require('../utils/logger')
 module.exports.index = async (req, res) => {
   // logout from admin
   req.logout()
-
+  // tags for SEO
   const mainTags = await MainTag.findOne({})
+  // if one of our popup message is selected as current, reveal it on main page
   const popupCurrent = await Popup.findOne({ current: true })
+  // all services and prices to reveal on menu and main page
   const services = await Service.find({})
   const prices = await Price.find({}).populate('unitPrice')
+  // contact info
   const contacts = await Contact.find({})
+  // errors for email sending
   const errors = (await req.session.errors) || {}
+  // input data from email fields
   const data = (await req.session.data) || {}
 
+   // get index.ejs file name from path and render it from views with custom renderEJS function (/server/middleware/template.js)
   await renderEJS(res, 'index', {
+    // token to protect from CSRF
     csrfToken: req.csrfToken(),
+    // nonce created on our server, to validate sourcew of content
     cspNonce: res.locals.cspNonce,
     page: 'home',
     title: mainTags.title,
+    // description of page for SEO, managed from admin pages
     description: mainTags.descriprion,
     data,
     errors,
@@ -42,15 +51,19 @@ module.exports.index = async (req, res) => {
 module.exports.about = async (req, res) => {
   const mainTags = await MainTag.findOne({})
   const about = await About.findOne({})
+  // ervises to reveal into dropdown menu
   const services = await Service.find({}, 'title template')
+  // contacts info to reveal into dropdown menu
   const contacts = await Contact.find({})
-  // logout from admin
+  // logout from admin if you go back or straight to about page from admin page
   req.logout()
+  // // get about.ejs file name from path and render it from views with custom renderEJS function (/server/middleware/template.js)
   await renderEJS(res, 'about', {
     csrfToken: req.csrfToken(),
     cspNonce: res.locals.cspNonce,
     page: 'about',
     title: `${mainTags.title} | About`,
+    // description of page for SEO
     description: mainTags.descriprion,
     about,
     services,
@@ -62,7 +75,7 @@ module.exports.about = async (req, res) => {
 module.exports.email = async (req, res) => {
   req.session.cookie.maxAge = 1000 * 60 * 5
   const errors = validationResult(req)
-
+//  if we get an error
   if (!errors.isEmpty()) {
     req.session.errors = errors.mapped()
 
@@ -71,6 +84,7 @@ module.exports.email = async (req, res) => {
     req.flash('error', 'Please check information and message you entered')
 
     res.redirect('/#contact-form')
+    // if no errors, send email throw nodemailer
   } else {
     try {
       const data = matchedData(req)
@@ -105,6 +119,7 @@ module.exports.email = async (req, res) => {
       req.session.errors = null
       res.redirect('/')
     } catch (err) {
+      // add error to logger and show part of it to user throw alert
       logger.error('From nodemail:' + err.message)
       req.flash('error', err.message)
       logger.error(err)
@@ -112,7 +127,7 @@ module.exports.email = async (req, res) => {
   }
 }
 
-// cancel email - clear form
+// cancel email - clear form | it'll clean the form and destroy session with all inputs
 module.exports.emailCancel = async (req, res) => {
   req.session.destroy()
   res.redirect('/')
@@ -120,15 +135,21 @@ module.exports.emailCancel = async (req, res) => {
 
 // gallery
 module.exports.gallery = async (req, res) => {
+  // tags for SEO
   const mainTags = await MainTag.findOne({})
+  // servises to reveal into dropdown menu
   const services = await Service.find({}, 'title template')
+
   const gallery = await Gallery.find({})
-  // logout from admin
+  // logout from admin if you go back or straight to gallery from admin page
   req.logout()
+  // get gallery.ejs file name from path and render it from views with custom renderEJS function (/server/middleware/template.js)
   await renderEJS(res, 'gallery', {
+    // cspNonce for Content Security Policy
     cspNonce: res.locals.cspNonce,
     page: 'gallery',
     title: `${mainTags.title} | Gallery`,
+    // description of page for SEO
     description: mainTags.descriprion,
     services,
     gallery
@@ -139,18 +160,24 @@ module.exports.gallery = async (req, res) => {
 module.exports.services = async (req, res) => {
   // logout from admin
   req.logout()
+  // service choosen by it template name
   const service = await Service.findOne({
     template: req.params.template
   }).populate('imageBeforeAfter')
+  // all services for dropdown nav menu
   const services = await Service.find({})
+  // all prices to be rendered  current service page
   const prices = await Price.find({}).populate('unitPrice')
+  // get current setvice file name from path and render it from views with custom renderEJS function (/server/middleware/template.js)
   await renderEJS(res, `our_services/${service.template}`, {
     title: `${
+      // Uppercasing first character for menu and title
       service.titleTag?.charAt(0).toUpperCase() + service.titleTag?.slice(1) ||
       service.title.charAt(0).toUpperCase() + service.title.slice(1)
     } | Facial treatments | Ilona beauty salon | Brooklyn`,
     page: service.title,
     cspNonce: res.locals.cspNonce,
+    // description of page for SEO
     description: service.descriptionMain,
     service,
     services,

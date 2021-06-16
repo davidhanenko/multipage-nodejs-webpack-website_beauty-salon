@@ -16,13 +16,17 @@ const { validationResult } = require('express-validator')
 
 // main page for admin
 module.exports.main = async (req, res) => {
+  // SEO mprovement meta tags, to be edited on admin page
   const mainTags = await MainTag.findOne({})
+  // currently selected popup message to be edited on admin page
   const popupCurrent = await Popup.findOne({ current: true })
+  // all services, about page, gallery, prices and contact, to be edited from admin page
   const services = await Service.find({})
   const gallery = await Gallery.find({})
   const about = await About.findOne({}, 'image about')
   const prices = await Price.find({})
   const contacts = await Contact.find({})
+  // render admin page with our renderEJS function instead of native Express method "render"
   await renderEJS(res, 'admin/admin', {
     csrfToken: req.csrfToken(),
     cspNonce: res.locals.cspNonce,
@@ -38,7 +42,7 @@ module.exports.main = async (req, res) => {
   })
 }
 
-// register form
+// show register form
 module.exports.showRegister = (req, res) => {
   renderEJS(res, 'admin/login/register', {
     csrfToken: req.csrfToken(),
@@ -51,20 +55,23 @@ module.exports.showRegister = (req, res) => {
 module.exports.register = async (req, res) => {
   let errors = validationResult(req)
 
+  // show only first error to user if we get some
   if (!errors.isEmpty()) {
     errors = errors.array({ onlyFirstError: true })
-
     req.flash('error', errors[0].msg)
     res.redirect('/admin/register')
   } else {
     try {
+      // get user inputs
       const { username, password, permission } = req.body
-
+      // create new Admin user
       const admin = new Admin({ username })
 
+      // all authorization made with Passport.js
+      // but another 'like' password created to ensure permission to make critical changes to the app
       const salt = await bcrypt.genSalt(10)
       admin.permission = await bcrypt.hash(permission, salt)
-
+      // register new user theow Passport
       Admin.register(admin, password, (err) => {
         if (err) {
           req.flash('error', err.message)
@@ -75,6 +82,7 @@ module.exports.register = async (req, res) => {
         }
       })
     } catch (err) {
+      // add error to the logger and reveal on page throw allert
       logger.error('From admin/register page:' + err.message)
       req.flash('error', err.message)
       res.redirect('back')
@@ -84,6 +92,7 @@ module.exports.register = async (req, res) => {
 
 // show login page
 module.exports.showLogin = async (req, res) => {
+  // all service and prices to be shown on navbar menu
   const services = await Service.find({})
   const prices = await Price.find({})
   await renderEJS(res, 'admin/login/login', {
@@ -97,13 +106,14 @@ module.exports.showLogin = async (req, res) => {
 }
 
 // signin logic
-
-// =============
+// ============ LIMITER
+// use our db connection to count and save incorrect password inpuns
 const mongoConn = mongoose.connection
+
 
 const maxWrongAttemptsByIPperMinute = 3
 const maxWrongAttemptsByIPperDay = 20
-
+// set up our limiter:
 const limiterFastBruteByIP = new RateLimiterMongo({
   storeClient: mongoConn,
   keyPrefix: 'login_fail_ip_per_minute',
@@ -119,9 +129,10 @@ const limiterSlowBruteByIP = new RateLimiterMongo({
   duration: 60 * 60 * 24,
   blockDuration: 60 * 60 * 24 // Block for 1 day, if 20 wrong attempts per day
 })
-// =============
+// ============= LIMITER end
 
 module.exports.login = async (req, res, next) => {
+  // get ip address of machine
   const ipAddr = req.connection.remoteAddress
 
   const [resFastByIP, resSlowByIP] = await Promise.all([
