@@ -2,7 +2,7 @@ const { Router } = require('express')
 const router = Router({ mergeParams: true })
 const prices = require('../../controllers/admin/prices')
 const catchAsync = require('../../utils/catchAsync')
-const { isLoggedIn } = require('../../middleware/admin')
+const { isLoggedIn, roleAdmin } = require('../../middleware/admin')
 const { check } = require('express-validator')
 
 //register price router
@@ -41,6 +41,7 @@ router.post(
   '/',
   priceBlockValidation,
   isLoggedIn,
+  roleAdmin,
   catchAsync(prices.addNewPrice)
 )
 
@@ -50,7 +51,12 @@ router.get('/:id', isLoggedIn, catchAsync(prices.showPrices))
 //edit & delete service price block
 router
   .route('/:price_id')
-  .put(priceBlockValidation, isLoggedIn, catchAsync(prices.editPriceBlock))
-  .delete(isLoggedIn, catchAsync(prices.deletePriceBlock))
+  .put(
+    priceBlockValidation,
+    isLoggedIn,
+    roleAdmin,
+    catchAsync(prices.editPriceBlock)
+  )
+  .delete(isLoggedIn, roleAdmin, catchAsync(prices.deletePriceBlock))
 
 module.exports = router

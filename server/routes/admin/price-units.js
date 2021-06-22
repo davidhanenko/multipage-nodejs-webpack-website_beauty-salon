@@ -5,7 +5,7 @@ const {
   editUnitPrice,
   deleteUnitPrice
 } = require('../../controllers/admin/prices')
-const { isLoggedIn } = require('../../middleware/admin')
+const { isLoggedIn, roleAdmin } = require('../../middleware/admin')
 const catchAsync = require('../../utils/catchAsync')
 const { check } = require('express-validator')
 
@@ -34,12 +34,18 @@ const priceUnitValidation = [
 ]
 
 //upload new unit price to price block
-router.post('/', priceUnitValidation, isLoggedIn, catchAsync(addNewUnitPrice))
+router.post(
+  '/',
+  priceUnitValidation,
+  isLoggedIn,
+  roleAdmin,
+  catchAsync(addNewUnitPrice)
+)
 
 //edit & delete unit price from service price block
 router
   .route('/:unit_id')
-  .put(priceUnitValidation, isLoggedIn, catchAsync(editUnitPrice))
-  .delete(isLoggedIn, catchAsync(deleteUnitPrice))
+  .put(priceUnitValidation, isLoggedIn, roleAdmin, catchAsync(editUnitPrice))
+  .delete(isLoggedIn, roleAdmin, catchAsync(deleteUnitPrice))
 
 module.exports = router

@@ -2,7 +2,7 @@ const { Router } = require('express')
 const router = Router({ mergeParams: true })
 const about = require('../../controllers/admin/about')
 const multer = require('../../utils/multer')
-const { isLoggedIn } = require('../../middleware/admin')
+const { isLoggedIn, roleAdmin } = require('../../middleware/admin')
 const catchAsync = require('../../utils/catchAsync')
 const { check } = require('express-validator')
 
@@ -25,12 +25,14 @@ router
   .get(isLoggedIn, catchAsync(about.showAbout))
   .post(
     isLoggedIn,
+    roleAdmin,
     multer.upload.single('image'),
     aboutInputValidation,
     catchAsync(about.createAbout)
   )
   .put(
     isLoggedIn,
+    roleAdmin,
     multer.upload.single('image'),
     aboutInputValidation,
     catchAsync(about.updateAbout)

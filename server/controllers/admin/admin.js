@@ -55,7 +55,7 @@ module.exports.showRegister = (req, res) => {
 module.exports.register = async (req, res) => {
   let errors = validationResult(req)
 
-  // show only first error to user if we get some
+  // show only first error to user if we got some
   if (!errors.isEmpty()) {
     errors = errors.array({ onlyFirstError: true })
     req.flash('error', errors[0].msg)
@@ -63,7 +63,7 @@ module.exports.register = async (req, res) => {
   } else {
     try {
       // get user inputs
-      const { username, password, permission } = req.body
+      const { username, password, permission, role } = req.body
       // create new Admin user
       const admin = new Admin({ username })
 
@@ -71,6 +71,11 @@ module.exports.register = async (req, res) => {
       // but another 'like' password created to ensure permission to make critical changes to the app
       const salt = await bcrypt.genSalt(10)
       admin.permission = await bcrypt.hash(permission, salt)
+      // set role to admin if secret match
+      // if no - only preview mode, without ability to make POST requests
+      if (role === process.env.ADMIN_SECRET) {
+        admin.isAdmin = true
+      }
       // register new user theow Passport
       Admin.register(admin, password, (err) => {
         if (err) {
@@ -109,7 +114,6 @@ module.exports.showLogin = async (req, res) => {
 // ============ LIMITER
 // use our db connection to count and save incorrect password inpuns
 const mongoConn = mongoose.connection
-
 
 const maxWrongAttemptsByIPperMinute = 3
 const maxWrongAttemptsByIPperDay = 20

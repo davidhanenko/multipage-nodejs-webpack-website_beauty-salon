@@ -2,7 +2,7 @@ const { Router } = require('express')
 const router = Router({ mergeParams: true })
 const admin = require('../../controllers/admin/admin')
 const catchAsync = require('../../utils/catchAsync')
-const { isLoggedIn } = require('../../middleware/admin')
+const { isLoggedIn, roleAdmin } = require('../../middleware/admin')
 const { check } = require('express-validator')
 
 const popupRoutes = require('./popups')
@@ -50,7 +50,7 @@ router.get('/logout', admin.logout)
 // title and description
 router
   .route('/main')
-  .post(isLoggedIn, catchAsync(admin.createMainPageTags))
-  .put(isLoggedIn, catchAsync(admin.updateMainPageTags))
+  .post(isLoggedIn, roleAdmin, catchAsync(admin.createMainPageTags))
+  .put(isLoggedIn, roleAdmin, catchAsync(admin.updateMainPageTags))
 
 module.exports = router

@@ -52,15 +52,23 @@
               min="6" required>
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">
-              Admin permition code is required
+              Admin permission code is required
+            </div>
+          </div>
+          <div class="my-3">
+            <label class="form-label" for="permission">Admin role secret</label>
+            <input class="form-control" type="password" id="role" name="role" placeholder="Admin role secret">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Enter valid secret if you are Admin
             </div>
           </div>
           <button type="submit" class="btn btn-success btn-block mt-5">Sign Up</button>
         </form>
-    
+
       </div>
     </div>
-    
+
     <%- include ../partials/go-back-admin-btn -%>
 
 </body>

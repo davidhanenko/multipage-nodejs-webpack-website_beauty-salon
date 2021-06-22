@@ -3,7 +3,7 @@ const { Router } = require('express')
 const router = Router({ mergeParams: true })
 const services = require('../../controllers/admin/services')
 const catchAsync = require('../../utils/catchAsync')
-const { isLoggedIn } = require('../../middleware/admin')
+const { isLoggedIn, roleAdmin } = require('../../middleware/admin')
 const { check } = require('express-validator')
 
 //register image before-after router
@@ -50,6 +50,7 @@ router.post(
       .trim()
   ],
   isLoggedIn,
+  roleAdmin,
   multer.upload.fields(imagesUpload),
   serviceInputValidation,
   catchAsync(services.createService)
@@ -61,15 +62,18 @@ router
   .get(isLoggedIn, catchAsync(services.showService))
   .put(
     isLoggedIn,
+    roleAdmin,
     multer.upload.fields(imagesUpload),
     serviceInputValidation,
     catchAsync(services.updateService)
   )
-  
-  // tags
-  router.route('/:title/tags').put(isLoggedIn, catchAsync(services.addTags))
+
+// tags
+router
+  .route('/:title/tags')
+  .put(isLoggedIn, roleAdmin, catchAsync(services.addTags))
 
 // delete servise
-router.delete('/:id', isLoggedIn, catchAsync(services.deleteService))
+router.delete('/:id', isLoggedIn, roleAdmin, catchAsync(services.deleteService))
 
 module.exports = router
