@@ -16,6 +16,11 @@ $('.popover-dismiss').popover({
   trigger: 'focus'
 })
 
+// readonly role alert
+setTimeout(function () {
+  $('#alertModal').modal('show')
+}, 2000)
+
 // spinner for creating tags
 $('#create-tags').on('click', function () {
   $('#create-tags-spinner').show()

@@ -6,6 +6,15 @@ global.jQuery = require("jquery");
 
 import '../../css/admin/prices.css';
 
+// popover
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
+$('.popover-dismiss').popover({
+  trigger: 'focus'
+})
+
 //price edit buttons
 $(".price-edit-button").on("click", function () {
    if ($(this).text().trim() == 'Edit') {

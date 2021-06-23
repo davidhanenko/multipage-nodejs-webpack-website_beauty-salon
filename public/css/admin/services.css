@@ -112,7 +112,7 @@ input.form-control {
 .video-choose {
   max-width: 70%;
   height: 7rem;
-  background: rgba(177, 131, 159, 0.516);
+  background: rgba(204, 204, 204, 0.516);
   position: -webkit-sticky;
   position: sticky;
   position: absolute;
@@ -164,6 +164,15 @@ input[type='checkbox'] {
   bottom: 4px;
   margin-right: 0.2rem;
 }
+
+/* tags */
+input[name='titleTag'],
+input[name='descriptionTag'],
+textarea[name='descriptionTag'] {
+ background: var(--bg-color-secondary);
+}
+
+
 
 /* delete confirm modal */
 .delete-modal-title {

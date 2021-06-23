@@ -8,7 +8,7 @@
       <%% gallery.forEach(img=> { %>
         <div class="col-md-3 mt-3">
           <div class="gallery-image">
-            <img alt="gallery image" src="<%%= img.galleryImage.url %>" >
+            <img alt="gallery image" src="<%%= img.galleryImage.url %>">
 
 
             <!-- delete button -->
@@ -29,7 +29,8 @@
                 <h5 class="modal-title mr-2" id="staticBackdropLabel">
                   Delete image:
                 </h5>
-                <img alt="preview of deleting gallery image"class="image-delete-modal" src="<%%= img.galleryImage.url %>" >
+                <img alt="preview of deleting gallery image" class="image-delete-modal"
+                  src="<%%= img.galleryImage.url %>">
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
@@ -67,6 +68,11 @@
       <div class="row add-new-image text-center pt-5">
 
         <div class="col-md-3">
+
+          <!-- popover -->
+          <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+            title="Images upload"
+            data-content="Choose up to 3 images to upload to Gallery. Each of those should be less than 10Mb in size">?</a>
 
           <div class="image-choose">
             <input type="file" class="form-control-file my-2 galleryImage" name="galleryImage" id="galleryImage"
@@ -109,9 +115,9 @@
         </div>
       </div>
     </form>
-  
+
   </div>
 
-<%- include ../partials/go-back-admin-btn -%>
+  <%- include ../partials/go-back-admin-btn -%>
 
-  <%- include ../partials/footer -%>
+    <%- include ../partials/footer -%>

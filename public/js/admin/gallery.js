@@ -6,6 +6,15 @@ global.jQuery = require('jquery')
 import '../../css/admin/gallery.css'
 
 
+// popover
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
+$('.popover-dismiss').popover({
+  trigger: 'focus'
+})
+
 //spinner for uploading main image
 $('#updateBtn').on('click', function () {
   $('#update-spinner').show()

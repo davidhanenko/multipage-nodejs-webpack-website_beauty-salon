@@ -4,6 +4,11 @@
     <h2>Edit or delete prices for <span>
         <%%= servicePrice.serviceTitle %>
       </span></h2>
+
+    <!--info popover -->
+    <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+      title="Prices" data-content="Here you can Edit, Delete or Add New prices positions for current service">?</a>
+
     <div class="row text-center">
       <div class="col-12">
         <div class="price-show">
@@ -195,9 +200,14 @@
             </div>
           </div>
           <button type="submit" class="btn btn-lg btn-block btn-success my-2 ml-2">
-            Add new price
+            Add new price row
           </button>
         </form>
+
+        <!--info popover -->
+        <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+          title="Add new price" data-content="Add new price row(position) for current service">?</a>
+
       </div>
     </div>
 

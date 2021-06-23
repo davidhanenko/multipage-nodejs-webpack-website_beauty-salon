@@ -33,7 +33,6 @@ document.onreadystatechange = function () {
 }
 
 // show alert/modal after page loaded and 3 sec past
-
 setTimeout(function () {
   $('#alertModal').modal('show')
 }, 3000)
