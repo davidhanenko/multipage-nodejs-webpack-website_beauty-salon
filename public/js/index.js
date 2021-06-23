@@ -32,7 +32,19 @@ document.onreadystatechange = function () {
   }
 }
 
+
 // show alert/modal after page loaded and 3 sec past
 setTimeout(function () {
-  $('#alertModal').modal('show')
+  if (
+    !localStorage.getItem('showOnce') ||
+    localStorage.getItem('showOnce') === 'true'
+  ) {
+    $('#alertModal').modal('show')
+    localStorage.setItem('showOnce', 'false')
+  }
 }, 3000)
+
+// show alert/modal on main page again(after 15 mins from last reload)
+setTimeout(function () {
+  localStorage.setItem('showOnce', 'true')
+}, 1000 * 60 * 15)
