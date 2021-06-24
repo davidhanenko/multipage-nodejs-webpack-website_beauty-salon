@@ -29,6 +29,10 @@ body {
 
 /* navbar */
 
+.read-only-role {
+  font-size: 1rem;
+}
+
 .navbar {
   padding-top: 0;
   padding-bottom: 0;
@@ -177,7 +181,6 @@ button.navbar-toggler {
 }
 
 @media (max-width: 321px) {
-
   .toggler-icon {
     height: 0.9rem;
     width: 0.9rem;

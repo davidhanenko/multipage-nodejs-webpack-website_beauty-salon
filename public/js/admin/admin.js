@@ -26,6 +26,7 @@ setTimeout(function () {
   localStorage.setItem('showOnceAdmin', 'true')
 }, 1000 * 60 * 15)
 
+
 // popovers
 $(function () {
   $('[data-toggle="popover"]').popover()

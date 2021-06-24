@@ -32,16 +32,17 @@
   </div>
   <div class="under">
 
+    <%% if(process.env.NODE_ENV === 'development' ) { %>
+      <h2 class="alert-heading">
+        <%%= err.message%>
+      </h2>
+      <p>
+        <%%= err.stack %>
+      </p>
+      <%% } %>
 
-    <h2 class="alert-heading">
-      <%%=err.message%>
-    </h2>
-    <p>
-      <%%= err.stack %>
-    </p>
-
-    <h3>Try to reload this page</h3>
-    <h3>Or go back to <a href="/">Homepage</a></h3>
+        <h3>Try to reload this page</h3>
+        <h3>Or go back to <a href="/">Homepage</a></h3>
   </div>
 
 </body>

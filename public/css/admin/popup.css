@@ -28,14 +28,18 @@ h2 {
 
 #create-new-message {
   background: var(--white);
-  margin-top: 6rem;
   width: 85%;
 }
 
 .new-edit-area {
   padding: 1rem;
-  min-height: 4rem;
+  min-height: 6rem;
   overflow-wrap: break-word;
+}
+
+.msg-title {
+  line-height: 2rem;
+  width: 100%;
 }
 
 
