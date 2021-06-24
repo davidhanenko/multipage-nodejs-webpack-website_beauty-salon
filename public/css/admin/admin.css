@@ -178,9 +178,9 @@ h2 {
 
 input[name='title'],
 textarea[name='description'] {
-  background: var(--bg-color-secondary);
+  background: rgb(247, 221, 227);
+  font-size: 1.2rem;
 }
-
 
 /* spinner */
 #page-loading-spinner {
@@ -195,8 +195,6 @@ textarea[name='description'] {
   bottom: 0;
   right: 0;
 }
-
-
 
 /* @MEDIA */
 @media (max-width: 790px) {

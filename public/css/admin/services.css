@@ -169,7 +169,7 @@ input[type='checkbox'] {
 input[name='titleTag'],
 input[name='descriptionTag'],
 textarea[name='descriptionTag'] {
- background: var(--bg-color-secondary);
+ background: rgb(247, 221, 227);
 }
 
 

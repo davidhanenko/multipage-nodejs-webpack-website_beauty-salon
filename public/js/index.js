@@ -35,11 +35,14 @@ document.onreadystatechange = function () {
 
 // show alert/modal after page loaded and 3 sec past
 setTimeout(function () {
+  // if message show first time and no 'showOnce' - set 'showOnce' item to true
   if (
     !localStorage.getItem('showOnce') ||
     localStorage.getItem('showOnce') === 'true'
   ) {
+    // show alert/message
     $('#alertModal').modal('show')
+    // set 'showOnce' to false. Don't show message after reloading of main page
     localStorage.setItem('showOnce', 'false')
   }
 }, 3000)
