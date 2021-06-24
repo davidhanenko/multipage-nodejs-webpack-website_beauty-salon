@@ -205,6 +205,7 @@ module.exports.login = async (req, res, next) => {
             return next(err)
           }
           req.flash('success', 'Welcome back!')
+          res.cookie('showOnceA', 'true', {secure: true})
           return res.redirect('/admin')
         })
       }
@@ -217,6 +218,7 @@ module.exports.logout = (req, res) => {
   req.logOut()
   req.flash('success', 'You are logged out!')
   req.session.destroy()
+  // res.clearCookie('showOnceA', {secure: true})
   res.redirect('/admin/login')
 }
 

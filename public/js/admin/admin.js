@@ -7,24 +7,16 @@ import '../../css/admin/admin.css'
 import '../../css/loaders.css'
 import './contacts.js'
 
+
 // show Read-only alert on Admin page
 setTimeout(function () {
-  // if message show first time and no 'showOnceAdmin' - set 'showOnceAdmin' item to true
-  if (
-    !localStorage.getItem('showOnceAdmin') ||
-    localStorage.getItem('showOnceAdmin') === 'true'
-  ) {
+  if (document.cookie.split('; ').find((row) => row.startsWith('showOnceA')).split('=')[1] === 'true') {
     // show alert/message
+    console.log('modal')
     $('#alertModal').modal('show')
-    // set 'showOnceAdmin' to false. Don't show message after reloading of main page
-    localStorage.setItem('showOnceAdmin', 'false')
   }
+  document.cookie = 'showOnceA=false'
 }, 2000)
-
-// return alert to the page again(after 15 mins from last reload)
-setTimeout(function () {
-  localStorage.setItem('showOnceAdmin', 'true')
-}, 1000 * 60 * 15)
 
 
 // popovers
