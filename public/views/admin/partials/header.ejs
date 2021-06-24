@@ -28,7 +28,9 @@
       <!-- ******** NavBar **********-->
 
       <nav id="mainNavbar" class="navbar navbar-expand-md fixed-top navbar-light mt-lg-0 navbar-light">
-        <a class="navbar-brand" href="/admin">Admin <span class="read-only-role"><%%= ((process.env.NODE_ENV !=='development' ) && !admin.isAdmin) ? 'read-only' : '' %></span> </a>
+        <a class="navbar-brand" href="/admin">Admin <span class="read-only-role">
+            <%%= ((process.env.NODE_ENV !=='development' ) && admin && !admin.isAdmin) ? 'read-only' : '' %>
+          </span> </a>
         <button class="navbar-toggler navbar-light  collapsed" type="button" data-toggle="collapse"
           data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
           aria-label="Toggle navigation">
