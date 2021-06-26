@@ -10,6 +10,7 @@ const Gallery = require('../../models/gallery')
 const Price = require('../../models/service-price')
 const Contact = require('../../models/contact')
 const Admin = require('../../models/admin')
+const Visit = require('../../models/visit')
 const logger = require('../../utils/logger')
 const { siteViewsAdmin } = require('../../utils/visits')
 
@@ -19,7 +20,7 @@ const { validationResult } = require('express-validator')
 // main page for admin
 module.exports.main = async (req, res) => {
   const admin = await Admin.findById(req.user.id)
-
+// increase visits by 1 if readonly role logged in
   if (!admin.isAdmin) {
     siteViewsAdmin()
   }
@@ -33,6 +34,7 @@ module.exports.main = async (req, res) => {
   const about = await About.findOne({}, 'image about')
   const prices = await Price.find({})
   const contacts = await Contact.find({})
+  const visits = await Visit.findOne({})
   // render admin page with our renderEJS function instead of native Express method "render"
   await renderEJS(res, 'admin/admin', {
     csrfToken: req.csrfToken(),
@@ -45,7 +47,8 @@ module.exports.main = async (req, res) => {
     gallery,
     about,
     prices,
-    contacts
+    contacts,
+    visits
   })
 }
 

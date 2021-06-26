@@ -406,4 +406,25 @@
 
   </section>
 
-  <%- include ./partials/footer -%>
+  <%% if((process.env.NODE_ENV !=='development' ) && admin.isAdmin) {%>
+    <section class="container-fluid my-5" id="views">
+      <hr />
+      <div class="row">
+        <div class="col-12">
+          <h2 class="admin-section my-4">Read-Only site views</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <h5>Total visits: <%%= visits.counter %>
+          </h5>
+          <h6>Last visit at: <%%= visits.updated_at %>
+          </h6>
+        </div>
+      </div>
+
+    </section>
+
+    <%% } %>
+
+      <%- include ./partials/footer -%>
