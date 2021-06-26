@@ -12,6 +12,7 @@ const logger = require('../utils/logger')
 
 // index(main page)
 module.exports.index = async (req, res) => {
+
   // logout from admin
   req.logout()
   // tags for SEO
@@ -28,7 +29,7 @@ module.exports.index = async (req, res) => {
   // input data from email fields
   const data = (await req.session.data) || {}
 
-   // get index.ejs file name from path and render it from views with custom renderEJS function (/server/middleware/template.js)
+  // get index.ejs file name from path and render it from views with custom renderEJS function (/server/middleware/template.js)
   await renderEJS(res, 'index', {
     // token to protect from CSRF
     csrfToken: req.csrfToken(),
@@ -75,7 +76,7 @@ module.exports.about = async (req, res) => {
 module.exports.email = async (req, res) => {
   req.session.cookie.maxAge = 1000 * 60 * 5
   const errors = validationResult(req)
-//  if we get an error
+  //  if we get an error
   if (!errors.isEmpty()) {
     req.session.errors = errors.mapped()
 

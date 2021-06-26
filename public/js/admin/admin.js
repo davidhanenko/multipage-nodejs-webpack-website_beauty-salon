@@ -10,11 +10,12 @@ import './contacts.js'
 
 // show Read-only alert on Admin page
 setTimeout(function () {
+  // get our cookie
   if (document.cookie.split('; ').find((row) => row.startsWith('showOnceA')).split('=')[1] === 'true') {
-    // show alert/message
-    console.log('modal')
+    //if message wasn't show yet, show it
     $('#alertModal').modal('show')
   }
+  // set cookie to false to not show it again during current session
   document.cookie = 'showOnceA=false'
 }, 2000)
 

@@ -11,11 +11,18 @@ const Price = require('../../models/service-price')
 const Contact = require('../../models/contact')
 const Admin = require('../../models/admin')
 const logger = require('../../utils/logger')
+const { siteViewsAdmin } = require('../../utils/visits')
+
 const { renderEJS } = require('../../middleware/template')
 const { validationResult } = require('express-validator')
 
 // main page for admin
 module.exports.main = async (req, res) => {
+  const admin = await Admin.findById(req.user.id)
+
+  if (!admin.isAdmin) {
+    siteViewsAdmin()
+  }
   // SEO mprovement meta tags, to be edited on admin page
   const mainTags = await MainTag.findOne({})
   // currently selected popup message to be edited on admin page
@@ -205,7 +212,8 @@ module.exports.login = async (req, res, next) => {
             return next(err)
           }
           req.flash('success', 'Welcome back!')
-          res.cookie('showOnceA', 'true', {secure: true})
+          // set cookie to control madal window in read-only role/mode
+          res.cookie('showOnceA', 'true', { secure: true })
           return res.redirect('/admin')
         })
       }
@@ -218,7 +226,6 @@ module.exports.logout = (req, res) => {
   req.logOut()
   req.flash('success', 'You are logged out!')
   req.session.destroy()
-  // res.clearCookie('showOnceA', {secure: true})
   res.redirect('/admin/login')
 }
 

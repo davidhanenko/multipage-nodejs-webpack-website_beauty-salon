@@ -33,11 +33,13 @@ body {
   font-size: 1rem;
 }
 
+
 .navbar {
   padding-top: 0;
   padding-bottom: 0;
   height: var(--navbar-height);
   padding: 0;
+
 }
 
 .navbar-light .navbar-brand {
