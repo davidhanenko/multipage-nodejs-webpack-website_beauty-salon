@@ -38,7 +38,7 @@ module.exports.index = async (req, res) => {
     page: 'home',
     title: mainTags.title,
     // description of page for SEO, managed from admin pages
-    description: mainTags.descriprion,
+    description: mainTags.description,
     data,
     errors,
     popupCurrent,
