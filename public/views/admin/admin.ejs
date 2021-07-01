@@ -111,11 +111,7 @@
         </p>
       </div>
       <div class="col-12 my-5">
-        <a href="/admin/about">
-          <button type="button" class="btn btn-secondary btn-block">
-            Viev About page
-          </button>
-        </a>
+        <a class="btn btn-secondary btn-block" href="/admin/about">View About page</a>
       </div>
 
     </div>
@@ -278,7 +274,7 @@
               <%% }) %>
       </div>
       <div class="col-12">
-        <a class="btn btn-secondary btn-block my-5" href="/admin/contacts/contacts-edit">View and edit contacts</a>
+        <a class="btn btn-secondary btn-block my-5" href="/admin/contacts/contacts-edit">View and edit Contacts</a>
       </div>
 
     </div>
@@ -415,11 +411,29 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-10">
-          <h5>Total visits: <%%= visits.counter %>
-          </h5>
-          <h6>Last visit at: <%%= visits.updated_at %>
-          </h6>
+        <div class="col-8">
+          <h4 class="my-3">Total visits: <%%= visits.counter %>
+          </h4>
+          <%% if(visits.visits.length !==0) { %>
+            <h5 class="mb-3">Last visit at: <%%= visits.updated_at %>
+            </h5>
+            <%% } %>
+              <%% visits.visits.forEach(visit=> { %>
+                <ul>
+                  <li>
+                    <p>
+                      <%%= visit %>
+                    </p>
+                  </li>
+                </ul>
+
+                <%% }) %>
+        </div>
+        <div class="col-4">
+          <form id="reset-counter" action="/admin/counter?_method=PUT" method="POST">
+            <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+            <button id="reset-counter-btn" class="btn btn-outline-warning btn-lg" aria-label="Reset">Reset</button>
+          </form>
         </div>
       </div>
 

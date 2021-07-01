@@ -20,7 +20,7 @@ const { validationResult } = require('express-validator')
 // main page for admin
 module.exports.main = async (req, res) => {
   const admin = await Admin.findById(req.user.id)
-// increase visits by 1 if readonly role logged in
+  // increase visits by 1 if readonly role logged in
   if (!admin.isAdmin) {
     siteViewsAdmin()
   }
@@ -261,4 +261,16 @@ module.exports.updateMainPageTags = async (req, res) => {
     req.flash('error', err.message)
     res.redirect('back')
   }
+}
+
+// reset counter
+module.exports.resetCounter = async (req, res) => {
+  await Visit.findOneAndUpdate(
+    {},
+    {
+      counter: 0,
+      visits: []
+    }
+  )
+  res.redirect('/admin')
 }

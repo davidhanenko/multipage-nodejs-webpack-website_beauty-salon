@@ -53,4 +53,9 @@ router
   .post(isLoggedIn, roleAdmin, catchAsync(admin.createMainPageTags))
   .put(isLoggedIn, roleAdmin, catchAsync(admin.updateMainPageTags))
 
+  // visites counter
+router
+  .route('/counter')
+  .put(isLoggedIn, roleAdmin, catchAsync(admin.resetCounter))
+
 module.exports = router

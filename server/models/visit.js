@@ -9,7 +9,8 @@ const visitSchema = new mongoose.Schema(
     counter: {
       type: Number,
       required: true
-    }
+    },
+    visits: Array
   },
   schemaOptions
 )
