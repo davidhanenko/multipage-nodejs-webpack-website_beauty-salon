@@ -10,7 +10,7 @@
     "dev": "NODE_ENV=development nodemon ./bin/www.js --watch server"
   },
   "keywords": [],
-  "author": "Vasyl Hanenko",
+  "author": "David Hanenko",
   "license": "ISC",
   "dependencies": {
     "animate.css": "^4.1.1",

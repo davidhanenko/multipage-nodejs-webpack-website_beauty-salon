@@ -148,6 +148,10 @@ button.navbar-toggler {
   transition: background 400ms linear;
 }
 
+.dropdown-toggle {
+  outline: none;
+}
+
 .dropdown-menu {
   background: #f6fafe00;
   border: none;
