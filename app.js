@@ -81,7 +81,7 @@ app.use(
       // sameSite: 'lax',
       httpOnly: true,
       // secure: true,
-      maxAge: 1000 * 60 * 30
+      maxAge: 1000 * 60 * 60
     }
   })
 )

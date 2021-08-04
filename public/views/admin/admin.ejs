@@ -415,7 +415,7 @@
           <h4 class="my-3">Total visits: <%%= visits.counter %>
           </h4>
           <%% if(visits.visits.length !==0) { %>
-            <h5 class="mb-3">Last visit at: <%%= visits.updated_at %>
+            <h5 class="mb-3">Last visit at: <%%= visits.updated_at - 4000 %>
             </h5>
             <%% } %>
               <%% visits.visits.forEach(visit=> { %>

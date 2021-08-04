@@ -215,7 +215,7 @@ module.exports.login = async (req, res, next) => {
             return next(err)
           }
           req.flash('success', 'Welcome back!')
-          // set cookie to control madal window in read-only role/mode
+          // set cookie to control modal window in read-only role/mode
           res.cookie('showOnceA', 'true', { secure: true })
           return res.redirect('/admin')
         })
