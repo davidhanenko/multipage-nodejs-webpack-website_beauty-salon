@@ -13,6 +13,8 @@
   --bgDPurple: #a772a5;
 }
 
+
+
 /* font sizes */
 .fs-1 {
   font-size: 1.25rem;
@@ -78,6 +80,10 @@
 }
 
 /* modal */
+.modal-body {
+  font-weight: 100;
+}
+
 .modal-header {
   border-bottom: 0 none;
 }

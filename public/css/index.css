@@ -297,6 +297,31 @@ hr {
   }
 }
 
+@media (min-width: 768px) and (max-width: 992px)  {
+ .service .service-title {
+  font-size: 1.6rem;
+  font-weight: 400;
+  bottom: 2rem;
+  }
+  .service p {
+  font-size: 1.1rem;
+  font-weight: 100;
+  }
+
+   .service-container:hover p {
+    transform: translateY(-2rem);
+    transition: 0.4s;
+    opacity: 1;
+    line-height: 1.2;
+  }
+
+  .service-container:hover .service-title {
+    color: #000;
+    transform: translateY(-12rem);
+    transition: 0.4s;
+  }
+}
+
 @media (max-width: 501px) {
   .slogan {
     top: 42vh;
