@@ -187,7 +187,10 @@ module.exports.showService = async (req, res) => {
 
 // update service information/data
 module.exports.updateService = async (req, res) => {
-  const service = await Service.findOne({ title: req.params.title })
+  const service = await Service.findOne(
+    { title: req.params.title },
+    { upsert: true }
+  )
 
   try {
     const uploader = async (path, opt) => await cloudinary.uploads(path, opt)

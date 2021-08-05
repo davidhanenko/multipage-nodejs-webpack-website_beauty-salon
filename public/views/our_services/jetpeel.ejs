@@ -23,11 +23,11 @@
 
               <div class="row text-center">
                 <div class="col justify-content-center">
-                  <h2>jetpeel</h2>
+                  <h2>jet peel</h2>
                 </div>
               </div>
 
-              <div class="row text-center serv-laser service-p-bigger">
+              <div class="row text-center">
                 <div class="col-lg-10 offset-lg-1">
                   <p class="text-justify px-2 pt-5">
                     <%%= service.description1 %>
@@ -36,23 +36,26 @@
               </div>
 
               <div class="row description pb-5">
-                <div class="col-lg-6 pb-4">
+                <div class="col-12 pb-4">
                   <h3 class="pb-2 pb-lg-0 pt-0 pt-lg-5 pt-lg-0">How it works</h3>
                   <p class="text-justify px-2 pt-3">
                     <%%= service.description2 %>
                   </p>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-md-6">
                   <img src="<%%= service.image1.url %>" alt="<%%= service.title %>">
+                </div>
+                <div class="col-md-6">
+                  <img src="<%%= service.image2.url %>" alt="<%%= service.title %>">
                 </div>
 
               </div>
 
               <div class="row my-5 text-center description serv-peel">
                 <div class="col-lg-6 order-2 order-lg-1">
-                  <img src="<%%= service.image2.url %>" alt="<%%= service.title %>">
+                  <img src="<%%= service.image3.url %>" alt="<%%= service.title %>">
                 </div>
-                <div class="col-lg-6 order-1 order-lg-2">
+                <div class="col-lg-6 order-2 order-lg-1">
                   <h3 class="pb-2">What we use</h3>
                   <p class="text-justify p-2 pt-3 pb-4">
                     <%%= service.description3 %>
@@ -60,14 +63,20 @@
                 </div>
               </div>
 
-              <div class="row my-5 img-shadow text-center description">
-                <div class="col-md-6">
+              <div class="row my-5 text-center description serv-peel">
+                <div class="col-lg-6 d-flex justify-content-center order-1 order-lg-2">
                   <video controls width="450">
                     <source src="<%%= service.video.url %>" type="video/webm">
                     <source src="<%%= service.video.url %>">
                   </video>
                 </div>
+                <div class="col-lg-6 order-2 order-lg-1">
+                  <p class="text-justify p-2 pt-3 pb-4">
+                    <%%= service.description4 %>
+                  </p>
+                </div>
               </div>
+
 
 
               <!-- before/after photo-slider -->

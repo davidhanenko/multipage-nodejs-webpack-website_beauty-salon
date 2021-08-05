@@ -84,7 +84,7 @@
           </div>
         </div>
 
-        <!-- JetPeel -->
+        <!-- Jet Peel -->
         <div class="row text-center my-5">
           <div class="col-lg-10 offset-lg-1">
             <p class="text-justify px-2 pt-5">
@@ -102,7 +102,7 @@
         </div>
 
         <div class="row descript d-flex align-items-center pb-5">
-          <div class="col-lg-6 pb-4">
+          <div class="col-12 pb-4">
             <h3 class="pb-2 pb-lg-0 pt-0 pt-lg-5 pt-lg-0">How it works</h3>
             <p class="text-justify px-2 pt-3">
               <%%= service.description2 %>
@@ -116,8 +116,8 @@
                 rows="6"><%%= service.description2 %></textarea>
             </div>
           </div>
-          <div class="col-lg-6">
 
+          <div class="col-lg-6">
             <div class="image-exist">
               <img src="<%%= service.image1.url %>" alt="<%%= service.title %>" />
               <!-- image upload block -->
@@ -129,7 +129,20 @@
                 <img class="img1Preview" />
               </div>
             </div>
+          </div>
 
+          <div class="col-lg-6">
+            <div class="image-exist">
+              <img src="<%%= service.image2.url %>" alt="<%%= service.title %>" />
+              <!-- image upload block -->
+              <div class="image-choose">
+                <label for="image2">Upload new image</label>
+                <input type="file" class="form-control-file my-2" name="image2" id="image2" accept="image/*" />
+
+                <!-- image preview -->
+                <img class="img2Preview" alt="" />
+              </div>
+            </div>
           </div>
 
         </div>
@@ -137,13 +150,13 @@
         <div class="row my-5 text-center d-flex align-items-center">
           <div class="col-lg-6 order-2 order-lg-1">
             <div class="image-exist">
-              <img src="<%%= service.image2.url %>" alt="<%%= service.title %>" />
+              <img src="<%%= service.image3.url %>" alt="<%%= service.title %>" />
               <div class="image-choose">
-                <label for="image2">Upload new image</label>
-                <input type="file" class="form-control-file my-2" name="image2" id="image2" accept="image/*" />
+                <label for="image3">Upload new image</label>
+                <input type="file" class="form-control-file my-2" name="image3" id="image3" accept="image/*" />
 
                 <!-- image preview -->
-                <img class="img2Preview" />
+                <img class="img3Preview" />
               </div>
 
             </div>
@@ -165,9 +178,8 @@
 
         </div>
 
-        <div class="row my-5 text-center">
-          <div class="col-md-6">
-
+        <div class="row my-5 text-center d-flex align-items-center">
+          <div class="col-lg-6 order-2 order-lg-1">
             <div class="video-exist">
               <video controls width="auto">
                 <source src="<%%= service.video.url %>" type="video/webm">
@@ -188,6 +200,20 @@
 
             </div>
           </div>
+          <div class="col-lg-6 order-1 order-lg-2">
+            <p class="text-justify p-2 pt-3 pb-4">
+              <%%= service.description4 %>
+            </p>
+            <button type="button" class="btn btn-sm btn-block btn-warning description4-edit-button">
+              Edit
+            </button>
+            <!-- edit area for 2nd description -->
+            <div class="description4-edit-area">
+              <textarea type="text" class="form-control my-2" name="description4"
+                rows="6"><%%= service.description4 %></textarea>
+            </div>
+          </div>
+
         </div>
 
         <button type="submit" id="updateBtn" class="btn btn-lg btn-block btn-primary my-2">
