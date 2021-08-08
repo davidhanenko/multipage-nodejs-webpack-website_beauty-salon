@@ -3,8 +3,6 @@
 @import 'loaders.css';
 @import 'services-bunner.css';
 
-
-
 #main-service {
   padding-top: 3rem;
   background: var(--white);
@@ -19,7 +17,7 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 4rem;
-  color: #37243b;
+  color: var(--purple4);
   z-index: 1;
 }
 
@@ -31,7 +29,7 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 2rem;
-  color: #37243b;
+  color: var(--purple4);
 }
 
 .service-hr {
@@ -71,7 +69,7 @@
 
 .description h3 {
   text-align: center;
-  color: #37243b;
+  color: var(--purple4);
   font-size: 2.2rem;
   padding-bottom: 1.4rem;
 }
@@ -105,6 +103,51 @@
   font-weight: 100;
 }
 
+.serv-microderm p {
+  text-indent: 0;
+}
+
+/* service Jet Peel */
+.jetpeel-steps {
+  background: url('../imgs/bg_all.jpg');
+}
+
+.jetpeel-steps h3 {
+  text-align: center;
+  color: var(--purple4);
+  font-size: 2.2rem;
+  padding-bottom: 1.4rem;
+}
+
+.jetpeel-step-inner {
+  background: var(--white);
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.jetpeel-step h4 {
+  text-align: center;
+  color: var(--purple3);
+  font-size: 2.5rem;
+  padding-bottom: 1.4rem;
+}
+
+.jetpeel-step h5 {
+  text-align: center;
+  color: var(--purple3);
+  font-size: 1.4rem;
+  padding-bottom: 1.4rem;
+  line-height: 1.6;
+}
+
+.jetpeel-step p {
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  text-indent: 0;
+}
+
 /* spinner */
 #service-loading-spinner {
   position: fixed;
@@ -120,29 +163,26 @@
 }
 
 .lds-spinner div:after {
-  background: #3a004c;
+  background: var(--purple1);
 }
-
 
 /* navbar */
 #mainNavbar {
-  background: #f6fafe;
-  filter:hue-rotate(45deg)
+  background: var(--white);
+  filter: hue-rotate(45deg);
 }
 
 .dropdown-menu {
-   background:  #f6fafe;
-}
-
-
-
-@media (max-width: 501px) {
- #serv-banner {
- display: none;
-}
-
-#main-service {
-  padding-top: 8rem;
   background: var(--white);
 }
+
+@media (max-width: 501px) {
+  #serv-banner {
+    display: none;
+  }
+
+  #main-service {
+    padding-top: 8rem;
+    background: var(--white);
+  }
 }

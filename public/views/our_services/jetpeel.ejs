@@ -27,15 +27,15 @@
                 </div>
               </div>
 
-              <div class="row text-center">
+              <section class="row text-center">
                 <div class="col-lg-10 offset-lg-1">
                   <p class="text-justify px-2 pt-5">
                     <%%= service.description1 %>
                   </p>
                 </div>
-              </div>
+              </section>
 
-              <div class="row description pb-5">
+              <section class="row description pb-5">
                 <div class="col-12 pb-4">
                   <h3 class="pb-2 pb-lg-0 pt-0 pt-lg-5 pt-lg-0">How it works</h3>
                   <p class="text-justify px-2 pt-3">
@@ -48,35 +48,72 @@
                 <div class="col-md-6">
                   <img src="<%%= service.image2.url %>" alt="<%%= service.title %>">
                 </div>
+              </section>
 
-              </div>
-
-              <div class="row my-5 text-center description serv-peel">
+              <section class="row my-5 text-center description">
                 <div class="col-lg-6 order-2 order-lg-1">
                   <img src="<%%= service.image3.url %>" alt="<%%= service.title %>">
                 </div>
-                <div class="col-lg-6 order-2 order-lg-1">
+                <div class="col-lg-6 order-1 order-lg-2">
                   <h3 class="pb-2">What we use</h3>
                   <p class="text-justify p-2 pt-3 pb-4">
                     <%%= service.description3 %>
                   </p>
                 </div>
-              </div>
+              </section>
 
-              <div class="row my-5 text-center description serv-peel">
-                <div class="col-lg-6 d-flex justify-content-center order-1 order-lg-2">
+              <section class="row my-5 text-center description">
+                <div class="col-lg-6 d-flex justify-content-center order-2">
                   <video controls width="450">
                     <source src="<%%= service.video.url %>" type="video/webm">
                     <source src="<%%= service.video.url %>">
                   </video>
                 </div>
-                <div class="col-lg-6 order-2 order-lg-1">
+                <div class="col-lg-6 order-1">
                   <p class="text-justify p-2 pt-3 pb-4">
                     <%%= service.description4 %>
                   </p>
                 </div>
-              </div>
+              </section>
 
+
+              <section class="jetpeel-steps">
+                <h3>Get it done in 4 steps</h3>
+
+                <div class="row">
+                  <div class="col-6 col-md-3 jetpeel-step">
+                    <div class="col-12 jetpeel-step-inner">
+                      <h4>Step 1</h4>
+                      <h5>LYMPHATIC DRAINAGE</h5>
+                      <p>A pleasant and relaxing massage useful for detoxifying the skin and stimulating
+                        micro-circulation
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3 jetpeel-step">
+                    <div class="col-12 jetpeel-step-inner">
+                      <h4>Step 2</h4>
+                      <h5>HYDRA DERMABRASION</h5>
+                      <p>Removal of dead skin cells prepares the skin to receive nourishment in the Infusion stage</p>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3 jetpeel-step">
+                    <div class="col-12 jetpeel-step-inner">
+                      <h4>Step 3</h4>
+                      <h5>HYDROPORATION</h5>
+                      <p>This step provides effective and deep delivery of active ingredients into the skin</p>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3 jetpeel-step">
+                    <div class="col-12 jetpeel-step-inner">
+                      <h4>Step 4</h4>
+                      <h5>BOOSTER INFUSION</h5>
+                      <p>This optional step can be included to boost the treatment result</p>
+                    </div>
+                  </div>
+
+                </div>
+              </section>
 
 
               <!-- before/after photo-slider -->

@@ -1,11 +1,11 @@
 :root {
   --navbar-height: 5rem;
-  --bg-color: rgb(249, 179, 199);
   --slogan: #5e3b5ed5;
   --white: #f6fafe;
   --purple1: #3a004c;
   --purple2: #5e3b5e;
   --purple3: #422942;
+  --purple4: #37243b;
   --gradient1: linear-gradient(to left, #5e3b5e, #5e3b5e96);
 }
 
@@ -36,6 +36,8 @@ body {
   right: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* header============ */
@@ -183,7 +185,6 @@ button.navbar-toggler {
   background: #f6fafef5;
   transition: background 800ms;
 }
-
 
 @media (max-width: 767px) {
   .dropdownScrolled {
