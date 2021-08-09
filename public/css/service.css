@@ -74,6 +74,16 @@
   padding-bottom: 1.4rem;
 }
 
+.description p {
+   font-weight: 100;
+  font-size: 1.17rem;
+  margin-block-end: 0em;
+  text-indent: 2.5rem;
+  line-height: 1.5;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
 .service-every p {
   font-weight: 100;
   font-size: 1.17rem;
@@ -94,15 +104,17 @@
   font-size: 1.35rem;
 }
 
+/* Chemical peel */
 .serv-peel ul {
   line-height: 1.8;
 }
-
+/* IPL Laser */
 .serv-laser li {
   font-size: 1.17rem;
   font-weight: 100;
 }
 
+/* Microdermabrasion */
 .serv-microderm p {
   text-indent: 0;
 }
@@ -138,8 +150,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--purple1);
-  font-size: 6rem;
-  padding-bottom: 1.4rem;
+  font-size: 7.5rem;
   opacity: 0.2;
   font-weight: 600;
 }

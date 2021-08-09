@@ -225,6 +225,12 @@ module.exports = {
       chunks: isDev ? ['service'] : ['service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
+      template:
+        '!!ejs-webpack-loader!./public/views/our_services/skin-tags-removal.ejs',
+      filename: 'views/our_services/skin-tags-removal.ejs',
+      chunks: isDev ? ['service'] : ['service', 'manifest', 'vendors']
+    }),
+    new HtmlWebPackPlugin({
       template: '!!ejs-webpack-loader!./public/views/gallery.ejs',
       filename: 'views/gallery.ejs',
       chunks: isDev ? ['gallery'] : ['gallery', 'manifest', 'vendors']
@@ -328,6 +334,14 @@ module.exports = {
       template:
         '!!ejs-webpack-loader!./public/views/admin/our_services/jet-peel.ejs',
       filename: 'views/admin/our_services/jet-peel.ejs',
+      chunks: isDev
+        ? ['admin_service']
+        : ['admin_service', 'manifest', 'vendors']
+    }),
+    new HtmlWebPackPlugin({
+      template:
+        '!!ejs-webpack-loader!./public/views/admin/our_services/skin-tags-removal.ejs',
+      filename: 'views/admin/our_services/skin-tags-removal.ejs',
       chunks: isDev
         ? ['admin_service']
         : ['admin_service', 'manifest', 'vendors']

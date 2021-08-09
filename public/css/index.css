@@ -144,6 +144,18 @@
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -1s);
 }
+
+.service-wrap:nth-child(7) {
+  animation: slidein1 0.6s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
+
+.service-wrap:nth-child(8) {
+  animation: slidein2 0.6s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
 /* services============= */
 
 hr {
