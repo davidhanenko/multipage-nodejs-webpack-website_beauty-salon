@@ -220,8 +220,8 @@ module.exports = {
       chunks: isDev ? ['service'] : ['service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./public/views/our_services/jetpeel.ejs',
-      filename: 'views/our_services/jetpeel.ejs',
+      template: '!!ejs-webpack-loader!./public/views/our_services/jet-peel.ejs',
+      filename: 'views/our_services/jet-peel.ejs',
       chunks: isDev ? ['service'] : ['service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
@@ -326,8 +326,8 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       template:
-        '!!ejs-webpack-loader!./public/views/admin/our_services/jetpeel.ejs',
-      filename: 'views/admin/our_services/jetpeel.ejs',
+        '!!ejs-webpack-loader!./public/views/admin/our_services/jet-peel.ejs',
+      filename: 'views/admin/our_services/jet-peel.ejs',
       chunks: isDev
         ? ['admin_service']
         : ['admin_service', 'manifest', 'vendors']

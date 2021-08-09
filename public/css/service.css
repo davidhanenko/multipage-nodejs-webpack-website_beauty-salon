@@ -110,6 +110,8 @@
 /* service Jet Peel */
 .jetpeel-steps {
   background: url('../imgs/bg_all.jpg');
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .jetpeel-steps h3 {
@@ -119,26 +121,34 @@
   padding-bottom: 1.4rem;
 }
 
+.jetpeel-step {
+  margin-top: 1rem;
+}
+
 .jetpeel-step-inner {
+  position: relative;
   background: var(--white);
   height: 100%;
-  padding: 0;
-  margin: 0;
+  padding: 1rem;
 }
 
 .jetpeel-step h4 {
-  text-align: center;
-  color: var(--purple3);
-  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--purple1);
+  font-size: 6rem;
   padding-bottom: 1.4rem;
+  opacity: 0.2;
+  font-weight: 600;
 }
 
 .jetpeel-step h5 {
   text-align: center;
   color: var(--purple3);
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   padding-bottom: 1.4rem;
-  line-height: 1.6;
 }
 
 .jetpeel-step p {
