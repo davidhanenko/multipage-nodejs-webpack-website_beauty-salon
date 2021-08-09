@@ -1,12 +1,33 @@
-<div class="row no-gutters justify-content-center btn-row">
+<div class="row no-gutters justify-content-center services-buttons">
   <%% services.forEach(button => { %>
       
-    <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center serv-btn">
-      <a href="/services/<%%= button.template %>" id="service-button" class="btn btn1 
-      <%%= typeof page !== undefined && page === button.title ? 'serv-btn-active' : ''
+    <div class="col-6 col-md-3 d-flex justify-content-center services-button my-2">
+      <a href="/services/<%%= button.template %>" id="service-button" class="btn service-button-link  
+      <%%= typeof page !== undefined && page === button.title ? 'service-button-active' : ''
       %>"><%%= button.title %> </a>
     </div>
       
    <%% }) %>
   
   </div> 
+
+    <!-- dropdown prices buttons -->
+    <div id="drop-prices" class="dropdown d-block d-lg-none">
+    
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Price list
+      </button>
+    
+    
+      <div class="prices-menu dropdown-menu pricesButtons" aria-labelledby="dropdownMenuButton">
+        <%% services.forEach(button => { %>
+    
+          <li class="dropdown-item priceBtn priceBtnActive">
+            <%%= button.title %>
+          </li>
+    
+          <%% }) %>
+    
+      </div>
+    </div>
