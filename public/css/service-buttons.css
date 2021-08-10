@@ -54,17 +54,17 @@
   margin-bottom: 1rem;
 }
 
-.dropdown-toggle {
+.service-button-toggle {
   color: var(--white);
   background: var(--purple2);
   text-transform: uppercase;
   font-size: 1.4rem;
 }
 
-.dropdown-menu {
-  background: var(--white);
+#dropdown-services-buttons .dropdown-menu {
+  background: rgb(182, 163, 179);
   border: none;
-  width: 20em;
+  width: 23em;
   margin-top: 0.1rem;
 }
 
@@ -74,6 +74,7 @@
   font-size: 1.2rem;
   width: 80%;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .dropdown-item:hover {
@@ -82,6 +83,12 @@
   color: var(--purple3);
   opacity: 65%;
   transition: border 400ms;
+}
+
+.dropdown-service-button-active {
+   color: rgb(21, 20, 20);
+  transition: 0.3s;
+  transform: scale(1.12);
 }
 
 @media (max-width: 501px) {

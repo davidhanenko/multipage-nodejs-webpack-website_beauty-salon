@@ -18,7 +18,7 @@
 <!-- dropdown services buttons -->
 <div id="dropdown-services-buttons" class="dropdown d-block d-md-none">
 
-  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+  <button class="btn dropdown-toggle service-button-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
     aria-haspopup="true" aria-expanded="false">
     our services
   </button>
@@ -27,9 +27,12 @@
   <div class="services-menu dropdown-menu dropdown-services-buttons" aria-labelledby="dropdownMenuButton">
     <%% services.forEach(button=> { %>
 
-      <li class="dropdown-item dropdown-service-button dropdown-service-btn-active">
+
+      <a href="/services/<%%= button.template %>" class="dropdown-item dropdown-service-button <%%= typeof page !==undefined && page===button.title
+          ? 'dropdown-service-button-active' : '' %>">
         <%%= button.title %>
-      </li>
+      </a>
+
 
       <%% }) %>
 
