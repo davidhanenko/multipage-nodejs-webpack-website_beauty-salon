@@ -1,33 +1,37 @@
-<div class="row no-gutters justify-content-center services-buttons">
-  <%% services.forEach(button => { %>
-      
-    <div class="col-6 col-md-3 d-flex justify-content-center services-button my-2">
-      <a href="/services/<%%= button.template %>" id="service-button" class="btn service-button-link  
-      <%%= typeof page !== undefined && page === button.title ? 'service-button-active' : ''
-      %>"><%%= button.title %> </a>
-    </div>
-      
-   <%% }) %>
-  
-  </div> 
+<div class="d-none d-md-block">
+  <div class="row no-gutters justify-content-center services-buttons ">
+    <%% services.forEach(button=> { %>
 
-    <!-- dropdown prices buttons -->
-    <div id="drop-prices" class="dropdown d-block d-lg-none">
-    
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Price list
-      </button>
-    
-    
-      <div class="prices-menu dropdown-menu pricesButtons" aria-labelledby="dropdownMenuButton">
-        <%% services.forEach(button => { %>
-    
-          <li class="dropdown-item priceBtn priceBtnActive">
-            <%%= button.title %>
-          </li>
-    
-          <%% }) %>
-    
+      <div class="col-6 col-md-3 d-flex justify-content-center services-button my-2">
+        <a href="/services/<%%= button.template %>" id="service-button" class="btn service-button-link  
+      <%%= typeof page !== undefined && page === button.title ? 'service-button-active' : ''
+      %>">
+          <%%= button.title %>
+        </a>
       </div>
-    </div>
+
+      <%% }) %>
+
+  </div>
+</div>
+
+<!-- dropdown services buttons -->
+<div id="dropdown-services-buttons" class="dropdown d-block d-md-none">
+
+  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+    our services
+  </button>
+
+
+  <div class="services-menu dropdown-menu dropdown-services-buttons" aria-labelledby="dropdownMenuButton">
+    <%% services.forEach(button=> { %>
+
+      <li class="dropdown-item dropdown-service-button dropdown-service-btn-active">
+        <%%= button.title %>
+      </li>
+
+      <%% }) %>
+
+  </div>
+</div>

@@ -1,5 +1,3 @@
-@import './prices.css';
-
 .services-buttons {
   position: absolute;
   top: -20rem;
@@ -50,6 +48,41 @@
   pointer-events: none;
 }
 
+/* dropdown services buttons */
+#dropdown-services-buttons {
+  border-bottom: 2px solid var(--white);
+  margin-bottom: 1rem;
+}
+
+.dropdown-toggle {
+  color: var(--white);
+  background: var(--purple2);
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+.dropdown-menu {
+  background: var(--white);
+  border: none;
+  width: 20em;
+  margin-top: 0.1rem;
+}
+
+.dropdown-item {
+  border-bottom: 1px solid transparent;
+  color: var(--purple3);
+  font-size: 1.2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.dropdown-item:hover {
+  background: none;
+  border-bottom: 1px solid var(--purple3);
+  color: var(--purple3);
+  opacity: 65%;
+  transition: border 400ms;
+}
 
 @media (max-width: 501px) {
   .btn-row {
