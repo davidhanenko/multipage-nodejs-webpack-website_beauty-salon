@@ -47,13 +47,21 @@ router
 // logout
 router.get('/logout', admin.logout)
 
+// display prices
+router.post(
+  '/display-price',
+  isLoggedIn,
+  roleAdmin,
+  catchAsync(admin.dispalayPrices)
+)
+
 // title and description
 router
   .route('/main')
   .post(isLoggedIn, roleAdmin, catchAsync(admin.createMainPageTags))
   .put(isLoggedIn, roleAdmin, catchAsync(admin.updateMainPageTags))
 
-  // visites counter
+// visites counter
 router
   .route('/counter')
   .put(isLoggedIn, roleAdmin, catchAsync(admin.resetCounter))

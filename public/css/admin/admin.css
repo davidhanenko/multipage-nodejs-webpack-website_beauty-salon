@@ -136,6 +136,19 @@ h2 {
   margin-top: 2rem;
 }
 
+#display-prices {
+  display: flex;
+  align-items: center;
+}
+
+.display-prices-checkbox {
+  width: 2rem;
+  height: 2rem;
+  line-height: 1rem;
+}
+
+
+
 /* Contacts */
 
 #contacts {

@@ -8,6 +8,7 @@ const Service = require('../../models/service')
 const About = require('../../models/about')
 const Gallery = require('../../models/gallery')
 const Price = require('../../models/service-price')
+const DisplayPrices = require('../../models/display-prices')
 const Contact = require('../../models/contact')
 const Admin = require('../../models/admin')
 const Visit = require('../../models/visit')
@@ -230,6 +231,23 @@ module.exports.logout = (req, res) => {
   req.flash('success', 'You are logged out!')
   req.session.destroy()
   res.redirect('/admin/login')
+}
+
+//  Display prices block on main page
+module.exports.dispalayPrices = async (req, res) => {
+  try {
+    await DisplayPrices.findOneAndUpdate(
+      { displayPrices: true },
+      { upsert: true }
+    )
+
+    req.flash('success', 'Display Prices Mode updated')
+    res.redirect('/admin')
+  } catch (err) {
+    logger.error('From admin/display-prices:' + err.message)
+    req.flash('error', err.message)
+    res.redirect('back')
+  }
 }
 
 // title and description create
