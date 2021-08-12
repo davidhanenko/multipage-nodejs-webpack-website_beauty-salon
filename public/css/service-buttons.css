@@ -1,6 +1,6 @@
 .services-buttons {
   position: absolute;
-  top: -20rem;
+  top: -18rem;
 }
 
 .services-button {
@@ -17,7 +17,6 @@
   color: var(--purple1);
   text-transform: uppercase;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  /* border: 1px solid var(--purple1); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,17 +31,16 @@
   background: -moz-linear-gradient(top left, #8c577a, #d095ce);
   background: linear-gradient(to bottom right, #8c577a, #d095ce);
   -webkit-text-fill-color: var(--white);
-  opacity: 0.5;
-  transition: 400;
+  opacity: 0.8;
+  transition: 300;
 }
 
 .service-button-active {
   background: #8c577a;
   background: -webkit-linear-gradient(top left, #8c577a, #d095ce);
   background: -moz-linear-gradient(top left, #8c577a, #d095ce);
-  background: linear-gradient(to bottom right, #68204c, #a578a1);
+  background: linear-gradient(to bottom right, #8c577a, #d095ce);
   -webkit-text-fill-color: #f6fafe;
-  transition: 400;
   filter: grayscale(20%);
   cursor: not-allowed;
   pointer-events: none;
@@ -50,48 +48,59 @@
 
 /* dropdown services buttons */
 #dropdown-services-buttons {
-  border-bottom: 2px solid var(--white);
-  margin-bottom: 1rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .service-button-toggle {
-  color: var(--white);
-  background: var(--purple2);
+  color: var(--purple1);
+  background: -webkit-linear-gradient(top left, #8c577a, #d095ce);
+  background: -moz-linear-gradient(top left, #8c577a, #d095ce);
+  background: linear-gradient(to bottom right, #8c577a, #d095ce);
   text-transform: uppercase;
   font-size: 1.4rem;
 }
 
+.service-button-toggle:hover {
+  color: var(--white);
+}
+
 #dropdown-services-buttons .dropdown-menu {
-  background: rgb(182, 163, 179);
+  background: linear-gradient(to bottom right, #d095ce ,#8c577a);
   border: none;
-  width: 23em;
-  margin-top: 0.1rem;
+  width: 100%;
+  margin-top: 0;
 }
 
 .dropdown-item {
   border-bottom: 1px solid transparent;
-  color: var(--purple3);
+  color: var(--purple1);
   font-size: 1.2rem;
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
+  margin-left: 1rem;
   cursor: pointer;
 }
 
 .dropdown-item:hover {
   background: none;
-  border-bottom: 1px solid var(--purple3);
-  color: var(--purple3);
-  opacity: 65%;
-  transition: border 400ms;
+  border-bottom: 1px solid var(--white);
+  color: var(--white);
+  transform: scale(1.02);
+  transition: all 200ms;
 }
 
 .dropdown-service-button-active {
-   color: rgb(21, 20, 20);
-  transition: 0.3s;
-  transform: scale(1.12);
+  color: var(--white);
+  transform: scale(1.02);
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 @media (max-width: 501px) {
-  .btn-row {
-  }
+ #dropdown-services-buttons {
+  position: absolute;
+  top: var(--navbarHeight);
+  width: 100%;
+}
 }
