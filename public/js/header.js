@@ -14,7 +14,7 @@ $(window).on('scroll', function () {
 // //scroll for dropdown background
 $(function () {
   $(window).on('scroll', function () {
-    var $dropdown = $('#drop')
+    var $dropdown = $('#services-dropdown')
     $dropdown.toggleClass('dropdownScrolled', $(this).scrollTop() > 90)
   })
 })
@@ -23,3 +23,5 @@ $(function () {
 $('.navbar-toggler').on('click', function () {
   $('.navbar').toggleClass('navToggled')
 })
+
+

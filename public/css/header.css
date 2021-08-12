@@ -1,5 +1,5 @@
 :root {
-  --navbar-height: 5rem;
+  --navbarHeight: 5rem;
   --slogan: #5e3b5ed5;
   --white: #f6fafe;
   --purple1: #3a004c;
@@ -103,8 +103,8 @@ button.navbar-toggler {
 }
 
 #mainNavbar {
-  height: var(--navbar-height);
-  transition: background 800ms linear;
+  height: var(--navbarHeight);
+  transition: background 400ms linear;
 }
 
 .navbar {
@@ -143,28 +143,31 @@ button.navbar-toggler {
 
 .scrolled {
   background: #f6fafef5;
-  transition: background 800ms;
+  transition: background 400ms;
 }
 .navToggled {
   background: #f6fafef5;
   transition: background 400ms linear;
 }
 
+/* dropdown */
+
 .dropdown-toggle {
   outline: none;
 }
 
 .dropdown-menu {
-  background: #f6fafe00;
+  background: transparent;
+  top: calc(var(--navbarHeight) - 16px);
   border: none;
   width: 20em;
-  margin-top: 7px;
 }
 
 .dropdown-item {
   border-bottom: 1px solid transparent;
   color: #37243b;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.35rem;
   text-transform: capitalize;
 }
 
@@ -172,7 +175,7 @@ button.navbar-toggler {
   background: none;
   border-bottom: 1px solid #37243b81;
   color: #37243b81;
-  transition: border 400ms;
+  transition: border 300ms;
 }
 
 .dropdown-item-active {
@@ -183,8 +186,9 @@ button.navbar-toggler {
 .dropdownScrolled {
   position: sticky;
   background: #f6fafef5;
-  transition: background 800ms;
+  transition: background 400ms linear;
 }
+
 
 @media (max-width: 767px) {
   .dropdownScrolled {
@@ -197,6 +201,6 @@ button.navbar-toggler {
 
   #mainNavbar {
     padding: 0;
-    transition: background 600ms linear;
+    transition: background 400ms linear;
   }
 }
