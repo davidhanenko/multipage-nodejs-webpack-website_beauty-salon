@@ -236,10 +236,22 @@ module.exports.logout = (req, res) => {
 //  Display prices block on main page
 module.exports.dispalayPrices = async (req, res) => {
   try {
-    await DisplayPrices.findOneAndUpdate(
-      { displayPrices: true },
-      { upsert: true }
-    )
+
+      let displayPrices = await DisplayPrices.findOne({})
+
+    if (displayPrices.displayPrices) {
+      await DisplayPrices.findOneAndUpdate(
+        {},
+        { displayPrices: false },
+        { upsert: true }
+      )
+    } else {
+      await DisplayPrices.findOneAndUpdate(
+        {},
+        { displayPrices: true },
+        { upsert: true }
+      )
+    }
 
     req.flash('success', 'Display Prices Mode updated')
     res.redirect('/admin')
