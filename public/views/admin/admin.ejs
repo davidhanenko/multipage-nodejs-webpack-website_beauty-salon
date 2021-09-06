@@ -225,7 +225,7 @@
       <div id="display-prices" class="row">
         <div class="col-10">
           <button type="button" class="btn btn-block btn-warning mt-5 mb-5" data-toggle="modal"
-            data-target="#confirmDisplayPricesModal">Show Prices on Main page</button>
+            data-target="#confirmDisplayPricesModal"><%%= displayPrices.displayPrices ? 'Hide' : 'Show' %>&nbsp; Prices on Main page</button>
         </div>
         <div class="col-2">
           <input type="checkbox" class="d-flex align-items-center display-prices-checkbox"  <%%= displayPrices.displayPrices
@@ -256,6 +256,7 @@
             </button>
             <form class="d-inline" action="/admin/display-price" method="POST">
               <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+              <input type="password" name="permission" placeholder="permission password.." required>
               <button class="btn btn-danger">Confirm</button>
             </form>
           </div>

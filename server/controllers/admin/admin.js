@@ -238,21 +238,29 @@ module.exports.logout = (req, res) => {
 //  Display prices block on main page
 module.exports.dispalayPrices = async (req, res) => {
   try {
+    // check admin permission pasword to change prices view
+    const isMatch = await bcrypt.compare(
+      req.body.permission,
+      req.user.permission
+    )
+    const displayPrices = await DisplayPrices.findOne({})
 
-      let displayPrices = await DisplayPrices.findOne({})
-
-    if (displayPrices.displayPrices) {
-      await DisplayPrices.findOneAndUpdate(
-        {},
-        { displayPrices: false },
-        { upsert: true }
-      )
+    if (isMatch) {
+      if (displayPrices.displayPrices) {
+        await DisplayPrices.findOneAndUpdate(
+          {},
+          { displayPrices: false },
+          { upsert: true }
+        )
+      } else {
+        await DisplayPrices.findOneAndUpdate(
+          {},
+          { displayPrices: true },
+          { upsert: true }
+        )
+      }
     } else {
-      await DisplayPrices.findOneAndUpdate(
-        {},
-        { displayPrices: true },
-        { upsert: true }
-      )
+      req.flash('error', 'Wrong permission password! Try again')
     }
 
     req.flash('success', 'Display Prices Mode updated')
