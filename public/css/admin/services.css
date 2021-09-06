@@ -169,14 +169,17 @@ input[type='checkbox'] {
 input[name='titleTag'],
 input[name='descriptionTag'],
 textarea[name='descriptionTag'] {
- background: rgb(247, 221, 227);
+  background: rgb(247, 221, 227);
 }
-
-
 
 /* delete confirm modal */
 .delete-modal-title {
   text-transform: capitalize;
+}
+
+#modal-close-btn {
+  position: absolute;
+  left: 1rem;
 }
 
 /* popover */

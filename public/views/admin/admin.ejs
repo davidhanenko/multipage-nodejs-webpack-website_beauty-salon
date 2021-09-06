@@ -220,25 +220,28 @@
     </div>
     <a class="btn btn-block btn-secondary mt-5 mb-5" href="/admin/prices/price-new">Add new price</a>
 
+    <!-- display prices on main page block -->
     <form action="/admin">
-    <div id="display-prices" class="row">
-      <div class="col-10">
-        <button type="button" class="btn btn-block btn-warning mt-5 mb-5" data-toggle="modal" data-target="#confirmDisplayPricesModal">Show Prices on Main page</button>
+      <div id="display-prices" class="row">
+        <div class="col-10">
+          <button type="button" class="btn btn-block btn-warning mt-5 mb-5" data-toggle="modal"
+            data-target="#confirmDisplayPricesModal">Show Prices on Main page</button>
+        </div>
+        <div class="col-2">
+          <input type="checkbox" class="d-flex align-items-center display-prices-checkbox"  <%%= displayPrices.displayPrices
+            ? 'checked' : '' %> disabled>
+        </div>
       </div>
-      <div class="col-2">
-        <input class="display-prices-checkbox" type="checkbox">
-      </div>
-    </div>
     </form>
 
-    <!-- modal window to confirm displaying -->
-    <div class="modal fade" id="confirmDisplayPricesModal" data-backdrop="static" data-keyboard="false"
-      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!-- modal window to confirm display prices -->
+    <div class="modal fade" id="confirmDisplayPricesModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="staticBackdropLabel">
-              Change display price mode to: ?
+              Change display prices mode to: <span class="prices-display-mode"> <%%= displayPrices.displayPrices ? 'hidden' : 'displayed' %></span>
             </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>

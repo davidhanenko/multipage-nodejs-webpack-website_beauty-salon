@@ -21,14 +21,14 @@
         </button>
       </div>
       <div class="modal-body">Please confirm deleting current service</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">
+      <div class="modal-footer d-flex ">
+        <button id="modal-close-btn" type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">
           Close
         </button>
         <form class="d-inline" action="/admin/services/<%%= service._id %>?_method=DELETE" method="POST">
           <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
           <input type="password" name="permission" placeholder="permission password.." required>
-          <button class="btn btn-sm btn-danger">
+          <button class="btn btn-sm btn-danger align-top">
             Confirm
           </button>
         </form>

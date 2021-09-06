@@ -18,7 +18,7 @@ const { siteViewsAdmin } = require('../../utils/visits')
 const { renderEJS } = require('../../middleware/template')
 const { validationResult } = require('express-validator')
 
-// main page for admin
+// main admin page
 module.exports.main = async (req, res) => {
   const admin = await Admin.findById(req.user.id)
   // increase visits by 1 if readonly role logged in
@@ -34,6 +34,7 @@ module.exports.main = async (req, res) => {
   const gallery = await Gallery.find({})
   const about = await About.findOne({}, 'image about')
   const prices = await Price.find({})
+  const displayPrices = await DisplayPrices.findOne({})
   const contacts = await Contact.find({})
   const visits = await Visit.findOne({})
   // render admin page with our renderEJS function instead of native Express method "render"
@@ -48,6 +49,7 @@ module.exports.main = async (req, res) => {
     gallery,
     about,
     prices,
+    displayPrices,
     contacts,
     visits
   })

@@ -144,9 +144,12 @@ h2 {
 .display-prices-checkbox {
   width: 2rem;
   height: 2rem;
-  line-height: 1rem;
 }
 
+.prices-display-mode {
+  text-transform: uppercase;
+  color: var(--purple1);
+}
 
 
 /* Contacts */
