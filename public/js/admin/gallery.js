@@ -35,7 +35,7 @@ $(function () {
               .append($('<div>&times;</div>').attr('class', 'del'))
           )
           
-        // console.log(files)
+        
           $('.del').on('click', function () {
             // $(this).prev().remove()
             $(this).parent().remove()

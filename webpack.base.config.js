@@ -445,7 +445,14 @@ module.exports = {
       inject: (htmlPlugin) =>
         basename(htmlPlugin.options.filename) === 'gallery.ejs'
     }),
-
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: resolve(__dirname, './robots.txt'),
+          to: resolve(__dirname, 'dist')
+        }
+      ]
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
