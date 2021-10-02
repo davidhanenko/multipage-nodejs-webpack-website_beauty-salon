@@ -68,7 +68,7 @@
 .priceBtn:hover {
   color: rgb(21, 20, 20);
   transition: 0.3s;
-  transform: scale(1.07);
+  transform: scale(1.05);
 }
 
 .navbar-toggler:focus,
@@ -125,11 +125,12 @@
 }
 
 .prices-menu .dropdown-item {
-  border-bottom: 1px solid none;
+  border-bottom: 1px solid transparent;
   color: var(--purple3);
   font-size: 1.2rem;
   width: 80%;
   margin: 0 auto;
+  opacity: 1;
   transition: all 400ms;
 }
 
@@ -141,10 +142,10 @@
 }
 
 .priceBtnActive {
-  border-bottom: 1px solid var(--purple3);
+  /* border-bottom: 1px solid var(--purple3); */
   color: var(--purple3);
-  opacity: 0.65;
-  /* transform: scale(1.12); */
+  opacity: 0.65 !important;
+  transform: scale(1.05);
   cursor: not-allowed;
   pointer-events: none;
 }

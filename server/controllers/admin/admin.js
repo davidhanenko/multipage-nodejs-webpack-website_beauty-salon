@@ -38,7 +38,7 @@ module.exports.main = async (req, res) => {
   const contacts = await Contact.find({})
   const visits = await Visit.findOne({})
   // render admin page with our renderEJS function instead of native Express method "render"
-  await renderEJS(res, 'admin/admin', {
+  await renderEJS(res, 'admin/admin-page/admin', {
     csrfToken: req.csrfToken(),
     cspNonce: res.locals.cspNonce,
     page: 'admin',

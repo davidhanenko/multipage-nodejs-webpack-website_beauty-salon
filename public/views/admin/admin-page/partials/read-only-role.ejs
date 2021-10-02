@@ -1,0 +1,34 @@
+<div class="modal fade" id="<%%= ((process.env.NODE_ENV !== 'development' ) && !admin.isAdmin) ? 'alertModal' : '' %>"
+  data-backdrop="static" data-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-light-pink">
+      <div class="row modal-header">
+
+        <div class="col-10">
+          <h5 class="fs-3 text-white">
+            <header>You are on Read-only mode</header>
+          </h5>
+        </div>
+        <div class="col-2">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="modal-body">
+
+        <h5 class="popup-text align-middle">
+          Welcome to the Admin page. You can navigate through all pages in read-only mode. But non of the POST, PUT
+          or DELETE
+          requests will be sent to the server.
+        </h5>
+
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>

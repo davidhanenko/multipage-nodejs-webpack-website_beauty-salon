@@ -1,0 +1,38 @@
+<%% if((process.env.NODE_ENV !=='development' ) && admin.isAdmin) {%>
+  <section class="container-fluid my-5" id="views">
+    <hr />
+    <div class="row">
+      <div class="col-12">
+        <h2 class="admin-section my-4">Read-Only site views</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+        <h4 class="my-3">Total visits: <%%= visits.counter %>
+        </h4>
+        <%% if(visits.visits.length !==0) { %>
+          <h5 class="mb-3">Last visit at: <%%= visits.updated_at - 4000 %>
+          </h5>
+          <%% } %>
+            <%% visits.visits.forEach(visit=> { %>
+              <ul>
+                <li>
+                  <p>
+                    <%%= visit %>
+                  </p>
+                </li>
+              </ul>
+
+              <%% }) %>
+      </div>
+      <div class="col-4">
+        <form id="reset-counter" action="/admin/counter?_method=PUT" method="POST">
+          <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+          <button id="reset-counter-btn" class="btn btn-outline-warning btn-lg" aria-label="Reset">Reset</button>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
+  <%% } %>

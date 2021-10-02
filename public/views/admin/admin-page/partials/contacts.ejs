@@ -1,0 +1,58 @@
+<section id="contacts" class="container-fluid my-5">
+  <div class="row text-center">
+    <div class="col-12 d-flex justify-content-start">
+      <h2 class="admin-section my-4">EDIT or DELETE Contact info</h2>
+    </div>
+    <div class="contact col-md-4 my-3 my-md-0">
+      <h3 class="contact-section location">
+        <span></span>Find us
+        </h2>
+        <%% contacts.forEach(contact=> { %>
+          <h4 class="contact-data">
+            <%%= contact.address1stLine %>
+          </h4>
+          <h5>
+            <%%= contact.address2ndLine %>
+          </h5>
+          <%% }) %>
+    </div>
+    <div class="contact col-md-4 my-1 my-md-0">
+      <h3 class="contact-section telephone">
+        <span></span>Contact us
+      </h3>
+      <%% contacts.forEach(contact=> { %>
+        <h4 class="contact-data">
+          <%%= contact.telephone %>
+        </h4>
+        <h5><em>
+            <%%= contact.email %>
+          </em></h5>
+        <%% }) %>
+    </div>
+    <div class="contact col-md-4 my-1 my-md-0">
+      <h3 class="contact-section hours"><span></span>Our hours
+      </h3>
+      <%% contacts.forEach(contact=> { %>
+        <%% if( contact.day || contact.dayFrom || contact.dayTo || contact.ampmFrom || contact.ampmTo ) { %>
+
+          <h4 class="contact-data">
+            <%% if(contact.day) { %>
+              <%%= contact.day %>
+                <%% } else { %>
+                  <%%= contact.dayFrom %>-<%%= contact.dayTo %>
+                      <%% } %> / <%%= contact.hoursFrom %> : <%%= contact.minsFrom %>
+                            <%%= contact.ampmFrom %>-<%%= contact.hoursTo%>:<%%= contact.minsTo%>
+                                  <%%= contact.ampmTo%>
+          </h4>
+          <%% } %>
+            <%% }) %>
+    </div>
+    <div class="col-12">
+      <a class="btn btn-secondary btn-block my-5" href="/admin/contacts/contacts-edit">View and edit Contacts</a>
+    </div>
+
+  </div>
+
+
+
+</section>

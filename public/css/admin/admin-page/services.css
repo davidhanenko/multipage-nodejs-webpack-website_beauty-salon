@@ -1,0 +1,54 @@
+.services {
+  background: var(--bg-color-secondary);
+}
+
+.service-admin a {
+  max-height: auto;
+  width: 100%;
+}
+
+.service-admin a:hover {
+  text-decoration: none;
+}
+
+.img-gradient {
+  display: block;
+  position: relative;
+}
+
+.img-service-admin {
+  width: 100%;
+  height: auto;
+}
+
+.img-gradient:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: rgb(53, 12, 80);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(143, 94, 135, 0.44) 23%,
+    rgba(207, 131, 240, 0) 100%
+  );
+}
+
+.img-gradient:hover {
+  transform: translate(0.1rem, 0.2rem);
+  box-shadow: -1px -1px 5px rgb(52, 38, 58);
+  transition: 0.2s;
+}
+
+.service-admin h4 {
+  z-index: 1;
+  text-transform: uppercase;
+  position: absolute;
+  left: 0.2rem;
+  bottom: 0;
+  color: #f6fafe;
+}

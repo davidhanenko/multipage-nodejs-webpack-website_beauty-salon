@@ -1,0 +1,16 @@
+<section class="container">
+  <hr>
+  <h2 class="admin-section my-4">Make changes to Gallery</h2>
+
+  <div class="gallary-images flex">
+
+    <%% gallery.forEach(img=> { %>
+      <div class="gallery-image flex-item">
+        <img src="<%%= img.galleryImage.url %>">
+      </div>
+      <%% })%>
+  </div>
+
+  <a class="btn btn-secondary btn-block mt-4" href="/admin/gallery">Go to Gallery</a>
+  <hr class="my-5">
+</section>

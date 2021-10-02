@@ -31,7 +31,8 @@ body {
   margin: 0;
   width: 50%;
   height: auto;
-  transition: 0.7s;
+  transition: all 0.7s;
+  transition-delay: 0.1s;
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -56,8 +57,8 @@ body {
 }
 
 .expanded {
-  transform: scale(1.6);
   z-index: 1;
+  transform: scale(1.6);
 }
 
 .full figure:not(.expanded) {
@@ -76,6 +77,7 @@ body {
 
 /* bottom menu */
 #bottom-menu {
+  user-select: none;
   margin-top: 6rem;
   background: var(--white);
 }
@@ -83,11 +85,11 @@ body {
 #bottom-menu a {
   color: #222;
   text-decoration: none;
-  transition: 0.2s;
+  transition: 0.25s;
 }
 
 #bottom-menu a:hover {
-  color: var(--purple2);
+  color: #c67dc6bf;
 }
 
 .copyright {
@@ -111,6 +113,6 @@ body {
   }
   .expanded {
     transform: scale(2.21);
-    z-index: 3;
+    z-index: 1;
   }
 }

@@ -1,0 +1,210 @@
+<%- include ../partials/header -%>
+
+
+
+  <div class="container-fluid p-0 mb-5">
+
+    <!-- readonly role/mode -->
+    <%- include ./partials/read-only-role -%>
+
+    <!-- Admin page header -->
+    <div class="container">
+      <h1 class="admin-header">Welcome back. What will we change today?</h1>
+
+      <hr>
+
+      <!-- Popup/Emergency message -->
+      <section class="container py-5">
+        <h2 class="admin-section my-4">Create new or Edit exist popup message</h2>
+        <div class="row">
+
+          <div class="col-md-8 popup-message <%%= popupCurrent && popupCurrent.msgBgColor %>">
+            <%% if(popupCurrent) { %>
+              <h4
+                class="<%%= popupCurrent.titleFontSize %> <%%= popupCurrent.titleColor %> <%%= popupCurrent.titlePosition %>">
+                <%%= popupCurrent.title %>
+              </h4>
+              <h5 class="popup-text align-middle 
+                          <%%= popupCurrent.msgFontSize %> <%%= popupCurrent.msgColor %> ">
+                <%%= popupCurrent.message %>
+              </h5>
+              <%% } else { %>
+                <h4>No current mesaages..</h4>
+                <h4>Create a new message or choose one from the list to show it on the main page.</h4>
+                <%% } %>
+          </div>
+
+          <div class="col-md-4 popup-buttons">
+
+            <a href="/admin/popups" class="btn btn-sm btn-outline-info d-md-block m-2">View
+            </a>
+
+            <%% if(popupCurrent) { %>
+              <form class="d-inline" action="/admin/popups?_method=PUT" method="POST">
+                <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+                <button class="btn btn-sm btn-outline-secondary d-md-block m-2">Remove</button>
+              </form>
+              <%% } %>
+
+
+          </div>
+          <!-- popover -->
+          <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+            title="Popup message"
+            data-content="&quot;View&quot;: to go to Popup page. &quot;Remove&quot;: to remove current message from the main page.">?</a>
+        </div>
+
+      </section>
+    </div>
+
+    <hr>
+
+  </div>
+
+  <!-- About page -->
+  <%- include ./partials/about -%>
+
+
+  <!--Gallery  -->
+  <%- include ./partials/gallery -%>
+
+
+
+  <!-- Services -->
+  <%- include ./partials/services -%>
+
+
+  </div>
+
+
+  <!-- Prices -->
+    <%- include ./partials/prices -%>
+
+
+
+  <!-- Contacts -->
+  <%- include ./partials/contacts -%>
+
+
+
+  <!-- Title, meta tags for main page-->
+  <section class="container my-5" id="tags">
+
+    <hr>
+
+    <div class="row">
+      <div class="col-12">
+        <h2 class="admin-section my-4">Main page Title and Description tags</h2>
+      </div>
+    </div>
+
+    <%% if( !mainTags ) { %>
+
+      <!-- create tags form -->
+      <form action="/admin/main" method="POST" class="mx-auto">
+        <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+        <div class="row justify-content-center">
+
+          <div class="col-md-8">
+            <input type="text" class="form-control my-2" name="title" placeholder="Title">
+          </div>
+
+          <div class="col-md-8">
+            <input type="text" class="form-control my-2" name="description" placeholder="Description">
+          </div>
+
+        </div>
+
+
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <button type="submit" id="create-tags" class="btn btn-lg btn-block btn-primary my-2">Create</button>
+          </div>
+        </div>
+
+        <!-- create loading spinner -->
+        <div class="text-center" id="create-tags-spinner">
+          <div class="lds-spinner create-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- popover -->
+      <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+        title="Info" data-content="Create title and description Google use to find your page">?</a>
+
+
+      <%% } else { %>
+
+        <!-- edit tags form -->
+        <form action="/admin/main?_method=PUT" method="POST" class="mx-auto">
+          <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+          <div class="row justify-content-center">
+
+            <div class="col-md-8">
+              <label for="tag-title">Title</label>
+              <input type="text" id="tag-title" class="form-control" name="title" value="<%%= mainTags.title %>">
+
+            </div>
+
+            <div class="col-md-8 my-4">
+              <label for="tag-description">Description</label>
+              <textarea type="text" id="tag-description" class="form-control" rows="5"
+                name="description"><%%= mainTags.description %></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <button type="submit" id="update-tags" class="btn btn-lg btn-block btn-primary my-2">Update</button>
+            </div>
+          </div>
+
+          <!-- update loading spinner -->
+          <div class="text-center" id="update-tags-spinner">
+            <div class="lds-spinner update-spinner">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+        </form>
+        <!-- popover -->
+        <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+          title="Info" data-content="Update title and description Google use to find your page">?</a>
+        <%% } %>
+
+          <hr>
+
+  </section>
+
+  <%- include ./partials/counter -%>
+  
+
+      <%- include ../../partials/footer -%>

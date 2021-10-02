@@ -1,0 +1,23 @@
+<section class="container-fluid my-5">
+
+  <div class="row services p-4">
+    <div class="col-12">
+      <h2 class="admin-section my-4">Chose Service you want to EDIT or DELETE</h2>
+    </div>
+
+    <%% services.forEach(service=> { %>
+      <div class="col-6 col-md-4 mt-3 service-admin">
+        <a href="/admin/services/<%%= service.title %>">
+          <div class="img-gradient">
+            <img class="img-service-admin" src="<%%= service.imageMain.url %>" alt="<%%= service.title %>" />
+            <h4>
+              <%%= service.title %>
+            </h4>
+          </div>
+        </a>
+      </div>
+      <%% }) %>
+
+        <a class="btn btn-block btn-secondary mt-5 mb-4" href="/admin/services/service-new">Add new service</a>
+
+</section>

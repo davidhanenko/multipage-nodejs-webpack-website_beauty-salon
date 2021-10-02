@@ -1,0 +1,26 @@
+.main {
+  width: 90%;
+  height: 20rem;
+}
+
+.gallery-images {
+  width: 50rem;
+  height: 16rem;
+  white-space: nowrap;
+}
+
+.gallery-image img {
+  margin: 0.6rem;
+  height: 15rem;
+  width: 15rem;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: scroll;
+  overflow-x: scroll;
+  overflow-y: none;
+}
+.flex-item {
+  flex: 0 0 auto;
+}

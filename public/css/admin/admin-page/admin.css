@@ -1,0 +1,123 @@
+@import '../popup.css';
+@import '../header.css';
+
+@import 'about.css';
+@import 'gallery.css';
+@import 'services.css';
+@import 'contacts.css';
+@import 'prices.css';
+
+body {
+  background: var(--bg-color-main);
+  padding-top: 20vh;
+}
+
+.admin-header {
+  font-size: 3.5rem;
+  color: #90a7c1;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2.8rem;
+  color: var(--white);
+  font-weight: 300;
+}
+
+/*Popup  */
+
+.popup-buttons .btn {
+  width: 8rem;
+}
+
+/* Tags */
+label[for='tag-title'],
+label[for='tag-description'] {
+  font-size: 1.5rem;
+  margin-bottom: 0.1rem;
+}
+
+input[name='title'],
+textarea[name='description'] {
+  background: rgb(247, 221, 227);
+  font-size: 1.2rem;
+}
+
+/* Views */
+#views {
+  background: var(--bg-color-secondary);
+}
+
+/* spinner */
+#page-loading-spinner {
+  position: fixed;
+  z-index: 999;
+  height: 3em;
+  width: 5em;
+  overflow: visible;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* @MEDIA */
+@media (max-width: 790px) {
+  .service-admin h4 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 501px) {
+  .admin-header {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+  .service-admin h4 {
+    font-size: 0.8rem;
+  }
+
+  .popup-buttons .btn {
+    width: 90%;
+  }
+}
+
+@media (max-width: 376px) {
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  .service-admin h4 {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 321px) {
+  .admin-header {
+    font-size: 2.5rem;
+  }
+
+  .admin-section {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+
+  .service-admin h4 {
+    font-size: 0.5rem;
+  }
+
+  .contact-data {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+}

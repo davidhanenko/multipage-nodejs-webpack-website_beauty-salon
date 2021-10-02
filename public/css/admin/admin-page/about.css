@@ -1,0 +1,15 @@
+.about {
+  background: var(--bg-color-secondary);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.about img {
+  height: 20rem;
+  width: auto;
+}
+
+.about p {
+  font-size: 1.2rem;
+  text-indent: 1.5rem;
+}

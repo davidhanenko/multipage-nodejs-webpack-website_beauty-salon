@@ -255,8 +255,8 @@ module.exports = {
         : ['admin_service', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({
-      template: '!!ejs-webpack-loader!./public/views/admin/admin.ejs',
-      filename: 'views/admin/admin.ejs',
+      template: '!!ejs-webpack-loader!./public/views/admin/admin-page/admin.ejs',
+      filename: 'views/admin/admin-page/admin.ejs',
       chunks: isDev ? ['admin'] : ['admin', 'manifest', 'vendors']
     }),
     new HtmlWebPackPlugin({

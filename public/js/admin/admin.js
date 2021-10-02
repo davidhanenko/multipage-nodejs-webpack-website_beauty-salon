@@ -3,7 +3,7 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 global.jQuery = require('jquery')
 
-import '../../css/admin/admin.css'
+import '../../css/admin/admin-page/admin.css'
 import '../../css/loaders.css'
 import './contacts.js'
 

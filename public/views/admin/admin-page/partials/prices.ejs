@@ -1,0 +1,101 @@
+<section class="container my-5">
+  <hr />
+  <div class="row">
+    <div class="col-12">
+      <h2 class="admin-section my-4">EDIT or DELETE services Prices</h2>
+    </div>
+    <%% prices.forEach(price=> { %>
+
+      <div class="col-md-3 prices">
+        <div>
+          <h4 class="pb-2">
+            <%%= price.serviceTitle %>
+          </h4>
+          <a class="btn btn-info" href="/admin/prices/<%%= price._id %>">View</a>
+          <button type="button" class="btn btn-danger" data-toggle="modal"
+            data-target="#confirmDeleteModal<%%= price._id %>">Delete</button>
+
+        </div>
+        <!-- modal window to confirm delete price block -->
+        <div class="modal fade" id="confirmDeleteModal<%%= price._id %>" data-backdrop="static" data-keyboard="false"
+          tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">
+                  Delete price: <%%= price.serviceTitle %>?
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">Please confirm deleting the price</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                  Close
+                </button>
+                <form class="d-inline" action="/admin/prices/<%%= price._id %>?_method=DELETE" method="POST">
+                  <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                  <button class="btn btn-danger">Confirm</button>
+                </form>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%% }) %>
+  </div>
+  <a class="btn btn-block btn-secondary mt-5 mb-5" href="/admin/prices/price-new">Add new price</a>
+
+  <!-- display prices on main page block -->
+  <form action="/admin">
+    <div id="display-prices" class="row">
+      <div class="col-10">
+        <button type="button" class="btn btn-block btn-warning mt-5 mb-5" data-toggle="modal"
+          data-target="#confirmDisplayPricesModal">
+          <%%= displayPrices.displayPrices ? 'Hide' : 'Show' %>&nbsp; Prices on Main page
+        </button>
+      </div>
+      <div class="col-2">
+        <input type="checkbox" class="d-flex align-items-center display-prices-checkbox" <%%=displayPrices.displayPrices
+          ? 'checked' : '' %> disabled>
+      </div>
+    </div>
+  </form>
+
+  <!-- modal window to confirm display prices -->
+  <div class="modal fade" id="confirmDisplayPricesModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">
+            Change display prices mode to: <span class="prices-display-mode">
+              <%%= displayPrices.displayPrices ? 'hidden' : 'displayed' %>
+            </span>
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Please confirm
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <form class="d-inline" action="/admin/display-price" method="POST">
+            <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+            <input type="password" name="permission" placeholder="permission password.." required>
+            <button class="btn btn-danger">Confirm</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+</section>
