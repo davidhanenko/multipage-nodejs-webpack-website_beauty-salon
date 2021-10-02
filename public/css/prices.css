@@ -71,12 +71,6 @@
   transform: scale(1.07);
 }
 
-.priceBtnActive {
-  color: rgb(21, 20, 20);
-  transition: 0.3s;
-  transform: scale(1.12);
-}
-
 .navbar-toggler:focus,
 .navbar-toggler:active:focus,
 .btn:focus,
@@ -131,17 +125,26 @@
 }
 
 .prices-menu .dropdown-item {
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid none;
   color: var(--purple3);
   font-size: 1.2rem;
   width: 80%;
   margin: 0 auto;
+  transition: all 400ms;
 }
 
 .prices-menu .dropdown-item:hover {
   background: none;
   border-bottom: 1px solid var(--purple3);
   color: var(--purple3);
-  opacity: 65%;
-  transition: border 400ms;
+  opacity: 0.65;
+}
+
+.priceBtnActive {
+  border-bottom: 1px solid var(--purple3);
+  color: var(--purple3);
+  opacity: 0.65;
+  /* transform: scale(1.12); */
+  cursor: not-allowed;
+  pointer-events: none;
 }

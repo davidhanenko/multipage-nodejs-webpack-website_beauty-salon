@@ -75,7 +75,7 @@
 }
 
 .description p {
-   font-weight: 100;
+  font-weight: 100;
   font-size: 1.17rem;
   margin-block-end: 0em;
   text-indent: 2.5rem;
@@ -107,7 +107,9 @@
 /* Chemical peel */
 .serv-peel ul {
   line-height: 1.8;
+  text-align: left;
 }
+
 /* IPL Laser */
 .serv-laser li {
   font-size: 1.17rem;
