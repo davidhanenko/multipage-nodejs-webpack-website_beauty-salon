@@ -1,0 +1,57 @@
+<section id="display-content" class='container-fluid'>
+
+  <%% displayContent.forEach(content=>{ %>
+
+    <!-- prices -->
+    <div class="row d-flex align-items-center">
+      <div class="col-10">
+        <button type="button" class="btn btn-block btn-warning mt-5 mb-5" data-toggle="modal"
+          data-target="#confirmDisplayModal<%%= content.content %>">
+          <%%= content.display ? 'Hide' : 'Display' %>&nbsp; <span class="content-title-button">
+              <%%= content.content %>
+            </span> on Website
+        </button>
+      </div>
+      <div class="col-2">
+        <input type="checkbox" class="d-flex align-items-center content-display-checkbox" <%%=content && content.display
+          ? 'checked' : '' %> disabled>
+      </div>
+    </div>
+
+    <!-- modal window to confirm display prices -->
+    <div class="modal fade" id="confirmDisplayModal<%%= content.content %>" data-backdrop="static" data-keyboard="false"
+      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">
+              Change <span class="content-title-modal">
+                <%%= content.content %>
+              </span> display mode to: <span class="content-display-mode">
+                <%%= content && content.display ? 'hidden' : 'displayed' %>
+              </span>
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Please confirm
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close
+            </button>
+            <form class="d-inline" action="/admin/display-content/<%%= content.content %>" method="POST">
+              <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+              <input type="password" name="permission" placeholder="permission password.." required>
+              <button class="btn btn-danger">Confirm</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%% })%>
+
+</section>

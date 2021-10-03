@@ -2,17 +2,15 @@ const Service = require('../models/service')
 const Price = require('../models/service-price')
 const DisplayContent = require('../models/display-content')
 const Contact = require('../models/contact')
-const About = require('../models/about')
 const Popup = require('../models/popup')
 const MainTag = require('../models/main-tag')
-const Gallery = require('../models/gallery')
 const { renderEJS } = require('../middleware/template')
 const nodemailer = require('nodemailer')
 const { validationResult, matchedData } = require('express-validator')
 const logger = require('../utils/logger')
 
 // index(main page)
-module.exports.index = async (req, res) => {
+module.exports.main = async (req, res) => {
   // logout from admin
   req.logout()
   // tags for SEO
@@ -22,7 +20,7 @@ module.exports.index = async (req, res) => {
   // all services and prices to reveal on menu and main page
   const services = await Service.find({})
   const prices = await Price.find({}).populate('unitPrice')
-  const displayContent = await DisplayContent.findOne({})
+  const displayPrices = await DisplayContent.findOne({ content: 'prices' })
   // contact info
   const contacts = await Contact.find({})
   // errors for email sending
@@ -45,31 +43,7 @@ module.exports.index = async (req, res) => {
     popupCurrent,
     services,
     prices,
-    displayContent,
-    contacts
-  })
-}
-
-// about page
-module.exports.about = async (req, res) => {
-  const mainTags = await MainTag.findOne({})
-  const about = await About.findOne({})
-  // ervises to reveal into dropdown menu
-  const services = await Service.find({}, 'title template')
-  // contacts info to reveal into dropdown menu
-  const contacts = await Contact.find({})
-  // logout from admin if you go back or straight to about page from admin page
-  req.logout()
-  // // get about.ejs file name from path and render it from views with custom renderEJS function (/server/middleware/template.js)
-  await renderEJS(res, 'about', {
-    csrfToken: req.csrfToken(),
-    cspNonce: res.locals.cspNonce,
-    page: 'about',
-    title: `${mainTags.title} | About`,
-    // description of page for SEO
-    description: mainTags.descriprion,
-    about,
-    services,
+    displayPrices,
     contacts
   })
 }
@@ -134,56 +108,4 @@ module.exports.email = async (req, res) => {
 module.exports.emailCancel = async (req, res) => {
   req.session.destroy()
   res.redirect('/')
-}
-
-// gallery
-module.exports.gallery = async (req, res) => {
-  // tags for SEO
-  const mainTags = await MainTag.findOne({})
-  // servises to reveal into dropdown menu
-  const services = await Service.find({}, 'title template')
-
-  const gallery = await Gallery.find({})
-  // logout from admin if you go back or straight to gallery from admin page
-  req.logout()
-  // get gallery.ejs file name from path and render it from views with custom renderEJS function (/server/middleware/template.js)
-  await renderEJS(res, 'gallery', {
-    // cspNonce for Content Security Policy
-    cspNonce: res.locals.cspNonce,
-    page: 'gallery',
-    title: `${mainTags.title} | Gallery`,
-    // description of page for SEO
-    description: mainTags.descriprion,
-    services,
-    gallery
-  })
-}
-
-// services
-module.exports.services = async (req, res) => {
-  // logout from admin
-  req.logout()
-  // service choosen by it template name
-  const service = await Service.findOne({
-    template: req.params.template
-  }).populate('imageBeforeAfter')
-  // all services for dropdown nav menu
-  const services = await Service.find({})
-  // all prices to be rendered  current service page
-  const prices = await Price.find({}).populate('unitPrice')
-  // get current setvice file name from path and render it from views with custom renderEJS function (/server/middleware/template.js)
-  await renderEJS(res, `our_services/${service.template}`, {
-    title: `${
-      // Uppercasing first character for menu and title
-      service.titleTag?.charAt(0).toUpperCase() + service.titleTag?.slice(1) ||
-      service.title.charAt(0).toUpperCase() + service.title.slice(1)
-    } | Facial treatments | Ilona beauty salon | Brooklyn`,
-    page: service.title,
-    cspNonce: res.locals.cspNonce,
-    // description of page for SEO
-    description: service.descriptionMain,
-    service,
-    services,
-    prices
-  })
 }

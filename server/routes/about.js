@@ -1,12 +1,12 @@
 
 const { Router } = require('express')
 const router = Router()
-const main = require('../controllers/main')
+const {about} = require('../controllers/about')
 const catchAsync = require('../utils/catchAsync')
 
 
 
 // open about
-router.get('/', catchAsync(main.about))
+router.get('/', catchAsync(about))
 
 module.exports = router

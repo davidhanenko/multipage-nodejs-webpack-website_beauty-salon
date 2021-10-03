@@ -31,7 +31,7 @@ body {
   margin: 0;
   width: 50%;
   height: auto;
-  transition: all 0.7s;
+  transition: all 0.5s;
   transition-delay: 0.1s;
   display: inline-block;
   position: relative;

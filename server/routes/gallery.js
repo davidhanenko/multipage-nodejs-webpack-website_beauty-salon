@@ -1,9 +1,8 @@
 const { Router } = require('express')
 const router = Router({ mergeParams: true })
-const main = require('../controllers/main')
+const { gallery } = require('../controllers/gallery')
 const catchAsync = require('../utils/catchAsync')
 
-// show gallery
-router.get('/', catchAsync(main.gallery))
+router.get('/', catchAsync(gallery))
 
 module.exports = router

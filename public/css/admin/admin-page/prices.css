@@ -7,21 +7,4 @@
   margin-top: 2rem;
 }
 
-#display-prices {
-  display: flex;
-  align-items: center;
-}
 
-.display-prices-checkbox {
-  width: 2rem;
-  height: 2rem;
-}
-
-.prices-display-mode {
-  text-transform: uppercase;
-  color: var(--purple1);
-}
-
-input[type='checkbox']:disabled {
-  background: green;
-}

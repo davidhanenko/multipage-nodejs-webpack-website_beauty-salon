@@ -103,30 +103,30 @@
 
       </div>
 
-      <%% if(displayContent.displayPrices) { %>
-        <%- include ./prices -%>
-          <%% } %>
+      <!-- Prices -->
+      <%- include ./prices -%>
 
-            <section id="email-map">
-              <div class="container mt-4">
-                <div class="row p-0">
 
-                  <div id="email-input" class="col-lg-6">
-                    <%- include ./email -%>
-                  </div>
+        <section id="email-map">
+          <div class="container mt-4">
+            <div class="row p-0">
 
-                  <div class="col-lg-6 mt-5 mt-lg-0 pl-0 pl-lg-4 pr-0 pr-lg-4">
-                    <%- include ./partials/map -%>
-                  </div>
-                </div>
+              <div id="email-input" class="col-lg-6">
+                <%- include ./email -%>
               </div>
-            </section>
 
-            <!-- alert message/modal -->
-            <%- include ./partials/popup-modal -%>
+              <div class="col-lg-6 mt-5 mt-lg-0 pl-0 pl-lg-4 pr-0 pr-lg-4">
+                <%- include ./partials/map -%>
+              </div>
+            </div>
+          </div>
+        </section>
 
-              <%- include ./contacts -%>
+        <!-- alert message/modal -->
+        <%- include ./partials/popup-modal -%>
 
-                <%- include ./partials/bottom-menu -%>
+          <%- include ./contacts -%>
 
-                  <%- include ./partials/footer -%>
+            <%- include ./partials/bottom-menu -%>
+
+              <%- include ./partials/footer -%>

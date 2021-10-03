@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const router = Router({ mergeParams: true })
-const { email, emailCancel } = require('../controllers/main')
+const { email, emailCancel } = require('../controllers/index')
 const catchAsync = require('../utils/catchAsync')
 const { check } = require('express-validator')
 const rateLimiterMiddleware = require('../middleware/limiter')
