@@ -103,7 +103,7 @@ module.exports.editPriceBlock = async (req, res) => {
   }
 }
 
-//delete price block for service
+// delete price block for service
 module.exports.deletePriceBlock = async (req, res) => {
   try {
     await Price.findByIdAndRemove(req.params.price_id)

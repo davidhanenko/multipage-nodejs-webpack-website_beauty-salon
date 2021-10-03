@@ -1,0 +1,13 @@
+#display-content {
+  background: var(--bg-color-secondary);
+}
+
+.content-title-button {
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.content-title-modal {
+  text-transform: capitalize;
+}
+

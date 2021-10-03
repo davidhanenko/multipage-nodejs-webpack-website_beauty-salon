@@ -6,6 +6,7 @@
 @import 'services.css';
 @import 'contacts.css';
 @import 'prices.css';
+@import 'display-content.css';
 
 body {
   background: var(--bg-color-main);

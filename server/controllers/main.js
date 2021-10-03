@@ -1,6 +1,6 @@
 const Service = require('../models/service')
 const Price = require('../models/service-price')
-const DisplayPrices = require('../models/display-prices')
+const DisplayContent = require('../models/display-content')
 const Contact = require('../models/contact')
 const About = require('../models/about')
 const Popup = require('../models/popup')
@@ -22,7 +22,7 @@ module.exports.index = async (req, res) => {
   // all services and prices to reveal on menu and main page
   const services = await Service.find({})
   const prices = await Price.find({}).populate('unitPrice')
-  const displayPrices = await DisplayPrices.findOne({})
+  const displayContent = await DisplayContent.findOne({})
   // contact info
   const contacts = await Contact.find({})
   // errors for email sending
@@ -45,7 +45,7 @@ module.exports.index = async (req, res) => {
     popupCurrent,
     services,
     prices,
-    displayPrices,
+    displayContent,
     contacts
   })
 }

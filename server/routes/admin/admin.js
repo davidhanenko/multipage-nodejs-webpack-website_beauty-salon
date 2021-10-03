@@ -49,10 +49,10 @@ router.get('/logout', admin.logout)
 
 // display prices
 router.post(
-  '/display-price',
+  '/display-content/:content',
   isLoggedIn,
   roleAdmin,
-  catchAsync(admin.dispalayPrices)
+  catchAsync(admin.dispalayContent)
 )
 
 // title and description

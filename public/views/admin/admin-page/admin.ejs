@@ -7,57 +7,57 @@
     <!-- readonly role/mode -->
     <%- include ./partials/read-only-role -%>
 
-    <!-- Admin page header -->
-    <div class="container">
-      <h1 class="admin-header">Welcome back. What will we change today?</h1>
+      <!-- Admin page header -->
+      <div class="container">
+        <h1 class="admin-header">Welcome back. What will we change today?</h1>
+
+        <hr>
+
+        <!-- Popup/Emergency message -->
+        <section class="container py-5">
+          <h2 class="admin-section my-4">Create new or Edit exist popup message</h2>
+          <div class="row">
+
+            <div class="col-md-8 popup-message <%%= popupCurrent && popupCurrent.msgBgColor %>">
+              <%% if(popupCurrent) { %>
+                <h4
+                  class="<%%= popupCurrent.titleFontSize %> <%%= popupCurrent.titleColor %> <%%= popupCurrent.titlePosition %>">
+                  <%%= popupCurrent.title %>
+                </h4>
+                <h5 class="popup-text align-middle 
+                          <%%= popupCurrent.msgFontSize %> <%%= popupCurrent.msgColor %> ">
+                  <%%= popupCurrent.message %>
+                </h5>
+                <%% } else { %>
+                  <h4>No current mesaages..</h4>
+                  <h4>Create a new message or choose one from the list to show it on the main page.</h4>
+                  <%% } %>
+            </div>
+
+            <div class="col-md-4 popup-buttons">
+
+              <a href="/admin/popups" class="btn btn-sm btn-outline-info d-md-block m-2">View
+              </a>
+
+              <%% if(popupCurrent) { %>
+                <form class="d-inline" action="/admin/popups?_method=PUT" method="POST">
+                  <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+                  <button class="btn btn-sm btn-outline-secondary d-md-block m-2">Remove</button>
+                </form>
+                <%% } %>
+
+
+            </div>
+            <!-- popover -->
+            <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
+              title="Popup message"
+              data-content="&quot;View&quot;: to go to Popup page. &quot;Remove&quot;: to remove current message from the main page.">?</a>
+          </div>
+
+        </section>
+      </div>
 
       <hr>
-
-      <!-- Popup/Emergency message -->
-      <section class="container py-5">
-        <h2 class="admin-section my-4">Create new or Edit exist popup message</h2>
-        <div class="row">
-
-          <div class="col-md-8 popup-message <%%= popupCurrent && popupCurrent.msgBgColor %>">
-            <%% if(popupCurrent) { %>
-              <h4
-                class="<%%= popupCurrent.titleFontSize %> <%%= popupCurrent.titleColor %> <%%= popupCurrent.titlePosition %>">
-                <%%= popupCurrent.title %>
-              </h4>
-              <h5 class="popup-text align-middle 
-                          <%%= popupCurrent.msgFontSize %> <%%= popupCurrent.msgColor %> ">
-                <%%= popupCurrent.message %>
-              </h5>
-              <%% } else { %>
-                <h4>No current mesaages..</h4>
-                <h4>Create a new message or choose one from the list to show it on the main page.</h4>
-                <%% } %>
-          </div>
-
-          <div class="col-md-4 popup-buttons">
-
-            <a href="/admin/popups" class="btn btn-sm btn-outline-info d-md-block m-2">View
-            </a>
-
-            <%% if(popupCurrent) { %>
-              <form class="d-inline" action="/admin/popups?_method=PUT" method="POST">
-                <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
-                <button class="btn btn-sm btn-outline-secondary d-md-block m-2">Remove</button>
-              </form>
-              <%% } %>
-
-
-          </div>
-          <!-- popover -->
-          <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
-            title="Popup message"
-            data-content="&quot;View&quot;: to go to Popup page. &quot;Remove&quot;: to remove current message from the main page.">?</a>
-        </div>
-
-      </section>
-    </div>
-
-    <hr>
 
   </div>
 
@@ -65,146 +65,209 @@
   <%- include ./partials/about -%>
 
 
-  <!--Gallery  -->
-  <%- include ./partials/gallery -%>
+    <!--Gallery  -->
+    <%- include ./partials/gallery -%>
 
 
 
-  <!-- Services -->
-  <%- include ./partials/services -%>
+      <!-- Services -->
+      <%- include ./partials/services -%>
 
-
-  </div>
-
-
-  <!-- Prices -->
-    <%- include ./partials/prices -%>
-
-
-
-  <!-- Contacts -->
-  <%- include ./partials/contacts -%>
-
-
-
-  <!-- Title, meta tags for main page-->
-  <section class="container my-5" id="tags">
-
-    <hr>
-
-    <div class="row">
-      <div class="col-12">
-        <h2 class="admin-section my-4">Main page Title and Description tags</h2>
-      </div>
-    </div>
-
-    <%% if( !mainTags ) { %>
-
-      <!-- create tags form -->
-      <form action="/admin/main" method="POST" class="mx-auto">
-        <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
-        <div class="row justify-content-center">
-
-          <div class="col-md-8">
-            <input type="text" class="form-control my-2" name="title" placeholder="Title">
-          </div>
-
-          <div class="col-md-8">
-            <input type="text" class="form-control my-2" name="description" placeholder="Description">
-          </div>
 
         </div>
 
 
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <button type="submit" id="create-tags" class="btn btn-lg btn-block btn-primary my-2">Create</button>
-          </div>
-        </div>
-
-        <!-- create loading spinner -->
-        <div class="text-center" id="create-tags-spinner">
-          <div class="lds-spinner create-spinner">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-
-      </form>
-
-      <!-- popover -->
-      <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
-        title="Info" data-content="Create title and description Google use to find your page">?</a>
+        <!-- Prices -->
+        <%- include ./partials/prices -%>
 
 
-      <%% } else { %>
 
-        <!-- edit tags form -->
-        <form action="/admin/main?_method=PUT" method="POST" class="mx-auto">
-          <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
-          <div class="row justify-content-center">
-
-            <div class="col-md-8">
-              <label for="tag-title">Title</label>
-              <input type="text" id="tag-title" class="form-control" name="title" value="<%%= mainTags.title %>">
-
-            </div>
-
-            <div class="col-md-8 my-4">
-              <label for="tag-description">Description</label>
-              <textarea type="text" id="tag-description" class="form-control" rows="5"
-                name="description"><%%= mainTags.description %></textarea>
-
-            </div>
-
-          </div>
+          <!-- Contacts -->
+          <%- include ./partials/contacts -%>
 
 
-          <div class="row justify-content-center">
-            <div class="col-md-8">
-              <button type="submit" id="update-tags" class="btn btn-lg btn-block btn-primary my-2">Update</button>
-            </div>
-          </div>
 
-          <!-- update loading spinner -->
-          <div class="text-center" id="update-tags-spinner">
-            <div class="lds-spinner update-spinner">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
+            <!-- Title, meta tags for main page-->
+            <section class="container my-5" id="tags">
 
-        </form>
-        <!-- popover -->
-        <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover" data-trigger="focus"
-          title="Info" data-content="Update title and description Google use to find your page">?</a>
-        <%% } %>
+              <hr>
 
-          <hr>
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="admin-section my-4">Main page Title and Description tags</h2>
+                </div>
+              </div>
 
-  </section>
+              <%% if( !mainTags ) { %>
 
-  <%- include ./partials/counter -%>
-  
+                <!-- create tags form -->
+                <form action="/admin/main" method="POST" class="mx-auto">
+                  <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                  <div class="row justify-content-center">
 
-      <%- include ../../partials/footer -%>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control my-2" name="title" placeholder="Title">
+                    </div>
+
+                    <div class="col-md-8">
+                      <input type="text" class="form-control my-2" name="description" placeholder="Description">
+                    </div>
+
+                  </div>
+
+
+                  <div class="row justify-content-center">
+                    <div class="col-md-8">
+                      <button type="submit" id="create-tags"
+                        class="btn btn-lg btn-block btn-primary my-2">Create</button>
+                    </div>
+                  </div>
+
+                  <!-- create loading spinner -->
+                  <div class="text-center" id="create-tags-spinner">
+                    <div class="lds-spinner create-spinner">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+
+                </form>
+
+                <!-- popover -->
+                <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover"
+                  data-trigger="focus" title="Info"
+                  data-content="Create title and description Google use to find your page">?</a>
+
+
+                <%% } else { %>
+
+                  <!-- edit tags form -->
+                  <form action="/admin/main?_method=PUT" method="POST" class="mx-auto">
+                    <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                    <div class="row justify-content-center">
+
+                      <div class="col-md-8">
+                        <label for="tag-title">Title</label>
+                        <input type="text" id="tag-title" class="form-control" name="title"
+                          value="<%%= mainTags.title %>">
+
+                      </div>
+
+                      <div class="col-md-8 my-4">
+                        <label for="tag-description">Description</label>
+                        <textarea type="text" id="tag-description" class="form-control" rows="5"
+                          name="description"><%%= mainTags.description %></textarea>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="row justify-content-center">
+                      <div class="col-md-8">
+                        <button type="submit" id="update-tags"
+                          class="btn btn-lg btn-block btn-primary my-2">Update</button>
+                      </div>
+                    </div>
+
+                    <!-- update loading spinner -->
+                    <div class="text-center" id="update-tags-spinner">
+                      <div class="lds-spinner update-spinner">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+
+                  </form>
+                  <!-- popover -->
+                  <a tabindex="0" class="btn btn-round-advice m-2" role="button" data-toggle="popover"
+                    data-trigger="focus" title="Info"
+                    data-content="Update title and description Google use to find your page">?</a>
+                  <%% } %>
+
+                    <hr>
+
+            </section>
+
+            <%- include ./partials/counter -%>
+
+
+              <!-- display content on main page -->
+
+
+              <section id="display-content" class='container-fluid'>
+
+                <%% displayContent.forEach(content=>{ %>
+
+                  <!-- prices -->
+                  <div class="row">
+                    <div class="col-10">
+                      <button type="button" class="btn btn-block btn-warning mt-5 mb-5" data-toggle="modal"
+                        data-target="#confirmDisplayModal<%%= content.content %>">
+                        <%%= content.display ? 'Hide' : 'Display' %>&nbsp; <span class="content-title-button"><%%= content.content %></span> on Website
+                      </button>
+                    </div>
+                    <div class="col-2">
+                      <input type="checkbox" class="d-flex align-items-center display-prices-checkbox" <%%= content &&
+                        content.display ? 'checked' : '' %> disabled>
+                    </div>
+                  </div>
+
+                  <!-- modal window to confirm display prices -->
+                  <div class="modal fade" id="confirmDisplayModal<%%= content.content %>" data-backdrop="static" data-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="staticBackdropLabel">
+                            Change <span class="content-title-modal"><%%= content.content %></span> display mode to: <span class="prices-display-mode">
+                              <%%= content && content.display ? 'hidden' : 'displayed' %>
+                            </span>
+                          </h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Please confirm
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                          </button>
+                          <form class="d-inline" action="/admin/display-content/<%%= content.content %>"
+                            method="POST">
+                            <input type="hidden" name="_csrf" value="<%%= csrfToken%>">
+                            <input type="password" name="permission" placeholder="permission password.." required>
+                            <button class="btn btn-danger">Confirm</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <%% })%>
+
+
+              </section>
+              <%- include ../../partials/footer -%>

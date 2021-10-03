@@ -8,7 +8,7 @@ const Service = require('../../models/service')
 const About = require('../../models/about')
 const Gallery = require('../../models/gallery')
 const Price = require('../../models/service-price')
-const DisplayPrices = require('../../models/display-prices')
+const DisplayContent = require('../../models/display-content')
 const Contact = require('../../models/contact')
 const Admin = require('../../models/admin')
 const Visit = require('../../models/visit')
@@ -34,7 +34,7 @@ module.exports.main = async (req, res) => {
   const gallery = await Gallery.find({})
   const about = await About.findOne({}, 'image about')
   const prices = await Price.find({})
-  const displayPrices = await DisplayPrices.findOne({})
+  const displayContent = await DisplayContent.find({})
   const contacts = await Contact.find({})
   const visits = await Visit.findOne({})
   // render admin page with our renderEJS function instead of native Express method "render"
@@ -49,7 +49,7 @@ module.exports.main = async (req, res) => {
     gallery,
     about,
     prices,
-    displayPrices,
+    displayContent,
     contacts,
     visits
   })
@@ -235,30 +235,21 @@ module.exports.logout = (req, res) => {
   res.redirect('/admin/login')
 }
 
-//  Display prices block on main page
-module.exports.dispalayPrices = async (req, res) => {
+//  Display content on main page
+module.exports.dispalayContent = async (req, res) => {
   try {
-    // check admin permission pasword to change prices view
+    // check admin permission pasword to change view mode
     const isMatch = await bcrypt.compare(
       req.body.permission,
       req.user.permission
     )
-    const displayPrices = await DisplayPrices.findOne({})
 
     if (isMatch) {
-      if (displayPrices.displayPrices) {
-        await DisplayPrices.findOneAndUpdate(
-          {},
-          { displayPrices: false },
-          { upsert: true }
-        )
-      } else {
-        await DisplayPrices.findOneAndUpdate(
-          {},
-          { displayPrices: true },
-          { upsert: true }
-        )
-      }
+      await DisplayContent.findOneAndUpdate(
+        { content: req.params.content },
+        [{ $set: { display: { $eq: [false, '$display'] } } }],
+        { upsert: true }
+      )
     } else {
       req.flash('error', 'Wrong permission password! Try again')
     }
@@ -266,7 +257,7 @@ module.exports.dispalayPrices = async (req, res) => {
     req.flash('success', 'Display Prices Mode updated')
     res.redirect('/admin')
   } catch (err) {
-    logger.error('From admin/display-prices:' + err.message)
+    logger.error('From admin/display-content:' + err.message)
     req.flash('error', err.message)
     res.redirect('back')
   }
