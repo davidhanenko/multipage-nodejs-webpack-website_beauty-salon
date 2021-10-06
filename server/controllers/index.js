@@ -1,3 +1,4 @@
+const axios = require('axios')
 const Service = require('../models/service')
 const Price = require('../models/service-price')
 const DisplayContent = require('../models/display-content')
@@ -20,7 +21,12 @@ module.exports.main = async (req, res) => {
   // all services and prices to reveal on menu and main page
   const services = await Service.find({})
   const prices = await Price.find({}).populate('unitPrice')
+  // display mode for prices
   const displayPrices = await DisplayContent.findOne({ content: 'prices' })
+  // display mode for about page
+  const displayAbout = await DisplayContent.findOne({ content: 'about' })
+  // display mode for gallery page
+  const displayGallery = await DisplayContent.findOne({ content: 'gallery' })
   // contact info
   const contacts = await Contact.find({})
   // errors for email sending
@@ -43,8 +49,10 @@ module.exports.main = async (req, res) => {
     popupCurrent,
     services,
     prices,
+    contacts,
     displayPrices,
-    contacts
+    displayAbout,
+    displayGallery
   })
 }
 
@@ -63,44 +71,63 @@ module.exports.email = async (req, res) => {
     res.redirect('/#contact-form')
     // if no errors, send email throw nodemailer
   } else {
-    try {
-      const data = matchedData(req)
-      const { name, phone, email, message } = data
+    const responseKey = req.body['g-recaptcha-response']
+    const secretKey = process.env.SECRET_KEY
 
-      let transport = nodemailer.createTransport({
-        host: 'smtp.mailtrap.io',
-        port: 2525,
-        auth: {
-          user: process.env.MAIL_USER,
-          pass: process.env.MAIL_PASS
+    const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${responseKey}`
+
+    axios
+      .post(url)
+      // .then((response) => response.json())
+      .then((googleResponse) => {
+        if (googleResponse.data.success == true) {
+          try {
+            const data = matchedData(req)
+            const { name, phone, email, message } = data
+
+            let transport = nodemailer.createTransport({
+              host: 'smtp.mailtrap.io',
+              port: 2525,
+              auth: {
+                user: process.env.MAIL_USER,
+                pass: process.env.MAIL_PASS
+              }
+            })
+
+            const msg = {
+              from: email,
+              to: process.env.MAIL_TO,
+              subject: 'Email from ingoodhandsbyIlona',
+              html: `<h2>${name}</h2><h3>${phone}</h3><p>${message}</p>`
+            }
+
+            transport.sendMail(msg, function (err) {
+              if (err) {
+                req.flash('error', 'Error, please try again')
+                logger.error(err)
+              }
+            })
+
+            req.flash('success', 'Thanks for the message! We‘ll be in touch')
+            // clear session data/errors after email sent
+            req.session.data = null
+            req.session.errors = null
+            res.redirect('/')
+          } catch (err) {
+            // add error to logger and show part of it to user throw alert
+            logger.error('From nodemail:' + err.message)
+            req.flash('error', err.message)
+            logger.error(err)
+          }
+        } else {
+          req.session.data = req.body
+          console.log('error - checkbox not selected')
+          res.redirect('/#contact-form')
         }
       })
-
-      const msg = {
-        from: email,
-        to: process.env.MAIL_TO,
-        subject: 'Email from ...',
-        html: `<h2>${name}</h2><h3>${phone}</h3><p>${message}</p>`
-      }
-
-      transport.sendMail(msg, function (err) {
-        if (err) {
-          req.flash('error', 'Error, please try again')
-          logger.error(err)
-        }
+      .catch((err) => {
+        console.log(err + 'Some error while verify captcha')
       })
-
-      req.flash('success', 'Thanks for the message! We‘ll be in touch')
-
-      req.session.data = null
-      req.session.errors = null
-      res.redirect('/')
-    } catch (err) {
-      // add error to logger and show part of it to user throw alert
-      logger.error('From nodemail:' + err.message)
-      req.flash('error', err.message)
-      logger.error(err)
-    }
   }
 }
 

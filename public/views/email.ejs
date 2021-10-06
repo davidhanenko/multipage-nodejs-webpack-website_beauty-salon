@@ -46,10 +46,13 @@
       aria-required="true"><%%= data.message %></textarea>
   </div>
 
+<div class="g-recaptcha" data-sitekey="<%%=process.env.WEBSITE_KEY%>"></div>
+
   <div class="row">
     <div class="col-6">
       <button type="submit" id="send-email-btn" class="btn btn-outline" aria-label="Send">SEND</button>
     </div>
+
     <div class="col-6 d-flex justify-content-end">
 
       <!-- reset form -->

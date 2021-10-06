@@ -46,9 +46,9 @@
     "rate-limiter-flexible": "^2.2.1",
     "serialize-javascript": "^5.0.1",
     "url-regex-safe": "^2.0.2",
+    "webpack": "^4.46.0",
     "winston": "^3.3.3",
-    "winston-mongodb": "^5.0.7",
-    "webpack": "^4.46.0"
+    "winston-mongodb": "^5.0.7"
   },
   "engines": {
     "node": "14.x"

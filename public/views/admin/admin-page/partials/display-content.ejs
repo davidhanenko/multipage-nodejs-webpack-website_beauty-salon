@@ -1,11 +1,17 @@
 <section id="display-content" class='container-fluid'>
 
+  <div class="row">
+    <div class="col-12">
+      <h2 class="admin-section my-4">Control view mode for website components</h2>
+    </div>
+  </div>
+
+
   <%% displayContent.forEach(content=>{ %>
 
-    <!-- prices -->
     <div class="row d-flex align-items-center">
       <div class="col-10">
-        <button type="button" class="btn btn-block btn-warning mt-5 mb-5" data-toggle="modal"
+        <button type="button" class="btn btn-block btn-warning mt-3 mb-3" data-toggle="modal"
           data-target="#confirmDisplayModal<%%= content.content %>">
           <%%= content.display ? 'Hide' : 'Display' %>&nbsp; <span class="content-title-button">
               <%%= content.content %>
@@ -18,7 +24,7 @@
       </div>
     </div>
 
-    <!-- modal window to confirm display prices -->
+    <!-- modal window to confirm display mode -->
     <div class="modal fade" id="confirmDisplayModal<%%= content.content %>" data-backdrop="static" data-keyboard="false"
       tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">

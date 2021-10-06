@@ -38,8 +38,7 @@ const logger = createLogger({
         format.prettyPrint(),
         format.colorize()
       )
-    }),
-    new transports.File({ filename: 'combined.log' })
+    })
   ]
 })
 

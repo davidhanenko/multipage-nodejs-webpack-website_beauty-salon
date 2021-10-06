@@ -21,6 +21,7 @@
   <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;600&display=swap" rel="stylesheet"> -->
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 
@@ -57,31 +58,35 @@
             <li class="nav-item <%%= typeof page !== undefined && page === 'home' ? 'active' : '' %>">
               <a class="nav-link" href="/">Home</a>
             </li>
-            <li class="nav-item <%%= typeof page !== undefined && page === 'about' ? 'active' : '' %>">
-              <a class="nav-link" href="/about">About</a>
-            </li>
-            <li class="nav-item dropdown" id="navbarDropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                Services
-              </a>
-              <div id="services-dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                <%% services.forEach(services=> { %>
-                  <a class="dropdown-item <%%= typeof page !== undefined && page === services.title ? 'dropdown-item-active' : ''
-                      %>" href="/services/<%%= services.template %>">
-                    <%%= services.title %>
+            <%% if(displayAbout.display) { %>
+              <li class="nav-item <%%= typeof page !== undefined && page === 'about' ? 'active' : '' %>">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+              <%% } %>
+                <li class="nav-item dropdown" id="navbarDropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Services
                   </a>
-                  <%% }) %>
+                  <div id="services-dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-              </div>
-            </li>
-            <li class="nav-item <%%= typeof page !== undefined && page === 'gallery' ? 'active' : '' %>">
-              <a class="nav-link" href="/gallery">Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/#email-map">Contact Us</a>
-            </li>
+                    <%% services.forEach(services=> { %>
+                      <a class="dropdown-item <%%= typeof page !== undefined && page === services.title ? 'dropdown-item-active' : ''
+                      %>" href="/services/<%%= services.template %>">
+                        <%%= services.title %>
+                      </a>
+                      <%% }) %>
+
+                  </div>
+                </li>
+                  <%% if(displayGallery.display) { %>
+                <li class="nav-item <%%= typeof page !== undefined && page === 'gallery' ? 'active' : '' %>">
+                  <a class="nav-link" href="/gallery">Gallery</a>
+                </li>
+                  <%% } %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/#email-map">Contact Us</a>
+                </li>
           </ul>
         </div>
       </nav>
