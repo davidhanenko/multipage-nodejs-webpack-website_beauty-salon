@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const router = Router({ mergeParams: true })
-const { email, emailCancel } = require('../controllers/index')
+const { emailSend, emailCancel } = require('../controllers/email')
 const catchAsync = require('../utils/catchAsync')
 const { check } = require('express-validator')
 const rateLimiterMiddleware = require('../middleware/limiter')
@@ -28,7 +28,7 @@ router.post(
       .trim()
       .normalizeEmail()
   ],
-  catchAsync(email)
+  catchAsync(emailSend)
 )
 
 // cancel email - clear form

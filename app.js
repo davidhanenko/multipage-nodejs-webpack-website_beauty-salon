@@ -169,6 +169,7 @@ if (isDev) {
             "'self' data:",
             'https://res.cloudinary.com/dxxcixosf/',
             'maps.gstatic.com *.googleapis.com *.ggpht',
+            'www.gstatic.com',
             (req, res) => `'nonce-${res.locals.cspNonce}'`
           ],
           'media-src': [
