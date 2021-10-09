@@ -32,7 +32,6 @@ document.onreadystatechange = function () {
   }
 }
 
-
 // show alert/modal after page loaded and 3 sec past
 setTimeout(function () {
   // if message show first time and no 'showOnce' - set 'showOnce' item to true
@@ -51,3 +50,12 @@ setTimeout(function () {
 setTimeout(function () {
   localStorage.setItem('showOnce', 'true')
 }, 1000 * 60 * 15)
+
+// auto close alerts
+window.setTimeout(function () {
+  $('.alert-success')
+    .fadeTo(500, 0)
+    .slideUp(500, function () {
+      $(this).remove()
+    })
+}, 10000)
