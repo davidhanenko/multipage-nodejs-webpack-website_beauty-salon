@@ -38,3 +38,4 @@ $('#create-tags').on('click', function () {
 $('#update-tags').on('click', function () {
   $('#update-tags-spinner').show()
 })
+

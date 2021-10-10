@@ -8,7 +8,6 @@
   width: 10.3rem;
   text-align: center;
   align-items: center;
-  /* margin: 1rem; */
 }
 
 .services-button a {
@@ -23,6 +22,7 @@
   text-align: center;
   display: flex;
   word-break: break-word;
+  transition: 300ms;
 }
 
 .services-button a:hover {
@@ -32,7 +32,6 @@
   background: linear-gradient(to bottom right, #8c577a, #d095ce);
   -webkit-text-fill-color: var(--white);
   opacity: 0.8;
-  transition: 300;
 }
 
 .service-button-active {
@@ -60,6 +59,7 @@
   background: linear-gradient(to bottom right, #8c577a, #d095ce);
   text-transform: uppercase;
   font-size: 1.4rem;
+  transition: all 300ms;
 }
 
 .service-button-toggle:hover {
@@ -67,40 +67,48 @@
 }
 
 #dropdown-services-buttons .dropdown-menu {
-  background: linear-gradient(to bottom right, #d095ce ,#8c577a);
+  background: linear-gradient(to bottom right, #d095ce, #8c577a);
   border: none;
   width: 100%;
   margin-top: 0;
+  padding-bottom: 1rem;
 }
 
-.dropdown-item {
+.dropdown-services-item {
+  display: block;
+  text-transform: uppercase;
   border-bottom: 1px solid transparent;
   color: var(--purple1);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 100;
   width: 90%;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
   margin-left: 1rem;
   cursor: pointer;
+  transition: all 300ms;
 }
 
-.dropdown-item:hover {
+.dropdown-services-item:hover {
   background: none;
   border-bottom: 1px solid var(--white);
   color: var(--white);
   transform: scale(1.02);
-  transition: all 200ms;
+  text-decoration: none;
 }
 
 .dropdown-service-button-active {
   color: var(--white);
+  border-bottom: 1px solid var(--white);
   transform: scale(1.02);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 @media (max-width: 501px) {
- #dropdown-services-buttons {
-  position: absolute;
-  top: var(--navbarHeight);
-  width: 100%;
-}
+  #dropdown-services-buttons {
+    position: absolute;
+    top: var(--navbarHeight);
+    width: 100%;
+  }
 }

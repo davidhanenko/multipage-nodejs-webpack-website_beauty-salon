@@ -10,13 +10,13 @@
   margin: 0 auto;
 }
 
-.alert-warning {
-  background-color: #ffd591bd;
+.alert-danger {
+  background-color: #ff9c91cd;
   filter: grayscale(45%);
 }
 
 .alert-success {
-  background-color: #b7eb8f92;
+  background-color: #b7eb8fc6;
   filter: grayscale(45%);
 }
 

@@ -170,13 +170,15 @@ button.navbar-toggler {
 .dropdown-item {
   border-bottom: 1px solid transparent;
   color: #37243b;
-  font-size: 1.1rem;
-  line-height: 1.35rem;
+  font-size: 1.3rem;
+  /* line-height: 1.35rem; */
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
   text-transform: capitalize;
 }
 
 .dropdown-item:hover {
-  background: #e7a0e70c;
+  background: none;
   border-bottom: 1px solid #37243b81;
   color: #37243b81;
   transition: all 300ms;
@@ -192,7 +194,6 @@ button.navbar-toggler {
   background: #f6fafef5;
   transition: background 400ms linear;
 }
-
 
 @media (max-width: 767px) {
   .dropdownScrolled {

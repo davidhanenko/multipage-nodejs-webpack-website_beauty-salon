@@ -27,27 +27,28 @@
 
               <div class="image-choose">
                 <label for="imageMain">Upload new image</label>
-                <input type="file" class="form-control-file my-2" name="imageMain" id="imageMain" accept="image/*" />
+                <input type="file" class="form-control-file my-2 service-image" name="imageMain" id="imageMain"
+                  accept="image/*" />
 
                 <!-- image preview -->
-                <img class="imgMainPreview" alt="" />
+                <img class="image-preview" alt="" />
 
               </div>
             </div>
           </div>
-          <div class="col-md-4 mt-4 mt-md-0">
+          <div class="col-md-4 mt-4 mt-md-0 edit">
             <h3>Description on main page</h3>
             <h5>
               <%%= service.descriptionMain %>
             </h5>
 
             <!-- button to open-close main description edit area  -->
-            <button type="button" class="btn btn-sm btn-block btn-warning main-description-button">
+            <button type="button" class="btn btn-sm btn-block btn-warning edit-button">
               Edit
             </button>
 
             <!-- edit area for main description -->
-            <div class="main-description-edit-area">
+            <div class="edit-area">
               <textarea type="text" class="form-control my-2" name="descriptionMain"
                 rows="5"><%%= service.descriptionMain %></textarea>
             </div>
@@ -85,7 +86,7 @@
           </div>
         </div>
 
-
+        <!-- main block -->
         <!-- 1st image -->
         <div class="row text-center pb-5 mt-5 d-flex align-items-center">
           <div class="col-lg-6">
@@ -95,26 +96,26 @@
               <!-- image upload block -->
               <div class="image-choose">
                 <label for="image1">Upload new image</label>
-                <input type="file" class="form-control-file my-2" name="image1" id="image1" accept="image/*" />
+                <input type="file" class="form-control-file my-2 service-image" name="image1" id="image1" accept="image/*" />
 
                 <!-- image preview -->
-                <img class="img1Preview" alt="" />
+                <img class="image-preview" alt="" />
               </div>
             </div>
 
           </div>
 
-          <div class="col-lg-6">
+          <div class="col-lg-6 edit">
             <h3 class="pb-0 pt-5 pt-lg-0">Microneedling</h3>
 
             <p class="text-justify p-2">
               <%%= service.description1 %>
             </p>
-            <button type="button" class="btn btn-sm btn-block btn-warning description1-edit-button">
+            <button type="button" class="btn btn-sm btn-block btn-warning edit-button">
               Edit
             </button>
             <!-- edit area for 1st description -->
-            <div class="description1-edit-area">
+            <div class="edit-area">
               <textarea type="text" class="form-control my-2" name="description1"
                 rows="6"><%%= service.description1 %></textarea>
             </div>
@@ -139,10 +140,10 @@
               <img src="<%%= service.image2.url %>" alt="<%%= service.title %>" />
               <div class="image-choose">
                 <label for="image2">Upload new image</label>
-                <input type="file" class="form-control-file my-2" name="image2" id="image2" accept="image/*" />
+                <input type="file" class="form-control-file my-2 service-image" name="image2" id="image2" accept="image/*" />
 
                 <!-- image preview -->
-                <img class="img2Preview" alt="" />
+                <img class="image-preview" alt="" />
               </div>
 
             </div>
@@ -151,17 +152,17 @@
         </div>
 
         <div class="row pl-4 mt-4 pb-5 descript serv-amts">
-          <div class="col-lg-6">
+          <div class="col-lg-6 edit">
             <h3>What is Auto MTS?</h3>
             <p class="text-justify p-2">
               <%%= service.description2 %>
             </p>
 
-            <button type="button" class="btn btn-sm btn-block btn-warning description2-edit-button">
+            <button type="button" class="btn btn-sm btn-block btn-warning edit-button">
               Edit
             </button>
             <!-- edit area for 2nd description -->
-            <div class="description2-edit-area">
+            <div class="edit-area">
               <textarea type="text" class="form-control my-2" name="description2"
                 rows="6"><%%= service.description2 %></textarea>
             </div>

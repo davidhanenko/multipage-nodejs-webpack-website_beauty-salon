@@ -33,9 +33,6 @@ h2::first-letter {
   line-height: 1.7rem;
 }
 
-.main-description-edit-area {
-  display: none;
-}
 
 h3::first-letter {
   text-transform: capitalize;
@@ -125,11 +122,7 @@ input.form-control {
   color: var(---white);
 }
 
-.imgMainPreview,
-.img1Preview,
-.img2Preview,
-.img3Preview,
-.img4Preview {
+.image-preview {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -137,11 +130,8 @@ input.form-control {
   max-height: 100%;
 }
 
-.description1-edit-area,
-.description2-edit-area,
-.description3-edit-area,
-.description4-edit-area {
-  display: none;
+.edit-area {
+  display: none; 
 }
 
 .delete-video {

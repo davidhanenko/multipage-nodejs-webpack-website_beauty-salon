@@ -19,25 +19,27 @@ const logger = createLogger({
   transports: [
     new transports.MongoDB({
       db: mongoConn,
-      format: format.combine(
-        format.timestamp({ format: timezoned }),
-        format.colorize(),
-        format.prettyPrint()
-      ),
       tryReconnect: true,
       level: 'error',
-      collection: 'error-logs'
+      collection: 'error-logs',
+      expireAfterSeconds: 60 * 60 * 24
+      // format: format.combine(
+      //   format.timestamp({ format: timezoned }),
+      //   format.colorize(),
+      //   format.prettyPrint()
+      // )
     }),
     new transports.MongoDB({
+      // format: format.combine(
+      //   format.timestamp({ format: timezoned }),
+      //   format.prettyPrint(),
+      //   format.colorize()
+      // ),
       db: mongoConn,
       tryReconnect: true,
       level: 'warn',
       collection: 'warn-logs',
-      format: format.combine(
-        format.timestamp({ format: timezoned }),
-        format.prettyPrint(),
-        format.colorize()
-      )
+      expireAfterSeconds: 60 * 60 * 24
     })
   ]
 })

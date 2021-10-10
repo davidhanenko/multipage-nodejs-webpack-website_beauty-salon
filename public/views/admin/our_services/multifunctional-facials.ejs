@@ -26,27 +26,28 @@
 
               <div class="image-choose">
                 <label for="imageMain">Upload new image</label>
-                <input type="file" class="form-control-file my-2" name="imageMain" id="imageMain" accept="image/*" />
+                <input type="file" class="form-control-file my-2 service-image" name="imageMain" id="imageMain"
+                  accept="image/*" />
 
                 <!-- image preview -->
-                <img class="imgMainPreview" alt="" />
+                <img class="image-preview" alt="" />
 
               </div>
             </div>
           </div>
-          <div class="col-md-4 mt-4 mt-md-0">
+          <div class="col-md-4 mt-4 mt-md-0 edit">
             <h3>Description on main page</h3>
             <h5>
               <%%= service.descriptionMain %>
             </h5>
 
             <!-- button to open-close main description edit area  -->
-            <button type="button" class="btn btn-sm btn-block btn-warning main-description-button">
+            <button type="button" class="btn btn-sm btn-block btn-warning edit-button">
               Edit
             </button>
 
             <!-- edit aria for main description -->
-            <div class="main-description-edit-area">
+            <div class="edit-area">
               <textarea type="text" class="form-control my-2" name="descriptionMain"
                 rows="5"><%%= service.descriptionMain %></textarea>
             </div>
@@ -86,7 +87,7 @@
         <!-- multifunctional -->
 
         <div class="row text-center my-5">
-          <div class="col-lg-10 offset-lg-1">
+          <div class="col-lg-10 offset-lg-1 edit">
             <p>
               You can’t stop time, but there are ways to reduce its effects on your skin. Most of that can be found
               in our place.
@@ -94,11 +95,11 @@
             <p class="text-justify px-2 pt-1">
               <%%= service.description1 %>
             </p>
-            <button type="button" class="btn btn-sm btn-block btn-warning description1-edit-button">
+            <button type="button" class="btn btn-sm btn-block btn-warning edit-button">
               Edit
             </button>
             <!-- edit area for 1st description -->
-            <div class="description1-edit-area">
+            <div class="edit-area">
               <textarea type="text" class="form-control my-2" name="description1"
                 rows="6"><%%= service.description1 %></textarea>
             </div>
@@ -106,7 +107,7 @@
         </div>
 
         <div class="row my-5 d-flex text-center d-flex align-items-center">
-          <div class="col-lg-6 pb-4">
+          <div class="col-lg-6 pb-4 edit">
             <h3 class="pb-2 pb-lg-0 pt-0 pt-lg-5 pt-lg-0">Multifunction anti aging LED treatment</h3>
             <p class="text-justify px-2 pt-3">
             <ul class="text-left">
@@ -126,11 +127,11 @@
             <p class="text-justify px-2 pt-3">
               <%%= service.description2 %>
             </p>
-            <button type="button" class="btn btn-sm btn-block btn-warning description2-edit-button">
+            <button type="button" class="btn btn-sm btn-block btn-warning edit-button">
               Edit
             </button>
             <!-- edit area for 2nd description -->
-            <div class="description2-edit-area">
+            <div class="edit-area">
               <textarea type="text" class="form-control my-2" name="description2"
                 rows="6"><%%= service.description2 %></textarea>
             </div>
@@ -142,10 +143,11 @@
               <!-- image upload block -->
               <div class="image-choose">
                 <label for="image1">Upload new image</label>
-                <input type="file" class="form-control-file my-2" name="image1" id="image1" accept="image/*" />
+                <input type="file" class="form-control-file my-2 service-image" name="image1" id="image1"
+                  accept="image/*" />
 
                 <!-- image preview -->
-                <img class="img1Preview" />
+                <img class="image-preview" alt="" />
               </div>
             </div>
           </div>
@@ -159,26 +161,27 @@
               <img src="<%%= service.image2.url %>" alt="<%%= service.title %>" />
               <div class="image-choose">
                 <label for="image2">Upload new image</label>
-                <input type="file" class="form-control-file my-2" name="image2" id="image2" accept="image/*" />
+                <input type="file" class="form-control-file my-2 service-image" name="image2" id="image2"
+                  accept="image/*" />
 
                 <!-- image preview -->
-                <img class="img2Preview" />
+                <img class="image-preview" alt="" />
               </div>
 
             </div>
           </div>
-          <div class="col-lg-6 order-1 order-lg-2">
+          <div class="col-lg-6 order-1 order-lg-2 edit">
             <h3 class="pb-2">Eye lift</h3>
             <h4>Rejuvenate Eye Area for younger looking Countours</h4>
 
             <p class="text-justify px-2 pt-3">
               <%%= service.description3 %>
             </p>
-            <button type="button" class="btn btn-sm btn-block btn-warning description3-edit-button">
+            <button type="button" class="btn btn-sm btn-block btn-warning edit-button">
               Edit
             </button>
             <!-- edit area for 2nd description -->
-            <div class="description3-edit-area">
+            <div class="edit-area">
               <textarea type="text" class="form-control my-2" name="description3"
                 rows="6"><%%= service.description3 %></textarea>
             </div>
@@ -187,7 +190,7 @@
         </div>
 
         <div class="row text-center my-5 d-flex align-items-center">
-          <div class="col-lg-6 pb-4">
+          <div class="col-lg-6 pb-4 edit">
             <h3 class="pb-2 pb-lg-0 pt-0 pt-lg-5 pt-lg-0">Medical deep pore cleansing facial</h3>
             <h4>Micro Face and Neck</h4>
 
@@ -195,11 +198,11 @@
             <p class="text-justify px-2 pt-3">
               <%%= service.description4 %>
             </p>
-            <button type="button" class="btn btn-sm btn-block btn-warning description4-edit-button">
+            <button type="button" class="btn btn-sm btn-block btn-warning edit-button">
               Edit
             </button>
             <!-- edit area for 2nd description -->
-            <div class="description4-edit-area">
+            <div class="edit-area">
               <textarea type="text" class="form-control my-2" name="description4"
                 rows="6"><%%= service.description4 %></textarea>
             </div>
@@ -209,10 +212,11 @@
               <img src="<%%= service.image3.url %>" alt="<%%= service.title %>" />
               <div class="image-choose">
                 <label for="image3">Upload new image</label>
-                <input type="file" class="form-control-file my-2" name="image3" id="image3" accept="image/*" />
+                <input type="file" class="form-control-file my-2 service-image" name="image3" id="image3"
+                  accept="image/*" />
 
                 <!-- image preview -->
-                <img class="img3Preview" />
+                <img class="image-preview" alt="" />
               </div>
 
             </div>
@@ -225,10 +229,11 @@
               <img src="<%%= service.image4.url %>" alt="<%%= service.title %>" />
               <div class="image-choose">
                 <label for="image4">Upload new image</label>
-                <input type="file" class="form-control-file my-2" name="image4" id="image4" accept="image/*" />
+                <input type="file" class="form-control-file my-2 service-image" name="image4" id="image4"
+                  accept="image/*" />
 
                 <!-- image preview -->
-                <img class="img4Preview" />
+                <img class="image-preview" alt="" />
               </div>
             </div>
           </div>
@@ -236,7 +241,7 @@
             <h3 class="pb-2">Back facial</h3>
 
             <p class="text-justify px-2 pt-3">
-            Complete cleaning for hard-to-reach areas includes exfoliation for smooth, even-toned skin.
+              Complete cleaning for hard-to-reach areas includes exfoliation for smooth, even-toned skin.
             </p>
           </div>
 
@@ -280,6 +285,6 @@
 
   <%- include ../partials/service-tags -%>
 
-  <%- include ../partials/go-back-admin-btn -%>
+    <%- include ../partials/go-back-admin-btn -%>
 
-    <%- include ../partials/footer -%>
+      <%- include ../partials/footer -%>

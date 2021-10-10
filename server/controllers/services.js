@@ -15,7 +15,12 @@ module.exports.services = async (req, res) => {
   // all prices to be rendered  current service page
   const prices = await Price.find({}).populate('unitPrice')
   // display prices on website mode
+  // display mode for prices
   const displayPrices = await DisplayContent.findOne({ content: 'prices' })
+  // display mode for about page
+  const displayAbout = await DisplayContent.findOne({ content: 'about' })
+  // display mode for gallery page
+  const displayGallery = await DisplayContent.findOne({ content: 'gallery' })
   // get current setvice file name from path and render it from views with custom renderEJS function (/server/middleware/template.js)
   await renderEJS(res, `our_services/${service.template}`, {
     title: `${
@@ -30,6 +35,8 @@ module.exports.services = async (req, res) => {
     service,
     services,
     prices,
-    displayPrices
+    displayPrices,
+    displayAbout,
+    displayGallery
   })
 }

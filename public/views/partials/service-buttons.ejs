@@ -28,7 +28,7 @@
     <%% services.forEach(button=> { %>
 
 
-      <a href="/services/<%%= button.template %>" class="dropdown-item dropdown-service-button <%%= typeof page !==undefined && page===button.title
+      <a href="/services/<%%= button.template %>" class="dropdown-services-item dropdown-service-button <%%= typeof page !==undefined && page===button.title
           ? 'dropdown-service-button-active' : '' %>">
         <%%= button.title %>
       </a>

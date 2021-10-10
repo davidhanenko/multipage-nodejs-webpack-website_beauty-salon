@@ -68,7 +68,6 @@ module.exports.emailSend = async (req, res) => {
             // add error to logger and show part of it to user throw alert
             logger.error('From nodemail:' + err.message)
             req.flash('error', err.message)
-            logger.error(err)
           }
         } else {
           // keep input data to prefill the form when showing error
@@ -79,7 +78,7 @@ module.exports.emailSend = async (req, res) => {
         }
       })
       .catch((err) => {
-        logger.error('From reCAPTCHA validation:' + err.message)
+        logger.warn('From reCAPTCHA validation:' + err.message)
         req.flash('error', err.message)
       })
   }

@@ -89,7 +89,7 @@ module.exports.register = async (req, res) => {
       if (role === process.env.ADMIN_SECRET) {
         admin.isAdmin = true
       }
-      // register new user theow Passport
+      // register new user through Passport
       Admin.register(admin, password, (err) => {
         if (err) {
           req.flash('error', err.message)
@@ -136,7 +136,7 @@ const limiterFastBruteByIP = new RateLimiterMongo({
   keyPrefix: 'login_fail_ip_per_minute',
   points: maxWrongAttemptsByIPperMinute,
   duration: 60,
-  blockDuration: 60 * 2 // Block for 30 minutes, if 3 wrong attempts per 60 seconds
+  blockDuration: 60 * 30 // Block for 30 minutes, if 3 wrong attempts per 60 seconds
 })
 
 const limiterSlowBruteByIP = new RateLimiterMongo({
@@ -208,7 +208,7 @@ module.exports.login = async (req, res, next) => {
                 String(Math.round(rlRejected.msBeforeNext / 1000)) || 1
               } seconds..`
             )
-            logger.error('From admin/signin page: Too many requests, 429')
+            logger.warn('From admin/signin page: Too many requests, 429')
             res.redirect('back')
           }
         }
